@@ -6,10 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "bootstrap": "^4.4.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
@@ -24,10 +22,18 @@
     "extends": "react-app"
   },
   "stylelint": {
-    "extends": "stylelint-config-sass-guidelines",
+    "extends": [
+      "stylelint-config-sass-guidelines",
+      "stylelint-a11y/recommended"
+    ],
     "plugins": [
-      "stylelint-order"
-    ]
+      "stylelint-order",
+      "stylelint-csstree-validator"
+    ],
+    "rules": {
+      "csstree/validator": true,
+      "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$"
+    }
   },
   "browserslist": {
     "production": [
@@ -42,8 +48,12 @@
     ]
   },
   "devDependencies": {
-    "stylelint": "^13.3.2",
+    "standard": "^14.3.3",
+    "stylelint": "^13.3.3",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
     "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.17.1"
   }

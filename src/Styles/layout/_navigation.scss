@@ -1,0 +1,24 @@
+.navigation__ul {
+  align-items: center;
+  background-color: $primary;
+  color: #fff;
+  display: flex;
+  font-family: $header-font;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+}
+
+.navigation__li {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation__li-anchor {
+  color: $white;
+  text-underline-position: under;
+}
+
+.navigation__span-separator {
+  color: $white;
+}

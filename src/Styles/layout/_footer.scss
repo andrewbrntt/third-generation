@@ -1,0 +1,22 @@
+.footer {
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__logo {
+  align-self: center;
+  display: flex;
+  height: 6.25rem;
+  width: 8rem;
+}
+
+.footer__ul {
+  align-items: center;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}

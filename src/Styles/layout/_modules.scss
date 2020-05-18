@@ -1,3 +1,8 @@
 /*------------*\
 Description: contains styling for larger layout components; e.g. nav, header, footer, etc.
 \*------------*/
+
+@import 'navigation';
+@import 'header';
+@import 'footer';
+@import 'body';

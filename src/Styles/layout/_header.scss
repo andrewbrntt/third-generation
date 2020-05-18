@@ -1,0 +1,16 @@
+.header {
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  //margin: 1rem 0;
+  height: 6.25rem;
+  width: 8rem;
+}

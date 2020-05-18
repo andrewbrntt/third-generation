@@ -1,3 +1,51 @@
-/*------------*\
-Description: contains global styles, such as resets, typography, colors, etc.
-\*------------*/
+///*------------*\
+//Description: contains global styles, such as resets, typography, colors, etc.
+//\*------------*/
+//
+//
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: 1rem;
+  letter-spacing: 0.12rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  word-spacing: 0.16rem;
+}
+
+body,
+.root__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.sr-only {
+  background-color: #3b2d4a;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  outline: $secondary solid 0.125rem;
+}
+
+main > h1:focus,
+main > h1:active {
+  outline: 3px dashed orange;
+  outline-offset: 10px;
+}

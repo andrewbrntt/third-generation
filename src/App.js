@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './temp-logo.png';
-import './App.css';
+import React, { useEffect } from 'react'
+import './App.css'
+import Header from './Components/Header'
+import SkipLink from './Components/SkipLink'
+import Footer from './Components/Footer'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="" alt="logo" />
-        <p className='display-1'>
-          Edit <code>src/App.js</code> and <mark>save to reload.</mark>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className=''>
+        <SkipLink />
+        <Header />
       </header>
-    </div>
-  );
+      <main className=''>
+        <h1 id='main-content'>Main Body</h1>
+      </main>
+      <footer className='footer'>
+        <Footer />
+      </footer>
+    </>
+  )
 }
 
-export default App;
+export default App
