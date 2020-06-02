@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
@@ -16,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "guide": "styleguidist server"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -24,15 +29,27 @@
   "stylelint": {
     "extends": [
       "stylelint-config-sass-guidelines",
-      "stylelint-a11y/recommended"
+      "stylelint-a11y/recommended",
+      "stylelint-order",
+      "stylelint-config-rational-order"
     ],
     "plugins": [
+      "stylelint-csstree-validator",
       "stylelint-order",
-      "stylelint-csstree-validator"
+      "stylelint-config-rational-order/plugin"
     ],
     "rules": {
       "csstree/validator": true,
-      "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$"
+      "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+      "order/properties-alphabetical-order": null,
+      "order/properties-order": [],
+      "plugin/rational-order": [
+        true,
+        {
+          "border-in-box-model": false,
+          "empty-line-between-groups": false
+        }
+      ]
     }
   },
   "browserslist": {
@@ -48,7 +65,7 @@
     ]
   },
   "devDependencies": {
-    "standard": "^14.3.3",
+    "react-styleguidist": "^11.0.8",
     "stylelint": "^13.3.3",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-rational-order": "^0.1.2",

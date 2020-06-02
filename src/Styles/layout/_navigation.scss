@@ -3,7 +3,7 @@
   background-color: $primary;
   color: #fff;
   display: flex;
-  font-family: $header-font;
+  font-family: $serif-font;
   justify-content: space-evenly;
   list-style: none;
   padding: 0;
@@ -12,13 +12,15 @@
 .navigation__li {
   display: flex;
   justify-content: space-around;
+  font-size: 16px;
 }
 
 .navigation__li-anchor {
-  color: $white;
   text-underline-position: under;
+  font-size: 16px;
 }
 
+.navigation__li-anchor,
 .navigation__span-separator {
   color: $white;
 }

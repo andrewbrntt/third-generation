@@ -1,0 +1,58 @@
+.body__header-container {
+
+  //Positioning
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  //Box Model
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.body-header__text-overlay {
+  //Positioning
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  left: 50%;
+
+  //Box Model
+  width: 85%;
+  //height: 550px;
+  padding: 0.6rem;
+
+  //Typography
+  color: #0f5c61;
+  font-size: 2.1rem;
+  font-family: $serif-font;
+  font-style: italic;
+  text-align: center;
+
+  //Visual
+  background-color: $white;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+
+}
+
+.body-header__text {
+  line-height: 1.1;
+}
+
+.body-header__sub-text {
+  font-weight: normal;
+  font-size: 1.9rem;
+  font-family: $san-serif-font;
+  font-style: normal;
+}
+
+.body-header__cta-button-container {
+  position: absolute;
+  top: 80%;
+  display: flex;
+  justify-content: center;
+}
+

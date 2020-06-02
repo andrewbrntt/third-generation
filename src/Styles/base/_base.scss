@@ -1,20 +1,18 @@
-///*------------*\
-//Description: contains global styles, such as resets, typography, colors, etc.
-//\*------------*/
-//
-//
+
 html {
   height: 100%;
 }
 
 body {
-  font-family: $primary-font;
-  font-size: 1rem;
-  letter-spacing: 0.12rem;
-  line-height: 1.5;
+
   margin: 0;
   padding: 0;
-  word-spacing: 0.16rem;
+
+  font-size: $default-font-size;
+  font-family: $san-serif-font;
+  line-height: $default-line-height;
+  letter-spacing: $default-letter-spacing;
+  word-spacing: $default-word-spacing;
 }
 
 body,
@@ -49,3 +47,4 @@ main > h1:active {
   outline: 3px dashed orange;
   outline-offset: 10px;
 }
+

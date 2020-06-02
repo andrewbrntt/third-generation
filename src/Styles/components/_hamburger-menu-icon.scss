@@ -1,0 +1,40 @@
+
+// Order of css blocks
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+
+.hamburger-menu-icon__container {
+  //Box Model
+  width: 2.5rem;
+  height: 3rem;
+}
+
+
+.hamburger-menu-icon__long-bar,
+.hamburger-menu-icon__short-bar {
+
+  //Box Model
+  height: 0.25rem;
+  margin: 10px;
+
+  //Visual
+  background-color: $white;
+  border-radius: 0.65rem;
+}
+
+.hamburger-menu-icon__long-bar {
+  //Box Model
+  width: 100%;
+}
+
+.hamburger-menu-icon__short-bar {
+  //Box Model
+  width: 55%;
+}
+
+

@@ -1,21 +1,51 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import './App.css'
-import Header from './Components/Header'
-import SkipLink from './Components/SkipLink'
-import Footer from './Components/Footer'
+import Header from './components/Header'
+import SkipLink from './components/SkipLink'
+import Footer from './components/Footer'
+import Home from './Pages/Home'
+import TestPage from './Pages/TestPage'
+import About from './Pages/About'
+import Roofing from './Pages/Roofing'
+import Siding from './Pages/Siding'
+import Services from './Pages/Services'
+import Contact from './Pages/Contact'
 
 function App () {
   return (
     <>
       <header className=''>
-        <SkipLink />
-        <Header />
+        <SkipLink/>
+        <Header/>
       </header>
-      <main className=''>
-        <h1 id='main-content'>Main Body</h1>
+      <main id='main-content' className=''>
+        <Switch>
+          <Route path='/test'>
+              <TestPage />
+          </Route>
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/roofing'>
+            <Roofing />
+          </Route>
+          <Route path='/siding'>
+            <Siding />
+          </Route>
+          <Route path='/services'>
+            <Services />
+          </Route>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
+          <Route path='/'>
+            <Home/>
+          </Route>
+        </Switch>
       </main>
       <footer className='footer'>
-        <Footer />
+        <Footer/>
       </footer>
     </>
   )
