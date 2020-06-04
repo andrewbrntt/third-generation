@@ -1,5 +1,14 @@
-.body__header-container {
+// Order of css blocks
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
+
+
+.body__header-container {
   //Positioning
   position: relative;
   display: flex;
@@ -15,20 +24,18 @@
 .body-header__text-overlay {
   //Positioning
   position: absolute;
-  top: 40%;
-  right: 50%;
+  top: 16.5rem;
   left: 50%;
 
   //Box Model
-  width: 85%;
-  //height: 550px;
-  padding: 0.6rem;
+  width: fit-content;
+  min-height: 12.5rem;
+  padding: 2rem 1rem;
 
   //Typography
   color: #0f5c61;
   font-size: 2.1rem;
   font-family: $serif-font;
-  font-style: italic;
   text-align: center;
 
   //Visual
@@ -39,12 +46,21 @@
 }
 
 .body-header__text {
+  //Box Model
+  margin: 0;
+
+  //Typography
+  font-size: 2.25rem;
   line-height: 1.1;
 }
 
 .body-header__sub-text {
+  //Box Model
+  margin-top: 0.9375rem;
+
+  //Typography
   font-weight: normal;
-  font-size: 1.9rem;
+  font-size: 1.125rem;
   font-family: $san-serif-font;
   font-style: normal;
 }

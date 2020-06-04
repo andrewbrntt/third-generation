@@ -1,16 +1,35 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
 .header {
-  background-color: $primary;
+  // Box Model
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Visual
+  background-color: $primary;
 }
 
 .header__logo-container {
-  display: flex;
-  justify-content: center;
+  //position: relative;
 }
 
 .header__logo {
-  //margin: 1rem 0;
-  height: 6.25rem;
-  width: 8rem;
+  // Box Model
+  width: 9.375rem;
+  height: 4.375rem;
+
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.header__mobile-navigation {
+  position: absolute;
+  left: 0.9375rem;
 }

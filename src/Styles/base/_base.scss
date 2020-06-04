@@ -4,7 +4,6 @@ html {
 }
 
 body {
-
   margin: 0;
   padding: 0;
 
@@ -17,15 +16,15 @@ body {
 
 body,
 .root__container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  //display: flex;
+  //flex-direction: column;
+  //height: 100%;
+  //margin: 0;
+  //padding: 0;
 }
 
 main {
-  flex: 1;
+  //flex: 1;
 }
 
 .sr-only {
@@ -48,3 +47,6 @@ main > h1:active {
   outline-offset: 10px;
 }
 
+.background-color-primary {
+  background-color: $primary;
+}

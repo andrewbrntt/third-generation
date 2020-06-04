@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Navigation = () => {
+const MobileNavigationMenu = () => {
   return (
     <nav className='navigation'>
       <ul className='navigation__ul'>
@@ -25,4 +25,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default MobileNavigationMenu

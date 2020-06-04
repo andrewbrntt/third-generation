@@ -15,11 +15,11 @@ import Contact from './Pages/Contact'
 function App () {
   return (
     <>
-      <header className=''>
-        <SkipLink/>
+      <header className='w3-container background-color-primary'>
+        {/*<SkipLink/>*/}
         <Header/>
       </header>
-      <main id='main-content' className=''>
+      <main id='main-content' className='w3-container'>
         <Switch>
           <Route path='/test'>
               <TestPage />
@@ -44,7 +44,7 @@ function App () {
           </Route>
         </Switch>
       </main>
-      <footer className='footer'>
+      <footer className='w3-container background-color-primary'>
         <Footer/>
       </footer>
     </>

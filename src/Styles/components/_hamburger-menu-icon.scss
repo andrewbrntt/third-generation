@@ -20,7 +20,6 @@
 
   //Box Model
   height: 0.25rem;
-  margin: 10px;
 
   //Visual
   background-color: $white;
@@ -38,3 +37,6 @@
 }
 
 
+.hamburger-menu-icon__bar--margin-y {
+  margin: 0.625rem 0;
+}
