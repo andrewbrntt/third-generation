@@ -19,7 +19,7 @@ function App () {
         {/*<SkipLink/>*/}
         <Header/>
       </header>
-      <main id='main-content' className='w3-container'>
+      <main id='main-content' className='w3-container remove-padding'>
         <Switch>
           <Route path='/test'>
               <TestPage />

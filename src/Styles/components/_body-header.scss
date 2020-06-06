@@ -6,8 +6,6 @@
 //Animation
 //Misc
 
-
-
 .body__header-container {
   //Positioning
   position: relative;
@@ -15,7 +13,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
+
+.body-header__img--overflow {
   //Box Model
   overflow-x: hidden;
   overflow-y: hidden;
@@ -23,25 +24,22 @@
 
 .body-header__text-overlay {
   //Positioning
-  position: absolute;
-  top: 16.5rem;
-  left: 50%;
+  top: 22rem;
+  left: 50vw;
 
   //Box Model
-  width: fit-content;
-  min-height: 12.5rem;
-  padding: 2rem 1rem;
+  min-width: 18.75rem;
+  min-height: 25rem;
+  padding: 1.25rem;
 
   //Typography
   color: #0f5c61;
   font-size: 2.1rem;
-  font-family: $serif-font;
   text-align: center;
 
   //Visual
   background-color: $white;
-  transform: translate(-50%, -50%);
-  opacity: 0.9;
+  //opacity: 0.9;
 
 }
 
@@ -51,12 +49,14 @@
 
   //Typography
   font-size: 2.25rem;
+  font-family: $serif-font;
+  font-weight: bold;
   line-height: 1.1;
 }
 
 .body-header__sub-text {
   //Box Model
-  margin-top: 0.9375rem;
+  //margin-top: 0.9375rem;
 
   //Typography
   font-weight: normal;
@@ -71,4 +71,3 @@
   display: flex;
   justify-content: center;
 }
-
