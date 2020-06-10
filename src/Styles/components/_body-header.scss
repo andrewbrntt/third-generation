@@ -6,14 +6,6 @@
 //Animation
 //Misc
 
-.body__header-container {
-  //Positioning
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 
 .body-header__img--overflow {
@@ -24,7 +16,7 @@
 
 .body-header__text-overlay {
   //Positioning
-  top: 22rem;
+  top: 26rem;
   left: 50vw;
 
   //Box Model
@@ -33,14 +25,12 @@
   padding: 1.25rem;
 
   //Typography
-  color: #0f5c61;
+  color: $primary;
   font-size: 2.1rem;
   text-align: center;
 
   //Visual
-  background-color: $white;
-  //opacity: 0.9;
-
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .body-header__text {
@@ -48,9 +38,9 @@
   margin: 0;
 
   //Typography
+  font-weight: bold;
   font-size: 2.25rem;
   font-family: $serif-font;
-  font-weight: bold;
   line-height: 1.1;
 }
 

@@ -1,21 +1,26 @@
 .footer {
-  background-color: $primary;
+  //Box Model
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
+
+  //Visual
+  background-color: $primary;
 }
 
 .footer__logo {
-  align-self: center;
+  //Box Model
   display: flex;
-  height: 6.25rem;
+  align-self: center;
   width: 8rem;
+  height: 6.25rem;
 }
 
 .footer__link {
-  border-bottom: 1px dotted;
   color: $white;
-  //text-underline-position: under;
   text-decoration: none;
+
+  //Visual
+  border-bottom: 1px dotted;
 }

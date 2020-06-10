@@ -1,13 +1,13 @@
 import React from 'react'
-import backgroundImage from '../assets/wide-kitchen-stock.jpg'
+import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
 import ThemeButton from './ThemeButton'
 
 const BodyHeader = () => {
 
   return (
     <section className='body-header__img--overflow'>
-      <img className='' aria-hidden='true' src={backgroundImage}/>
-      <div id='test' className='w3-display-middle body-header__text-overlay w3-content'>
+      <img aria-hidden='true' src={backgroundImage}/>
+      <div className='w3-display-middle body-header__text-overlay w3-content'>
         <h1 className='body-header__text'>
           Transform Your House Into Your Dream Home
         </h1>
@@ -17,9 +17,7 @@ const BodyHeader = () => {
         <p className='body-header__sub-text'>
           A home's interior should reflect your style.
         </p>
-    <span className=''>
-            <ThemeButton/>
-          </span>
+            <ThemeButton text='Contact Us'/>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@
 // ----- Fonts ------- //
 $san-serif-font: 'Open Sans', 'Calibri', 'Century Gothic', 'Helvetica', 'Tahoma', 'Verdana', sans-serif;
 $serif-font: 'Georgia', 'Times New Roman', Times, serif;
+$action-font: 'Arvo', 'Times New Roman', Times, serif;
 // ------------------ //
 
 // ----- Size and Spacing ------- //
@@ -12,3 +13,10 @@ $default-word-spacing: 1.5;
 
 // ------------------ //
 
+.action-text {
+  //Typography
+  font-size: 1.5rem;
+  font-family: $action-font;
+  letter-spacing: $default-letter-spacing;
+  word-spacing: $default-word-spacing;
+}

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const ThemeButton = ({ styleClasses, text }) => {
   return (
-    <button className={`theme-button theme-button--focus ${styleClasses}`}>
-      Contact Us
+    <button className={`theme-button action-text theme-button--focus ${styleClasses}`}>
+      {text}
     </button>
   )
 }

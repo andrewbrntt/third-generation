@@ -16,7 +16,7 @@ function App () {
   return (
     <>
       <header className='w3-container background-color-primary'>
-        {/*<SkipLink/>*/}
+        <SkipLink/>
         <Header/>
       </header>
       <main id='main-content' className='w3-container remove-padding'>

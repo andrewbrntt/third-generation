@@ -1,0 +1,19 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.body-section {
+  min-height: 31.25rem;
+  text-align: center;
+}
+
+.body-section__title {
+  margin: 2.5rem;
+
+  //Typography
+  font-family: $serif-font;
+}

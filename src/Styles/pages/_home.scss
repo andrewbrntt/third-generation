@@ -1,0 +1,23 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.home__services--color {
+  color: $primary;
+}
+
+.home__service-cards-container {
+  margin: 2.8125rem 0;
+}
+
+.home__service-card {
+  margin: 1.5rem 0;
+}
+
+.home__about-us--color {
+  color: $white;
+}

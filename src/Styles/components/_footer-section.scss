@@ -1,13 +1,16 @@
 
 .footer__section,
 .footer__ul {
-  align-items: center;
-  color: $white;
+  //Box Model
   display: flex;
   flex-direction: column;
-  font-family: $san-serif-font;
+  align-items: center;
   margin: 0;
   padding: 0;
+
+  //Typography
+  color: $white;
+  font-family: $san-serif-font;
 }
 
 .footer__ul {

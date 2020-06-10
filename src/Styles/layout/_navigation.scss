@@ -1,12 +1,17 @@
 .navigation__ul {
-  align-items: center;
-  background-color: $primary;
-  color: #fff;
+  //Box Model
   display: flex;
-  font-family: $serif-font;
+  align-items: center;
   justify-content: space-evenly;
-  list-style: none;
   padding: 0;
+
+  //Typography
+  color: #fff;
+  font-family: $serif-font;
+
+  //Visual
+  list-style: none;
+  background-color: $primary;
 }
 
 .navigation__li {
