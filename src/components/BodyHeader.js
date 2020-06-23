@@ -1,24 +1,35 @@
-import React from 'react'
-import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import useElementDimensions from '../helpers/useElementDimensions'
 import ThemeButton from './ThemeButton'
+import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
+import HeroImageOverlay from './HeroImageOverlay'
 
 const BodyHeader = () => {
 
+  let bodyHeader = useRef(null)
+  let overlayContainer = useRef(null)
+  let overlayDimensions = useElementDimensions(overlayContainer)
+
+  const [height, setHeight] = useState(0)
+
+let dimensions = {
+    height: `${(height + 40)/16}rem`
+}
+
+  useLayoutEffect(() => {
+    if (height) {
+      dimensions = {height: `${(overlayDimensions.height + 40)/16}rem`}
+      setHeight(overlayDimensions.height)
+    } else {
+      dimensions = {height: `${(overlayContainer.current.offsetHeight + 40)/16}rem`}
+      setHeight(overlayContainer.current.offsetHeight)
+    }
+  }, [overlayDimensions])
+
   return (
-    <section className='body-header__img--overflow'>
-      <img aria-hidden='true' src={backgroundImage}/>
-      <div className='w3-display-middle body-header__text-overlay w3-content'>
-        <h1 className='body-header__text'>
-          Transform Your House Into Your Dream Home
-        </h1>
-        <p className='body-header__sub-text'>
-          A home's exterior is made to beautiful through its siding, trim, and roofing.
-        </p>
-        <p className='body-header__sub-text'>
-          A home's interior should reflect your style.
-        </p>
-            <ThemeButton text='Contact Us'/>
-      </div>
+    <section style={dimensions} ref={bodyHeader} className='body-header-container body-header__background-hero-img--overflow'>
+      <img className='body-header__background-hero-img' aria-hidden='true' src={backgroundImage}/>
+      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle'/>
     </section>
   )
 }

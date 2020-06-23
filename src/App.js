@@ -1,16 +1,21 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar as faStarSolid, faStarHalfAlt } from '@fortawesome/pro-solid-svg-icons'
+import { faStar as faStarRegular } from '@fortawesome/pro-regular-svg-icons'
 import './App.css'
 import Header from './components/Header'
 import SkipLink from './components/SkipLink'
 import Footer from './components/Footer'
 import Home from './Pages/Home'
-import TestPage from './Pages/TestPage'
 import About from './Pages/About'
 import Roofing from './Pages/Roofing'
 import Siding from './Pages/Siding'
 import Services from './Pages/Services'
 import Contact from './Pages/Contact'
+import Repairs from './Pages/Repairs'
+
+library.add(faStarSolid, faStarHalfAlt, faStarRegular)
 
 function App () {
   return (
@@ -19,25 +24,25 @@ function App () {
         <SkipLink/>
         <Header/>
       </header>
-      <main id='main-content' className='w3-container remove-padding'>
+      <main id='main-content'>
         <Switch>
-          <Route path='/test'>
-              <TestPage />
-          </Route>
           <Route path='/about'>
-            <About />
+            <About/>
           </Route>
           <Route path='/roofing'>
-            <Roofing />
+            <Roofing/>
           </Route>
           <Route path='/siding'>
-            <Siding />
+            <Siding/>
           </Route>
           <Route path='/services'>
-            <Services />
+            <Services/>
+          </Route>
+          <Route path='/repairs'>
+            <Repairs/>
           </Route>
           <Route path='/contact'>
-            <Contact />
+            <Contact/>
           </Route>
           <Route path='/'>
             <Home/>

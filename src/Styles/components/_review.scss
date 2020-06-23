@@ -1,0 +1,24 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.review__details-container {
+  margin-bottom: 2.8125rem;
+}
+
+.review__name {
+  font-weight: bold;
+}
+
+.review__star-container {
+  //Box-Model
+  display: flex;
+  justify-content: space-between;
+  width: 6rem;
+  height: 1rem;
+  padding-top: 1.25rem;
+}

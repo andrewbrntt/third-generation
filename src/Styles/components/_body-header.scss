@@ -6,58 +6,16 @@
 //Animation
 //Misc
 
+.body-header-container {
+  position: relative;
+}
 
+.body-header__background-hero-img {
+  height: 100%;
+}
 
-.body-header__img--overflow {
+.body-header__background-hero-img--overflow {
   //Box Model
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-.body-header__text-overlay {
-  //Positioning
-  top: 26rem;
-  left: 50vw;
-
-  //Box Model
-  min-width: 18.75rem;
-  min-height: 25rem;
-  padding: 1.25rem;
-
-  //Typography
-  color: $primary;
-  font-size: 2.1rem;
-  text-align: center;
-
-  //Visual
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.body-header__text {
-  //Box Model
-  margin: 0;
-
-  //Typography
-  font-weight: bold;
-  font-size: 2.25rem;
-  font-family: $serif-font;
-  line-height: 1.1;
-}
-
-.body-header__sub-text {
-  //Box Model
-  //margin-top: 0.9375rem;
-
-  //Typography
-  font-weight: normal;
-  font-size: 1.125rem;
-  font-family: $san-serif-font;
-  font-style: normal;
-}
-
-.body-header__cta-button-container {
-  position: absolute;
-  top: 80%;
-  display: flex;
-  justify-content: center;
 }

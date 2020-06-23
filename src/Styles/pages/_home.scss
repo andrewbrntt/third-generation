@@ -6,18 +6,50 @@
 // Animation
 // Misc
 
-.home__services--color {
+.home--primary-color {
   color: $primary;
 }
 
+
+.home__button-container--spacing {
+  margin: 2.5rem 2.8125rem 0;
+}
+
+//About Us
+.home__about-us--img {
+  width: 100%;
+  height: 16.25rem;
+  margin-bottom: 3.125rem;
+}
+
+.home__about-us-padding-container {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+//Service Cards
 .home__service-cards-container {
-  margin: 2.8125rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  height: 11.25rem;
 }
 
-.home__service-card {
-  margin: 1.5rem 0;
+.home__service-cards--margin-bottom {
+  margin-bottom: 1.6rem;
 }
 
-.home__about-us--color {
-  color: $white;
+
+.our-work__p--bottom-margin-40 {
+  margin-bottom: 2.5rem;
+}
+
+//Before After
+.home__before-after {
+  margin: 1.25rem 0;
+}
+
+.home__before-after:not(:last-child) {
+  margin-bottom: 3.125rem;
+  font-size: 1.125rem;
+
 }

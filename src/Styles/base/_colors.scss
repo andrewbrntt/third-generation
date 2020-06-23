@@ -1,4 +1,12 @@
-$primary: #21534f;
+$primary: #284f4d;
 $secondary: #db7d05;
 $off-white: #f2f2f2;
 $white: #fff;
+
+.background-color-primary {
+  background-color: $primary;
+}
+
+.background-color-secondary {
+  background-color: $secondary;
+}

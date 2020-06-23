@@ -1,22 +1,22 @@
 /** Order of css blocks **/
-// Positioning
-// Box Model
-// Typography
-// Visual
-// Animation
-// Misc
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
 .banner {
-
-  padding: 0.625rem 0.3125rem;
+  //Box Model
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.25rem;
 
   //Typography
   color: $white;
-  font-size: 1.52rem;
-  font-family: $action-font;
-  text-align: center;
 
   //Display
   background-color: $secondary;
-
 }

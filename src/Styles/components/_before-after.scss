@@ -1,0 +1,17 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.before-after__container {
+  display: flex;
+  justify-content: center;
+}
+
+.before-after__img-container {
+  width: 8.75rem;
+  height: 11rem;
+}

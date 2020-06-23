@@ -1,19 +1,29 @@
 /** Order of css blocks **/
-// Positioning
-// Box Model
-// Typography
-// Visual
-// Animation
-// Misc
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
 .body-section {
+  //Box Model
   min-height: 31.25rem;
+  padding: 3.125rem 0.5rem 2.1875rem;
+
+  //Typography
   text-align: center;
 }
 
 .body-section__title {
-  margin: 2.5rem;
+  margin: 0 0 2.5rem;
 
   //Typography
+  font-size: 2.25rem;
   font-family: $serif-font;
 }
+
+.body-section__p-container {
+  margin-bottom: 2.5rem;
+}
+

@@ -1,0 +1,30 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.hero-image-overlay__container {
+  //Box Model
+  width: 95.5%;
+
+  padding: 3.125rem 0.25rem 2.1875rem;
+
+  //Typography
+  color: $primary;
+  text-align: center;
+
+  //Visual
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.hero-image-overlay__h1 {
+  margin: 0 0 1.875rem;
+}
+
+.hero-image-overlay__p-container {
+  margin: 0 0 2.5rem;
+}
+
