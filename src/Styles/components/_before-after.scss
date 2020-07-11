@@ -1,17 +1,28 @@
 /** Order of css blocks **/
-// Positioning
-// Box Model
-// Typography
-// Visual
-// Animation
-// Misc
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
-.before-after__container {
-  display: flex;
-  justify-content: center;
+.before-after-item {
+  //Box Model
+  display: inline-block;
+  width: 9.0625rem;
 }
 
-.before-after__img-container {
-  width: 8.75rem;
-  height: 11rem;
+.before-after__img {
+  //Box Model
+  width: 100%;
+  height: 9.375rem;
+}
+
+.before-after__text {
+  //Box Model
+  height: 1.875rem;
+  margin-top: 0.9375rem;
+
+  //Typography
+  font-size: 1.25rem;
 }

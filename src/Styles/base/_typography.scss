@@ -47,21 +47,10 @@ $default-word-spacing: 0.09375rem;
 }
 
 .banner-text {
+  font-weight: bold;
   font-size: 1.25rem;
-  font-family: $action-font;
+  font-family: $san-serif-font;
   letter-spacing: 0.025625rem;
-}
-
-.color-primary {
-  color: $primary;
-}
-
-.color-secondary {
-  color: $secondary;
-}
-
-.color-white {
-  color: $white;
 }
 
 .p--top-spacing {

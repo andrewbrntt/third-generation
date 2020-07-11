@@ -28,7 +28,7 @@ function useElementDimensions (ref) {
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [ref.current])
+  }, [handleResize])
 
   return dimensions
 }

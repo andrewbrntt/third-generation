@@ -10,9 +10,7 @@ const Header = () => {
       {/*<div className='test-nav-container'>*/}
       {/*  <Navigation styleClasses='header__mobile-navigation'/>*/}
       {/*</div>*/}
-      <div className='header__logo-container'>
         <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
-      </div>
     </div>
   )
 }

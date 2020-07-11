@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding: 0.875rem 0.5rem 3rem;
 
   //Visual
   background-color: $primary;
@@ -13,8 +13,9 @@
   //Box Model
   display: flex;
   align-self: center;
-  width: 8rem;
-  height: 6.25rem;
+  width: 9.375rem;
+  height: 4.375rem;
+  margin-top: 2.5rem;
 }
 
 .footer__link {

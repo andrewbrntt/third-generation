@@ -11,22 +11,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.75rem 0 1.25rem;
 
   // Visual
   background-color: $primary;
-}
-
-.header__logo-container {
-  //position: relative;
 }
 
 .header__logo {
   // Box Model
   width: 9.375rem;
   height: 4.375rem;
-
-  margin-top: 0.75rem;
-  margin-bottom: 1.25rem;
 }
 
 .header__mobile-navigation {

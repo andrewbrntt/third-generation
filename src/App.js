@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar as faStarSolid, faStarHalfAlt } from '@fortawesome/pro-solid-svg-icons'
 import { faStar as faStarRegular } from '@fortawesome/pro-regular-svg-icons'
+import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import './App.css'
 import Header from './components/Header'
 import SkipLink from './components/SkipLink'
@@ -14,14 +15,16 @@ import Siding from './Pages/Siding'
 import Services from './Pages/Services'
 import Contact from './Pages/Contact'
 import Repairs from './Pages/Repairs'
+import Banner from './components/Banner'
 
-library.add(faStarSolid, faStarHalfAlt, faStarRegular)
+library.add(faStarSolid, faStarHalfAlt, faStarRegular, faFacebook, faInstagram)
 
 function App () {
   return (
     <>
-      <header className='w3-container background-color-primary'>
+      <header className='background-color-primary'>
         <SkipLink/>
+        <Banner/>
         <Header/>
       </header>
       <main id='main-content'>
@@ -49,7 +52,7 @@ function App () {
           </Route>
         </Switch>
       </main>
-      <footer className='w3-container background-color-primary'>
+      <footer className='footer background-color-primary'>
         <Footer/>
       </footer>
     </>
