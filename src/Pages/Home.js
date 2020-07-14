@@ -6,7 +6,6 @@ import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
 import Review from '../components/Review'
 import BeforeAfter from '../components/BeforeAfter'
-import ThemeButton from '../components/ThemeButton'
 import VendorSection from '../components/VendorSection'
 import ContactForm from '../components/ContactForm'
 
@@ -65,7 +64,7 @@ const Home = () => {
           <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
         </div>
       </BodySection>
-      <BodySection paddingXRem='0' styleClasses='background-color-primary color-white' title='About Us'>
+      <BodySection buttonText='About Us' paddingXRem='0' styleClasses='background-color-primary color-white' title='About Us'>
         <img className='home__about-us--img' src={AboutImage}/>
         <div className='home__about-us-padding-container'>
           <p>
@@ -75,11 +74,8 @@ const Home = () => {
             We believe in using our skills to beautify the community we love and its surrounding areas.
           </p>
         </div>
-        <div className='home__button-container--spacing'>
-          <ThemeButton text='About Us'/>
-        </div>
       </BodySection>
-      <BodySection paddingXRem='0.5' styleClasses='color-primary' title='Our Work'>
+      <BodySection buttonText='View Gallery' paddingXRem='0.5' styleClasses='color-primary' title='Our Work'>
         <p>
           We offer a personal experience for each customer by ensuring every project is unique.
         </p>
@@ -96,17 +92,15 @@ const Home = () => {
           <div className='home__before-after-set--margin'>
             <BeforeAfter beforeSrc={BeforeImage} afterSrc={AfterImage}/>
           </div>
-          <div className='home__our-work-button--spacing'>
-            <ThemeButton text='View Gallery'/>
-          </div>
         </div>
       </BodySection>
       <BodySection paddingXRem='0.5' styleClasses='background-color-primary color-white' title='Contact Us'>
         <ContactForm/>
       </BodySection>
-      <BodySection styleClasses='color-primary' title='Reviews'>
-        {reviewsList.map(currentReview => <Review key={`home__review-container-${shortId.generate()}`} review={currentReview}/>)}
-        <ThemeButton text='Reviews'/>
+      <BodySection buttonText='Reviews' styleClasses='color-primary' title='Reviews'>
+        <div className='home__reviews-container'>
+          {reviewsList.map(currentReview => <div className='home__review--spacing'><Review key={`home__review-container-${shortId.generate()}`} review={currentReview}/></div>)}
+        </div>
       </BodySection>
       <VendorSection vendors={vendors}/>
     </>

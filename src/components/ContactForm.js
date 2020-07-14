@@ -36,7 +36,9 @@ const ContactForm = () => {
         <FormInputField fieldData={phone}/>
         <FormInputField fieldData={email}/>
         <FormInputField textArea formId='contact-form' fieldData={message}/>
+        <div className='contact-form__button--spacing'>
         <ThemeButton text='Submit'/>
+        </div>
       </form>
     </>
   )

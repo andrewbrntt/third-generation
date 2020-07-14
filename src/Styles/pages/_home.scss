@@ -6,15 +6,8 @@
 // Animation
 // Misc
 
-
-
 .home--primary-color {
   color: $primary;
-}
-
-
-.home__button-container--spacing {
-  margin: 2.5rem 2.8125rem 0;
 }
 
 //About Us
@@ -41,7 +34,6 @@
 }
 
 //Our Work
-
 .home__our-work-p--bottom-margin-40 {
   margin-bottom: 2.5rem;
 }
@@ -50,14 +42,16 @@
   padding-top: 0.625rem;
 }
 
-////Before After
+//Before After
 .home__before-after-set--margin {
   margin-bottom: 1.875rem;
 }
 
-//
-//.home__before-after-cards {
-//  margin-bottom: 2.5rem;
-//}
+//Reviews
+.home__review--spacing {
+  margin-bottom: 1.25rem;
+}
 
-
+.home__reviews-container > .home__review--spacing:last-child {
+  margin-bottom: 0;
+}

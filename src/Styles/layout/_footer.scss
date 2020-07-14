@@ -1,9 +1,17 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
 .footer {
   //Box Model
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.875rem 0.5rem 3rem;
+  padding: 0.875rem 0.5rem 0;
 
   //Visual
   background-color: $primary;
@@ -15,13 +23,22 @@
   align-self: center;
   width: 9.375rem;
   height: 4.375rem;
-  margin-top: 2.5rem;
+  margin: 2.5rem 0 0.875rem;
 }
 
 .footer__link {
+  //Typography
   color: $white;
+  font-size: 1.25rem;
   text-decoration: none;
+}
 
-  //Visual
-  border-bottom: 1px dotted;
+.footer__ul {
+  //Box Model
+  padding-left: 0.625rem;
+
+  //Typography
+  font-family: $action-font;
+  line-height: 2.5;
+  list-style: none;
 }

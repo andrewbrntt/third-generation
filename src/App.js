@@ -1,9 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStar as faStarSolid, faStarHalfAlt } from '@fortawesome/pro-solid-svg-icons'
-import { faStar as faStarRegular } from '@fortawesome/pro-regular-svg-icons'
-import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
+import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './App.css'
 import Header from './components/Header'
 import SkipLink from './components/SkipLink'
@@ -16,8 +13,9 @@ import Services from './Pages/Services'
 import Contact from './Pages/Contact'
 import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
+import Remodel from './Pages/Remodel'
 
-library.add(faStarSolid, faStarHalfAlt, faStarRegular, faFacebook, faInstagram)
+fontAwesomeLibrary()
 
 function App () {
   return (
@@ -34,6 +32,9 @@ function App () {
           </Route>
           <Route path='/roofing'>
             <Roofing/>
+          </Route>
+          <Route path='/remodel'>
+            <Remodel />
           </Route>
           <Route path='/siding'>
             <Siding/>

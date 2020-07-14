@@ -6,8 +6,10 @@
 //Animation
 //Misc
 
-.footer-section__heading {
+.h1-page-header {
+  //Box Model
+  margin: 3.125rem 0 2.1875rem;
+
   //Typography
-  color: $white;
-  font-weight: bold;
+  text-align: center;
 }

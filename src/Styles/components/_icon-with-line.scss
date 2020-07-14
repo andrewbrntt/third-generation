@@ -1,0 +1,42 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.icon-with-line__container {
+
+  border: 1px solid salmon;
+  height: 200px;
+}
+
+.icon-with-line__hr {
+}
+
+.icon-with-line__icon {
+  position: relative;
+  top: -50px;
+  font-size: 8rem;
+}
+.icon-with-line__icon .fa-primary,
+.icon-with-line__icon .fa-secondary {
+  //Visual
+  opacity: 1;
+  fill: $primary;
+  stroke: $white;
+  stroke-width: 10px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 0.5rem solid $white;
+}

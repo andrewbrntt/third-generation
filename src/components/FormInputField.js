@@ -11,9 +11,7 @@ const FormInputField = ({ formId, fieldData, textArea }) => {
           className='form-input-field__text-area'
           form={formId}
           name={fieldData.name}
-        >
-                    {}
-                  </textarea> :
+        >{}</textarea> :
         <input
           id={fieldData.id}
           title={fieldData.labelText}

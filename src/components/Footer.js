@@ -6,7 +6,7 @@ import SocialMediaSection from './SocialMediaSection'
 
 const Footer = () => {
 
-  const servicesOfferedListItems = ['Remodel', 'Roofing', 'Siding']
+  const servicesOfferedListItems = ['Home Remodel', 'Roofing', 'Siding', 'Repairs']
   return (
     <>
       <SocialMediaSection/>
@@ -18,7 +18,10 @@ const Footer = () => {
         <li>
           <FooterSection header='Services' listItems={servicesOfferedListItems}/>
         </li>
+        <li><NavLink className='footer__link' to='/our-work'>Our Work</NavLink></li>
         <li><NavLink className='footer__link' to='/reviews'>Reviews</NavLink></li>
+        <li><NavLink className='footer__link' to='/contact-us'>Contact Us</NavLink></li>
+        <li><NavLink className='footer__link' to='/emergency'>24-Hour Emergency Service</NavLink></li>
       </ul>
     </>
   )
