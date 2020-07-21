@@ -1,23 +1,19 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const style = {
-  '--fa-primary-color': 'red',
-  '--fa-secondary-color': 'blue',
-  '--fa-primary-opacity': 1,
-  '--fa-secondary-opacity': 1
-}
-
-const IconWithLine = () => {
+const IconWithLine = ({icon}) => {
   return (
     <div className='icon-with-line__container'>
-      {/*I want the hr to drop down not the tools to come up*/}
       <hr className='icon-with-line__hr' />
+      {Array.isArray(icon) ?
       <FontAwesomeIcon
-        className='icon-with-line__icon'
-        // style={style}
-        icon={['fad', 'tools']}
-      />
+        className='icon-with-line__fa-icon'
+        icon={icon}
+      /> : <img
+          src={icon}
+          alt=''
+          className='icon-with-line__icon'
+        />}
     </div>
   )
 }

@@ -16,7 +16,6 @@ function getDimensions (element) {
 
 function useElementDimensions (ref) {
 
-  // TODO: Not sure if this should pass an empty object for conditional
   const [dimensions, setDimensions] = useState(getDimensions(ref ? ref.current : {}))
 
   const handleResize = useCallback(() => {

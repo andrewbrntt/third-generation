@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
-import './App.css'
+import './Styles/base/_app.scss'
 import Header from './components/Header'
 import SkipLink from './components/SkipLink'
 import Footer from './components/Footer'
@@ -14,16 +14,17 @@ import Contact from './Pages/Contact'
 import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
 import Remodel from './Pages/Remodel'
+import MobileNavigationMenu from './components/MobileNavigationMenu'
 
 fontAwesomeLibrary()
 
 function App () {
   return (
     <>
-      <header className='background-color-primary'>
+      <header className='background-color-primary mobile-header'>
         <SkipLink/>
         <Banner/>
-        <Header/>
+        <MobileNavigationMenu styleClasses='header__mobile-navigation'/>
       </header>
       <main id='main-content'>
         <Switch>

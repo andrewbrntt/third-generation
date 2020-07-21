@@ -1,10 +1,10 @@
 /** Order of css blocks **/
-// Positioning
-// Box Model
-// Typography
-// Visual
-// Animation
-// Misc
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
 .theme-button {
   //Box Model
@@ -19,9 +19,29 @@
   border: 0;
 }
 
-.theme-button--focus:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+.theme-button__hr-container {
+  display: flex;
+  justify-content: center;
 }
 
-  
+.theme-button__hr {
+  //Box Model
+  width: 0;
+  border: 0;
+  border-bottom: 0.3125rem solid;
+}
+
+button:hover .theme-button__hr,
+button:focus .theme-button__hr {
+  animation: separator-width 1s ease-out forwards;
+}
+
+@keyframes separator-width {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

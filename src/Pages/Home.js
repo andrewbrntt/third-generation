@@ -5,10 +5,9 @@ import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
 import Review from '../components/Review'
-import BeforeAfter from '../components/BeforeAfter'
 import VendorSection from '../components/VendorSection'
 import ContactForm from '../components/ContactForm'
-
+import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
@@ -19,6 +18,7 @@ import AboutImage from '../assets/group-people.jpg'
 import AngiesList from '../assets/angies-list-seal.png'
 import HomeAdvisor from '../assets/home-advisor-seal.png'
 import BBB from '../assets/bbb-seal.svg'
+import BeforeAfter from '../components/BeforeAfter'
 
 const Home = () => {
 
@@ -30,6 +30,12 @@ const Home = () => {
       comment: 'Interactively disintermediate process-centric users through clicks-and-mortar bandwidth. Holisticly expedite team building solutions via clicks-and-mortar infomediaries. Compellingly evisculate excellent e-tailers before open-source services. Intrinsicly synergize functional.'
     }
   }
+
+  const beforeAfterImages = [
+    { beforeImage: BeforeImage, afterImage: AfterImage },
+    { beforeImage: BeforeImage, afterImage: AfterImage },
+    { beforeImage: BeforeImage, afterImage: AfterImage }
+  ]
 
   const randomReviewNumber = _ => {
     return (Math.random() * 5)
@@ -64,7 +70,8 @@ const Home = () => {
           <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
         </div>
       </BodySection>
-      <BodySection buttonText='About Us' paddingXRem='0' styleClasses='background-color-primary color-white' title='About Us'>
+      <BodySection buttonText='About Us' paddingXRem='0' styleClasses='background-color-primary color-white'
+                   title='About Us'>
         <img className='home__about-us--img' src={AboutImage}/>
         <div className='home__about-us-padding-container'>
           <p>
@@ -79,27 +86,18 @@ const Home = () => {
         <p>
           We offer a personal experience for each customer by ensuring every project is unique.
         </p>
-        <p className='p--top-spacing home__our-work-p--bottom-margin-40'>
+        <p className='p--top-spacing p--bottom-margin-40'>
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
-        <div className='home__before-after-container'>
-          <div className='home__before-after-set--margin'>
-            <BeforeAfter beforeSrc={BeforeImage} afterSrc={AfterImage}/>
-          </div>
-          <div className='home__before-after-set--margin'>
-            <BeforeAfter beforeSrc={BeforeImage} afterSrc={AfterImage}/>
-          </div>
-          <div className='home__before-after-set--margin'>
-            <BeforeAfter beforeSrc={BeforeImage} afterSrc={AfterImage}/>
-          </div>
-        </div>
+        <BeforeAfterGallerySection galleryImages={beforeAfterImages}/>
       </BodySection>
       <BodySection paddingXRem='0.5' styleClasses='background-color-primary color-white' title='Contact Us'>
         <ContactForm/>
       </BodySection>
       <BodySection buttonText='Reviews' styleClasses='color-primary' title='Reviews'>
         <div className='home__reviews-container'>
-          {reviewsList.map(currentReview => <div className='home__review--spacing'><Review key={`home__review-container-${shortId.generate()}`} review={currentReview}/></div>)}
+          {reviewsList.map(currentReview => <div className='home__review--spacing'><Review
+            key={`home__review-container-${shortId.generate()}`} review={currentReview}/></div>)}
         </div>
       </BodySection>
       <VendorSection vendors={vendors}/>

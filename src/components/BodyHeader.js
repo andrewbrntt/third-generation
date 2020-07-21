@@ -6,7 +6,7 @@ import HeroImageOverlay from './HeroImageOverlay'
 const BodyHeader = () => {
 
   const overlayContainer = useRef(null)
-  let overlayDimensions = useElementDimensions(overlayContainer)
+  const overlayDimensions = useElementDimensions(overlayContainer)
 
   const [height, setHeight] = useState(0)
 

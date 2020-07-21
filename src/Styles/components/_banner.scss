@@ -7,6 +7,10 @@
 //Misc
 
 .banner {
+  //Positioning
+  position: relative;
+  z-index: 2;
+
   //Box Model
   display: flex;
   align-items: center;

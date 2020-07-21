@@ -6,7 +6,12 @@
 //Animation
 //Misc
 
-.before-after-item {
+//Before After
+.before-after-set--margin {
+  margin-bottom: 1.875rem;
+}
+
+.before-after__item {
   //Box Model
   display: inline-block;
   width: 9.0625rem;

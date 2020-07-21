@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/3GC_Logo-White.svg'
+import logo from '../assets/3gc-mobile-logo.svg'
 import FooterSection from './FooterSection'
 import { NavLink } from 'react-router-dom'
 import SocialMediaSection from './SocialMediaSection'
