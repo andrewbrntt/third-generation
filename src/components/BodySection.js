@@ -14,7 +14,7 @@ const BodySection = ({ sectionTitle, children, styleClasses, paddingXRem, button
     <>
       {pageHeader && <PageHeader header={pageHeader}/>}
       <section style={styles}
-               className={`${pageHeader ? 'remove-padding-top' : ''} body-section default-text ${styleClasses ? styleClasses : ''}`}>
+               className={`${pageHeader ? 'remove-padding-top' : ''} body-section default-text ${styleClasses || ''}`}>
         {iconName && <IconWithLine icon={iconName} />}
         {sectionTitle && <h2 className='body-section__title'>{sectionTitle}</h2>}
         {children}

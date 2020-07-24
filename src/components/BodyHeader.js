@@ -3,7 +3,7 @@ import useElementDimensions from '../helpers/useElementDimensions'
 import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
 import HeroImageOverlay from './HeroImageOverlay'
 
-const BodyHeader = () => {
+const BodyHeader = ({buttonText, pageHeader, children}) => {
 
   const overlayContainer = useRef(null)
   const overlayDimensions = useElementDimensions(overlayContainer)
@@ -21,7 +21,9 @@ const BodyHeader = () => {
   return (
     <section style={{ height: `${(height + 40) / 16}rem` }} className='body-header-container body-header__background-hero-img--overflow'>
       <img alt='' className='body-header__background-hero-img' aria-hidden='true' src={backgroundImage}/>
-      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle'/>
+      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle' buttonText={buttonText} pageHeader={pageHeader}>
+        {children}
+      </HeroImageOverlay>
     </section>
   )
 }

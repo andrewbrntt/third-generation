@@ -4,14 +4,21 @@ import {
   faStarHalfAlt,
   faHorizontalRule,
   faTools,
-  faCircle
+  faCircle,
+  faHome
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faStar as faStarRegular,
   faPhoneAlt,
   faClipboardListCheck,
   faFileContract,
-  faHammer
+  faHammer,
+  faSparkles,
+  faTemperatureDown,
+  faHouse,
+  faSnowflake,
+  faRaindrops,
+  faSun
 } from '@fortawesome/pro-regular-svg-icons'
 import { faTools as duoTools } from '@fortawesome/pro-duotone-svg-icons'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
@@ -30,7 +37,14 @@ const fontAwesomeLibrary = () => {
     faPhoneAlt,
     faClipboardListCheck,
     faFileContract,
-    faHammer
+    faHammer,
+    faHome,
+    faSparkles,
+    faTemperatureDown,
+    faHouse,
+    faSnowflake,
+    faRaindrops,
+    faSun
   )
 }
 

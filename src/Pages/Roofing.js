@@ -21,7 +21,7 @@ const Roofing = () => {
     { logo: JamesHardieLogo, altText: 'James Hardie Siding Logo' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
     { logo: alsideLogo, altText: 'Alside Siding Logo' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo' },
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'roofing__firestone-logo' },
     { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo' }
   ]
 
@@ -54,7 +54,7 @@ const Roofing = () => {
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection sectionTitle='Materials' styleClasses='color-primary' buttonText='FAQ'>
+      <BodySection sectionTitle='Materials' styleClasses='color-primary'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>
@@ -68,7 +68,7 @@ const Roofing = () => {
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Reviews' paddingXRem='0.5'
                    buttonText='Reviews'>
-        <ReviewList randomCount='3'/>
+        <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>
         <p className='padding-x-8'>

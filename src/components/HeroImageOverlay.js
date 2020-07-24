@@ -1,21 +1,16 @@
 import React from 'react'
 import ThemeButton from './ThemeButton'
 
-const HeroImageOverlay = ({ elementRef, styleClasses }) => {
+const HeroImageOverlay = ({ elementRef, styleClasses, pageHeader, children, buttonText }) => {
   return (
     <div ref={elementRef} className={`hero-image-overlay__container ${styleClasses}`}>
       <h1 className='hero-image-overlay__h1 h1-page-header-text'>
-        Transform Your House Into Your Dream Home
+        {pageHeader}
       </h1>
       <div className='hero-image-overlay__p-container default-text'>
-      <p>
-        A home's exterior is made to beautiful through its siding, trim, and roofing.
-      </p>
-      <p className='p--top-spacing'>
-        A home's interior should reflect your style.
-      </p>
+        {children}
       </div>
-      <ThemeButton text='Contact Us'/>
+      <ThemeButton text={buttonText}/>
     </div>
   )
 }

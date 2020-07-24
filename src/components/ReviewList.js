@@ -2,7 +2,7 @@ import React from 'react'
 import shortId from 'shortid'
 import Review from './Review'
 
-const ReviewList = ({ reviewsList = [], randomCount = 0 }) => {
+const ReviewList = ({ reviewsList = [], randomCount = 0 , styleClasses}) => {
 
   const randomReviewNumber = _ => {
     return (Math.random() * 5)
@@ -13,7 +13,8 @@ const createRandomReview = _ => {
     name: 'Andrew',
     score: randomReviewNumber(),
     location: 'BFE Anywhere',
-    comment: 'Interactively disintermediate process-centric users through clicks-and-mortar bandwidth. Holisticly expedite team building solutions via clicks-and-mortar infomediaries. Compellingly evisculate excellent e-tailers before open-source services. Intrinsicly synergize functional.'
+    comment: 'Interactively disintermediate process-centric users through clicks-and-mortar bandwidth. Holisticly expedite team building solutions via clicks-and-mortar infomediaries.',
+    styleClasses: styleClasses
   }
 }
 

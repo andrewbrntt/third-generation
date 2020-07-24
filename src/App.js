@@ -15,6 +15,9 @@ import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
 import Remodel from './Pages/Remodel'
 import MobileNavigationMenu from './components/MobileNavigationMenu'
+import OurWork from './Pages/OurWork'
+import Reviews from './Pages/Reviews'
+import EmergencyService from './Pages/EmergencyService'
 
 fontAwesomeLibrary()
 
@@ -48,6 +51,15 @@ function App () {
           </Route>
           <Route path='/contact'>
             <Contact/>
+          </Route>
+          <Route path='/our-work'>
+            <OurWork/>
+          </Route>
+          <Route path='/reviews'>
+            <Reviews />
+          </Route>
+          <Route path='/emergency-service'>
+            <EmergencyService />
           </Route>
           <Route path='/'>
             <Home/>

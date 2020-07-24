@@ -43,7 +43,7 @@ const Review = ({ review }) => {
   }
 
   return (
-    <div className='review__container'>
+    <div className={`review__container ${review.styleClasses ||''}`}>
       <figure role='img' className='review__star-container'
               aria-label={`Rated ${review.score.toFixed(1)} stars out of 5`}>
         {calculateReviewScore()}

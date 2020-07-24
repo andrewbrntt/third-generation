@@ -1,14 +1,14 @@
 import React from 'react'
 import BodySection from '../components/BodySection'
+import VendorSection from '../components/VendorSection'
+import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import AboutImage from '../assets/group-people.jpg'
 import BeforeImage from '../assets/after-temp.jpg'
 import AfterImage from '../assets/before-temp.jpg'
-import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import AlliedLogo from '../assets/vendor-assets/allied/allied-logo.png'
 import CaterLogo from '../assets/vendor-assets/carter/carterlumber.png'
 import GAFLogo from '../assets/vendor-assets/gaf/gaf-logo.png'
 import Tools from '../assets/icon-tools.svg'
-import VendorSection from '../components/VendorSection'
 
 const beforeAfterImages = [
   { beforeImage: BeforeImage, afterImage: AfterImage },

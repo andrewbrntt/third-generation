@@ -1,9 +1,13 @@
 import React from 'react'
+import ContactForm from '../components/ContactForm'
+import BodySection from '../components/BodySection'
 
 const Contact = () => {
   return (
     <>
-      Hello Contact
+      <BodySection pageHeader='Contact Us' paddingXRem='1.25'>
+        <ContactForm/>
+      </BodySection>
     </>
   )
 }

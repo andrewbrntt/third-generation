@@ -6,6 +6,7 @@ import LinkCard from '../components/LinkCard'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
 import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
+import ReviewList from '../components/ReviewList'
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
@@ -16,7 +17,6 @@ import AboutImage from '../assets/group-people.jpg'
 import AngiesList from '../assets/angies-list-seal.png'
 import HomeAdvisor from '../assets/home-advisor-seal.png'
 import BBB from '../assets/bbb-seal.svg'
-import ReviewList from '../components/ReviewList'
 
 const Home = () => {
 
@@ -34,7 +34,14 @@ const Home = () => {
 
   return (
     <>
-      <BodyHeader/>
+      <BodyHeader buttonText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
+        <p>
+          A home's exterior is made to beautiful through its siding, trim, and roofing.
+        </p>
+        <p className='p--top-spacing'>
+          A home's interior should reflect your style.
+        </p>
+      </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Our Services'>
         <div className='default-text body-section__p-container body-section__text'>
           <p>
@@ -66,7 +73,7 @@ const Home = () => {
         </div>
       </BodySection>
       <BodySection buttonText='View Gallery' paddingXRem='0.25' styleClasses='color-primary' sectionTitle='Our Work'>
-        <p className=''>
+        <p>
           We offer a personal experience for each customer by ensuring every project is unique.
         </p>
         <p className='p--top-spacing p--bottom-margin-40'>
@@ -77,7 +84,7 @@ const Home = () => {
       <BodySection paddingXRem='0.5' styleClasses='background-color-primary color-white' sectionTitle='Contact Us'>
         <ContactForm/>
       </BodySection>
-      <BodySection buttonText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
+      <BodySection buttonText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <ReviewSitesSection reviewSites={reviewSites}/>
