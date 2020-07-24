@@ -11,16 +11,24 @@
   margin-bottom: 1.875rem;
 }
 
+.before-after-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .before-after__item {
   //Box Model
   display: inline-block;
-  width: 9.0625rem;
+  width: 9.375rem;
+  height: 9.375rem;
 }
 
 .before-after__img {
   //Box Model
   width: 100%;
-  height: 9.375rem;
+  height: 100%;
 }
 
 .before-after__text {
@@ -31,3 +39,4 @@
   //Typography
   font-size: 1.25rem;
 }
+

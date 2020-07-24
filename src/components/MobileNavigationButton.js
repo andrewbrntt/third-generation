@@ -4,9 +4,12 @@ import HamburgerMenuIcon from './HamburgerMenuIcon'
 const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }) => {
 
   return (
-    <button className={`mobile-navigation__toggle-button ${styleClasses}`}
-            aria-expanded={navIsOpen}
-            onClick={toggleNavMenu}>
+    <button
+      className={`mobile-navigation__toggle-button ${styleClasses}`}
+      role='button'
+      aria-haspopup='menu'
+      aria-expanded={navIsOpen}
+      onClick={toggleNavMenu}>
       <HamburgerMenuIcon/>
     </button>
   )

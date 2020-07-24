@@ -1,6 +1,18 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStar as faStarSolid, faStarHalfAlt, faHorizontalRule, faTools, faCircle } from '@fortawesome/pro-solid-svg-icons'
-import { faStar as faStarRegular } from '@fortawesome/pro-regular-svg-icons'
+import {
+  faStar as faStarSolid,
+  faStarHalfAlt,
+  faHorizontalRule,
+  faTools,
+  faCircle
+} from '@fortawesome/pro-solid-svg-icons'
+import {
+  faStar as faStarRegular,
+  faPhoneAlt,
+  faClipboardListCheck,
+  faFileContract,
+  faHammer
+} from '@fortawesome/pro-regular-svg-icons'
 import { faTools as duoTools } from '@fortawesome/pro-duotone-svg-icons'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 
@@ -14,7 +26,11 @@ const fontAwesomeLibrary = () => {
     faTools,
     faHorizontalRule,
     duoTools,
-    faCircle
+    faCircle,
+    faPhoneAlt,
+    faClipboardListCheck,
+    faFileContract,
+    faHammer
   )
 }
 

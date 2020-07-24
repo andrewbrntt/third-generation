@@ -17,11 +17,6 @@
   margin-bottom: 3.125rem;
 }
 
-.home__about-us-padding-container {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-}
-
 //Service Cards
 .home__service-cards-container {
   display: flex;
@@ -36,13 +31,4 @@
 //Our Work
 .home__our-work-p--bottom-margin-40 {
   margin-bottom: 2.5rem;
-}
-
-//Reviews
-.home__review--spacing {
-  margin-bottom: 1.25rem;
-}
-
-.home__reviews-container > .home__review--spacing:last-child {
-  margin-bottom: 0;
 }

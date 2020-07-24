@@ -1,0 +1,82 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.our-process-infographic__step-container {
+  width: 100%;
+  text-align: center;
+}
+
+.our-process-infographic__step {
+  display: flex;
+  align-items: center;
+  margin: -0.3125rem 0.625rem 0;
+}
+
+.our-process-infographic__step--right {
+  justify-content: flex-end;
+}
+
+.our-process-infographic__circle {
+  font-size: 5.3125rem;
+}
+
+.our-process-infographic__circle--margin-left {
+  margin-left: 0.625rem;
+}
+
+.our-process-infographic__icon {
+  font-size: 3.4375rem;
+}
+
+.our-process-infographic__text-container {
+  width: 11.25rem;
+  font-size: 1.875rem;
+  font-family: $san-serif-font;
+}
+
+.our-process-infographic__line-left-bottom,
+.our-process-infographic__line-right-bottom,
+.our-process-infographic__line-div-right,
+.our-process-infographic__line-div-left {
+  min-width: 10.9375rem;
+  height: 3rem;
+  margin: 0 4.375rem;
+}
+
+.our-process-infographic__line-left-bottom,
+.our-process-infographic__line-right-bottom {
+  margin-top: -0.3125rem;
+  border-bottom: 0.25rem solid $white;
+}
+
+
+.our-process-infographic__line-left-bottom {
+  border-left: 0.25rem solid $white;
+}
+
+.our-process-infographic__line-right-bottom {
+  border-right: 0.25rem solid $white;
+}
+
+.our-process-infographic__line-div-right {
+  margin-top: 0;
+  border-right: 0.25rem solid $white;
+}
+
+.our-process-infographic__line-div-left {
+  margin-top: 0;
+  border-left: 0.25rem solid $white;
+}
+
+
+.our-process-infographic__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6.25rem;
+}

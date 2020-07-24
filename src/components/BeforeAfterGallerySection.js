@@ -1,11 +1,12 @@
 import React from 'react'
+import shortId from 'shortid'
 import BeforeAfter from './BeforeAfter'
 
 const BeforeAfterGallerySection = ({ galleryImages }) => {
   return (
     <div className='before-after-container'>
       {galleryImages.map(images =>
-        <div className='before-after-set--margin'>
+        <div key={shortId.generate()} className='before-after-set--margin'>
           <BeforeAfter beforeSrc={images.beforeImage} afterSrc={images.afterImage}/>
         </div>
       )}

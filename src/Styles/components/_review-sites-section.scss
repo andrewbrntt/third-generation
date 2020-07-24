@@ -1,0 +1,22 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.review-sites-section__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2.5rem 0.25rem 2.1875rem;
+}
+
+.review-sites-section__badge-container {
+  display: flex;
+  align-items: center;
+  width: 6.25rem;
+  height: 6.25rem;
+  text-align: center;
+}
