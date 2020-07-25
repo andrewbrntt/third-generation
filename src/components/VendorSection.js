@@ -6,8 +6,8 @@ const VendorSection = ({ vendors = [] }) => {
     <div className='vendor-section__container'>
       {vendors.map((vendor) => {
         return (
-          <div className='vendor-section__badge-container'>
-            <img key={shortId.generate()}
+          <div key={shortId.generate()} className='vendor-section__badge-container'>
+            <img
                  src={vendor.logo}
                  alt={vendor.altText}
                  className={vendor.styleClasses}

@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {forwardRef} from 'react'
 import HamburgerMenuIcon from './HamburgerMenuIcon'
 
-const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }) => {
+const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forwardedRef) => {
 
   return (
     <button
       className={`mobile-navigation__toggle-button ${styleClasses}`}
+      id='poo'
       role='button'
       aria-haspopup='menu'
+      ref={forwardedRef}
       aria-expanded={navIsOpen}
       onClick={toggleNavMenu}>
       <HamburgerMenuIcon/>
@@ -15,5 +17,5 @@ const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }) => {
   )
 }
 
-export default MobileNavigationButton
+export default forwardRef(MobileNavigationButton)
 

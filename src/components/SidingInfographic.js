@@ -1,12 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import shortId from 'shortid'
 import Tools from '../assets/icon-tools.svg'
 
 const SidingInfographic = () => {
 
   const sidingStep = (step) => {
     return (
-      <div className='siding-infographic__step-container'>
+      <div key={shortId.generate()} className='siding-infographic__step-container'>
         <h3 className='siding-infographic__step-title remove-margin-top'>{step.title}</h3>
         <div className={`siding-infographic__step ${step.reverseDirection && 'siding-infographic__step--reverse'}`}>
           {

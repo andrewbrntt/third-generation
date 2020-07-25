@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import MobileNavigationButton from './MobileNavigationButton'
 import logo from '../assets/3GC_Logo-White.svg'
@@ -6,18 +6,31 @@ import logo from '../assets/3GC_Logo-White.svg'
 const MobileNavigationMenu = () => {
 
   const [navIsOpen, setNavIsOpen] = useState(false)
+  const finalNavigationElementRef = useRef(null)
+  const mobileToggleButtonRef = useRef(null)
 
   const toggleMobileNav = (e) => {
     e.preventDefault()
-    console.log('yup clicked')
     setNavIsOpen(!navIsOpen)
+    console.log('current Ref', finalNavigationElementRef.current)
   }
+
+  useEffect(() => {
+    const handleBlur = (e) => {
+      e.preventDefault()
+        mobileToggleButtonRef.current.focus()
+    }
+    finalNavigationElementRef.current.addEventListener('blur', handleBlur)
+    return () => finalNavigationElementRef.current.removeEventListener('blur', handleBlur)
+
+  }, [finalNavigationElementRef])
 
   useEffect(() => {
     const menuLinks = document.getElementsByClassName('nav-link')
 
     const handleLinkClick = () => {
       setNavIsOpen(!navIsOpen)
+      mobileToggleButtonRef.current.focus()
     }
 
     menuLinks.forEach((link) => {
@@ -31,11 +44,13 @@ const MobileNavigationMenu = () => {
     }
   }, [navIsOpen])
 
+
   return (
     <nav role='navigation'>
       <div className='header'>
         <MobileNavigationButton
           navIsOpen={navIsOpen}
+          ref={mobileToggleButtonRef}
           toggleNavMenu={toggleMobileNav}
           styleClasses='header__mobile-navigation nav-button'
         />
@@ -58,7 +73,8 @@ const MobileNavigationMenu = () => {
           <li><NavLink className='nav-link' to='/our-work'>Our Work</NavLink></li>
           <li><NavLink className='nav-link' to='/reviews'>Reviews</NavLink></li>
           <li><NavLink className='nav-link' to='/contact'>Contact Us</NavLink></li>
-          <li><NavLink className='nav-link' to='/emergency-service'>24-Hour Emergency Service</NavLink></li>
+          <li><NavLink ref={finalNavigationElementRef} className='nav-link' to='/emergency-service'>24-Hour Emergency
+            Service</NavLink></li>
         </ul>
       </div>
     </nav>
