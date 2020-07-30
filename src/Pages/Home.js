@@ -1,5 +1,4 @@
 import React from 'react'
-
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
@@ -7,34 +6,22 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
 import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import ReviewList from '../components/ReviewList'
+import DecorativeImage from '../components/DecorativeImage'
+import { beforeAfterMockData, reviewSites, formFieldsData } from '../helpers/mockData.js'
+
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
 import SidingImage from '../assets/service-placeholder-women-2.jpg'
-import AfterImage from '../assets/before-temp.jpg'
-import BeforeImage from '../assets/after-temp.jpg'
 import AboutImage from '../assets/group-people.jpg'
-import AngiesList from '../assets/angies-list-seal.png'
-import HomeAdvisor from '../assets/home-advisor-seal.png'
-import BBB from '../assets/bbb-seal.svg'
 
 const Home = () => {
 
-  const beforeAfterImages = [
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage }
-  ]
-
-  const reviewSites = [
-    { img: AngiesList, id: 'AL', altText: 'Angie\\\'s List Certified seal' },
-    { img: HomeAdvisor, id: 'HA', altText: 'Home Advisor Approved Seal' },
-    { img: BBB, id: 'bbb', altText: 'Better Business Bureau Accredited Seal' }
-  ]
+  const galleryImages = beforeAfterMockData
 
   return (
     <>
-      <BodyHeader buttonText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
+      <BodyHeader linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
         </p>
@@ -60,9 +47,9 @@ const Home = () => {
           <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
         </div>
       </BodySection>
-      <BodySection buttonText='About Us' paddingXRem='0' styleClasses='background-color-primary color-white'
+      <BodySection linkText='About Us' paddingXRem='0' styleClasses='background-color-primary color-white'
                    sectionTitle='About Us'>
-        <img className='home__about-us--img' src={AboutImage}/>
+        <DecorativeImage className='home__about-us--img' src={AboutImage}/>
         <div className='padding-x-8'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
@@ -72,19 +59,19 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection buttonText='View Gallery' paddingXRem='0.25' styleClasses='color-primary' sectionTitle='Our Work'>
+      <BodySection linkText='View Gallery' paddingXRem='0.25' styleClasses='color-primary' sectionTitle='Our Work'>
         <p>
           We offer a personal experience for each customer by ensuring every project is unique.
         </p>
         <p className='p--top-spacing p--bottom-margin-40'>
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
-        <BeforeAfterGallerySection galleryImages={beforeAfterImages}/>
+        <BeforeAfterGallerySection galleryImages={galleryImages}/>
       </BodySection>
       <BodySection paddingXRem='0.5' styleClasses='background-color-primary color-white' sectionTitle='Contact Us'>
-        <ContactForm/>
+        <ContactForm formFieldsData={formFieldsData}/>
       </BodySection>
-      <BodySection buttonText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <ReviewSitesSection reviewSites={reviewSites}/>

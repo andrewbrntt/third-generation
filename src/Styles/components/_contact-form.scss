@@ -10,3 +10,69 @@
   //Box Model
   margin-top: 1.25rem;
 }
+
+.contact-form__modal-close-btn-container {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+
+.contact-form__modal-close-btn {
+  background-color: $white;
+  border: 0;
+  color: $secondary;
+}
+
+.contact-form__times-icon {
+  font-size: 50px;
+}
+
+.contact-form__modal {
+  padding: 20px 8px;
+  section {
+    padding: 0;
+  }
+}
+
+.modal-card__container {
+  padding: 10px;
+  list-style: none;
+}
+
+.modal-card__title {
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.modal-card__subtext {
+  text-align: center;
+}
+
+.contact-form__modal-card-container {
+margin-bottom: 30px;
+}
+
+.contact-form__ul {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+.contact-form__btn {
+  width: 120px;
+  height: 50px;
+  background-color: $secondary;
+  color: $white;
+  border: none;
+}
+
+.contact-form__bottom-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  height: 120px;
+}

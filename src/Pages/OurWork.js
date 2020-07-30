@@ -2,25 +2,15 @@ import React from 'react'
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
-import BeforeImage from '../assets/after-temp.jpg'
-import AfterImage from '../assets/before-temp.jpg'
 import ReviewList from '../components/ReviewList'
+import { beforeAfterMockData } from '../helpers/mockData'
 
 const OurWork = () => {
 
-  const beforeAfterImages = [
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage },
-    { beforeImage: BeforeImage, afterImage: AfterImage }
-  ]
-
+  const galleryImages = beforeAfterMockData
   return (
     <>
-      <BodyHeader pageHeader='Our Work' buttonText='Contact Us'>
+      <BodyHeader pageHeader='Our Work' linkText='Contact Us'>
         <p>
           Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful
           homes and guarantee well-built projects that ensure customer satisfaction.
@@ -31,9 +21,9 @@ const OurWork = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-        <BeforeAfterGallerySection galleryImages={beforeAfterImages}/>
+        <BeforeAfterGallerySection galleryImages={galleryImages}/>
       </BodySection>
-      <BodySection buttonText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
         <ReviewList randomCount='5'/>
       </BodySection>
     </>

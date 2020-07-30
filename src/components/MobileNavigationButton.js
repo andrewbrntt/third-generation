@@ -6,8 +6,6 @@ const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forw
   return (
     <button
       className={`mobile-navigation__toggle-button ${styleClasses}`}
-      id='poo'
-      role='button'
       aria-haspopup='menu'
       ref={forwardedRef}
       aria-expanded={navIsOpen}

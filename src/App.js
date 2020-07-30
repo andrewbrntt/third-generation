@@ -2,14 +2,12 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
-import Header from './components/Header'
 import SkipLink from './components/SkipLink'
 import Footer from './components/Footer'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Roofing from './Pages/Roofing'
 import Siding from './Pages/Siding'
-import Services from './Pages/Services'
 import Contact from './Pages/Contact'
 import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
@@ -18,6 +16,7 @@ import MobileNavigationMenu from './components/MobileNavigationMenu'
 import OurWork from './Pages/OurWork'
 import Reviews from './Pages/Reviews'
 import EmergencyService from './Pages/EmergencyService'
+import Services from './Pages/Services'
 
 fontAwesomeLibrary()
 
@@ -38,13 +37,10 @@ function App () {
             <Roofing/>
           </Route>
           <Route path='/remodel'>
-            <Remodel />
+            <Remodel/>
           </Route>
           <Route path='/siding'>
             <Siding/>
-          </Route>
-          <Route path='/services'>
-            <Services/>
           </Route>
           <Route path='/repairs'>
             <Repairs/>
@@ -56,17 +52,20 @@ function App () {
             <OurWork/>
           </Route>
           <Route path='/reviews'>
-            <Reviews />
+            <Reviews/>
+          </Route>
+          <Route path='/services'>
+            <Services />
           </Route>
           <Route path='/emergency-service'>
-            <EmergencyService />
+            <EmergencyService/>
           </Route>
           <Route path='/'>
             <Home/>
           </Route>
         </Switch>
       </main>
-      <footer className='footer background-color-primary'>
+      <footer id='footer-content' className='footer background-color-primary'>
         <Footer/>
       </footer>
     </>

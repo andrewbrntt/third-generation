@@ -1,35 +1,3 @@
-//.navigation__ul {
-//  //Box Model
-//  display: flex;
-//  align-items: center;
-//  justify-content: space-evenly;
-//  padding: 0;
-//
-//  //Typography
-//  color: #fff;
-//  font-family: $serif-font;
-//
-//  //Visual
-//  list-style: none;
-//  background-color: $primary;
-//}
-//
-//.navigation__li {
-//  display: flex;
-//  justify-content: space-around;
-//  font-size: 16px;
-//}
-//
-//.navigation__li-anchor {
-//  text-underline-position: under;
-//  font-size: 16px;
-//}
-//
-//.navigation__li-anchor,
-//.navigation__span-separator {
-//  color: $white;
-//}
-
 /** Order of css blocks **/
 //Positioning
 //Box Model
@@ -39,17 +7,8 @@
 //Misc
 
 .mobile-navigation__container {
-  //Positioning
-  position: absolute;
-  top: 151px;
-  left: 0;
-  z-index: 1;
-
-  //Box Model
-  width: 100%;
-  height: 100%;
+  height: 675px;
   padding: 0.5rem;
-  overflow: auto;
 }
 
 .mobile-navigation__ul {
@@ -59,7 +18,6 @@
 .mobile-navigation__ul li,
 .mobile-navigation__heading {
   margin-bottom: 0.875rem;
-  padding-left: 0.625rem;
 }
 
 .mobile-navigation__ul li {
@@ -67,8 +25,15 @@
 }
 
 .mobile-navigation__ul li > a {
+  display: block;
+  padding-left: 0.625rem;
   font-size: 1.25rem;
   text-decoration: none;
+}
+
+.mobile-navigation__ul li >  .mobile-navigation__emergency-service {
+  display: inline-block;
+  font-size: 1.1875rem;
 }
 
 .mobile-navigation__nested-list {

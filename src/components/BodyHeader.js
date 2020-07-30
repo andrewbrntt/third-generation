@@ -2,8 +2,9 @@ import React, { useState, useRef, useLayoutEffect } from 'react'
 import useElementDimensions from '../helpers/useElementDimensions'
 import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
 import HeroImageOverlay from './HeroImageOverlay'
+import DecorativeImage from './DecorativeImage'
 
-const BodyHeader = ({buttonText, pageHeader, children}) => {
+const BodyHeader = ({linkText, pageHeader, children}) => {
 
   const overlayContainer = useRef(null)
   const overlayDimensions = useElementDimensions(overlayContainer)
@@ -20,8 +21,8 @@ const BodyHeader = ({buttonText, pageHeader, children}) => {
 
   return (
     <section style={{ height: `${(height + 40) / 16}rem` }} className='body-header-container body-header__background-hero-img--overflow'>
-      <img alt='' className='body-header__background-hero-img' aria-hidden='true' src={backgroundImage}/>
-      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle' buttonText={buttonText} pageHeader={pageHeader}>
+      <DecorativeImage className='body-header__background-hero-img' src={backgroundImage}/>
+      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle' linkText={linkText} pageHeader={pageHeader}>
         {children}
       </HeroImageOverlay>
     </section>

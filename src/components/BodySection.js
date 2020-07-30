@@ -1,9 +1,9 @@
 import React from 'react'
-import ThemeButton from './ThemeButton'
+import ThemedLink from './ThemedLink'
 import PageHeader from './PageHeader'
 import IconWithLine from './IconWithLine'
 
-const BodySection = ({ sectionTitle, children, styleClasses, paddingXRem, buttonText, pageHeader, iconName }) => {
+const BodySection = ({ sectionTitle, children, styleClasses, paddingXRem, pageHeader, iconName, linkText, linkRoute }) => {
   const styles = {
     paddingRight: `${paddingXRem}rem`,
     paddingLeft: `${paddingXRem}rem`,
@@ -18,8 +18,9 @@ const BodySection = ({ sectionTitle, children, styleClasses, paddingXRem, button
         {iconName && <IconWithLine icon={iconName} />}
         {sectionTitle && <h2 className='body-section__title'>{sectionTitle}</h2>}
         {children}
-        {buttonText && <div className='body-section__button-container--spacing'>
-            <ThemeButton text={buttonText}/>
+        {linkText &&
+        <div className='body-section__link-container'>
+            <ThemedLink route={linkRoute} text={linkText}/>
           </div>}
       </section>
     </>

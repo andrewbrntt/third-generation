@@ -7,8 +7,12 @@
 //Misc
 
 .our-process-infographic__step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   text-align: center;
+  list-style: none;
 }
 
 .our-process-infographic__step {
@@ -27,6 +31,10 @@
 
 .our-process-infographic__circle--margin-left {
   margin-left: 0.625rem;
+}
+
+.our-process-infographic__circle--margin-right {
+  margin-right: 0.625rem;
 }
 
 .our-process-infographic__icon {

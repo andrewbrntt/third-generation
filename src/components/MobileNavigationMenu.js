@@ -1,49 +1,73 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import shortId from 'shortid'
 import MobileNavigationButton from './MobileNavigationButton'
 import logo from '../assets/3GC_Logo-White.svg'
 
 const MobileNavigationMenu = () => {
 
+  const serviceRoutes = [
+    { routeName: 'Remodel', routeTo: '/remodel' },
+    { routeName: 'Roofing', routeTo: '/roofing' },
+    { routeName: 'Siding', routeTo: '/siding' },
+    { routeName: 'Repairs', routeTo: '/repairs' }
+  ]
+  const topMenuRoutes = [
+    { routeName: 'Home', routeTo: '/', exact: true },
+    { routeName: 'About', routeTo: '/about' },
+  ]
+  const bottomMenuRoutes = [
+    { routeName: 'Our Work', routeTo: '/our-work' },
+    { routeName: 'Reviews', routeTo: '/reviews' },
+    { routeName: 'Contact Us', routeTo: '/contact' },
+    {
+      routeName: '24-Hour Emergency Service',
+      routeTo: '/emergency-service',
+      styleClasses: 'mobile-navigation__emergency-service'
+    },
+  ]
+
   const [navIsOpen, setNavIsOpen] = useState(false)
-  const finalNavigationElementRef = useRef(null)
   const mobileToggleButtonRef = useRef(null)
+  let location = useLocation()
 
   const toggleMobileNav = (e) => {
     e.preventDefault()
     setNavIsOpen(!navIsOpen)
-    console.log('current Ref', finalNavigationElementRef.current)
+  }
+
+  const createRouteObject = (route) => {
+    return {
+      pathname: route,
+      state: { navIsOpen: false }
+    }
+  }
+
+  const createNavMenuItem = (routeName, routeTo, styleClasses = '', exact = false) => {
+    return (
+      <li key={shortId.generate()}>
+        <NavLink activeClassName='background-color-secondary' exact={exact} className={styleClasses} to={createRouteObject(routeTo)}>{routeName}</NavLink>
+      </li>
+    )
+  }
+
+  const createMenuList = (routes, styleClasses) => {
+    return (
+      <ul className={styleClasses}>
+        {routes.map(route => {
+          return createNavMenuItem(route.routeName, route.routeTo, route.styleClasses, route.exact)
+        })}
+      </ul>
+    )
   }
 
   useEffect(() => {
-    const handleBlur = (e) => {
-      e.preventDefault()
-        mobileToggleButtonRef.current.focus()
+    if (location && location.state) {
+      if (location.state.navIsOpen !== null && location.state.navIsOpen !== undefined) {
+        setNavIsOpen(location.state.navIsOpen)
+      }
     }
-    finalNavigationElementRef.current.addEventListener('blur', handleBlur)
-    return () => finalNavigationElementRef.current.removeEventListener('blur', handleBlur)
-
-  }, [finalNavigationElementRef])
-
-  useEffect(() => {
-    const menuLinks = document.getElementsByClassName('nav-link')
-
-    const handleLinkClick = () => {
-      setNavIsOpen(!navIsOpen)
-      mobileToggleButtonRef.current.focus()
-    }
-
-    menuLinks.forEach((link) => {
-      link.addEventListener('click', handleLinkClick)
-    })
-
-    return () => {
-      menuLinks.forEach((link) => {
-        link.removeEventListener('click', handleLinkClick)
-      })
-    }
-  }, [navIsOpen])
-
+  }, [location])
 
   return (
     <nav role='navigation'>
@@ -54,28 +78,16 @@ const MobileNavigationMenu = () => {
           toggleNavMenu={toggleMobileNav}
           styleClasses='header__mobile-navigation nav-button'
         />
-        <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
+        <NavLink to={createRouteObject('/')}>
+          <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
+        </NavLink>
       </div>
       <div role='menu' className='mobile-navigation__container background-color-primary color-white'
-           style={{ display: !navIsOpen && 'none', height: document.body.offsetHeight }}>
-        <ul className='mobile-navigation__ul remove-padding action-text'>
-          <li><NavLink className='nav-link' to='/'>Home</NavLink></li>
-          <li><NavLink className='nav-link' to='/about'>About</NavLink></li>
-        </ul>
+           style={{ display: !navIsOpen && 'none' }}>
+        {createMenuList(topMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
         <h2 className='mobile-navigation__heading'>Services</h2>
-        <ul className='mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text'>
-          <li><NavLink className='nav-link' to='/remodel'>Home Remodel</NavLink></li>
-          <li><NavLink className='nav-link' to='/roofing'>Roofing</NavLink></li>
-          <li><NavLink className='nav-link' to='/siding'>Siding</NavLink></li>
-          <li><NavLink className='nav-link' to='/repairs'>Repairs</NavLink></li>
-        </ul>
-        <ul className='mobile-navigation__ul remove-padding action-text'>
-          <li><NavLink className='nav-link' to='/our-work'>Our Work</NavLink></li>
-          <li><NavLink className='nav-link' to='/reviews'>Reviews</NavLink></li>
-          <li><NavLink className='nav-link' to='/contact'>Contact Us</NavLink></li>
-          <li><NavLink ref={finalNavigationElementRef} className='nav-link' to='/emergency-service'>24-Hour Emergency
-            Service</NavLink></li>
-        </ul>
+        {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text')}
+        {createMenuList(bottomMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
       </div>
     </nav>
   )

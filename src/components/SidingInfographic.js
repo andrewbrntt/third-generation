@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import shortId from 'shortid'
 import Tools from '../assets/icon-tools.svg'
+import DecorativeImage from './DecorativeImage'
 
 const SidingInfographic = () => {
 
@@ -44,7 +45,7 @@ const SidingInfographic = () => {
   const lowerMaintenanceCostsIcon = () => {
     return (
       <span className='lower-maintenance-cost__icon-container'>
-        <img src={Tools} role='img'/>
+        <DecorativeImage src={Tools} role='img'/>
       </span>
     )
   }

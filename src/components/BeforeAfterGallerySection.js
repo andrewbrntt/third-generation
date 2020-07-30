@@ -7,7 +7,7 @@ const BeforeAfterGallerySection = ({ galleryImages }) => {
     <div className='before-after-container'>
       {galleryImages.map(images =>
         <div key={shortId.generate()} className='before-after-set--margin'>
-          <BeforeAfter beforeSrc={images.beforeImage} afterSrc={images.afterImage}/>
+          <BeforeAfter before={images.before} after={images.after}/>
         </div>
       )}
     </div>

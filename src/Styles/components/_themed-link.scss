@@ -1,0 +1,55 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.themed-link {
+  //Box Model
+  display: block;
+  width: 210px;
+  height: 50px;
+  padding: 10px 20px;
+
+  //Typography
+  color: $white;
+  text-decoration: none;
+
+  //Display
+  background-color: $secondary;
+  border: 0;
+}
+
+
+
+.themed-link__hr-container {
+  display: flex;
+  justify-content: center;
+}
+
+.themed-link__hr {
+  //Box Model
+  width: 0;
+  margin-top: -0.3125rem;
+  border: 0;
+  border-bottom: 0.3125rem solid;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:hover .themed-link__hr,
+  a:focus .themed-link__hr {
+    animation: separator-width 0.4s ease-out forwards;
+  }
+
+  @keyframes separator-width {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+}

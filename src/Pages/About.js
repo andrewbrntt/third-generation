@@ -2,44 +2,40 @@ import React from 'react'
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
-import AngiesList from '../assets/angies-list-seal.png'
-import HomeAdvisor from '../assets/home-advisor-seal.png'
-import BBB from '../assets/bbb-seal.svg'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
+import DecorativeImage from '../components/DecorativeImage'
+import { reviewSites } from '../helpers/mockData'
 
 const About = () => {
 
   const stepList = [
-    { icon: ['far', 'phone-alt'], text: 'Contact Us' },
-    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection' },
-    { icon: ['far', 'file-contract'], text: 'Sign Contract' },
-    { icon: ['far', 'hammer'], text: 'Labor' },
-    { icon: ['far', 'star'], text: 'Satisfied Customer' }
+    { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
+    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection'},
+    { icon: ['far', 'file-contract'], text: 'Sign Contract', srText: 'step 3 sign contract' },
+    { icon: ['far', 'hammer'], text: 'Labor', srText: 'step 4 labor starts' },
+    { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
   ]
 
-  const reviewSites = [
-    { img: AngiesList, id: 'AL', altText: 'Angie\\\'s List Certified seal' },
-    { img: HomeAdvisor, id: 'HA', altText: 'Home Advisor Approved Seal' },
-    { img: BBB, id: 'bbb', altText: 'Better Business Bureau Accredited Seal' }
-  ]
   return (
     <>
-      <BodySection buttonText='Contact Us' pageHeader='About Us'>
-        <img className='remodel__hero--img' src={AboutImage}/>
-        <p>
-          Third Generation Construction is a family-owned and operated business serving Lorain County and its
-          surrounding
-          areas.
-        </p>
-        <p className='p--top-spacing'>
-          Our team of professionals has more than 15-years of experience values honesty and integrity and treats your
-          home or business as if it were our own.
-        </p>
-        <p className='p--top-spacing'>
-          We look forward to building lasting relationships and guarantee your
-          satisfaction.
-        </p>
+      <BodySection linkText='Contact Us' pageHeader='About Us'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <div className='padding-x-8'>
+          <p>
+            Third Generation Construction is a family-owned and operated business serving Lorain County and its
+            surrounding
+            areas.
+          </p>
+          <p className='p--top-spacing'>
+            Our team of professionals has more than 15-years of experience values honesty and integrity and treats your
+            home or business as if it were our own.
+          </p>
+          <p className='p--top-spacing'>
+            We look forward to building lasting relationships and guarantee your
+            satisfaction.
+          </p>
+        </div>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
@@ -55,17 +51,19 @@ const About = () => {
         </p>
         <ReviewSitesSection reviewSites={reviewSites}/>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' buttonText='View Gallery' sectionTitle='Our Work'>
-        <img className='remodel__hero--img' src={AboutImage}/>
+      <BodySection styleClasses='background-color-primary color-white' linkText='View Gallery'
+                   sectionTitle='Our Work'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
         <p className='padding-x-8'>
           We're proud of our work and love showing it off.
         </p>
-        <p className='p--top-spacing padding-x-8'>Let Third Generation Construction transform your current space into the home of
+        <p className='p--top-spacing padding-x-8'>Let Third Generation Construction transform your current space into
+          the home of
           your dreams.
         </p>
       </BodySection>
       <BodySection sectionTitle='Reviews' styleClasses='color-primary' paddingXRem='0.5'>
-        <ReviewList randomCount='1' />
+        <ReviewList randomCount='1'/>
       </BodySection>
     </>
   )

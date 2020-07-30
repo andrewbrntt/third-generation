@@ -4,14 +4,19 @@ import Review from './Review'
 
 const ReviewList = ({ reviewsList = [], randomCount = 0 , styleClasses}) => {
 
-  const randomReviewNumber = _ => {
-    return (Math.random() * 5)
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
   }
+
+
+  const scoreOptions = [0.5, 0.3, 1, 0.9, 0.1]
 
 const createRandomReview = _ => {
   return {
     name: 'Andrew',
-    score: randomReviewNumber(),
+    score: scoreOptions[getRandomInt(0, 4)],
     location: 'BFE Anywhere',
     comment: 'Interactively disintermediate process-centric users through clicks-and-mortar bandwidth. Holisticly expedite team building solutions via clicks-and-mortar infomediaries.',
     styleClasses: styleClasses

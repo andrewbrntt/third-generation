@@ -7,6 +7,7 @@ import GAFLogo from '../assets/vendor-assets/gaf/gaf-logo.png'
 import AlliedLogo from '../assets/vendor-assets/allied/allied-logo.png'
 import VendorSection from '../components/VendorSection'
 import ReviewList from '../components/ReviewList'
+import DecorativeImage from '../components/DecorativeImage'
 
 const Repairs = () => {
 
@@ -18,8 +19,8 @@ const Repairs = () => {
 
   return (
     <>
-      <BodySection styleClasses='color-primary' pageHeader='Repairs' buttonText='Contact Us'>
-        <img className='remodel__hero--img' src={AboutImage}/>
+      <BodySection styleClasses='color-primary' pageHeader='Repairs' linkText='Contact Us'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
         <p className='padding-x-8'>
           Sometimes all it takes to transform your home is a few minor fixes.
         </p>
@@ -31,14 +32,14 @@ const Repairs = () => {
         </p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' iconName={Tools} sectionTitle='Free Consultation'
-                   paddingXRem='0.5' buttonText='Contact Us'>
+                   paddingXRem='0.5' linkText='Contact Us'>
         <p>You have questions.</p>
         <p className='p--top-spacing'>We have answers.</p>
         <p className='p--top-spacing'>
           Schedule a free consultation and let us help you turn your current house into the home you're dreaming of.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary' buttonText='FAQ' paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary' linkText='FAQ' paddingXRem='0.5'>
         <p>
           Need to do more research before committing?
         </p>
@@ -46,8 +47,8 @@ const Repairs = () => {
         <p className='p--top-spacing'> We have answers to common home-remodel questions.</p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work'
-                   buttonText='View Gallery'>
-        <img className='remodel__hero--img' src={AboutImage}/>
+                   linkText='View Gallery'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
         <p>
           We're proud of our work and love showing it off.
         </p>
@@ -65,8 +66,8 @@ const Repairs = () => {
         </p>
         <VendorSection vendors={vendors}/>
       </BodySection>
-      <BodySection buttonText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
-      <ReviewList randomCount='1'/>
+      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+        <ReviewList randomCount='1'/>
       </BodySection>
     </>
   )

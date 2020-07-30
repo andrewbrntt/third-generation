@@ -1,5 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DecorativeImage from './DecorativeImage'
 
 const IconWithLine = ({icon}) => {
   return (
@@ -9,9 +10,8 @@ const IconWithLine = ({icon}) => {
       <FontAwesomeIcon
         className='icon-with-line__fa-icon'
         icon={icon}
-      /> : <img
+      /> : <DecorativeImage
           src={icon}
-          alt=''
           className='icon-with-line__icon'
         />}
     </div>

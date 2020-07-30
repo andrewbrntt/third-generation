@@ -5,7 +5,8 @@ import {
   faHorizontalRule,
   faTools,
   faCircle,
-  faHome
+  faHome,
+  faTimes
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faStar as faStarRegular,
@@ -44,7 +45,8 @@ const fontAwesomeLibrary = () => {
     faHouse,
     faSnowflake,
     faRaindrops,
-    faSun
+    faSun,
+    faTimes
   )
 }
 

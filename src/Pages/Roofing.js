@@ -1,18 +1,17 @@
 import React from 'react'
 import BodySection from '../components/BodySection'
-import AboutImage from '../assets/group-people.jpg'
+import DecorativeImage from '../components/DecorativeImage'
+import ReviewSitesSection from '../components/ReviewSitesSection'
+import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
+import { reviewSites } from '../helpers/mockData'
+import AboutImage from '../assets/group-people.jpg'
 import owensCorningLogo from '../assets/vendor-assets/owens-corning/owens-corning.png'
 import JamesHardieLogo from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo.png'
 import royalSidingLogo from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color.png'
 import alsideLogo from '../assets/vendor-assets/alside/alside.png'
 import firestoneLogo from '../assets/vendor-assets/firestone/firestone_logo.png'
 import certainteedSidingLogo from '../assets/vendor-assets/certainteed/siding-certainteed-logo.png'
-import ReviewList from '../components/ReviewList'
-import ReviewSitesSection from '../components/ReviewSitesSection'
-import AngiesList from '../assets/angies-list-seal.png'
-import HomeAdvisor from '../assets/home-advisor-seal.png'
-import BBB from '../assets/bbb-seal.svg'
 
 const Roofing = () => {
 
@@ -25,16 +24,10 @@ const Roofing = () => {
     { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo' }
   ]
 
-  const reviewSites = [
-    { img: AngiesList, id: 'AL', altText: 'Angie\\\'s List Certified seal' },
-    { img: HomeAdvisor, id: 'HA', altText: 'Home Advisor Approved Seal' },
-    { img: BBB, id: 'bbb', altText: 'Better Business Bureau Accredited Seal' }
-  ]
-
   return (
     <>
-      <BodySection pageHeader='Roofing' buttonText='Contact Us'>
-        <img className='remodel__hero--img' src={AboutImage}/>
+      <BodySection pageHeader='Roofing' linkText='Contact Us'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
         <p className='padding-x-8'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
           roof replacement.
@@ -45,8 +38,8 @@ const Roofing = () => {
         </p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work'
-                   buttonText='View Gallery'>
-        <img className='remodel__hero--img' src={AboutImage}/>
+                   linkText='View Gallery'>
+        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
         <p>
           We're proud of our work and love showing it off.
         </p>
@@ -54,7 +47,7 @@ const Roofing = () => {
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection sectionTitle='Materials' styleClasses='color-primary'>
+      <BodySection sectionTitle='Materials' paddingXRem='0.5' styleClasses='color-primary'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>
@@ -67,7 +60,7 @@ const Roofing = () => {
         </div>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Reviews' paddingXRem='0.5'
-                   buttonText='Reviews'>
+                   linkText='Reviews'>
         <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>
@@ -75,7 +68,7 @@ const Roofing = () => {
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>
-        <ReviewSitesSection reviewSites={reviewSites} />
+        <ReviewSitesSection reviewSites={reviewSites}/>
       </BodySection>
     </>
   )

@@ -21,10 +21,10 @@ const OurProcessInfoGraphic = ({ stepList }) => {
 
   const ourProcessStepLeft = (step, index) => {
     return (
-      <div key={shortId.generate()} className='our-process-infographic__step-container'>
+      <li key={shortId.generate()} className='our-process-infographic__step-container'>
         <div className='our-process-infographic__step'>
           {graphicElement(step.icon, 'our-process-infographic__circle--margin-left')}
-          <span className='our-process-infographic__text-container'>{step.text}</span>
+          <label aria-label={step.srText} className='our-process-infographic__text-container'>{step.text}</label>
         </div>
         {index < stepList.length - 1 &&
         <>
@@ -32,15 +32,15 @@ const OurProcessInfoGraphic = ({ stepList }) => {
           <div className='our-process-infographic__line-div-right'>{}</div>
         </>
         }
-      </div>
+      </li>
     )
   }
 
   const ourProcessStepRight = (step, index) => {
     return (
-      <div key={shortId()} className='our-process-infographic__step-container'>
+      <li key={shortId.generate()} className='our-process-infographic__step-container'>
         <div className='our-process-infographic__step our-process-infographic__step--right'>
-          <span className='our-process-infographic__text-container'>{step.text}</span>
+          <label className='our-process-infographic__text-container'>{step.text}</label>
           {graphicElement(step.icon, 'our-process-infographic__circle--margin-right')}
         </div>
         {index < stepList.length - 1 &&
@@ -49,12 +49,12 @@ const OurProcessInfoGraphic = ({ stepList }) => {
           <div className='our-process-infographic__line-div-left'>{}</div>
         </>
         }
-      </div>
+      </li>
     )
   }
 
   return (
-    <div className='our-process-infographic__container background-color-primary color-white'>
+    <ol className='our-process-infographic__container background-color-primary color-white remove-padding-left remove-margin'>
       {stepList.map((step, index) => {
         if (index % 2 === 0) {
           return ourProcessStepLeft(step, index)
@@ -62,7 +62,7 @@ const OurProcessInfoGraphic = ({ stepList }) => {
           return ourProcessStepRight(step, index)
         }
       })}
-    </div>
+    </ol>
   )
 }
 

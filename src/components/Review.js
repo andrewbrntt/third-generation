@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Review = ({ review }) => {
 
-  const calculateReviewScore = () => {
+  const calculateReviewStars = () => {
     const starLimit = 5
 
     let reviewStars = []
@@ -42,11 +42,19 @@ const Review = ({ review }) => {
     return reviewStars
   }
 
+  const calculateAdjustedReviewScore = () => {
+    if(review.score > 0 && review.score < 0.5) {
+      return 0.5
+    }
+
+    return review.score.toFixed(1)
+  }
+
   return (
     <div className={`review__container ${review.styleClasses ||''}`}>
       <figure role='img' className='review__star-container'
-              aria-label={`Rated ${review.score.toFixed(1)} stars out of 5`}>
-        {calculateReviewScore()}
+              aria-label={`Rated ${calculateAdjustedReviewScore(1)} stars out of 5`}>
+        {calculateReviewStars()}
       </figure>
       <div className='w3-left-align review__details-container default-text'>
         <p className='review__name'>{review.name}</p>
