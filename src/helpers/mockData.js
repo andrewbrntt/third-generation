@@ -62,7 +62,45 @@ const services = {
     { value: 'siding', text: 'Siding' }
   ],
   isRequired: true,
-  value: 'remodel'
+  value: ''
 }
 
 export const formFieldsData = { fullName, email, phone, message, services }
+
+
+// const fullName = {
+//   id: 'contact-form__full-name',
+//   name: 'full-name',
+//   labelText: 'Full Name',
+//   type: 'text',
+//   isRequired: true,
+//   value: null
+// }
+// const email = {
+//   id: 'contact-form__email',
+//   name: 'email',
+//   labelText: 'Email (email@domain.com)',
+//   type: 'email',
+//   isRequired: true,
+//   value: null
+// }
+// const phone = {
+//   id: 'contact-form__phone',
+//   name: 'phone',
+//   labelText: 'Phone (XXX-XXX-XXXX)',
+//   type: 'tel',
+//   isRequired: true,
+//   value: null
+// }
+// const message = {
+//   id: 'contact-form__message',
+//   name: 'message',
+//   labelText: 'Message',
+//   inputType: 'text',
+//   isRequired: false,
+//   elementType: 'textarea'
+// }
+//
+// const servicesWithError = {
+//   ...services,
+// }

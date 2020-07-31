@@ -1,11 +1,11 @@
 import React, {forwardRef} from 'react'
 import shortId from 'shortid'
 
-const FormErrorField = ({ errors }) => {
+const FormErrorField = ({ formFieldsData }) => {
 
   const errorListItems = (errors) => {
     return errors.map(error => {
-        return (
+        return error.isError && (
           <li key={shortId.generate()} className='form-error-field__li'>
             {error.message}
           </li>
@@ -17,9 +17,10 @@ const FormErrorField = ({ errors }) => {
   return (
     <div className='form-error-field__container color-primary'>
       <span className='form-error-field__text'>There was an error your submission:</span>
-      <ul className='form-error-field__ul'>
-        {errorListItems(errors)}
-      </ul>
+      Poop
+      {/*<ul className='form-error-field__ul'>*/}
+      {/*  {errorListItems(formFieldsData)}*/}
+      {/*</ul>*/}
     </div>
   )
 }

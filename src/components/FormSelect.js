@@ -7,6 +7,7 @@ const FormSelect = ({fieldElementData}) => {
       required={fieldElementData.isRequired}
       className='form-input-field__input'
     >
+      <option value=''>Select Service</option>
       {fieldElementData.options.map(option => {
         return <option key={option.value} value={option.value}>{option.text}</option>
       })}
