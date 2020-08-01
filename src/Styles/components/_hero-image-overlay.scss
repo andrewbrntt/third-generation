@@ -18,13 +18,25 @@
 
   //Visual
   background: rgba(255, 255, 255, 0.9);
+
+  @include md {
+    padding: 6.25rem 2.375rem 4.75rem;
+  }
 }
 
-.hero-image-overlay__h1 {
+.hero-image-overlay__h1--margin {
   margin: 0 0 1.875rem;
+  @include md {
+    margin: 0;
+  }
 }
 
-.hero-image-overlay__p-container {
+.hero-image-overlay__children-container {
   margin: 0 0 2.5rem;
+
+  @include md {
+    margin: 6.25rem 0;
+    font-size: 1.5rem;
+  }
 }
 

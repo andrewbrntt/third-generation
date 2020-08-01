@@ -20,7 +20,6 @@ $default-font-size: 1rem;
 $default-letter-spacing: 0.05rem;
 $default-line-height: 1.5;
 $default-word-spacing: 0.09375rem;
-
 // ------------------ //
 
 .h1-page-header-text {
@@ -28,6 +27,11 @@ $default-word-spacing: 0.09375rem;
   font-family: $serif-font;
   letter-spacing: $default-letter-spacing;
   word-spacing: $default-word-spacing;
+
+  @include md {
+    font-size: 50px;
+  }
+
 }
 
 .default-text {
@@ -36,6 +40,10 @@ $default-word-spacing: 0.09375rem;
   line-height: $default-line-height;
   letter-spacing: $default-letter-spacing;
   word-spacing: $default-word-spacing;
+
+  @include md {
+    font-size: 1.5rem;
+  }
 }
 
 .action-text {

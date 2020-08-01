@@ -14,9 +14,14 @@
   margin-bottom: 2.5rem;
 }
 
-.padding-x-8 {
+.padding-x-standard {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+
+  @include md {
+    padding-right: 2.125rem;
+    padding-left: 2.125rem;
+  }
 }
 
 .remove-padding {

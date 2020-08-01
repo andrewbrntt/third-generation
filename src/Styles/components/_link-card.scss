@@ -9,6 +9,15 @@
 .link-card__container {
   width: 8.4375rem;
   text-decoration: none;
+
+  // 576px window width and more
+  @include sm {
+    width: 10.375rem;
+  }
+
+  @include md {
+    width: 340px;
+  }
 }
 
 .link-card__img--dimensions {
@@ -19,3 +28,6 @@
   color: $primary;
   text-align: center;
 }
+
+
+

@@ -23,7 +23,9 @@ const fullName = {
   labelText: 'Full Name',
   type: 'text',
   isRequired: true,
-  value: null
+  value: 'Eat My Cock',
+  hasError: false,
+  errorMessage: ''
 }
 const email = {
   id: 'contact-form__email',
@@ -31,7 +33,9 @@ const email = {
   labelText: 'Email (email@domain.com)',
   type: 'email',
   isRequired: true,
-  value: null
+  value: 'hello',
+  hasError: false,
+  errorMessage: ''
 }
 const phone = {
   id: 'contact-form__phone',
@@ -39,7 +43,9 @@ const phone = {
   labelText: 'Phone (XXX-XXX-XXXX)',
   type: 'tel',
   isRequired: true,
-  value: null
+  value: '1234',
+  hasError: false,
+  errorMessage: ''
 }
 const message = {
   id: 'contact-form__message',
@@ -47,7 +53,10 @@ const message = {
   labelText: 'Message',
   inputType: 'text',
   isRequired: false,
-  elementType: 'textarea'
+  elementType: 'textarea',
+  hasError: false,
+  value: '',
+  errorMessage: ''
 }
 const services = {
   id: 'contact-form__services',
@@ -62,7 +71,9 @@ const services = {
     { value: 'siding', text: 'Siding' }
   ],
   isRequired: true,
-  value: ''
+  value: 'remodel',
+  hasError: false,
+  errorMessage: ''
 }
 
 export const formFieldsData = { fullName, email, phone, message, services }

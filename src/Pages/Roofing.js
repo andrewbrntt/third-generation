@@ -28,11 +28,11 @@ const Roofing = () => {
     <>
       <BodySection pageHeader='Roofing' linkText='Contact Us'>
         <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
-        <p className='padding-x-8'>
+        <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
           roof replacement.
         </p>
-        <p className='p--top-spacing padding-x-8'>
+        <p className='p--top-spacing padding-x-standard'>
           Our trained staff are experts at professionally installing all types of roofing systems, including asphalt,
           metal, tile, or slate.
         </p>
@@ -64,7 +64,7 @@ const Roofing = () => {
         <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>
-        <p className='padding-x-8'>
+        <p className='padding-x-standard'>
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>

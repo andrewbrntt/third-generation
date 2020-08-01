@@ -13,6 +13,10 @@
   //Typography
   font-family: $san-serif-font;
   text-align: center;
+
+  @include md {
+    padding: 6.25rem 0 4.6875rem;
+  }
 }
 
 .body-section__title {
@@ -21,14 +25,19 @@
   //Typography
   font-size: 2.25rem;
   font-family: $serif-font;
-}
 
-.body-section__p-container {
-  margin-bottom: 2.5rem;
+  @include md {
+    margin: 0 0 6.25rem;
+    font-size: 46px;
+  }
 }
 
 .body-section__link-container {
   display: flex;
   justify-content: center;
   margin: 2.5rem 2.8125rem 0;
+
+  @include md {
+    margin-top: 4.6875rem;
+  }
 }

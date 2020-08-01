@@ -1,5 +1,6 @@
 import React, {forwardRef} from 'react'
 import HamburgerMenuIcon from './HamburgerMenuIcon'
+import ReactDOM from 'react-dom'
 
 const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forwardedRef) => {
 
@@ -15,5 +16,6 @@ const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forw
   )
 }
 
+// noinspection JSCheckFunctionSignatures
 export default forwardRef(MobileNavigationButton)
 

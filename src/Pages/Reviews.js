@@ -22,7 +22,7 @@ const Reviews = () => {
         <ReviewList randomCount='5'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>
-        <h2 className='default-text padding-x-8 reviews__review-list-title remove-margin-y'>Find More Reviews</h2>
+        <h2 className='default-text padding-x-standard reviews__review-list-title remove-margin-y'>Find More Reviews</h2>
         <ReviewSitesSection reviewSites={reviewSites}/>
       </BodySection>
     </>

@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import useContactForm from '../helpers/useContactForm'
+import React from 'react'
 import ContactForm from '../components/ContactForm'
 import BodySection from '../components/BodySection'
-import FormErrorField from '../components/FormErrorField'
-import {formFieldsData} from '../helpers/mockData'
-import Modal from '../components/Modal'
+import { formFieldsData } from '../helpers/mockData'
 
 const Contact = () => {
-
-
 
   return (
     <BodySection pageHeader='Contact Us' paddingXRem='1.25'>

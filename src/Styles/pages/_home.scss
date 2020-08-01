@@ -17,18 +17,57 @@
   margin-bottom: 3.125rem;
 }
 
+//Our Services
+.home__our-services-p-container {
+  margin-bottom: 2.5rem;
+}
+
 //Service Cards
 .home__service-cards-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20.8125rem;
+  height: 23.25rem;
+
+  @include sm {
+    width: 25rem;
+    height: 27.3125rem;
+  }
+
+  @include md {
+    justify-content: space-evenly;
+    width: 48rem;
+    height: 53.125rem;
+  }
+}
+
+.home__service-cards-row {
+  display: flex;
   justify-content: space-evenly;
-  height: 11.25rem;
+  width: 20.8125rem;
+
+  @include sm {
+    width: 25rem;
+  }
+
+  @include md {
+    width: 752px;
+  }
 }
 
 .home__service-cards--margin-bottom {
   margin-bottom: 1.6rem;
 }
+//
 
 //Our Work
 .home__our-work-p--bottom-margin-40 {
   margin-bottom: 2.5rem;
 }
+
+.home__service-cards--center {
+  display: flex;
+  justify-content: center;
+}
+//

@@ -9,8 +9,6 @@ import { beforeAfterMockData, reviewSites } from '../helpers/mockData'
 
 const EmergencyService = () => {
 
-  const galleryImages = beforeAfterMockData
-
   return (
     <>
       <BodySection styleClasses='color-primary' pageHeader='24-Hour Emergency Service' linkText='Contact Us'>
@@ -24,7 +22,7 @@ const EmergencyService = () => {
         <p>We're proud of our work and love showing it off.</p>
         <p className='p--top-spacing'>
           Let 3RD Generation Construction transform your current space into the home of your dreams.</p>
-        <BeforeAfterGallerySection galleryImages={galleryImages}/>
+        <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
       <BodySection linkText='Reviews' styleClasses='color-primary' paddingXRem='0.5'>
         <ReviewList randomCount='1'/>

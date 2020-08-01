@@ -21,13 +21,13 @@ const Repairs = () => {
     <>
       <BodySection styleClasses='color-primary' pageHeader='Repairs' linkText='Contact Us'>
         <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
-        <p className='padding-x-8'>
+        <p className='padding-x-standard'>
           Sometimes all it takes to transform your home is a few minor fixes.
         </p>
-        <p className='p--top-spacing padding-x-8'>
+        <p className='p--top-spacing padding-x-standard'>
           Large projects or small, Third Generation Construction is here to help you love your home for years to come.
         </p>
-        <p className='p--top-spacing padding-x-8'>
+        <p className='p--top-spacing padding-x-standard'>
           Our services include painting, fence building, flooring, and more.
         </p>
       </BodySection>

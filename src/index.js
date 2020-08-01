@@ -17,6 +17,7 @@ function ScrollToTop () {
   return null
 }
 
+// noinspection JSCheckFunctionSignatures
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

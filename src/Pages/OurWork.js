@@ -7,7 +7,6 @@ import { beforeAfterMockData } from '../helpers/mockData'
 
 const OurWork = () => {
 
-  const galleryImages = beforeAfterMockData
   return (
     <>
       <BodyHeader pageHeader='Our Work' linkText='Contact Us'>
@@ -21,7 +20,7 @@ const OurWork = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-        <BeforeAfterGallerySection galleryImages={galleryImages}/>
+        <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
       <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
         <ReviewList randomCount='5'/>

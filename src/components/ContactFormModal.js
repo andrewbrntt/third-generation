@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from './Modal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import BodySection from './BodySection'
@@ -8,8 +8,9 @@ import ModalCard from './ModalCard'
 const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClose }) => {
 
   return (
-    <Modal styleClasses={`contact-form__modal color-primary ${isModalOpen ? 'contact-form-modal--display-block' : 'contact-form-modal--display-none'}`}>
-      <div className='padding-x-8 contact-form__modal-close-btn-container'>
+    <Modal
+      styleClasses={`contact-form__modal color-primary ${isModalOpen ? 'contact-form-modal--display-block' : 'contact-form-modal--display-none'}`}>
+      <div className='padding-x-standard contact-form__modal-close-btn-container'>
         <button className='contact-form__modal-close-btn' onClick={handleClose}>
           <FontAwesomeIcon className='contact-form__times-icon' icon={['fa', 'times']}/>
         </button>
