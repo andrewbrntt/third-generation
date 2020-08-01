@@ -19,4 +19,9 @@
   width: 6.25rem;
   height: 6.25rem;
   text-align: center;
+
+  @include md {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
 }

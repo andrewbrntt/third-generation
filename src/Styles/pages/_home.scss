@@ -15,7 +15,12 @@
   width: 100%;
   height: 16.25rem;
   margin-bottom: 3.125rem;
+
+  @include md {
+    margin-bottom: 4.6875rem;
+  }
 }
+//
 
 //Our Services
 .home__our-services-p-container {
@@ -45,19 +50,15 @@
 .home__service-cards-row {
   display: flex;
   justify-content: space-evenly;
-  width: 20.8125rem;
-
-  @include sm {
-    width: 25rem;
-  }
-
-  @include md {
-    width: 752px;
-  }
+  width: 100%;
 }
 
 .home__service-cards--margin-bottom {
   margin-bottom: 1.6rem;
+}
+
+.home__our-services-p-container--margin {
+  margin-bottom: 4.6875rem;
 }
 //
 

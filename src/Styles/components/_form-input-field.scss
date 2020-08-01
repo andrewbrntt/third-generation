@@ -6,6 +6,12 @@
 //Animation
 //Misc
 
+.form-input-field__container {
+  @include md {
+    margin-bottom: 2.5rem;
+  }
+}
+
 .form-input-field__input {
   //Box Model
   width: 100%;
@@ -20,10 +26,13 @@
   padding: 0.5625rem 0 2.3rem;
 
   //Typography
-  color: $primary;
   font-weight: 600;
   font-size: 1rem;
   text-align: left;
+
+  @include md {
+    font-size: 1.5rem;
+  }
 }
 
 .form-input-field__text-area {

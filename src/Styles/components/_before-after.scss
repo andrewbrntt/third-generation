@@ -7,9 +7,15 @@
 //Misc
 
 //Before After
-.before-after-set--margin {
-  margin-bottom: 1.875rem;
-}
+//.before-after-set--margin {
+//  margin-right: 0.5rem;
+//  margin-bottom: 1.875rem;
+//  margin-left: 0.5rem;
+//
+//  @include md {
+//    margin-bottom: 50px;
+//  }
+//}
 
 .before-after-container {
   display: flex;
@@ -18,11 +24,26 @@
   justify-content: center;
 }
 
+.before-after-container > div:not(:last-child) {
+  margin-right: 0.5rem;
+  margin-bottom: 1.875rem;
+  margin-left: 0.5rem;
+
+  @include md {
+    margin-bottom: 50px;
+  }
+}
+
 .before-after__item {
   //Box Model
   display: inline-block;
   width: 9.375rem;
   height: 9.375rem;
+
+  @include md {
+    width: 21.875rem;
+    height: 21.25rem;
+  }
 }
 
 .before-after__img {
@@ -38,5 +59,9 @@
 
   //Typography
   font-size: 1.25rem;
+
+  @include md {
+    font-size: 28px;
+  }
 }
 

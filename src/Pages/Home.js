@@ -31,7 +31,7 @@ const Home = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Our Services'>
-        <div className='default-text home__our-services-p-container'>
+        <div className='default-text home__our-services-p-container--margin padding-x-standard'>
           <p>
             Whatever your home needs. Third Generation Construction can help.
           </p>
@@ -52,11 +52,7 @@ const Home = () => {
           </div>
         </div>
       </BodySection>
-      <BodySection
-        linkText='About Us'
-        styleClasses='background-color-primary color-white'
-        sectionTitle='About Us'
-      >
+      <BodySection linkText='About Us' styleClasses='background-color-primary color-white' sectionTitle='About Us'>
         <DecorativeImage className='home__about-us--img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
@@ -67,19 +63,21 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkText='View Gallery' paddingXRem='0.25' styleClasses='color-primary' sectionTitle='Our Work'>
+      <BodySection linkText='View Gallery' styleClasses='color-primary' sectionTitle='Our Work'>
+        <div className='body-section__p-container padding-x-standard'>
         <p>
           We offer a personal experience for each customer by ensuring every project is unique.
         </p>
-        <p className='p--top-spacing p--bottom-margin-40'>
+        <p className='p--top-spacing'>
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
+        </div>
         <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
-      <BodySection paddingXRem='0.5' styleClasses='background-color-primary color-white' sectionTitle='Contact Us'>
-        <ContactForm formFieldsData={formFieldsData}/>
+      <BodySection styleClasses='padding-x-standard background-color-primary color-white' sectionTitle='Contact Us'>
+        <ContactForm formStyleClasses='color-white' formFieldsData={formFieldsData}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary padding-x-standard' sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <ReviewSitesSection reviewSites={reviewSites}/>

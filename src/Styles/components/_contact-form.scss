@@ -12,15 +12,15 @@
 }
 
 .contact-form__ul {
-  list-style: none;
   margin: 40px 0 0;
   padding: 0;
+  list-style: none;
 }
 
 .contact-form__btn {
   width: 120px;
   height: 50px;
-  padding: 0;
+
   background-color: $secondary;
   color: $white;
   border: none;

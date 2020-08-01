@@ -3,10 +3,8 @@ import ThemedLink from './ThemedLink'
 import PageHeader from './PageHeader'
 import IconWithLine from './IconWithLine'
 
-const BodySection = ({ sectionTitle, children, styleClasses, paddingXRem, pageHeader, iconName, linkText, linkRoute }) => {
+const BodySection = ({ sectionTitle, children, styleClasses, pageHeader, iconName, linkText, linkRoute }) => {
   const styles = {
-    paddingRight: `${paddingXRem}rem`,
-    paddingLeft: `${paddingXRem}rem`,
     paddingTop: `${pageHeader && 0}`
   }
 

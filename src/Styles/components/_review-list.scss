@@ -12,4 +12,8 @@
 
 .review-list__review--spacing {
   margin-bottom: 1.25rem;
+
+  @include md {
+    margin-bottom: 3.125rem;
+  }
 }

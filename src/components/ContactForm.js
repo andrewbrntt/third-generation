@@ -12,7 +12,7 @@ import {
 import ContactFormModal from './ContactFormModal'
 import FormErrorField from './FormErrorField'
 
-const ContactForm = () => {
+const ContactForm = ({formStyleClasses}) => {
 
   const [fullName, setFullName] = useState(formFieldsData.fullName)
   const [email, setEmail] = useState(formFieldsData.email)
@@ -86,42 +86,42 @@ const ContactForm = () => {
   }
 
   useEffect(() => {
-    const handleChange = (e) => {
-      e.preventDefault()
-      e.stopPropagation()
-
-      let targetElement = e.target
-
-      switch (targetElement.id) {
-        case fullName.id:
-          setFullName(updateFormData(fullName, targetElement.value))
-          break
-        case phone.id:
-          setPhone(updateFormData(phone, targetElement.value))
-          break
-        case email.id:
-          setEmail(updateFormData(email, targetElement.value))
-          break
-        case services.id:
-          setServices(updateFormData(services, targetElement.value))
-          break
-        case message.id:
-          setMessage(updateFormData(message, targetElement.value))
-          break
-        default:
-          return targetElement
-      }
-    }
-    Object.keys(formFieldsData).forEach(fieldData => {
-      let currentField = document.getElementById(formFieldsData[fieldData].id)
-      currentField.addEventListener('change', handleChange)
-    })
-    return () => {
-      Object.keys(formFieldsData).forEach(fieldData => {
-        let currentField = document.getElementById(formFieldsData[fieldData].id)
-        currentField.removeEventListener('change', handleChange)
-      })
-    }
+    // const handleChange = (e) => {
+    //   e.preventDefault()
+    //   e.stopPropagation()
+    //
+    //   let targetElement = e.target
+    //
+    //   switch (targetElement.id) {
+    //     case fullName.id:
+    //       setFullName(updateFormData(fullName, targetElement.value))
+    //       break
+    //     case phone.id:
+    //       setPhone(updateFormData(phone, targetElement.value))
+    //       break
+    //     case email.id:
+    //       setEmail(updateFormData(email, targetElement.value))
+    //       break
+    //     case services.id:
+    //       setServices(updateFormData(services, targetElement.value))
+    //       break
+    //     case message.id:
+    //       setMessage(updateFormData(message, targetElement.value))
+    //       break
+    //     default:
+    //       return targetElement
+    //   }
+    // }
+    // Object.keys(formFieldsData).forEach(fieldData => {
+    //   let currentField = document.getElementById(formFieldsData[fieldData].id)
+    //   currentField.addEventListener('change', handleChange)
+    // })
+    // return () => {
+    //   Object.keys(formFieldsData).forEach(fieldData => {
+    //     let currentField = document.getElementById(formFieldsData[fieldData].id)
+    //     currentField.removeEventListener('change', handleChange)
+    //   })
+    // }
   }, [email.value, fullName.value, phone.value, services.value, message.value])
 
   useEffect(() => {
@@ -147,7 +147,7 @@ const ContactForm = () => {
         formInputData={[fullName, email, phone, services, message]}
       />
       <FormErrorField errors={fieldsDataArray}/>
-      <form id='contact-form' onSubmit={handleFormSubmit}>
+      <form id='contact-form' className={formStyleClasses} onSubmit={handleFormSubmit}>
         <FormInputField fieldData={fullName}/>
         <FormInputField fieldData={phone}/>
         <FormInputField fieldData={email}/>

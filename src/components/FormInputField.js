@@ -3,7 +3,7 @@ import FormSelect from './FormSelect'
 import FormInput from './FormInput'
 import FormTextArea from './FormTextArea'
 
-const FormInputField = ({ formId, fieldData }) => {
+const FormInputField = ({ ref, formId, fieldData }) => {
 
   const getFieldElement = (fieldElementData) => {
     switch (fieldElementData.elementType) {
@@ -17,7 +17,7 @@ const FormInputField = ({ formId, fieldData }) => {
   }
 
   return (
-    <div className='form-input__container'>
+    <div className='form-input-field__container'>
       {getFieldElement(fieldData)}
       <label htmlFor={fieldData.id} style={{ display: 'block' }}
              className='form-input-field__label action-text'>

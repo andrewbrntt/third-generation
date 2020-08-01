@@ -8,14 +8,16 @@
 
 .body-section {
   //Box Model
-  padding: 3.125rem 0 2.1875rem;
+  padding-top: 3.125rem;
+  padding-bottom: 2.1875rem;
 
   //Typography
   font-family: $san-serif-font;
   text-align: center;
 
   @include md {
-    padding: 6.25rem 0 4.6875rem;
+    padding-top: 6.25rem;
+    padding-bottom: 4.6875rem;
   }
 }
 
@@ -40,4 +42,8 @@
   @include md {
     margin-top: 4.6875rem;
   }
+}
+
+.body-section__p-container {
+  margin-bottom: 6.25rem;
 }
