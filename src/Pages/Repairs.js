@@ -20,7 +20,7 @@ const Repairs = () => {
   return (
     <>
       <BodySection styleClasses='color-primary' pageHeader='Repairs' linkText='Contact Us'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Sometimes all it takes to transform your home is a few minor fixes.
         </p>
@@ -48,7 +48,7 @@ const Repairs = () => {
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work'
                    linkText='View Gallery'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>
           We're proud of our work and love showing it off.
         </p>

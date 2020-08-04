@@ -22,7 +22,7 @@ const Remodel = () => {
   return (
     <>
       <BodySection linkText='Contact Us' pageHeader='Remodel' styleClasses='remove-padding-x'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
           Construction is here.

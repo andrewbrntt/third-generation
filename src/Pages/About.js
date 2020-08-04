@@ -20,7 +20,7 @@ const About = () => {
   return (
     <>
       <BodySection linkText='Contact Us' pageHeader='About Us'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Process'>
+      <BodySection styleClasses='background-color-primary color-white test-height' sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
       </BodySection>
       <BodySection paddingXRem='0.5'>
@@ -53,7 +53,7 @@ const About = () => {
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' linkText='View Gallery'
                    sectionTitle='Our Work'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           We're proud of our work and love showing it off.
         </p>

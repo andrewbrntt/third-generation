@@ -7,7 +7,7 @@ const ThemedLink = ({ styleClasses, text, route }) => {
              className={`themed-link action-text ${styleClasses || ''}`}>
       {text}
       <span className='themed-link__hr-container'>
-        <hr className='themed-link__hr remove-margin'/>
+        <hr className='themedd-link__hr remove-margin'/>
       </span>
     </NavLink>
   )

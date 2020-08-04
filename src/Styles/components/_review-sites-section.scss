@@ -21,7 +21,13 @@
   text-align: center;
 
   @include md {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+}
+
+.review-site-svg {
+  @include md {
+    width: 12.5rem;
   }
 }

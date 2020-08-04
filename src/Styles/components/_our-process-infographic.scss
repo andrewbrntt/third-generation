@@ -6,85 +6,139 @@
 //Animation
 //Misc
 
-.our-process-infographic__step-container {
+.our-process-infographic__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  height: 1000px;
+  padding: 0 1.25rem 6.25rem;
+
+  @include md {
+    max-width: 760px;
+    //padding-right: 2rem;
+    //padding-left: 2rem;
+  }
+}
+
+.test-height {
+  height: 3000px;
+
+}
+
+.our-process-infographic__li {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  text-align: center;
   list-style: none;
+}
+
+.our-process-infographic__step-container {
+width: 100%;
+}
+
+.our-process-infographic__step-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .our-process-infographic__step {
   display: flex;
   align-items: center;
-  margin: -0.3125rem 0.625rem 0;
+  width: 100%;
+
+  ////margin: -0.3125rem 0.625rem 0;
+  //
+  //@include md {
+  //}
 }
+
+.our-process-infographic__step--left {
+  justify-content: flex-start;
+}
+
 
 .our-process-infographic__step--right {
   justify-content: flex-end;
-}
-
-.our-process-infographic__circle {
-  font-size: 5.3125rem;
-}
-
-.our-process-infographic__circle--margin-left {
-  margin-left: 0.625rem;
-}
-
-.our-process-infographic__circle--margin-right {
-  margin-right: 0.625rem;
-}
-
-.our-process-infographic__icon {
-  font-size: 3.4375rem;
 }
 
 .our-process-infographic__text-container {
   width: 11.25rem;
   font-size: 1.875rem;
   font-family: $san-serif-font;
+
+  @include md {
+    width: 100%;
+    font-size: 40px;
+  }
 }
 
 .our-process-infographic__line-left-bottom,
 .our-process-infographic__line-right-bottom,
 .our-process-infographic__line-div-right,
 .our-process-infographic__line-div-left {
-  min-width: 10.9375rem;
+  //width: 100%;
   height: 3rem;
-  margin: 0 4.375rem;
+  margin: 0;
 }
 
 .our-process-infographic__line-left-bottom,
 .our-process-infographic__line-right-bottom {
-  margin-top: -0.3125rem;
-  border-bottom: 0.25rem solid $white;
+  //margin-top: -0.3125rem;
+  //border-bottom: 0.25rem solid $white;
+  //border: 0.25rem solid $white;
+
 }
 
-
 .our-process-infographic__line-left-bottom {
-  border-left: 0.25rem solid $white;
+  //border-left: 0.25rem solid $white;
+  border: 0.25rem solid $white;
 }
 
 .our-process-infographic__line-right-bottom {
-  border-right: 0.25rem solid $white;
+  //border-right: 0.25rem solid $white;
+  border: 0.25rem solid $white;
 }
 
+.our-process-infographic__line-div--dimensions {
+  margin-right: 48px;
+  margin-left: 48px;
+}
+
+
 .our-process-infographic__line-div-right {
-  margin-top: 0;
-  border-right: 0.25rem solid $white;
+  //margin-top: 0;
+  //border-right: 0.25rem solid $white;
+  border: 0.25rem solid $white;
 }
 
 .our-process-infographic__line-div-left {
-  margin-top: 0;
+  //margin-top: 0;
   border-left: 0.25rem solid $white;
+  //border: 0.25rem solid $white;
 }
 
+// Icons
 
-.our-process-infographic__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 6.25rem;
+.our-process-infographic__circle {
+  font-size: 5.3125rem;
+
+  @include md {
+    font-size: 9rem;
+    width: auto;
+  }
 }
+
+span > [data-icon='phone-alt'].our-process-infographic__icon {
+  font-size: 3.4375rem;
+
+  @include md {
+    left: 15px;
+    font-size: 6rem;
+  }
+}
+
+//#main-content > section.body-section.default-text.background-color-primary.color-white.test-height > ol > li > div > div.our-process-infographic__step > span > svg.svg-inline--fa.fa-phone-alt.fa-w-16.color-white.our-process-infographic__icon

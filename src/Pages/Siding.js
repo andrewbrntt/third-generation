@@ -19,7 +19,7 @@ const Siding = () => {
   return (
     <>
       <BodySection pageHeader='Siding' linkText='Contact Us'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>Durable siding and energy-efficient doors and windows are all part of what makes your home beautiful.</p>
         <p className='p--top-spacing'>
           Third Generation Construction is here to help increase your curb appeal and secure your home.
@@ -51,7 +51,7 @@ const Siding = () => {
         </p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work' linkText='View Gallery'>
-        <DecorativeImage className='remodel__hero--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>
           We're proud of our work and love showing it off.
         </p>
