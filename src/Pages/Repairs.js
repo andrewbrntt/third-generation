@@ -32,14 +32,14 @@ const Repairs = () => {
         </p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white' iconName={Tools} sectionTitle='Free Consultation'
-                   paddingXRem='0.5' linkText='Contact Us'>
+                   linkText='Contact Us'>
         <p>You have questions.</p>
         <p className='p--top-spacing'>We have answers.</p>
         <p className='p--top-spacing'>
           Schedule a free consultation and let us help you turn your current house into the home you're dreaming of.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary' linkText='FAQ' paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary' linkText='FAQ'>
         <p>
           Need to do more research before committing?
         </p>
@@ -56,7 +56,7 @@ const Repairs = () => {
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary' sectionTitle='Our Suppliers' paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary' sectionTitle='Our Suppliers'>
         <p>
           We're proud to be local and support local.
         </p>
@@ -66,7 +66,7 @@ const Repairs = () => {
         </p>
         <VendorSection vendors={vendors}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='1'/>
       </BodySection>
     </>

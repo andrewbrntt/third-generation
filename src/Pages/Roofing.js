@@ -26,7 +26,7 @@ const Roofing = () => {
 
   return (
     <>
-      <BodySection pageHeader='Roofing' linkText='Contact Us'>
+      <BodySection pageHeader='Roofing' linkText='Contact Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
@@ -47,7 +47,7 @@ const Roofing = () => {
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection sectionTitle='Materials' paddingXRem='0.5' styleClasses='color-primary'>
+      <BodySection sectionTitle='Materials' styleClasses='color-primary padding-x-standard'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>
@@ -59,7 +59,7 @@ const Roofing = () => {
           <VendorSection vendors={vendors}/>
         </div>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' sectionTitle='Reviews' paddingXRem='0.5'
+      <BodySection styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Reviews'
                    linkText='Reviews'>
         <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>

@@ -9,7 +9,7 @@
 .review__container {
   //Box Model
   padding: 0.5rem;
-  border: 1px solid $secondary;
+  border: 0.0625rem solid $secondary;
 }
 
 .review__name {
@@ -40,8 +40,8 @@
 
 .hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   overflow: hidden;
   white-space: nowrap;
   clip: rect(0 0 0 0);

@@ -18,7 +18,7 @@ const Siding = () => {
 
   return (
     <>
-      <BodySection pageHeader='Siding' linkText='Contact Us'>
+      <BodySection styleClasses='color-primary padding-x-standard' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>Durable siding and energy-efficient doors and windows are all part of what makes your home beautiful.</p>
         <p className='p--top-spacing'>
@@ -28,7 +28,7 @@ const Siding = () => {
           Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
         </p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' paddingXRem='0.5' sectionTitle='Pros to Siding'
+      <BodySection styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
         <p>
           Replacing your siding has a number of benefits, including increase the value of your home.
@@ -41,7 +41,7 @@ const Siding = () => {
           with our team today.</p>
         <SidingInfographic/>
       </BodySection>
-      <BodySection styleClasses='color-primary' paddingXRem='0.5' sectionTitle='Outlast the Elements' linkText='FAQ'>
+      <BodySection styleClasses='color-primary' sectionTitle='Outlast the Elements' linkText='FAQ'>
         <p>
           Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County
           homes.
@@ -59,7 +59,7 @@ const Siding = () => {
           Let 3RD Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary' sectionTitle='Materials' paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary' sectionTitle='Materials'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>

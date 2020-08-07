@@ -22,7 +22,7 @@ const OurWork = () => {
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
         <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
     </>

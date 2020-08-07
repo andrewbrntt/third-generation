@@ -17,6 +17,7 @@ import OurWork from './Pages/OurWork'
 import Reviews from './Pages/Reviews'
 import EmergencyService from './Pages/EmergencyService'
 import Services from './Pages/Services'
+import Test from './Pages/Test'
 
 fontAwesomeLibrary()
 
@@ -59,6 +60,9 @@ function App () {
           </Route>
           <Route path='/emergency-service'>
             <EmergencyService/>
+          </Route>
+          <Route path='/test'>
+            <Test/>
           </Route>
           <Route path='/'>
             <Home/>

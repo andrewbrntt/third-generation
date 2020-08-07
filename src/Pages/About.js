@@ -12,14 +12,14 @@ const About = () => {
   const stepList = [
     { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
     { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection'},
-    { icon: ['far', 'file-contract'], text: 'Sign Contract', srText: 'step 3 sign contract' },
+    { icon: ['far', 'file-signature'], text: 'Sign Contract', srText: 'step 3 sign contract' },
     { icon: ['far', 'hammer'], text: 'Labor', srText: 'step 4 labor starts' },
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
   ]
 
   return (
     <>
-      <BodySection linkText='Contact Us' pageHeader='About Us'>
+      <BodySection linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
@@ -40,7 +40,7 @@ const About = () => {
       <BodySection styleClasses='background-color-primary color-white test-height' sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
       </BodySection>
-      <BodySection paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary padding-x-standard'>
         <p>
           Our work begins and ends with customer satisfaction as our services are customizable to each project.
         </p>
@@ -62,7 +62,7 @@ const About = () => {
           your dreams.
         </p>
       </BodySection>
-      <BodySection sectionTitle='Reviews' styleClasses='color-primary' paddingXRem='0.5'>
+      <BodySection sectionTitle='Reviews' styleClasses='color-primary padding-x-standard'>
         <ReviewList randomCount='1'/>
       </BodySection>
     </>

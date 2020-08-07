@@ -15,7 +15,7 @@ const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClos
           <FontAwesomeIcon className='contact-form__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
-      <BodySection paddingXRem='0.5' sectionTitle='Verify Info'>
+      <BodySection sectionTitle='Verify Info'>
         <span className='default-text'>Please ensure the information is correct before submitting</span>
         <ul className='contact-form__ul'>
           {formInputData.map(element => {

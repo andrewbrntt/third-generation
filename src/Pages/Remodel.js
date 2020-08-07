@@ -21,7 +21,7 @@ const vendors = [
 const Remodel = () => {
   return (
     <>
-      <BodySection linkText='Contact Us' pageHeader='Remodel' styleClasses='remove-padding-x'>
+      <BodySection linkText='Contact Us' pageHeader='Remodel' styleClasses='remove-padding-x color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
@@ -44,9 +44,10 @@ const Remodel = () => {
           Schedule a free consultation and let us help you turn your current house into the home you're dreaming of.
         </p>
       </BodySection>
-      <BodySection linkText='FAQ' styleClasses='color-primary'>
-        <p>Still need to do a little more research before committing?</p>
-        <p className='p--top-spacing'>No problem. Check out our Home Remodel FAQ today.</p>
+      <BodySection sectionTitle='24-Hour Emergency Service' linkText='Contact Us' styleClasses='color-primary padding-x-standard'>
+        <p>Life happens.</p>
+        <p className='p--top-spacing'> Third Generation Construction is here.</p>
+        <p className='p--top-spacing'>We are available 24/7 to help you fix whatever goes wrong in your home.</p>
       </BodySection>
       <BodySection styleClasses='background-color-primary color-white'
                    sectionTitle='Our Work'
@@ -54,7 +55,8 @@ const Remodel = () => {
         <p className='padding-x-standard'>
           We're proud of our work and love showing it off.
         </p>
-        <p className='p--top-spacing p--bottom-margin-40 padding-x-standard'>Let Third Generation Construction transform your
+        <p className='p--top-spacing p--bottom-margin-40 padding-x-standard'>Let Third Generation Construction transform
+          your
           current
           space into the home of your dreams.</p>
         <BeforeAfterGallerySection galleryImages={galleryImages}/>

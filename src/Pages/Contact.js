@@ -6,7 +6,7 @@ import { formFieldsData } from '../helpers/mockData'
 const Contact = () => {
 
   return (
-    <BodySection pageHeader='Contact Us' paddingXRem='1.25'>
+    <BodySection pageHeader='Contact Us'>
       <ContactForm formFieldsData={formFieldsData}/>
     </BodySection>
   )

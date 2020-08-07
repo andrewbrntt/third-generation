@@ -24,10 +24,10 @@ const EmergencyService = () => {
           Let 3RD Generation Construction transform your current space into the home of your dreams.</p>
         <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' paddingXRem='0.5'>
+      <BodySection linkText='Reviews' styleClasses='color-primary'>
         <ReviewList randomCount='1'/>
       </BodySection>
-      <BodySection styleClasses='color-primary' paddingXRem='0.5'>
+      <BodySection styleClasses='color-primary'>
         <p>
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.

@@ -12,14 +12,14 @@
 }
 
 .contact-form__ul {
-  margin: 40px 0 0;
+  margin: 2.5rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .contact-form__btn {
-  width: 120px;
-  height: 50px;
+  width: 7.5rem;
+  height: 3.125rem;
 
   background-color: $secondary;
   color: $white;
@@ -30,5 +30,5 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 120px;
+  height: 7.5rem;
 }

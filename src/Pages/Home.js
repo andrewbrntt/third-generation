@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </BodySection>
       <BodySection linkText='About Us' styleClasses='background-color-primary color-white' sectionTitle='About Us'>
-        <DecorativeImage className='home__about-us--img' src={AboutImage}/>
+        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
