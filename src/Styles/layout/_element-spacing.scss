@@ -14,6 +14,13 @@
   margin-bottom: 2.5rem;
 }
 
+.p--bottom-margin-100 {
+  @include md {
+    margin-bottom: 6.25rem;
+  }
+}
+
+
 .padding-x-standard {
   padding-right: 0.5rem;
   padding-left: 0.5rem;

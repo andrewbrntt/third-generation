@@ -1,0 +1,113 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.siding-icon-container-home {
+  justify-self: center;
+  width: 8.5rem;
+  height: 6.625rem;
+
+  @include md {
+    width: 16rem;
+    height: 15rem;
+  }
+}
+
+.siding-icon--justify-self {
+  justify-self: center;
+  padding: 3.125rem 0;
+}
+
+// Beautify Exterior Icon
+.siding-infographic__beautify-exterior-icon {
+  font-size: 6.25rem;
+
+  @include md {
+    font-size: 13.75rem;
+  }
+}
+
+.siding-icon-stars {
+  color: $secondary;
+  font-size: 2.8125rem;
+
+  @include md {
+    font-size: 6.25rem;
+  }
+}
+
+.protect-structural-integrity__fa-home-icon {
+  font-size: 6.25rem;
+
+  @include md {
+    font-size: 11.875rem;
+  }
+}
+
+.beautify-exterior__fa-home-icon {
+  font-size: 6.25rem;
+
+  @include md {
+    font-size: 15.625rem;
+  }
+}
+
+//Lower Utility Icon
+.lower-utility-cost__icon-container {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  font-size: 7.5rem;
+
+  @include md {
+    font-size: 14.375rem;
+  }
+}
+
+//Lower Maintenance Icon
+.lower-maintenance-cost__icon-container {
+  width: 100%;
+  height: 100%;
+}
+
+.lower-maintenance-cost__icon {
+  align-self: center;
+}
+
+.lower-maintenance-cost__icon > img {
+  width: 6.875rem;
+  height: 6.875rem;
+
+  @include md {
+    width: 14.375rem;
+    height: 14.375rem;
+  }
+}
+
+//Protect Structural Integrity Icon
+.protect-structural-integrity__icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+}
+
+.protect-structural-integrity__icon-weather-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5625rem;
+
+  @include md {
+    font-size: 3.25rem;
+  }
+}
+
+.protect-structural-integrity__icon-weather {
+  margin-right: 0.3125rem;
+  margin-bottom: 0.625rem;
+}

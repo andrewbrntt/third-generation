@@ -16,7 +16,7 @@ import certainteedSidingLogo from '../assets/vendor-assets/certainteed/siding-ce
 const Roofing = () => {
 
   const vendors = [
-    { logo: owensCorningLogo, altText: 'Carter Lumber Logo' },
+    { logo: owensCorningLogo, altText: 'Owens Corning Logo' },
     { logo: JamesHardieLogo, altText: 'James Hardie Siding Logo' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
     { logo: alsideLogo, altText: 'Alside Siding Logo' },
