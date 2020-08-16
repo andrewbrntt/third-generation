@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import shortId from 'shortid'
 import MobileNavigationButton from './MobileNavigationButton'
@@ -28,7 +28,6 @@ const MobileNavigationMenu = () => {
   ]
 
   const [navIsOpen, setNavIsOpen] = useState(false)
-  const mobileToggleButtonRef = useRef(null)
   let location = useLocation()
 
   const toggleMobileNav = (e) => {
@@ -74,7 +73,6 @@ const MobileNavigationMenu = () => {
       <div className='header'>
         <MobileNavigationButton
           navIsOpen={navIsOpen}
-          ref={mobileToggleButtonRef}
           toggleNavMenu={toggleMobileNav}
           styleClasses='header__mobile-navigation nav-button'
         />

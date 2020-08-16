@@ -2,19 +2,17 @@ import React from 'react'
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import Tools from '../assets/icon-tools.svg'
-import CaterLogo from '../assets/vendor-assets/carter/carterlumber.png'
-import GAFLogo from '../assets/vendor-assets/gaf/gaf-logo.png'
-import AlliedLogo from '../assets/vendor-assets/allied/allied-logo.png'
 import VendorSection from '../components/VendorSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
+import {carterLogo, gafLogo, alliedLogo} from '../helpers/vendorAssetLibrary'
 
 const Repairs = () => {
 
   const vendors = [
-    { logo: CaterLogo, altText: 'Carter Lumber Logo' },
-    { logo: GAFLogo, altText: 'GAF Roofing Shingles and Materials Logo' },
-    { logo: AlliedLogo, altText: 'Allied Roofing Supply Company Logo' }
+    { logo: carterLogo, altText: 'Carter Lumber Logo' },
+    { logo: gafLogo, altText: 'GAF Roofing Shingles and Materials Logo' },
+    { logo: alliedLogo, altText: 'Allied Roofing Supply Company Logo' }
   ]
 
   return (

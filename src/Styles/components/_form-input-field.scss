@@ -35,7 +35,11 @@
   }
 }
 
+.form-input-field__error {
+  border: 0.125rem solid $red;
+}
+
 .form-input-field__text-area {
-  width: 100%;
+  width: 98%;
   min-height: 9.375rem;
 }

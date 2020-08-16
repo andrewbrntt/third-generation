@@ -6,18 +6,19 @@ import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
 import { reviewSites } from '../helpers/mockData'
 import AboutImage from '../assets/group-people.jpg'
-import owensCorningLogo from '../assets/vendor-assets/owens-corning/owens-corning.png'
-import JamesHardieLogo from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo.png'
-import royalSidingLogo from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color.png'
-import alsideLogo from '../assets/vendor-assets/alside/alside.png'
-import firestoneLogo from '../assets/vendor-assets/firestone/firestone_logo.png'
-import certainteedSidingLogo from '../assets/vendor-assets/certainteed/siding-certainteed-logo.png'
-
+import {
+  alsideLogo,
+  certainteedSidingLogo,
+  firestoneLogo,
+  jamesHardieLogo,
+  owensCorningLogo,
+  royalSidingLogo
+} from '../helpers/vendorAssetLibrary'
 const Roofing = () => {
 
   const vendors = [
     { logo: owensCorningLogo, altText: 'Owens Corning Logo' },
-    { logo: JamesHardieLogo, altText: 'James Hardie Siding Logo' },
+    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
     { logo: alsideLogo, altText: 'Alside Siding Logo' },
     { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'roofing__firestone-logo' },

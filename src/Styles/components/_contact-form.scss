@@ -18,17 +18,18 @@
 }
 
 .contact-form__btn {
-  width: 7.5rem;
+  min-width: 7.5rem;
   height: 3.125rem;
 
-  background-color: $secondary;
   color: $white;
-  border: none;
+  text-align: center;
+  background-color: $secondary;
+  border-style: none;
 }
 
 .contact-form__bottom-section {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   height: 7.5rem;
 }

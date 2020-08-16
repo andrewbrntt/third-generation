@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import FormInputField from './FormInputField'
 import ThemedButton from './ThemedButton'
+import ContactFormModal from './ContactFormModal'
+import FormErrorField from './FormErrorField'
 import { formFieldsData } from '../helpers/mockData'
 import {
   validateEmail,
@@ -9,154 +11,133 @@ import {
   validatePhoneNumber,
   validateService
 } from '../helpers/formValidation'
-import ContactFormModal from './ContactFormModal'
-import FormErrorField from './FormErrorField'
+import BodySection from './BodySection'
 
-const ContactForm = ({formStyleClasses}) => {
+const ContactForm = ({ formStyleClasses }) => {
 
   const [fullName, setFullName] = useState(formFieldsData.fullName)
   const [email, setEmail] = useState(formFieldsData.email)
   const [phone, setPhone] = useState(formFieldsData.phone)
   const [services, setServices] = useState(formFieldsData.services)
   const [message, setMessage] = useState(formFieldsData.message)
-  const [fieldsDataArray, setFieldsDataArray] = useState([email, fullName, phone, services, message])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  function updateFormData (formData, newValue) {
-    let clone = Object.assign({}, formData)
-    return Object.assign({}, clone, { value: newValue })
-  }
+  const [fieldsDataArray, setFieldsDataArray] = useState([])
 
-  const addErrorProperties = (fieldData) => {
-    switch (fieldData.name) {
-      case 'full-name':
-        let fullNameClone = { ...fieldData }
-        fullNameClone.errorMessage = `${fullNameClone.value || ''} can only contain letters and spaces`
-        fullNameClone.hasError = !validateFullName(fullNameClone.value)
-        return fullNameClone
-      case 'email':
-        let emailClone = { ...fieldData }
-        emailClone.errorMessage = `${emailClone.value || ''} must be formatted as name@domain.com`
-        emailClone.hasError = !validateEmail(emailClone.value)
-        return emailClone
-      case 'phone':
-        let phoneClone = { ...fieldData }
-        phoneClone.errorMessage = `${phoneClone.value || ''} can only contain parentheses, numbers and dashes`
-        phoneClone.hasError = !validatePhoneNumber(phoneClone.value)
-        return phoneClone
-      case 'services':
-        let servicesClone = { ...fieldData }
-        servicesClone.errorMessage = `You must select a type of service`
-        servicesClone.hasError = !validateService(servicesClone.value)
-        return servicesClone
-      case 'message':
-        let messageClone = { ...fieldData }
-        messageClone.errorMessage = `Your message cannot contain HTML tags`
-        messageClone.hasError = !validateMessage(messageClone.value)
-        return messageClone
-      default:
-        return
-    }
+  const handleReviewModalSubmit = (e) => {
+    e.preventDefault()
+    toggleModal()
+    validateForm()
   }
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    e.stopPropagation()
+    toggleModal()
+  }
 
+  const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
   }
 
-  const handleModalSubmit = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const handleFormValueChange = (currentElementData, newValue) => {
+    let newElementData = Object.assign({}, currentElementData, { value: newValue.value })
 
-    validateForm()
-  }
-
-  const handleClose = () => {
-    setIsModalOpen(!isModalOpen)
+    switch (currentElementData.name) {
+      case 'full-name':
+        setFullName(newElementData)
+        break
+      case 'email':
+        setEmail(newElementData)
+        break
+      case 'phone':
+        setPhone(newElementData)
+        break
+      case 'message':
+        setMessage(newElementData)
+        break
+      case 'services':
+        setServices(newElementData)
+        break
+      default:
+        break
+    }
   }
 
   const validateForm = () => {
-    const updatedFieldsDataArray = fieldsDataArray.map(fieldData => {
-      const we = addErrorProperties(fieldData)
-      return we
-    })
-    setFieldsDataArray(updatedFieldsDataArray)
+    let validationArray = []
+
+    if (!validateFullName(fullName.value)) {
+      let updatedName = { ...fullName, hasError: true, errorMessage: 'Full Name: must only contain letters' }
+      setFullName(updatedName)
+      validationArray.push(updatedName)
+    }
+
+    if (!validateEmail(email.value)) {
+      let updatedEmail = {
+        ...email,
+        hasError: true,
+        errorMessage: `Email: ${email.value || ''} must be formatted as name@domain.com`
+      }
+      setEmail(updatedEmail)
+      validationArray.push(updatedEmail)
+    }
+
+    if (!validatePhoneNumber(phone.value)) {
+      let updatedPhone = {
+        ...phone,
+        hasError: true,
+        errorMessage: `Phone Number: ${phone.value || ''} can only contain parentheses, numbers and dashes`
+      }
+      setPhone(updatedPhone)
+      validationArray.push(updatedPhone)
+    }
+
+    if (!validateService(services.value)) {
+      let updatedService = { ...services, hasError: true, errorMessage: 'You must select a type of service' }
+      setServices(updatedService)
+      validationArray.push(updatedService)
+    }
+
+    if (!validateMessage(message.value)) {
+      let updatedMessage = { ...message, hasError: true, errorMessage: 'Your message cannot contain HTML tags' }
+      setMessage(updatedMessage)
+      validationArray.push(updatedMessage)
+    }
+
+    setFieldsDataArray(validationArray)
   }
 
   useEffect(() => {
-    // const handleChange = (e) => {
-    //   e.preventDefault()
-    //   e.stopPropagation()
-    //
-    //   let targetElement = e.target
-    //
-    //   switch (targetElement.id) {
-    //     case fullName.id:
-    //       setFullName(updateFormData(fullName, targetElement.value))
-    //       break
-    //     case phone.id:
-    //       setPhone(updateFormData(phone, targetElement.value))
-    //       break
-    //     case email.id:
-    //       setEmail(updateFormData(email, targetElement.value))
-    //       break
-    //     case services.id:
-    //       setServices(updateFormData(services, targetElement.value))
-    //       break
-    //     case message.id:
-    //       setMessage(updateFormData(message, targetElement.value))
-    //       break
-    //     default:
-    //       return targetElement
-    //   }
-    // }
-    // Object.keys(formFieldsData).forEach(fieldData => {
-    //   let currentField = document.getElementById(formFieldsData[fieldData].id)
-    //   currentField.addEventListener('change', handleChange)
-    // })
-    // return () => {
-    //   Object.keys(formFieldsData).forEach(fieldData => {
-    //     let currentField = document.getElementById(formFieldsData[fieldData].id)
-    //     currentField.removeEventListener('change', handleChange)
-    //   })
-    // }
-  }, [email.value, fullName.value, phone.value, services.value, message.value])
+    if (isModalOpen) {
+      const body = document.getElementsByTagName('body')[0]
+      console.log(body)
+      body.setAttribute('style', 'position: fixed;')
+    } else {
+      const body = document.getElementsByTagName('body')[0]
+      body.setAttribute('style', 'position: initial;')
 
-  useEffect(() => {
-    const checkForSuccess = (fieldsDataArray) => {
-      if (!(fieldsDataArray[0]).hasError &&
-        !fieldsDataArray[1].hasError && !fieldsDataArray[2].hasError && !fieldsDataArray[3].hasError && !fieldsDataArray[4].hasError) {
-        console.log('go to where ever')
-        return false
-      }
-      console.log('Errors')
     }
-    console.log('in effect', formFieldsData)
-    checkForSuccess(fieldsDataArray)
-
-  }, [fieldsDataArray[0].hasError, fieldsDataArray[1].hasError, fieldsDataArray[3].hasError, fieldsDataArray[4].hasError])
+  }, [isModalOpen])
 
   return (
     <>
       <ContactFormModal
-        handleClose={handleClose}
-        handleSubmit={handleModalSubmit}
+        handleClose={toggleModal}
+        handleSubmit={handleReviewModalSubmit}
         isModalOpen={isModalOpen}
         formInputData={[fullName, email, phone, services, message]}
       />
-      <FormErrorField errors={fieldsDataArray}/>
-      <form id='contact-form' className={formStyleClasses} onSubmit={handleFormSubmit}>
-        <FormInputField fieldData={fullName}/>
-        <FormInputField fieldData={phone}/>
-        <FormInputField fieldData={email}/>
-        <FormInputField fieldData={services}/>
-        <FormInputField fieldData={message} textArea formId='contact-form'/>
-        <div className='contact-form__button--spacing'>
-          <ThemedButton type='submit' text='Submit'/>
-        </div>
-      </form>
+        {fieldsDataArray.length > 0 && <FormErrorField formFieldsData={fieldsDataArray}/>}
+        <form id='contact-form' className={formStyleClasses} onSubmit={handleFormSubmit}>
+          <FormInputField fieldData={fullName} handleStateChange={handleFormValueChange}/>
+          <FormInputField fieldData={phone} handleStateChange={handleFormValueChange}/>
+          <FormInputField fieldData={email} handleStateChange={handleFormValueChange}/>
+          <FormInputField fieldData={services} handleStateChange={handleFormValueChange}/>
+          <FormInputField fieldData={message} textArea formId='contact-form' handleStateChange={handleFormValueChange}/>
+          <div className='contact-form__button--spacing'>
+            <ThemedButton type='submit' text='Submit'/>
+          </div>
+        </form>
     </>
   )
 }

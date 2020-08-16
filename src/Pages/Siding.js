@@ -3,25 +3,24 @@ import SidingInfographic from '../components/SidingInfographic'
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
 import AboutImage from '../assets/group-people.jpg'
-import CaterLogo from '../assets/vendor-assets/carter/carterlumber.png'
-import GAFLogo from '../assets/vendor-assets/gaf/gaf-logo.png'
-import AlliedLogo from '../assets/vendor-assets/allied/allied-logo.png'
+import {
+  alsideLogo,
+  certainteedSidingLogo,
+  firestoneLogo,
+  jamesHardieLogo,
+  owensCorningLogo,
+  royalSidingLogo
+} from '../helpers/vendorAssetLibrary'
 import DecorativeImage from '../components/DecorativeImage'
-import owensCorningLogo from '../assets/vendor-assets/owens-corning/owens-corning.png'
-import JamesHardieLogo from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo.png'
-import royalSidingLogo from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color.png'
-import alsideLogo from '../assets/vendor-assets/alside/alside.png'
-import firestoneLogo from '../assets/vendor-assets/firestone/firestone_logo.png'
-import certainteedSidingLogo from '../assets/vendor-assets/certainteed/siding-certainteed-logo.png'
 
 const Siding = () => {
 
   const vendors = [
-    { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: '' },
-    { logo: JamesHardieLogo, altText: 'James Hardie Siding Logo' },
+    { logo: owensCorningLogo, altText: 'Owens Corning Logo' },
+    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
     { logo: alsideLogo, altText: 'Alside Siding Logo' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'roofing__firestone-logo' },
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
     { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo' }
   ]
 
@@ -29,7 +28,8 @@ const Siding = () => {
     <>
       <BodySection styleClasses='color-primary' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what makes your home beautiful.</p>
+        <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
+          makes your home beautiful.</p>
         <p className='p--top-spacing padding-x-standard'>
           Third Generation Construction is here to help increase your curb appeal and secure your home.
         </p>

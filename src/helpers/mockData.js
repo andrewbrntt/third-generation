@@ -8,7 +8,6 @@ import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-
 import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
 import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
 
-
 export const beforeAfterMockData = [
   { before: {src:BeforeImage, altText: 'Before image of a roof'}, after: {src: AfterImage, altText: 'After Image of a roof'}},
   { before: {src:BeforeImage, altText: 'Before image of siding'}, after: {src:AfterImage, altText: 'After Image of siding'}},
@@ -45,10 +44,11 @@ const fullName = {
   labelText: 'Full Name',
   type: 'text',
   isRequired: true,
-  value: 'Eat My Cock',
+  value: '345',
   hasError: false,
   errorMessage: ''
 }
+
 const email = {
   id: 'contact-form__email',
   name: 'email',
@@ -59,16 +59,18 @@ const email = {
   hasError: false,
   errorMessage: ''
 }
+
 const phone = {
   id: 'contact-form__phone',
   name: 'phone',
-  labelText: 'Phone (XXX-XXX-XXXX)',
+  labelText: 'Phone',
   type: 'tel',
   isRequired: true,
-  value: '1234',
+  value: 'dfsg',
   hasError: false,
   errorMessage: ''
 }
+
 const message = {
   id: 'contact-form__message',
   name: 'message',
@@ -80,6 +82,7 @@ const message = {
   value: '',
   errorMessage: ''
 }
+
 const services = {
   id: 'contact-form__services',
   name: 'services',

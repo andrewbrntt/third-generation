@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Modal from './Modal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import BodySection from './BodySection'
@@ -7,11 +7,24 @@ import ModalCard from './ModalCard'
 
 const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClose }) => {
 
+  const modalCloseButtonRef = useRef(null)
+
+  const handleSubmitButtonBlur = () => {
+    modalCloseButtonRef.current.focus()
+  }
+
+  useEffect(() => {
+    if(isModalOpen) {
+      modalCloseButtonRef.current.focus()
+    }
+
+  }, [isModalOpen])
+
   return (
     <Modal
       styleClasses={`contact-form__modal color-primary ${isModalOpen ? 'contact-form-modal--display-block' : 'contact-form-modal--display-none'}`}>
       <div className='padding-x-standard contact-form__modal-close-btn-container'>
-        <button className='contact-form__modal-close-btn' onClick={handleClose}>
+        <button ref={modalCloseButtonRef} className='contact-form__modal-close-btn' onClick={handleClose}>
           <FontAwesomeIcon className='contact-form__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
@@ -28,7 +41,7 @@ const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClos
         </ul>
         <section className='contact-form__bottom-section'>
           <button className='contact-form__btn action-text' onClick={handleClose}>Edit</button>
-          <button className='contact-form__btn action-text' onClick={handleSubmit}>Submit</button>
+          <button onBlur={handleSubmitButtonBlur} className='contact-form__btn action-text' onClick={handleSubmit}>Submit</button>
         </section>
       </BodySection>
     </Modal>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormTextArea = ({ formId, fieldElementData }) => {
+const FormTextArea = ({ formId, fieldElementData, handleOnChange }) => {
   return (
     <textarea
       id={fieldElementData.id}
@@ -8,6 +8,7 @@ const FormTextArea = ({ formId, fieldElementData }) => {
       className='form-input-field__text-area'
       form={formId}
       name={fieldElementData.name}
+      onChange={ e => handleOnChange(fieldElementData, e.target)}
     >{}</textarea>
   )
 }

@@ -1,29 +1,30 @@
-import React, {forwardRef} from 'react'
+import React from 'react'
 import shortId from 'shortid'
 
 const FormErrorField = ({ formFieldsData }) => {
 
   const errorListItems = (errors) => {
-    console.log('error list', errors)
-    // return errors.map(error => {
-    //     return error.hasError && (
-    //       <li key={shortId.generate()} className='form-error-field__li'>
-    //         {error.message}
-    //       </li>
-    //     )
-    //   }
-    // )
+    return errors.map(error => {
+        return (<li key={shortId.generate()} className='form-error-field__li'>
+          {error.errorMessage}
+        </li>)
+
+      }
+    )
   }
 
-  return (
-    <div className='form-error-field__container color-primary'>
-      <span className='form-error-field__text'>There was an error your submission:</span>
-      Poop
-      <ul className='form-error-field__ul'>
-        {errorListItems(formFieldsData)}
-      </ul>
-    </div>
-  )
+  const HasError = () => {
+    return (
+      <div className='form-error-field__container color-primary' role='alert' aria-atomic='true'>
+        <span className='form-error-field__text'>There was an error your submission:</span>
+        <ul className='form-error-field__ul'>
+          {errorListItems(formFieldsData)}
+        </ul>
+      </div>
+    )
+  }
+
+  return formFieldsData.length > 0 ? <HasError/> : ''
 }
 
 export default FormErrorField

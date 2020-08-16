@@ -2,13 +2,12 @@ import React, {forwardRef} from 'react'
 import HamburgerMenuIcon from './HamburgerMenuIcon'
 import ReactDOM from 'react-dom'
 
-const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forwardedRef) => {
+const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }) => {
 
   return (
     <button
       className={`mobile-navigation__toggle-button ${styleClasses}`}
       aria-haspopup='menu'
-      ref={forwardedRef}
       aria-expanded={navIsOpen}
       onClick={toggleNavMenu}>
       <HamburgerMenuIcon/>
@@ -16,6 +15,5 @@ const MobileNavigationButton = ({ styleClasses, toggleNavMenu, navIsOpen }, forw
   )
 }
 
-// noinspection JSCheckFunctionSignatures
-export default forwardRef(MobileNavigationButton)
+export default MobileNavigationButton
 
