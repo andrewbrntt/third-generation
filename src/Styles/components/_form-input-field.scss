@@ -22,6 +22,7 @@
 
 .form-input-field__label {
   //Box Model
+  display: block;
   width: 100%;
   padding: 0.5625rem 0 2.3rem;
 
@@ -35,6 +36,10 @@
   }
 }
 
+.form-input-field__label > span:first-child {
+  color: $primary;
+}
+
 .form-input-field__error {
   border: 0.125rem solid $red;
 }
@@ -42,4 +47,8 @@
 .form-input-field__text-area {
   width: 98%;
   min-height: 9.375rem;
+}
+
+.form-input-field__required-tag {
+  color: $red;
 }

@@ -1,17 +1,14 @@
 export function validateFullName(fullName) {
-  let validStr = checkStringIsValid(fullName)
-  return /^[a-zA-Z\s]+$/.test(validStr)
+  return checkStringIsValid(fullName) && /^[a-zA-Z\s]+$/.test(fullName)
 }
 
 export function validateEmail (email) {
-let validStr = checkStringIsValid(email)
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(validStr).toLowerCase());
+  return checkStringIsValid(email) && re.test(String(email).toLowerCase());
 }
 
 export function validatePhoneNumber(phoneNumber) {
-  let validStr = checkStringIsValid(phoneNumber)
-  return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(validStr)
+  return checkStringIsValid(phoneNumber) && /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(phoneNumber)
 }
 
 export function validateService(service) {
@@ -19,8 +16,12 @@ export function validateService(service) {
 }
 
 export function validateMessage(message) {
-  let validStr = checkStringIsValid(message)
-  return /^[a-zA-Z\s]+$/.test(validStr)
+   if(message.length > 0) {
+     return !hasHtml(message)
+   } else {
+     return true
+   }
+
 }
 
 function isEmpty(str) {
@@ -33,9 +34,5 @@ function hasHtml (str) {
 }
 
 function checkStringIsValid(str) {
-   if(str && !isEmpty(str) && !hasHtml(str)) {
-     return str
-   } else {
-     return ''
-   }
+   return !isEmpty(str) && !hasHtml(str)
 }

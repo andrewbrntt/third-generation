@@ -8,6 +8,8 @@ import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-
 import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
 import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
 
+//TODO: Sort this data out better because it is not all mock data anymore
+
 export const beforeAfterMockData = [
   { before: {src:BeforeImage, altText: 'Before image of a roof'}, after: {src: AfterImage, altText: 'After Image of a roof'}},
   { before: {src:BeforeImage, altText: 'Before image of siding'}, after: {src:AfterImage, altText: 'After Image of siding'}},
@@ -44,7 +46,7 @@ const fullName = {
   labelText: 'Full Name',
   type: 'text',
   isRequired: true,
-  value: '345',
+  value: '',
   hasError: false,
   errorMessage: ''
 }
@@ -52,10 +54,11 @@ const fullName = {
 const email = {
   id: 'contact-form__email',
   name: 'email',
-  labelText: 'Email (email@domain.com)',
+  labelText: 'Email',
+  inputFormat: '(email@domain.com)',
   type: 'email',
   isRequired: true,
-  value: 'hello',
+  value: '',
   hasError: false,
   errorMessage: ''
 }
@@ -63,10 +66,10 @@ const email = {
 const phone = {
   id: 'contact-form__phone',
   name: 'phone',
-  labelText: 'Phone',
+  labelText: 'Phone Number',
   type: 'tel',
   isRequired: true,
-  value: 'dfsg',
+  value: '',
   hasError: false,
   errorMessage: ''
 }
@@ -96,47 +99,9 @@ const services = {
     { value: 'siding', text: 'Siding' }
   ],
   isRequired: true,
-  value: 'remodel',
+  value: '',
   hasError: false,
   errorMessage: ''
 }
 
 export const formFieldsData = { fullName, email, phone, message, services }
-
-
-// const fullName = {
-//   id: 'contact-form__full-name',
-//   name: 'full-name',
-//   labelText: 'Full Name',
-//   type: 'text',
-//   isRequired: true,
-//   value: null
-// }
-// const email = {
-//   id: 'contact-form__email',
-//   name: 'email',
-//   labelText: 'Email (email@domain.com)',
-//   type: 'email',
-//   isRequired: true,
-//   value: null
-// }
-// const phone = {
-//   id: 'contact-form__phone',
-//   name: 'phone',
-//   labelText: 'Phone (XXX-XXX-XXXX)',
-//   type: 'tel',
-//   isRequired: true,
-//   value: null
-// }
-// const message = {
-//   id: 'contact-form__message',
-//   name: 'message',
-//   labelText: 'Message',
-//   inputType: 'text',
-//   isRequired: false,
-//   elementType: 'textarea'
-// }
-//
-// const servicesWithError = {
-//   ...services,
-// }

@@ -1,15 +1,20 @@
 import React from 'react'
 import ContactForm from '../components/ContactForm'
 import BodySection from '../components/BodySection'
-import { formFieldsData } from '../helpers/mockData'
+import ReviewSitesSection from '../components/ReviewSitesSection'
+import { reviewSites } from '../helpers/mockData'
 
 const Contact = () => {
 
   return (
     <BodySection styleClasses='padding-x-standard' pageHeader='Contact Us'>
-    <ContactForm formFieldsData={formFieldsData}/>
+      <ContactForm/>
+      <p className='contact__p'>
+        Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
+        quality of work as well as our commitment to outstanding results.
+      </p>
+      <ReviewSitesSection reviewSites={reviewSites} />
     </BodySection>
   )
 }
-
 export default Contact

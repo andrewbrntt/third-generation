@@ -9,6 +9,7 @@
 .form-error-field__ul {
   width: 100%;
   padding-left: 1.25rem;
+  word-break: break-word;
 }
 
 .form-error-field__li {
@@ -19,7 +20,7 @@
 .form-error-field__container {
   min-height: 5rem;
   margin-bottom: 2.5rem;
-  padding: 0.9375rem 0.3125rem;
+  padding: 0.9375rem;
   background-color: $beige;
   font-weight: 600;
   font-size: 1rem;

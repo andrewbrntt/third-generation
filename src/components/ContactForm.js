@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FormInputField from './FormInputField'
 import ThemedButton from './ThemedButton'
-import ContactFormModal from './ContactFormModal'
+import ContactFormReviewModal from './ContactFormReviewModal'
 import FormErrorField from './FormErrorField'
 import { formFieldsData } from '../helpers/mockData'
 import {
@@ -11,7 +11,7 @@ import {
   validatePhoneNumber,
   validateService
 } from '../helpers/formValidation'
-import BodySection from './BodySection'
+import ContactFormSuccessModal from './ContactFormSuccessModal'
 
 const ContactForm = ({ formStyleClasses }) => {
 
@@ -20,23 +20,42 @@ const ContactForm = ({ formStyleClasses }) => {
   const [phone, setPhone] = useState(formFieldsData.phone)
   const [services, setServices] = useState(formFieldsData.services)
   const [message, setMessage] = useState(formFieldsData.message)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
 
-  const [fieldsDataArray, setFieldsDataArray] = useState([])
+  const [fieldErrors, setFieldErrors] = useState([])
 
   const handleReviewModalSubmit = (e) => {
     e.preventDefault()
-    toggleModal()
-    validateForm()
+    toggleReviewModal()
+    let formErrors = validateForm()
+    if(formErrors.length === 0) {
+      toggleSuccessModal()
+      clearState()
+    } else {
+      setFieldErrors(formErrors)
+    }
+  }
+
+  const clearState = () => {
+    setFullName({...fullName, value: ''})
+    setPhone({...phone, value: ''})
+    setEmail({...email, value: ''})
+    setServices({...services, value: ''})
+    setMessage({...message, value: ''})
   }
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    toggleModal()
+    toggleReviewModal()
   }
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
+  const toggleReviewModal = () => {
+    setIsReviewModalOpen(!isReviewModalOpen)
+  }
+
+  const toggleSuccessModal = () => {
+    setIsSuccessModalOpen(!isSuccessModalOpen)
   }
 
   const handleFormValueChange = (currentElementData, newValue) => {
@@ -67,7 +86,7 @@ const ContactForm = ({ formStyleClasses }) => {
     let validationArray = []
 
     if (!validateFullName(fullName.value)) {
-      let updatedName = { ...fullName, hasError: true, errorMessage: 'Full Name: must only contain letters' }
+      let updatedName = { ...fullName, hasError: true, errorMessage: 'Full Name: must only contain letters and spaces' }
       setFullName(updatedName)
       validationArray.push(updatedName)
     }
@@ -76,7 +95,7 @@ const ContactForm = ({ formStyleClasses }) => {
       let updatedEmail = {
         ...email,
         hasError: true,
-        errorMessage: `Email: ${email.value || ''} must be formatted as name@domain.com`
+        errorMessage: `Email: "${email.value}" must be formatted as name@domain.com`
       }
       setEmail(updatedEmail)
       validationArray.push(updatedEmail)
@@ -86,7 +105,7 @@ const ContactForm = ({ formStyleClasses }) => {
       let updatedPhone = {
         ...phone,
         hasError: true,
-        errorMessage: `Phone Number: ${phone.value || ''} can only contain parentheses, numbers and dashes`
+        errorMessage: `Phone Number: "${phone.value}" can only contain parentheses, numbers and dashes`
       }
       setPhone(updatedPhone)
       validationArray.push(updatedPhone)
@@ -104,37 +123,36 @@ const ContactForm = ({ formStyleClasses }) => {
       validationArray.push(updatedMessage)
     }
 
-    setFieldsDataArray(validationArray)
+    return validationArray
   }
 
   useEffect(() => {
-    if (isModalOpen) {
+    if (isReviewModalOpen || isSuccessModalOpen) {
       const body = document.getElementsByTagName('body')[0]
-      console.log(body)
       body.setAttribute('style', 'position: fixed;')
     } else {
       const body = document.getElementsByTagName('body')[0]
       body.setAttribute('style', 'position: initial;')
-
     }
-  }, [isModalOpen])
+  }, [isReviewModalOpen, isSuccessModalOpen])
 
   return (
     <>
-      <ContactFormModal
-        handleClose={toggleModal}
+      <ContactFormReviewModal
+        handleClose={toggleReviewModal}
         handleSubmit={handleReviewModalSubmit}
-        isModalOpen={isModalOpen}
+        isModalOpen={isReviewModalOpen}
         formInputData={[fullName, email, phone, services, message]}
       />
-        {fieldsDataArray.length > 0 && <FormErrorField formFieldsData={fieldsDataArray}/>}
-        <form id='contact-form' className={formStyleClasses} onSubmit={handleFormSubmit}>
+      <ContactFormSuccessModal handleClose={toggleSuccessModal} isSuccessModalOpen={isSuccessModalOpen} />
+        {fieldErrors.length > 0 && <FormErrorField formFieldsData={fieldErrors}/>}
+        <form id='contact-form' className={`contact-form ${formStyleClasses}`} onSubmit={handleFormSubmit}>
           <FormInputField fieldData={fullName} handleStateChange={handleFormValueChange}/>
           <FormInputField fieldData={phone} handleStateChange={handleFormValueChange}/>
           <FormInputField fieldData={email} handleStateChange={handleFormValueChange}/>
           <FormInputField fieldData={services} handleStateChange={handleFormValueChange}/>
           <FormInputField fieldData={message} textArea formId='contact-form' handleStateChange={handleFormValueChange}/>
-          <div className='contact-form__button--spacing'>
+          <div className='contact-form__button-container contact-form__button--spacing'>
             <ThemedButton type='submit' text='Submit'/>
           </div>
         </form>

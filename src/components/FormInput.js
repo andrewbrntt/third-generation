@@ -9,8 +9,11 @@ const FormInput = ({ fieldElementData, handleOnChange }) => {
       type={fieldElementData.inputType}
       required={fieldElementData.isRequired}
       onChange={e => handleOnChange(fieldElementData, e.target)}
+      value={fieldElementData.value ? fieldElementData.value : ''}
     />
   )
 }
 
 export default FormInput
+
+//(567)-377-9909

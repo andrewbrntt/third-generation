@@ -6,10 +6,7 @@
 //Animation
 //Misc
 
-.contact__p {
-  margin-top: 4.5rem;
-
-  @include md {
-    font-size: 1.875rem;
-  }
+.image-gallery--display-flex {
+  display: flex;
+  align-items: center;
 }

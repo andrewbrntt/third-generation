@@ -1,13 +1,13 @@
-import React, {forwardRef} from 'react'
+import React from 'react'
 
-const Modal = ({ children, styleClasses, modalId }, myRef) => {
+const Modal = ({ children, styleClasses, modalId }) => {
   return (
-    <div ref={myRef} id={modalId} className={`w3-modal ${styleClasses || ''}`}>
-      <div className="w3-modal-content">
+    <div id={modalId} className={`w3-modal ${styleClasses || ''}`}>
+      <div className='background-color-white'>
         {children}
       </div>
     </div>
   )
 }
 
-export default forwardRef(Modal)
+export default Modal

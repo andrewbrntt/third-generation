@@ -15,7 +15,7 @@ const FormErrorField = ({ formFieldsData }) => {
 
   const HasError = () => {
     return (
-      <div className='form-error-field__container color-primary' role='alert' aria-atomic='true'>
+      <div className='form-error-field__container padding-x-standard color-red' role='alert' aria-atomic='true'>
         <span className='form-error-field__text'>There was an error your submission:</span>
         <ul className='form-error-field__ul'>
           {errorListItems(formFieldsData)}

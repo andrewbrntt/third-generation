@@ -20,7 +20,8 @@ import {
   faHouse,
   faSnowflake,
   faRaindrops,
-  faSun
+  faSun,
+  faCheckCircle
 } from '@fortawesome/pro-regular-svg-icons'
 import { faTools as duoTools } from '@fortawesome/pro-duotone-svg-icons'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
@@ -48,7 +49,8 @@ const fontAwesomeLibrary = () => {
     faSnowflake,
     faRaindrops,
     faSun,
-    faTimes
+    faTimes,
+    faCheckCircle
   )
 }
 

@@ -28,11 +28,6 @@
   }
 }
 
-
-.test-height {
-  //height: 3000px;
-}
-
 .our-process-infographic__li {
   width: 100%;
   list-style: none;
@@ -52,10 +47,10 @@
   font-family: $san-serif-font;
 
   @include md {
-    width: 100%;
-    font-size: 2.5rem;
     position: absolute;
     top: 2.6875rem;
+    width: 100%;
+    font-size: 2.5rem;
   }
 }
 
@@ -70,5 +65,3 @@
 .grid-column-3 {
   grid-column: 3;
 }
-
-// Icons

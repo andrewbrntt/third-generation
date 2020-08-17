@@ -7,6 +7,7 @@ const FormSelect = ({ fieldElementData, handleOnChange }) => {
       required={fieldElementData.isRequired}
       className='form-input-field__input'
       onChange={e => handleOnChange(fieldElementData, e.target)}
+      value={fieldElementData.value ? fieldElementData.value : ''}
     >
       <option value=''>Select Service</option>
       {fieldElementData.options.map(option => {

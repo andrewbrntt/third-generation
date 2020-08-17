@@ -5,7 +5,7 @@ import BodySection from './BodySection'
 import shortId from 'shortid'
 import ModalCard from './ModalCard'
 
-const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClose }) => {
+const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, handleClose }) => {
 
   const modalCloseButtonRef = useRef(null)
 
@@ -17,23 +17,23 @@ const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClos
     if(isModalOpen) {
       modalCloseButtonRef.current.focus()
     }
-
   }, [isModalOpen])
 
   return (
     <Modal
-      styleClasses={`contact-form__modal color-primary ${isModalOpen ? 'contact-form-modal--display-block' : 'contact-form-modal--display-none'}`}>
-      <div className='padding-x-standard contact-form__modal-close-btn-container'>
-        <button ref={modalCloseButtonRef} className='contact-form__modal-close-btn' onClick={handleClose}>
-          <FontAwesomeIcon className='contact-form__times-icon' icon={['fa', 'times']}/>
+      styleClasses={`contact-form__review-modal color-primary 
+      ${isModalOpen ? 'modal--display-block' : 'modal--display-none'}`}>
+      <div className='modal__close-btn-container'>
+        <button ref={modalCloseButtonRef} className='modal__close-btn' onClick={handleClose}>
+          <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
       <BodySection sectionTitle='Verify Info'>
-        <span className='default-text'>Please ensure the information is correct before submitting</span>
-        <ul className='contact-form__ul'>
+        <p className='default-text padding-x-standard'>Please ensure the information is correct before submitting</p>
+        <ul className='contact-form__ul padding-x-standard'>
           {formInputData.map(element => {
             return (
-              <li key={shortId.generate()} className='contact-form__modal-card-container'>
+              <li key={shortId.generate()}>
                 <ModalCard inputName={element.labelText} inputValue={element.value}/>
               </li>
             )
@@ -48,4 +48,4 @@ const ContactFormModal = ({ formInputData, isModalOpen, handleSubmit, handleClos
   )
 }
 
-export default ContactFormModal
+export default ContactFormReviewModal
