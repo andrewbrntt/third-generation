@@ -11,9 +11,9 @@ import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
 //TODO: Sort this data out better because it is not all mock data anymore
 
 export const beforeAfterMockData = [
-  { before: {src:BeforeImage, altText: 'Before image of a roof'}, after: {src: AfterImage, altText: 'After Image of a roof'}},
-  { before: {src:BeforeImage, altText: 'Before image of siding'}, after: {src:AfterImage, altText: 'After Image of siding'}},
-  { before: {src:BeforeImage, altText: 'Before image of a remodel'}, after: {src:AfterImage, altText: 'After Image of a remodel'}},
+  { before: {src:BeforeImage, altText: 'Before image of a roof', subText: 'Before'}, after: {src: AfterImage, altText: 'After Image of a roof', subText: 'After'}},
+  { before: {src:BeforeImage, altText: 'Before image of siding', subText: 'Before'}, after: {src:AfterImage, altText: 'After Image of siding', subText: 'After'}},
+  { before: {src:BeforeImage, altText: 'Before image of a remodel', subText: 'Before'}, after: {src:AfterImage, altText: 'After Image of a remodel', subText: 'After'}},
 ]
 
 export const reviewSites = [

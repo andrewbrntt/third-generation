@@ -10,7 +10,7 @@ const ContactFormSuccessModal = ({ isSuccessModalOpen, handleClose }) => {
       styleClasses={`modal-container contact-form__success-modal-container contact-form__success-modal--padding-bottom-75 color-primary 
       ${isSuccessModalOpen ? 'modal--display-block' : 'modal--display-none'}`}>
       <div className='modal__close-btn-container'>
-        <button className='modal__close-btn' onClick={handleClose}>
+        <button className='modal__close-btn background-color-white' onClick={handleClose}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>

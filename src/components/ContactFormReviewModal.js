@@ -24,7 +24,7 @@ const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, hand
       styleClasses={`contact-form__review-modal color-primary 
       ${isModalOpen ? 'modal--display-block' : 'modal--display-none'}`}>
       <div className='modal__close-btn-container'>
-        <button ref={modalCloseButtonRef} className='modal__close-btn' onClick={handleClose}>
+        <button ref={modalCloseButtonRef} className='modal__close-btn background-color-white' onClick={handleClose}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
