@@ -7,7 +7,7 @@
 //Misc
 
 .mobile-navigation__container {
-  height: 42.1875rem;
+  margin-top: 3.75rem;
   padding: 0.5rem;
 }
 
@@ -40,17 +40,9 @@
   margin-left: 2.1875rem;
 }
 
-.mobile-navigation__logo {
-  margin: 3.125rem 0 0;
-}
-
-.mobile-navigation__close-button {
-  font-size: 4.6875rem;
-  border: 0;
-}
-
-.mobile-navigation__close-button-container {
+.mobile-navigation__menu-button {
   position: absolute;
-  top: 0.625rem;
+  top: 4.75rem;
   left: 0.9375rem;
+  z-index: 1;
 }

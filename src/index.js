@@ -20,7 +20,7 @@ function ScrollToTop () {
 // noinspection JSCheckFunctionSignatures
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter forceRefresh={true}>
       <ScrollToTop/>
       <App/>
     </BrowserRouter>

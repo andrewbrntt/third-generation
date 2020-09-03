@@ -9,10 +9,6 @@ const BodyHeader = ({linkText, pageHeader, children}) => {
   const overlayContainer = useRef(null)
   const overlayDimensions = useElementDimensions(overlayContainer)
 
-
-
-  
-
   const [height, setHeight] = useState(0)
 
   useLayoutEffect(() => {

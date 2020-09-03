@@ -12,22 +12,22 @@ import Contact from './Pages/Contact'
 import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
 import Remodel from './Pages/Remodel'
-import MobileNavigationMenu from './components/MobileNavigationMenu'
 import OurWork from './Pages/OurWork'
 import Reviews from './Pages/Reviews'
 import EmergencyService from './Pages/EmergencyService'
 import Services from './Pages/Services'
 import Test from './Pages/Test'
+import Header from './components/Header'
 
 fontAwesomeLibrary()
 
 function App () {
   return (
     <>
-      <header className='background-color-primary mobile-header'>
+      <header className='background-color-primary'>
         <SkipLink/>
         <Banner/>
-        <MobileNavigationMenu styleClasses='header__mobile-navigation'/>
+        <Header />
       </header>
       <main id='main-content'>
         <Switch>

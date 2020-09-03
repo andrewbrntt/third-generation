@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import shortId from 'shortid'
 import MobileNavigationButton from './MobileNavigationButton'
-import logo from '../assets/3GC_Logo-White.svg'
 
-const MobileNavigationMenu = () => {
+const MobileNavigationMenu = ({ createRouteObject }) => {
 
   const serviceRoutes = [
     { routeName: 'Remodel', routeTo: '/remodel' },
@@ -26,26 +25,18 @@ const MobileNavigationMenu = () => {
       styleClasses: 'mobile-navigation__emergency-service'
     },
   ]
-
   const [navIsOpen, setNavIsOpen] = useState(false)
-  let location = useLocation()
 
   const toggleMobileNav = (e) => {
     e.preventDefault()
     setNavIsOpen(!navIsOpen)
   }
 
-  const createRouteObject = (route) => {
-    return {
-      pathname: route,
-      state: { navIsOpen: false }
-    }
-  }
-
   const createNavMenuItem = (routeName, routeTo, styleClasses = '', exact = false) => {
     return (
       <li key={shortId.generate()}>
-        <NavLink activeClassName='background-color-secondary' exact={exact} className={styleClasses} to={createRouteObject(routeTo)}>{routeName}</NavLink>
+        <NavLink activeClassName='background-color-secondary' exact={exact} className={styleClasses}
+                 to={createRouteObject(routeTo)}>{routeName}</NavLink>
       </li>
     )
   }
@@ -60,32 +51,20 @@ const MobileNavigationMenu = () => {
     )
   }
 
-  useEffect(() => {
-    if (location && location.state) {
-      if (location.state.navIsOpen !== null && location.state.navIsOpen !== undefined) {
-        setNavIsOpen(location.state.navIsOpen)
-      }
-    }
-  }, [location])
-
   return (
     <nav role='navigation'>
-      <div className='header'>
-        <MobileNavigationButton
-          navIsOpen={navIsOpen}
-          toggleNavMenu={toggleMobileNav}
-          styleClasses='header__mobile-navigation nav-button'
-        />
-        <NavLink to={createRouteObject('/')}>
-          <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
-        </NavLink>
-      </div>
-      <div role='menu' className='mobile-navigation__container background-color-primary color-white'
-           style={{ display: !navIsOpen && 'none' }}>
-        {createMenuList(topMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
-        <h2 className='mobile-navigation__heading'>Services</h2>
-        {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text')}
-        {createMenuList(bottomMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
+      <MobileNavigationButton
+        navIsOpen={navIsOpen}
+        toggleNavMenu={toggleMobileNav}
+        styleClasses='mobile-navigation__menu-button'
+      />
+      <div role='menu' className='mobile-navigation__container background-color-primary color-white'>
+        <div style={{ display: !navIsOpen && 'none' }}>
+          {createMenuList(topMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
+          <h2 className='mobile-navigation__heading'>Services</h2>
+          {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text')}
+          {createMenuList(bottomMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
+        </div>
       </div>
     </nav>
   )
