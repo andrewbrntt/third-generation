@@ -32,20 +32,29 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
     setNavIsOpen(!navIsOpen)
   }
 
-  const createNavMenuItem = (routeName, routeTo, styleClasses = '', exact = false) => {
+  const createNavMenuItem = (routeName, routeTo, styleClasses = '', exact = false, ariaLabelledBy = null) => {
+    let elementId = `${ariaLabelledBy}-${routeName.toString().toLowerCase()}`
+
     return (
       <li key={shortId.generate()}>
-        <NavLink activeClassName='background-color-secondary' exact={exact} className={styleClasses}
-                 to={createRouteObject(routeTo)}>{routeName}</NavLink>
+        <NavLink id={elementId}
+                 aria-labelledby={`${ariaLabelledBy} ${elementId}`}
+                 activeClassName='background-color-secondary'
+                 exact={exact}
+                 className={styleClasses}
+                 to={createRouteObject(routeTo)}
+        >
+          {routeName}
+        </NavLink>
       </li>
     )
   }
 
-  const createMenuList = (routes, styleClasses) => {
+  const createMenuList = (routes, styleClasses, ariaLabelledBy = null) => {
     return (
-      <ul className={styleClasses}>
+      <ul className={styleClasses} >
         {routes.map(route => {
-          return createNavMenuItem(route.routeName, route.routeTo, route.styleClasses, route.exact)
+          return createNavMenuItem(route.routeName, route.routeTo, route.styleClasses, route.exact, ariaLabelledBy)
         })}
       </ul>
     )
@@ -61,8 +70,8 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
       <div role='menu' className='mobile-navigation__container background-color-primary color-white'>
         <div style={{ display: !navIsOpen && 'none' }}>
           {createMenuList(topMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
-          <h2 className='mobile-navigation__heading'>Services</h2>
-          {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text')}
+          <h2 id='mobile-navigation__services-heading' className='mobile-navigation__heading'>Services</h2>
+          {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text', 'mobile-navigation__services-heading')}
           {createMenuList(bottomMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
         </div>
       </div>
