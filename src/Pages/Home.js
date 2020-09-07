@@ -17,9 +17,17 @@ import AboutImage from '../assets/group-people.jpg'
 
 const Home = () => {
 
+  const formStyles = {
+    formClasses: '',
+    fieldContainerClasses: '',
+    labelElementClasses: '',
+    labelTextClasses:'color-white',
+    requiredTextClasses: 'color-white'
+  }
+
   return (
     <>
-      <BodyHeader linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
+      <BodyHeader linkRoute='/contact' linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
         </p>
@@ -41,18 +49,14 @@ const Home = () => {
         </div>
         <div className='home__service-cards--center'>
           <div className='home__service-cards-container'>
-            <div className='home__service-cards-row'>
               <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
               <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
-            </div>
-            <div className='home__service-cards-row'>
               <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
               <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
-            </div>
           </div>
         </div>
       </BodySection>
-      <BodySection linkText='About Us' styleClasses='background-color-primary color-white' sectionTitle='About Us'>
+      <BodySection linkRoute='/about' linkText='About Us' styleClasses='background-color-primary color-white' sectionTitle='About Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
@@ -63,7 +67,7 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkText='View Gallery' styleClasses='color-primary' sectionTitle='Our Work'>
+      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='color-primary' sectionTitle='Our Work'>
         <div className='body-section__p-container padding-x-standard'>
         <p>
           We offer a personal experience for each customer by ensuring every project is unique.
@@ -75,9 +79,9 @@ const Home = () => {
         <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
       <BodySection styleClasses='padding-x-standard background-color-primary color-white' sectionTitle='Contact Us'>
-        <ContactForm formStyleClasses='color-white' formFieldsData={formFieldsData}/>
+        <ContactForm formStyleClasses={formStyles} formFieldsData={formFieldsData}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary padding-x-standard' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary padding-x-standard' sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <ReviewSitesSection reviewSites={reviewSites}/>

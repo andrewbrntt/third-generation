@@ -9,7 +9,7 @@ const Reviews = () => {
 
   return (
     <>
-      <BodyHeader pageHeader='Reviews' linkText='Contact Us'>
+      <BodyHeader linkRoute='/contact' pageHeader='Reviews' linkText='Contact Us'>
         <p>
           We are proud to be endorsed by Angie's List, Home Advisor, and the Better Business Bureau.
         </p>

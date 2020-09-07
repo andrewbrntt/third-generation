@@ -6,10 +6,6 @@
 // Animation
 // Misc
 
-.home--primary-color {
-  color: $primary;
-}
-
 //Our Services
 .home__our-services-p-container {
   margin-bottom: 2.5rem;
@@ -32,6 +28,11 @@
     justify-content: space-evenly;
     width: 48rem;
     height: 53.125rem;
+  }
+
+  @include lg {
+    flex-direction: inherit;
+    width: 100%;
   }
 }
 
@@ -60,3 +61,4 @@
   justify-content: center;
 }
 //
+

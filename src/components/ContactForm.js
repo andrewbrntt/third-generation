@@ -13,7 +13,7 @@ import {
 } from '../helpers/formValidation'
 import ContactFormSuccessModal from './ContactFormSuccessModal'
 
-const ContactForm = ({ formStyleClasses }) => {
+const ContactForm = ({ formStyleClasses = {} }) => {
 
   const [fullName, setFullName] = useState(formFieldsData.fullName)
   const [email, setEmail] = useState(formFieldsData.email)
@@ -146,12 +146,12 @@ const ContactForm = ({ formStyleClasses }) => {
       />
       <ContactFormSuccessModal handleClose={toggleSuccessModal} isSuccessModalOpen={isSuccessModalOpen} />
         {fieldErrors.length > 0 && <FormErrorField formFieldsData={fieldErrors}/>}
-        <form id='contact-form' className={`contact-form ${formStyleClasses}`} onSubmit={handleFormSubmit}>
-          <FormInputField fieldData={fullName} handleStateChange={handleFormValueChange}/>
-          <FormInputField fieldData={phone} handleStateChange={handleFormValueChange}/>
-          <FormInputField fieldData={email} handleStateChange={handleFormValueChange}/>
-          <FormInputField fieldData={services} handleStateChange={handleFormValueChange}/>
-          <FormInputField fieldData={message} textArea formId='contact-form' handleStateChange={handleFormValueChange}/>
+        <form id='contact-form' className={`contact-form ${formStyleClasses.formClasses}`} onSubmit={handleFormSubmit}>
+          <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={fullName} handleStateChange={handleFormValueChange}/>
+          <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={phone} handleStateChange={handleFormValueChange}/>
+          <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={email} handleStateChange={handleFormValueChange}/>
+          <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={services} handleStateChange={handleFormValueChange}/>
+          <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={message} textArea formId='contact-form' handleStateChange={handleFormValueChange}/>
           <div className='contact-form__button-container contact-form__button--spacing'>
             <ThemedButton type='submit' text='Submit'/>
           </div>

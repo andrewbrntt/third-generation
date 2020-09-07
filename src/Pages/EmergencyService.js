@@ -11,20 +11,20 @@ const EmergencyService = () => {
 
   return (
     <>
-      <BodySection styleClasses='color-primary' pageHeader='24-Hour Emergency Service' linkText='Contact Us'>
+      <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>Life is full of curveballs and emergencies happen.</p>
         <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>
         <p className='p--top-spacing'>We're available 24/7 and can help fix urgent needs as they happen.</p>
       </BodySection>
-      <BodySection styleClasses='color-white background-color-primary' sectionTitle='Our Work'
+      <BodySection linkRoute='/our-work' styleClasses='color-white background-color-primary' sectionTitle='Our Work'
                    linkText='View Gallery'>
         <p>We're proud of our work and love showing it off.</p>
         <p className='p--top-spacing'>
           Let 3RD Generation Construction transform your current space into the home of your dreams.</p>
         <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary'>
         <ReviewList randomCount='1'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>

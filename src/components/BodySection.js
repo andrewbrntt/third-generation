@@ -13,13 +13,15 @@ const BodySection = ({ sectionTitle, children, styleClasses, pageHeader, iconNam
       {pageHeader && <PageHeader header={pageHeader}/>}
       <section style={styles}
                className={`${pageHeader ? 'remove-padding-top' : ''} body-section default-text ${styleClasses || ''}`}>
-        {iconName && <IconWithLine icon={iconName} />}
-        {sectionTitle && <h2 className='body-section__title'>{sectionTitle}</h2>}
-        {children}
-        {linkText &&
-        <div className='body-section__link-container'>
+        <div className='body-section__container'>
+          {iconName && <IconWithLine icon={iconName}/>}
+          {sectionTitle && <h2 className='body-section__title'>{sectionTitle}</h2>}
+          {children}
+          {linkText &&
+          <div className='body-section__link-container'>
             <ThemedLink route={linkRoute} text={linkText}/>
           </div>}
+        </div>
       </section>
     </>
   )

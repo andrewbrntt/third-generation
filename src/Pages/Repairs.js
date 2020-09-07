@@ -17,7 +17,7 @@ const Repairs = () => {
 
   return (
     <>
-      <BodySection styleClasses='color-primary' pageHeader='Repairs' linkText='Contact Us'>
+      <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='Repairs' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Sometimes all it takes to transform your home is a few minor fixes.
@@ -29,7 +29,7 @@ const Repairs = () => {
           Our services include painting, fence building, flooring, and more.
         </p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' iconName={Tools} sectionTitle='Free Consultation'
+      <BodySection linkRoute='/contact' styleClasses='background-color-primary color-white' iconName={Tools} sectionTitle='Free Consultation'
                    linkText='Contact Us'>
         <p>You have questions.</p>
         <p className='p--top-spacing'>We have answers.</p>
@@ -44,7 +44,7 @@ const Repairs = () => {
         <p className='p--top-spacing'> No problem.</p>
         <p className='p--top-spacing'> We have answers to common home-remodel questions.</p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' sectionTitle='Our Work'
                    linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>
@@ -64,7 +64,7 @@ const Repairs = () => {
         </p>
         <VendorSection vendors={vendors}/>
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='1'/>
       </BodySection>
     </>

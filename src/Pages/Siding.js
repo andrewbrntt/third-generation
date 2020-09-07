@@ -26,7 +26,7 @@ const Siding = () => {
 
   return (
     <>
-      <BodySection styleClasses='color-primary' pageHeader='Siding' linkText='Contact Us'>
+      <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
           makes your home beautiful.</p>
@@ -37,7 +37,7 @@ const Siding = () => {
           Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
         </p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Pros to Siding'
+      <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
         <p>
           Replacing your siding has a number of benefits, including increase the value of your home.
@@ -61,7 +61,7 @@ const Siding = () => {
           Replacing your home’s weather-worn or damaged siding can increase your home’s value, curb appeal, and safety.
         </p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work' linkText='View Gallery'>
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' sectionTitle='Our Work' linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           We're proud of our work and love showing it off.

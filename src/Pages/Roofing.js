@@ -14,6 +14,7 @@ import {
   owensCorningLogo,
   royalSidingLogo
 } from '../helpers/vendorAssetLibrary'
+
 const Roofing = () => {
 
   const vendors = [
@@ -21,13 +22,13 @@ const Roofing = () => {
     { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
     { logo: alsideLogo, altText: 'Alside Siding Logo' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'roofing__firestone-logo' },
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
     { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo' }
   ]
 
   return (
     <>
-      <BodySection pageHeader='Roofing' linkText='Contact Us' styleClasses='color-primary'>
+      <BodySection linkRoute='/contact' pageHeader='Roofing' linkText='Contact Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
@@ -38,7 +39,7 @@ const Roofing = () => {
           metal, tile, or slate.
         </p>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' sectionTitle='Our Work'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' sectionTitle='Our Work'
                    linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p>
@@ -56,11 +57,13 @@ const Roofing = () => {
           Third Generation Construction uses dependable and affordable products to ensure your project is secure,
           beautiful, and reliable.
         </p>
-        <div className='remodel__vendor-section--alignment'>
+        <div className='vendor-section--alignment'>
           <VendorSection vendors={vendors}/>
         </div>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Reviews'
+      <BodySection
+        linkRoute='/reviews'
+        styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Reviews'
                    linkText='Reviews'>
         <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>
