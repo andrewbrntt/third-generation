@@ -1,26 +1,48 @@
-.navigation__ul {
-  align-items: center;
-  background-color: $primary;
-  color: #fff;
-  display: flex;
-  font-family: $serif-font;
-  justify-content: space-evenly;
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.mobile-navigation__container {
+  margin-top: 3.75rem;
+  padding: 0.5rem;
+}
+
+.mobile-navigation__ul {
   list-style: none;
-  padding: 0;
 }
 
-.navigation__li {
-  display: flex;
-  justify-content: space-around;
-  font-size: 16px;
+.mobile-navigation__ul li,
+.mobile-navigation__heading {
+  margin-bottom: 0.875rem;
 }
 
-.navigation__li-anchor {
-  text-underline-position: under;
-  font-size: 16px;
+.mobile-navigation__ul li {
+  border: 0.125rem solid $white;
 }
 
-.navigation__li-anchor,
-.navigation__span-separator {
-  color: $white;
+.mobile-navigation__ul li > a {
+  display: block;
+  padding-left: 0.625rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.mobile-navigation__ul li >  .mobile-navigation__emergency-service {
+  display: inline-block;
+  font-size: 1.1875rem;
+}
+
+.mobile-navigation__nested-list {
+  margin-left: 2.1875rem;
+}
+
+.mobile-navigation__menu-button {
+  position: absolute;
+  top: 4.75rem;
+  left: 0.9375rem;
+  z-index: 1;
 }

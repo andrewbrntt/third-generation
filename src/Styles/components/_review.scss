@@ -1,0 +1,49 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.review__container {
+  //Box Model
+  padding: 0.5rem;
+  border: 0.0625rem solid $secondary;
+}
+
+.review__name {
+  //Box Model
+  margin-top: 1.5rem;
+
+  //Typography
+  font-weight: bold;
+  font-size: 1.625rem;
+}
+
+.review__star-container {
+  //Box-Model
+  display: flex;
+  justify-content: space-around;
+  margin: 0.75rem 0 0;
+}
+
+.review__location {
+  //Box Model
+  margin: 1.5rem 0;
+}
+
+.review__star {
+  display: inline;
+  font-size: 3rem;
+}
+
+.hidden {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}

@@ -1,0 +1,15 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.contact__p {
+  margin-top: 4.5rem;
+
+  @include md {
+    font-size: 1.875rem;
+  }
+}

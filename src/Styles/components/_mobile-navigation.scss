@@ -1,0 +1,18 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.mobile-navigation__toggle-button {
+
+  // Box Model
+  width: 3.125rem;
+  height: 3.125rem;
+
+  // Visual
+  background-color: $primary;
+  border-style: none;
+}

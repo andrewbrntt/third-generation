@@ -1,0 +1,98 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.image-gallery__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(80, 80, 80, 0.8);
+}
+
+.image-gallery__img-container {
+  width: 16.25rem;
+  height: 370px;
+}
+
+.image-gallery__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  padding-left: 3px;
+  padding-right: 5px;
+}
+
+.image-gallery__img {
+  width: 100%;
+  height: 320px;
+}
+
+.image-gallery__img--display-block {
+  display: block;
+}
+
+.image-gallery__img--display-none {
+  display: none;
+}
+
+.image-gallery__modal-btn {
+  background-color: transparent;
+}
+
+.image-gallery__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.image-gallery__modal-arrow-btn {
+  position: relative;
+  padding: 0;
+  color: $secondary;
+  border-style: none;
+}
+
+.image-gallery__modal-arrow-btn-left {
+  margin-right: -20px;
+}
+
+.image-gallery__modal-arrow-btn-right {
+  margin-left: -20px;
+}
+
+
+.image-gallery__arrow-circle-background-icon {
+  font-size: 2.9375rem;
+}
+
+.image-gallery__arrow-circle-icon {
+  font-size: 3.125rem;
+}
+
+.image-gallery__close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+.image-gallery__arrow-btn-container {
+  display: flex;
+  align-items: center;
+  width: 60px;
+}
+
+.image-gallery__arrow-icon {
+  font-size: 50px;
+}
+

@@ -1,0 +1,67 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+//Before After
+//.before-after-set--margin {
+//  margin-right: 0.5rem;
+//  margin-bottom: 1.875rem;
+//  margin-left: 0.5rem;
+//
+//  @include md {
+//    margin-bottom: 50px;
+//  }
+//}
+
+.before-after-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.before-after-container > div:not(:last-child) {
+  margin-right: 0.5rem;
+  margin-bottom: 1.875rem;
+  margin-left: 0.5rem;
+
+  @include md {
+    margin-bottom: 3.125rem;
+  }
+}
+
+.before-after__item {
+  //Box Model
+  display: inline-block;
+  width: 9.375rem;
+  height: 9.375rem;
+
+  @include md {
+    width: 21.875rem;
+    height: 21.25rem;
+  }
+}
+
+.before-after__img {
+  //Box Model
+  width: 100%;
+  height: 100%;
+}
+
+.before-after__text {
+  //Box Model
+  height: 1.875rem;
+  margin-top: 0.9375rem;
+
+  //Typography
+  font-size: 1.25rem;
+
+  @include md {
+    font-size: 1.75rem;
+  }
+}
+

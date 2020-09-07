@@ -1,0 +1,66 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.our-process-infographic__circle {
+  font-size: 5.3125rem;
+
+  @include md {
+    justify-self: flex-end;
+    font-size: 9.125rem;
+  }
+
+  svg {
+    margin-left: 0;
+  }
+
+
+  [data-icon='phone-alt'].our-process-infographic__icon {
+    font-size: 3.4375rem;
+
+    @include md {
+      font-size: 6rem;
+    }
+  }
+
+  [data-icon='clipboard-list-check'].our-process-infographic__icon {
+    font-size: 3.8rem;
+
+    @include md {
+      font-size: 6rem;
+    }
+  }
+
+  [data-icon='file-signature'].our-process-infographic__icon {
+    margin-right: 1.0625rem;
+    font-size: 3.3rem;
+
+    @include md {
+      margin-left: 2.9375rem;
+      font-size: 6rem;
+    }
+  }
+
+  [data-icon='hammer'].our-process-infographic__icon {
+    font-size: 3.2rem;
+
+    @include md {
+      margin-top: 1.375rem;
+      font-size: 6rem;
+    }
+  }
+
+  [data-icon='star'].our-process-infographic__icon {
+    margin-top: 0.4375rem;
+    font-size: 4.1rem;
+
+    @include md {
+      margin-top: 1.125rem;
+      font-size: 6.5rem;
+    }
+  }
+}

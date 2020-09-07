@@ -1,8 +1,38 @@
 /*------------*\
 Description: contains each self-contained component in its own .scss partial
 \*------------*/
-@import 'skip-link';
-@import 'footer-section';
+@import 'banner';
+@import 'before-after';
 @import 'body-header';
-@import 'theme-button';
+@import 'body-section';
+@import 'contact-form';
+@import 'footer-section';
+@import 'form-input-field';
 @import 'hamburger-menu-icon';
+@import 'hero-image-overlay';
+@import 'icon-with-line';
+@import 'link-card';
+@import 'mobile-navigation';
+@import 'page-header';
+@import 'review';
+@import 'skip-link';
+@import 'social-media-section';
+@import 'themed-button';
+@import 'themed-link';
+@import 'vendor-section';
+@import 'our-process-icon';
+@import 'our-process-infographic';
+@import 'our-process-lines';
+@import 'our-process-step';
+@import 'review-sites-section';
+@import 'review-list';
+@import 'siding-infographic';
+@import 'form-error-field';
+@import 'contact-form-modal';
+@import 'modal';
+@import 'contact-form-success-modal';
+@import 'image-gallery';
+
+//TEST COMPONENTS
+@import 'siding-infographic-icon';
+@import 'siding-infographic-text';

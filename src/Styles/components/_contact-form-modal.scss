@@ -1,0 +1,75 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.contact-form__review-modal-close-btn-container {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem;
+  text-align: right;
+}
+
+.contact-form__review-modal-close-btn {
+  background-color: $white;
+  border: 0;
+  color: $secondary;
+  padding: 0;
+}
+
+.contact-form__review-modal-times-icon {
+  font-size: 3.125rem;
+}
+
+.contact-form__review-modal {
+  padding: 1.25rem 0.5rem;
+
+  section {
+    padding: 0;
+  }
+}
+
+.contact-form__review-modal-card-container {
+  padding: 0.625rem;
+  list-style: none;
+  margin-bottom: 1.875rem;
+}
+
+.contact-form__review-modal-card-title {
+  width: 100%;
+  display: inline-block;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1.25rem;
+
+  @include md {
+    font-size: 1.625rem;
+  }
+}
+
+.contact-form__review-modal-card-subtext {
+  text-align: center;
+  word-break: break-word;
+
+  @include md {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-form__review-modal section > h2:nth-of-type(1) {
+  @include md {
+    margin-bottom: 3.75rem;
+    font-size: 3.125rem;
+  }
+}
+
+.contact-form__review-modal section > p:nth-of-type(1) {
+  @include md {
+    padding-bottom: 3.75rem;
+    font-size: 1.875rem;
+  }
+}
+

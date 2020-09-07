@@ -1,23 +1,30 @@
-import React from 'react'
-import backgroundImage from '../assets/wide-kitchen-stock.jpg'
-import ThemeButton from './ThemeButton'
+import React, { useState, useRef, useLayoutEffect } from 'react'
+import useElementDimensions from '../helpers/useElementDimensions'
+import backgroundImage from '../assets/mobile-wide-kitchen-stock.jpg'
+import HeroImageOverlay from './HeroImageOverlay'
+import DecorativeImage from './DecorativeImage'
 
-const BodyHeader = () => {
+const BodyHeader = ({linkText, pageHeader, children}) => {
+
+  const overlayContainer = useRef(null)
+  const overlayDimensions = useElementDimensions(overlayContainer)
+
+  const [height, setHeight] = useState(0)
+
+  useLayoutEffect(() => {
+    if (overlayDimensions.height) {
+      setHeight(overlayDimensions.height)
+    } else {
+      setHeight(overlayContainer.current.offsetHeight)
+    }
+  }, [overlayDimensions])
+
   return (
-    <section className='body__header-container'>
-      <img aria-hidden='true' className='' alt='' src={backgroundImage}/>
-      <div className='body-header__text-overlay'>
-        <h1 className='body-header__text'>
-          Transform Your House Into Your Dream Home
-        </h1>
-        <h2 className='body-header__sub-text'>
-          A home’s exterior is made to be beautiful with its siding, trim, and roofing. The home’s interior is made to
-          reflect you and be built to showcase your personal style.
-        </h2>
-      </div>
-      <span className='body-header__cta-button-container'>
-        <ThemeButton />
-      </span>
+    <section style={{ height: `${(height + 40) / 16}rem` }} className='body-header-container body-header__background-hero-img--overflow'>
+      <DecorativeImage className='body-header__background-hero-img' src={backgroundImage}/>
+      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle' linkText={linkText} pageHeader={pageHeader}>
+        {children}
+      </HeroImageOverlay>
     </section>
   )
 }

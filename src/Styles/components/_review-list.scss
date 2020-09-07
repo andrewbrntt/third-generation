@@ -1,0 +1,19 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.reviews-list__container > .review-list__review--spacing:last-child {
+  margin-bottom: 0;
+}
+
+.review-list__review--spacing {
+  margin-bottom: 1.25rem;
+
+  @include md {
+    margin-bottom: 3.125rem;
+  }
+}

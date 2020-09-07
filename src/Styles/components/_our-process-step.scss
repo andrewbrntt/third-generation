@@ -1,0 +1,25 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.our-process-infographic__step {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include md {
+position: relative;
+  }
+}
+
+.our-process-infographic__step--right {
+  justify-content: flex-end;
+
+  label {
+
+  }
+}

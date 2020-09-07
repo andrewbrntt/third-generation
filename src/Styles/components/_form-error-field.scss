@@ -1,0 +1,33 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.form-error-field__ul {
+  width: 100%;
+  padding-left: 1.25rem;
+  word-break: break-word;
+}
+
+.form-error-field__li {
+  margin-bottom: 1.25rem;
+  color: $red;
+}
+
+.form-error-field__container {
+  min-height: 5rem;
+  margin-bottom: 2.5rem;
+  padding: 0.9375rem;
+  background-color: $beige;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+
+  @include md {
+    padding: 23px 20px 14px;
+    font-size: 1.5rem;
+  }
+}

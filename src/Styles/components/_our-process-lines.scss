@@ -1,0 +1,47 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+// Connecting Line Divs
+.our-process-infographic__line-div--dimensions {
+  margin: -0.1875rem 3rem -0.1875rem 3.1875rem;
+
+  @include md {
+    margin-right: 5.5rem;
+    margin-left: 5.5rem;
+  }
+}
+
+.our-process-infographic__line-div--dimensions > div {
+  height: 3rem;
+}
+
+// Line for icons on the left
+.our-process-infographic__top-div-left--border-left {
+  border-left: 0.25rem solid $white;
+}
+
+.our-process-infographic__bottom-div-left--border-top {
+  border-top: 0.25rem solid $white;
+}
+
+.our-process-infographic__bottom-div-left--border-right {
+  border-right: 0.25rem solid $white;
+}
+
+// Line for icons on the right
+.our-process-infographic__top-div-right--border-right {
+  border-right: 0.25rem solid $white;
+}
+
+.our-process-infographic__bottom-div-right--border-top {
+  border-top: 0.25rem solid $white;
+}
+
+.our-process-infographic__bottom-div-right--border-left {
+  border-left: 0.25rem solid $white;
+}

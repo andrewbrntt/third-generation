@@ -1,0 +1,33 @@
+/** Order of css blocks **/
+// Positioning
+// Box Model
+// Typography
+// Visual
+// Animation
+// Misc
+
+.link-card__container {
+  width: 8.4375rem;
+  text-decoration: none;
+
+  // 576px window width and more
+  @include sm {
+    width: 10.375rem;
+  }
+
+  @include md {
+    width: 21.25rem;
+  }
+}
+
+.link-card__img--dimensions {
+  width: 100%;
+}
+
+.link-card__title {
+  color: $primary;
+  text-align: center;
+}
+
+
+

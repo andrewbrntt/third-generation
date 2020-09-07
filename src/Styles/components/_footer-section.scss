@@ -1,20 +1,13 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
 
-.footer__section,
-.footer__ul {
-  align-items: center;
+.footer-section__heading {
+  //Typography
   color: $white;
-  display: flex;
-  flex-direction: column;
-  font-family: $san-serif-font;
-  margin: 0;
-  padding: 0;
-}
-
-.footer__ul {
-  font-family: $serif-font;
-  list-style: none;
-}
-
-.footer__section-title--margin {
-  margin-bottom: 0;
+  font-weight: bold;
 }

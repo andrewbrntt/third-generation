@@ -1,14 +1,26 @@
 import React from 'react'
-import logo from '../assets/3GC_Logo-White.svg'
-import Navigation from './Navigation'
+import logo from '../assets/3gc-logo-white.svg'
+import MobileNavigationMenu from './MobileNavigationMenu'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+
+  const createRouteObject = (route) => {
+    return {
+      pathname: route,
+      state: { navIsOpen: false }
+    }
+  }
+
+
   return (
     <div className='header'>
+      <MobileNavigationMenu createRouteObject={createRouteObject} />
       <div className='header__logo-container'>
-        <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo} />
+      <NavLink to={createRouteObject('/')}>
+        <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
+      </NavLink>
       </div>
-      <Navigation />
     </div>
   )
 }

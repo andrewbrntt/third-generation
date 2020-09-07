@@ -1,0 +1,91 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.contact-form__success-modal-title {
+  padding-bottom: 3.125rem;
+
+  //Typography
+  font-size: 2.5rem;
+  font-family: $serif-font;
+  text-align: center;
+}
+
+.contact-form__success-modal-subtext {
+  padding-bottom: 3.125rem;
+}
+
+.contact-form__success-modal-icon {
+  color: $secondary;
+  font-size: 5.9375rem;
+
+  @include md {
+    font-size: 15.625rem;
+  }
+}
+
+.contact-form__success-modal-ul {
+  font-size: 1.25rem;
+  list-style: none;
+}
+
+.contact-form__success-modal--padding-bottom-75 {
+  padding-bottom: 4.6875rem;
+}
+
+.contact-form__success-modal--padding-bottom-50 {
+  padding-bottom: 3.125rem;
+}
+
+.contact-form__success-modal-text {
+  display: inline-block;
+  width: 25%;
+  text-align: left;
+  @include md {
+    font-size: 1.875rem;
+  }
+}
+
+.contact-form__success-modal-link {
+  display: inline-block;
+  width: 33%;
+  height: 1.8rem;
+  text-decoration: none;
+  border-bottom: 0.1875rem solid $secondary;
+
+  @include md {
+    width: 20%;
+    height: 2.5rem;
+    font-size: 1.625rem;
+  }
+}
+
+.contact-form__success-modal-ul > li:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
+.contact-form__success-modal-container > div > .body-section {
+  padding-top: 0;
+}
+
+//#main-content > section > div.w3-modal.modal-container.contact-form__success-modal--padding-bottom-75.color-primary.modal--display-block > div > section
+
+.contact-form__success-modal-container section > h2:nth-of-type(1) {
+  @include md {
+    margin-bottom: 3.75rem;
+    font-size: 3.125rem;
+  }
+}
+
+.contact-form__success-modal-container section > p:nth-of-type(1) {
+  @include md {
+    padding-bottom: 3.75rem;
+    font-size: 1.875rem;
+  }
+}
+
+

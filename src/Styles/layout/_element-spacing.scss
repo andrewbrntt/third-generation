@@ -1,0 +1,94 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.p--top-spacing {
+  margin-top: 1rem;
+}
+
+.p--bottom-margin-40 {
+  margin-bottom: 2.5rem;
+}
+
+.p--bottom-margin-100 {
+  @include md {
+    margin-bottom: 6.25rem;
+  }
+}
+
+
+.padding-x-standard {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+
+  @include md {
+    padding-right: 2.125rem;
+    padding-left: 2.125rem;
+  }
+}
+
+.remove-padding {
+  padding: 0;
+}
+
+.remove-padding-x {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.remove-padding-y {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.remove-padding-top {
+  padding-top: 0;
+}
+
+.remove-padding-bottom {
+  padding-bottom: 0;
+}
+
+.remove-padding-left {
+  padding-left: 0;
+}
+
+.remove-padding-right {
+  padding-right: 0;
+}
+
+//Margins
+.remove-margin {
+  margin: 0;
+}
+
+.remove-margin-x {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.remove-margin-y {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.remove-margin-top {
+  margin-top: 0;
+}
+
+.remove-margin-bottom {
+  margin-bottom: 0;
+}
+
+.remove-margin-left {
+  margin-left: 0;
+}
+
+.remove-margin-right {
+  margin-right: 0;
+}
+

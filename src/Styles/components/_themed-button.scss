@@ -1,0 +1,50 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.themed-button {
+  //Box Model
+  width: 13.125rem;
+  height: 3.125rem;
+
+  //Typography
+  color: $white;
+
+  //Display
+  background-color: $secondary;
+  border: 0;
+}
+
+.themed-button__hr-container {
+  display: flex;
+  justify-content: center;
+}
+
+.themed-button__hr {
+  //Box Model
+  width: 0;
+  border: 0;
+  border-bottom: 0.3125rem solid;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  button:hover .themed-button__hr,
+  button:focus .themed-button__hr {
+    animation: separator-width 0.4s ease-out forwards;
+  }
+
+  @keyframes separator-width {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+}

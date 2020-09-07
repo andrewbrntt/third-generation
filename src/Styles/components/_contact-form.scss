@@ -1,0 +1,57 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.contact-form__button--spacing {
+  //Box Model
+  margin-top: 1.25rem;
+}
+
+.contact-form__ul {
+  margin: 2.5rem 0 0;
+  list-style: none;
+
+  @include md {
+    margin-top: 0;
+  }
+}
+
+.contact-form__ul > li:last-child > .contact-form__review-modal-card-container {
+  margin: 0;
+}
+
+.contact-form__btn {
+  min-width: 7.5rem;
+  height: 3.125rem;
+  color: $white;
+  text-align: center;
+  background-color: $secondary;
+  border-style: none;
+
+  @include md {
+    min-width: 11.75rem;
+  }
+}
+
+.contact-form__bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 7.5rem;
+}
+
+.contact-form > div:nth-child(5) > label {
+  padding-left: 0.375rem;
+}
+
+
+.contact-form__button-container button {
+  @include md {
+    font-size: 1.625rem;
+    width: 15.625rem;
+  }
+}

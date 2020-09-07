@@ -1,0 +1,49 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.modal--display-block {
+  display: block;
+}
+
+.modal--display-none {
+  display: none;
+}
+
+.modal__times-icon {
+  font-size: 3.125rem;
+  @include md {
+    font-size: 4.6875rem;
+  }
+}
+
+.modal__close-btn {
+  color: $secondary;
+  border: 0;
+}
+
+.modal__close-btn-container {
+  display: inline-block;
+  width: 100%;
+  padding-top: 0.9375rem;
+  padding-right: 0.9375rem;
+  text-align: right;
+}
+
+.modal__title {
+  margin: 0;
+  padding-bottom: 3.125rem;
+}
+
+.modal__subtext {
+  padding-bottom: 3.125rem;
+}
+
+.modal-container {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}

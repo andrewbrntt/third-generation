@@ -1,0 +1,18 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.vendor-section__container {
+  //Box Model
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vendor-section__container >  .vendor-section__badge-container:not(:last-child) {
+  margin-bottom: 4.6875rem;
+}

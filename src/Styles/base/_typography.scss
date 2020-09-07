@@ -1,14 +1,63 @@
+// ----- WCAG 1.4.12 Text Spacing (AA) -----//
+//Line height (line spacing) to at least 1.5 times the font size;
+//Spacing following paragraphs to at least 2 times the font size;
+//Letter spacing (tracking) to at least 0.12 times the font size;
+//Word spacing to at least 0.16 times the font size.
+
+//XD letter-spacing converter
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing / 1000) * 1em;
+}
 
 // ----- Fonts ------- //
-$san-serif-font: 'Arial', 'Calibri', 'Century Gothic', 'Helvetica', 'Tahoma', 'Verdana', sans-serif;
-$serif-font: 'Times New Roman', 'Georgia', serif;
+$san-serif-font: 'Open Sans', 'Calibri', 'Century Gothic', 'Helvetica', 'Tahoma', 'Verdana', sans-serif;
+$serif-font: 'Georgia', 'Times New Roman', Times, serif;
+$action-font: 'Arvo', 'Times New Roman', Times, serif;
 // ------------------ //
 
 // ----- Size and Spacing ------- //
 $default-font-size: 1rem;
-$default-letter-spacing: 0.12rem;
+$default-letter-spacing: 0.05rem;
 $default-line-height: 1.5;
-$default-word-spacing: 1.5;
-
+$default-word-spacing: 0.09375rem;
 // ------------------ //
+
+.h1-page-header-text {
+  font-size: 2.5rem;
+  font-family: $serif-font;
+  letter-spacing: $default-letter-spacing;
+  word-spacing: $default-word-spacing;
+
+  @include md {
+    font-size: 3.125rem;
+  }
+
+}
+
+.default-text {
+  font-size: 1.25rem;
+  font-family: $san-serif-font;
+  line-height: $default-line-height;
+  letter-spacing: $default-letter-spacing;
+  word-spacing: $default-word-spacing;
+
+  @include md {
+    font-size: 1.5rem;
+  }
+}
+
+.action-text {
+  //Typography
+  font-size: 1.5rem;
+  font-family: $action-font;
+  letter-spacing: $default-letter-spacing;
+  word-spacing: $default-word-spacing;
+}
+
+.banner-text {
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: $san-serif-font;
+  letter-spacing: 0.025625rem;
+}
 
