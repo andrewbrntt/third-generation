@@ -36,10 +36,6 @@
   }
 }
 
-.form-input-field__label > span:first-child {
-  color: $primary;
-}
-
 .form-input-field__error {
   border: 0.125rem solid $red;
 }
@@ -49,6 +45,3 @@
   min-height: 9.375rem;
 }
 
-.form-input-field__required-tag {
-  color: $red;
-}

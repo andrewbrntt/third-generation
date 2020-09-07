@@ -6,33 +6,37 @@ Description: contains each self-contained component in its own .scss partial
 @import 'body-header';
 @import 'body-section';
 @import 'contact-form';
+@import 'contact-form-modal';
+@import 'contact-form-success-modal';
+@import 'desktop-navigation';
 @import 'footer-section';
+@import 'form-error-field';
 @import 'form-input-field';
 @import 'hamburger-menu-icon';
 @import 'hero-image-overlay';
 @import 'icon-with-line';
+@import 'image-gallery';
+@import 'image-gallery-section';
 @import 'link-card';
 @import 'mobile-navigation';
-@import 'page-header';
-@import 'review';
-@import 'skip-link';
-@import 'social-media-section';
-@import 'themed-button';
-@import 'themed-link';
-@import 'vendor-section';
+@import 'modal';
 @import 'our-process-icon';
 @import 'our-process-infographic';
 @import 'our-process-lines';
 @import 'our-process-step';
+@import 'page-header';
+@import 'review';
 @import 'review-sites-section';
 @import 'review-list';
+@import 'skip-link';
 @import 'siding-infographic';
-@import 'form-error-field';
-@import 'contact-form-modal';
-@import 'modal';
-@import 'contact-form-success-modal';
-@import 'image-gallery';
-
-//TEST COMPONENTS
+// TEST COMPONENTS
 @import 'siding-infographic-icon';
 @import 'siding-infographic-text';
+//
+
+@import 'social-media-section';
+@import 'themed-button';
+@import 'themed-link';
+@import 'vendor-section';
+

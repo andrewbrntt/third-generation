@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import shortId from 'shortid'
 import MobileNavigationButton from './MobileNavigationButton'
 
@@ -35,14 +35,21 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
   const createNavMenuItem = (routeName, routeTo, styleClasses = '', exact = false, ariaLabelledBy = null) => {
     let elementId = `${ariaLabelledBy}-${routeName.toString().toLowerCase()}`
 
+    const inputProps = {
+      id: elementId,
+      'aria-labelledby': `${ariaLabelledBy} ${elementId}`
+    }
+
+    const ariaAttributes = ariaLabelledBy ? inputProps : {}
+
     return (
       <li key={shortId.generate()}>
-        <NavLink id={elementId}
-                 aria-labelledby={`${ariaLabelledBy} ${elementId}`}
-                 activeClassName='background-color-secondary'
-                 exact={exact}
-                 className={styleClasses}
-                 to={createRouteObject(routeTo)}
+        <NavLink
+          {...ariaAttributes}
+          activeClassName='background-color-secondary'
+          exact={exact}
+          className={styleClasses}
+          to={createRouteObject(routeTo)}
         >
           {routeName}
         </NavLink>
@@ -52,7 +59,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
 
   const createMenuList = (routes, styleClasses, ariaLabelledBy = null) => {
     return (
-      <ul className={styleClasses} >
+      <ul className={styleClasses}>
         {routes.map(route => {
           return createNavMenuItem(route.routeName, route.routeTo, route.styleClasses, route.exact, ariaLabelledBy)
         })}

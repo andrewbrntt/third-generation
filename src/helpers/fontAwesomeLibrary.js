@@ -6,7 +6,8 @@ import {
   faTools,
   faCircle,
   faHome,
-  faTimes
+  faTimes,
+  faCaretDown
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faStar as faStarRegular,
@@ -54,7 +55,8 @@ const fontAwesomeLibrary = () => {
     faTimes,
     faCheckCircle,
     faArrowCircleRight,
-    faArrowCircleLeft
+    faArrowCircleLeft,
+    faCaretDown
   )
 }
 

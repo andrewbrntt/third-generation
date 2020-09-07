@@ -1,12 +1,11 @@
 import React from 'react'
-import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
-import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
+import BodyHeader from '../components/BodyHeader'
+import { mockGallerySections } from '../helpers/mockData'
 import ReviewList from '../components/ReviewList'
-import { beforeAfterMockData } from '../helpers/mockData'
+import ImageGallery from '../components/ImageGallery'
 
 const OurWork = () => {
-
   return (
     <>
       <BodyHeader pageHeader='Our Work' linkText='Contact Us'>
@@ -19,14 +18,13 @@ const OurWork = () => {
           before-and-after transformations.
         </p>
       </BodyHeader>
-      <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-        <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
+      <BodySection styleClasses='color-primary padding-x-standard' sectionTitle='Gallery'>
+        <ImageGallery gallerySections={mockGallerySections} />
       </BodySection>
-      <BodySection linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
     </>
   )
 }
-
 export default OurWork

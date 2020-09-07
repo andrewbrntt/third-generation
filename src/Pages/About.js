@@ -19,7 +19,7 @@ const About = () => {
 
   return (
     <>
-      <BodySection linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
+      <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard'>
           <p>
@@ -51,7 +51,7 @@ const About = () => {
         </p>
         <ReviewSitesSection reviewSites={reviewSites}/>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white' linkText='View Gallery'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' linkText='View Gallery'
                    sectionTitle='Our Work'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>

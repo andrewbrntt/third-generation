@@ -15,7 +15,6 @@ import Remodel from './Pages/Remodel'
 import OurWork from './Pages/OurWork'
 import Reviews from './Pages/Reviews'
 import EmergencyService from './Pages/EmergencyService'
-import Services from './Pages/Services'
 import Test from './Pages/Test'
 import Header from './components/Header'
 
@@ -27,47 +26,48 @@ function App () {
       <header className='background-color-primary'>
         <SkipLink/>
         <Banner/>
-        <Header />
+        <Header/>
       </header>
       <main id='main-content'>
-        <Switch>
-          <Route path='/about'>
-            <About/>
-          </Route>
-          <Route path='/roofing'>
-            <Roofing/>
-          </Route>
-          <Route path='/remodel'>
-            <Remodel/>
-          </Route>
-          <Route path='/siding'>
-            <Siding/>
-          </Route>
-          <Route path='/repairs'>
-            <Repairs/>
-          </Route>
-          <Route path='/contact'>
-            <Contact/>
-          </Route>
-          <Route path='/our-work'>
-            <OurWork/>
-          </Route>
-          <Route path='/reviews'>
-            <Reviews/>
-          </Route>
-          <Route path='/services'>
-            <Services />
-          </Route>
-          <Route path='/emergency-service'>
-            <EmergencyService/>
-          </Route>
-          <Route path='/test'>
-            <Test/>
-          </Route>
-          <Route path='/'>
-            <Home/>
-          </Route>
-        </Switch>
+        <div className='main-content__container'>
+          <Switch>
+            <Route path='/about'>
+              <About/>
+            </Route>
+            <Route path='/roofing'>
+              <Roofing/>
+            </Route>
+            <Route path='/remodel'>
+              <Remodel/>
+            </Route>
+            <Route path='/siding'>
+              <Siding/>
+            </Route>
+            <Route path='/repairs'>
+              <Repairs/>
+            </Route>
+            <Route path='/contact'>
+              <Contact/>
+            </Route>
+            <Route path='/our-work'>
+              <OurWork/>
+            </Route>
+            <Route path='/reviews'>
+              <Reviews/>
+            </Route>
+            <Route path='/emergency-service'>
+              <EmergencyService/>
+            </Route>
+
+            // TODO: Remove this before prod
+            <Route path='/test'>
+              <Test/>
+            </Route>
+            <Route path='/'>
+              <Home/>
+            </Route>
+          </Switch>
+        </div>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
         <Footer/>

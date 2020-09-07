@@ -12,10 +12,22 @@
 
 .body-header__background-hero-img {
   height: 100%;
+
+  @include lg {
+    max-width: 1200px;
+  }
 }
 
 .body-header__background-hero-img--overflow {
   //Box Model
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.body-header__picture-container {
+  @include lg {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
 }

@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <BodyHeader linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
+      <BodyHeader linkRoute='/contact' linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
         </p>

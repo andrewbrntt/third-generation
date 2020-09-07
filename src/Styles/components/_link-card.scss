@@ -18,6 +18,11 @@
   @include md {
     width: 21.25rem;
   }
+
+  @include lg {
+    width: 225px;
+    height: 236px;
+  }
 }
 
 .link-card__img--dimensions {
