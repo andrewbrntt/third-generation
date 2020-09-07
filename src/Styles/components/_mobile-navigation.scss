@@ -6,8 +6,13 @@
 // Animation
 // Misc
 
-.mobile-navigation__toggle-button {
+.mobile-navigation--display {
+  @include lg {
+    display: none;
+  }
+}
 
+.mobile-navigation__toggle-button {
   // Box Model
   width: 3.125rem;
   height: 3.125rem;

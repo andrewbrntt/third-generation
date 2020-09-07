@@ -11,8 +11,11 @@
 }
 
 .body-header__background-hero-img {
-  max-width: 1200px;
   height: 100%;
+
+  @include lg {
+    width: 100%;
+  }
 }
 
 .body-header__background-hero-img--overflow {

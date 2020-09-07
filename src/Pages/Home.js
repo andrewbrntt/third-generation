@@ -49,10 +49,14 @@ const Home = () => {
         </div>
         <div className='home__service-cards--center'>
           <div className='home__service-cards-container'>
+            <div className='home__service-cards-row'>
               <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
               <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
+            </div>
+            <div className='home__service-cards-row'>
               <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
               <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
+            </div>
           </div>
         </div>
       </BodySection>

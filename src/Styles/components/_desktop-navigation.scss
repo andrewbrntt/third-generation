@@ -7,8 +7,11 @@
 //Misc
 
 .desktop-nav__container {
-  display: flex;
-  justify-content: center;
+  display: none;
+  @include lg {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .desktop-nav__ul {

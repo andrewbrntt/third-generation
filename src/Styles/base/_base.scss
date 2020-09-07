@@ -50,12 +50,16 @@ main > h1:active {
 }
 
 .root__container > main {
-  display: flex;
-  justify-content: center;
-  background-color: $primary;
+  @include lg {
+    display: flex;
+    justify-content: center;
+    background-color: $primary;
+  }
 }
 
 main .main-content__container {
-  max-width: 1200px;
-  background-color: $white;
+  @include lg {
+    max-width: 1200px;
+    background-color: $white;
+  }
 }

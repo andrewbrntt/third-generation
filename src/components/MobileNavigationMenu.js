@@ -68,7 +68,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
   }
 
   return (
-    <nav role='navigation'>
+    <nav className='mobile-navigation--display' role='navigation'>
       <MobileNavigationButton
         navIsOpen={navIsOpen}
         toggleNavMenu={toggleMobileNav}
