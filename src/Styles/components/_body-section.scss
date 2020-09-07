@@ -66,5 +66,7 @@
 }
 
 .body-section__container {
-  max-width: 1200px;
+  @include lg {
+    max-width: 1200px;
+  }
 }

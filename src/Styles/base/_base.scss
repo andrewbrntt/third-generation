@@ -48,14 +48,3 @@ main > h1:active {
   outline: 0.1875rem dashed $secondary;
   outline-offset: 0.625rem;
 }
-
-.root__container > main {
-  display: flex;
-  justify-content: center;
-  background-color: $primary;
-}
-
-main .main-content__container {
-  max-width: 1200px;
-  background-color: $white;
-}
