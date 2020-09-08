@@ -10,6 +10,8 @@
   width: 8.4375rem;
   text-decoration: none;
 
+
+
   // 576px window width and more
   @include sm {
     width: 10.375rem;
@@ -21,7 +23,6 @@
 
   @include lg {
     width: 225px;
-    height: 236px;
   }
 }
 

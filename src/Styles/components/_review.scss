@@ -10,6 +10,15 @@
   //Box Model
   padding: 0.5rem;
   border: 0.0625rem solid $secondary;
+
+  @include lg {
+    height: 25.875rem;
+    padding: 0.9375rem 0.9375rem 2.8125rem;
+  }
+}
+
+.review__details-container > p {
+  letter-spacing: 0.01rem;
 }
 
 .review__name {
@@ -19,6 +28,10 @@
   //Typography
   font-weight: bold;
   font-size: 1.625rem;
+
+  @include lg {
+    font-size: 2.25rem;
+  }
 }
 
 .review__star-container {
@@ -26,16 +39,28 @@
   display: flex;
   justify-content: space-around;
   margin: 0.75rem 0 0;
+
+  @include lg {
+    width: 17.1875rem;
+  }
 }
 
 .review__location {
   //Box Model
   margin: 1.5rem 0;
+
+  @include lg {
+    font-size: 2.25rem;
+  }
 }
 
 .review__star {
   display: inline;
   font-size: 3rem;
+
+  @include lg {
+    font-size: 2.5rem;
+  }
 }
 
 .hidden {

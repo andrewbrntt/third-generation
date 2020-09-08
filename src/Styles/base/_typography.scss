@@ -17,7 +17,7 @@ $action-font: 'Arvo', 'Times New Roman', Times, serif;
 
 // ----- Size and Spacing ------- //
 $default-font-size: 1rem;
-$default-letter-spacing: 0.05rem;
+$default-letter-spacing: 0.004375rem;
 $default-line-height: 1.5;
 $default-word-spacing: 0.09375rem;
 // ------------------ //
@@ -32,6 +32,12 @@ $default-word-spacing: 0.09375rem;
     font-size: 3.125rem;
   }
 
+  @include lg {
+    font-size: 2.625rem;
+    line-height: 1.25;
+    letter-spacing: 0.015625rem;
+  }
+
 }
 
 .default-text {
@@ -43,6 +49,12 @@ $default-word-spacing: 0.09375rem;
 
   @include md {
     font-size: 1.5rem;
+  }
+
+  @include lg {
+    font-size: 1.5rem;
+    letter-spacing: 0.07px;
+
   }
 }
 

@@ -6,6 +6,12 @@
 //Animation
 //Misc
 
+.contact-form {
+  @include lg {
+    width: 60.3125rem;
+  }
+}
+
 .contact-form__button--spacing {
   //Box Model
   margin-top: 1.25rem;

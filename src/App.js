@@ -29,10 +29,11 @@ function App () {
         <Header/>
       </header>
       <main id='main-content'>
-        <div className='main-content__container'>
           <Switch>
             <Route path='/about'>
+              <div>
               <About/>
+              </div>
             </Route>
             <Route path='/roofing'>
               <Roofing/>
@@ -67,7 +68,6 @@ function App () {
               <Home/>
             </Route>
           </Switch>
-        </div>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
         <Footer/>

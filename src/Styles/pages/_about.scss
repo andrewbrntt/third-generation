@@ -6,3 +6,22 @@
 //Animation
 //Misc
 
+
+
+.about-us__p-section > p:first-child {
+  @include lg {
+    width: 55.625rem;
+  }
+}
+
+.about-us__p-section > p:nth-child(2) {
+  @include lg {
+    width: 45.9375rem;
+  }
+}
+
+.about-us__body-section {
+  @include lg {
+    width: 100%;
+  }
+}

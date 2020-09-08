@@ -22,6 +22,16 @@
   @include md {
     padding: 6.25rem 2.375rem 4.75rem;
   }
+
+  @include lg {
+    width: 965px;
+    height: 581px;
+    padding: 100px 32px 80px;
+  }
+}
+
+.hero-image-overlay__container h1 {
+
 }
 
 .hero-image-overlay__h1--margin {
@@ -37,6 +47,10 @@
   @include md {
     margin: 6.25rem 0;
     font-size: 1.5rem;
+  }
+  @include lg {
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 }
 

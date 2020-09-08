@@ -52,14 +52,13 @@ main > h1:active {
 .root__container > main {
   @include lg {
     display: flex;
-    justify-content: center;
-    background-color: $primary;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-main .main-content__container {
+.section-container--1200 {
   @include lg {
     max-width: 1200px;
-    background-color: $white;
   }
 }
