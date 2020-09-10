@@ -31,9 +31,7 @@ function App () {
       <main id='main-content'>
           <Switch>
             <Route path='/about'>
-              <div>
               <About/>
-              </div>
             </Route>
             <Route path='/roofing'>
               <Roofing/>

@@ -12,4 +12,9 @@
 
   //Typography
   text-align: center;
+
+  @include lg {
+    margin-top: 6.25rem;
+    margin-bottom: 5rem;
+  }
 }

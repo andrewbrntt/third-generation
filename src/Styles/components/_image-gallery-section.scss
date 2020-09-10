@@ -7,8 +7,13 @@
 //Misc
 
 .image-gallery-section__container {
-  margin-bottom: 45px;
   text-align: left;
+padding-right: 34px;
+padding-left: 34px;
+  @include lg {
+    width: 768px;
+    margin-bottom: 45px;
+  }
 }
 
 .image-gallery-section__title {
@@ -21,11 +26,18 @@
   letter-spacing: 0.05px;
 }
 
-.image-gallery-section__single-img {
+.image-gallery-section__hero-img {
   width: 100%;
-  height: 307px;
+  @include lg {
+    width: 60.3125rem;
+    height: 60.3125rem;
+  }
 }
 
 .image-gallery-section__img {
-  margin-bottom: 10px;
+  width: 50%;
+  @include lg {
+    width: 321px;
+    height: 321px;
+  }
 }

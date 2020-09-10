@@ -49,6 +49,12 @@ main > h1:active {
   outline-offset: 0.625rem;
 }
 
+.root__container {
+  @include lg {
+    width: 100%;
+  }
+}
+
 .root__container > main {
   @include lg {
     display: flex;

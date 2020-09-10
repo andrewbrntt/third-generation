@@ -19,7 +19,10 @@
 
 .image-gallery__img-container {
   width: 16.25rem;
-  height: 370px;
+
+  @include lg {
+    width: 60.3125rem;
+  }
 }
 
 .image-gallery__container {
@@ -33,6 +36,11 @@
 .image-gallery__img {
   width: 100%;
   height: 320px;
+
+  @include lg {
+    width: 60.3125rem;
+    height: auto;
+  }
 }
 
 .image-gallery__img--display-block {

@@ -35,40 +35,47 @@ export const beforeAfterMockData = [
 ]
 
 export const mockGalleryImageObjects1 = [
-  { id: 'remodel-single-1', pairId: '', src: SingleImage, altText: 'After Image of a remodel' },
+  {
+    id: 'remodel-single-1',
+    isHero: true,
+    src: SingleImage,
+    altText: 'After Image of a remodel',
+    subText: ''
+  },
   {
     id: 'remodel-before-1',
-    pairId: 'remodel-after-1',
+    isHero: false,
     src: BeforeImage,
     altText: 'Before image of a roof',
-    subText: 'Before'
+    subText: ''
   },
   {
     id: 'remodel-after-1',
-    pairId: 'remodel-before-1',
+    isHero: false,
     src: AfterImage,
     altText: 'After Image of a roof',
-    subText: 'After'
+    subText: ''
   },
   {
     id: 'remodel-single-2',
-    pairId: '',
+    isHero: false,
     src: SingleImage2,
-    altText: 'After Image of a remodel'
+    altText: 'After Image of a remodel',
+    subText: ''
   },
   {
     id: 'remodel-before-2',
-    pairId: 'remodel-after-2',
+    isHero: false,
     src: BeforeImage2,
     altText: 'Before image of siding',
-    subText: 'Before'
+    subText: ''
   },
   {
     id: 'remodel-after-2',
-    pairId: 'remodel-before-2',
+    isHero: false,
     src: AfterImage2,
     altText: 'After Image of a remodel',
-    subText: 'After'
+    subText: ''
   }
 ]
 
@@ -106,7 +113,8 @@ export const mockGalleryImageObjects2 = [
     pairId: 'remodel-before-4',
     src: AfterImage4,
     altText: 'After Image of a remodel',
-    subText: 'After' }
+    subText: 'After'
+  }
 ]
 
 export const mockGallerySections = [

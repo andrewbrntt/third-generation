@@ -6,7 +6,7 @@ const FooterSection = ({ header, listItems }) => {
     <div className='footer-section'>
       <h3 className='footer-section__heading'>{header}</h3>
       {listItems &&
-      <ul className='footer__ul'>
+      <ul className='footer__ul footer__subsection-list'>
         {listItems.map(item => <li key={item}><NavLink className='footer__link' to={`/${item.toLowerCase()}`}>{item}</NavLink></li>)}
       </ul>
       }

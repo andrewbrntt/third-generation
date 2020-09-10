@@ -9,20 +9,16 @@ const ReviewSitesSection = ({ reviewSites = [] }) => {
 
   const reviewSiteSvg = (site) => {
     return (
-      <div key={`review-sites-section_${shortId.generate()}`} className='review-sites-section__badge-container'>
-          <img className='review-site-svg' role='img' src={site.imgDefault} alt={site.altText}/>
-      </div>
+          <img key={`review-sites-section_${shortId.generate()}`} className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
     )  }
 
   const reviewSiteImg = (site) => {
     return (
-      <div key={`review-sites-section_${shortId.generate()}`} className='review-sites-section__badge-container'>
         <picture>
           <source media='(min-width:992px)' srcSet={site.imgLarge}/>
           <source media='(min-width:768px)' srcSet={site.imgMedium}/>
-          <img src={site.imgDefault} alt={site.altText}/>
+          <img key={`review-sites-section_${shortId.generate()}`} src={site.imgDefault} alt={site.altText}/>
         </picture>
-      </div>
     )
   }
 

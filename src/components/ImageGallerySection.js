@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import BeforeAfter from './BeforeAfter'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import shortId from 'shortid'
 import ImageGalleryModal from './ImageGalleryModal'
 
@@ -8,33 +7,14 @@ const ImageGallerySection = ({ title, images }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImageId, setSelectedImageId] = useState(null)
 
-  const createBeforeAfterPair = (image) => {
-    const imagePairObject = images.find(currentImage => image.pairId === currentImage.id)
-    return { id: image.id, before: image, after: imagePairObject }
-  }
-
   const createGallerySectionItem = (imageObject) => {
-    if (imageObject.subText && imageObject.subText.toLowerCase() === 'after') {
-      return
-    }
-    if (imageObject.pairId && imageObject.subText.toLowerCase() === 'before') {
-      imageObject = createBeforeAfterPair(imageObject)
-      return (
-        <div key={shortId.generate()} className='image-gallery-section__img--border'>
-          <button onClick={() => onImageClick(imageObject.id)}>
-            <BeforeAfter before={imageObject.before} after={imageObject.after}/>
-          </button>
-        </div>
-      )
-    } else {
-      return (
-        <button key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
-          <img className='image-gallery-section__single-img image-gallery-section__img'
-               src={imageObject.src}
-               alt={imageObject.altText}/>
-        </button>
-      )
-    }
+    return (
+      <a  href='#' key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
+        <img className={imageObject.isHero ? 'image-gallery-section__hero-img' : 'image-gallery-section__img'}
+             src={imageObject.src}
+             alt={imageObject.altText}/>
+      </a>
+    )
   }
 
   const onImageClick = (imageId) => {
@@ -48,15 +28,15 @@ const ImageGallerySection = ({ title, images }) => {
 
   }
 
-  // useEffect(() => {
-  //   if (isModalOpen) {
-  //     const body = document.getElementsByTagName('body')[0]
-  //     body.setAttribute('style', 'position: fixed;')
-  //   } else {
-  //     const body = document.getElementsByTagName('body')[0]
-  //     body.setAttribute('style', 'position: initial;')
-  //   }
-  // }, [isModalOpen])
+  useLayoutEffect(() => {
+    if (isModalOpen) {
+      const reactRootDiv = document.getElementById('root')
+      reactRootDiv.setAttribute('style', 'position: fixed;')
+    } else {
+      const reactRootDiv = document.getElementById('root')
+      reactRootDiv.setAttribute('style', 'position: initial;')
+    }
+  }, [isModalOpen])
 
   return (
     <>

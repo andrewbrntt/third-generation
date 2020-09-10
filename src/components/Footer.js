@@ -8,10 +8,12 @@ const Footer = () => {
 
   const servicesOfferedListItems = ['Remodel', 'Roofing', 'Siding', 'Repairs']
   return (
-    <>
+    <div className='footer__container'>
       <SocialMediaSection/>
       {/* BEM would an image be footer__img--logo? */}
+      <div className='footer__logo-container'>
       <img alt='Third Generation Construction Company Logo' className='footer__logo' src={logo}/>
+      </div>
       <ul className='footer__ul'>
         <li><NavLink className='footer__link' to='/'>Home</NavLink></li>
         <li><NavLink className='footer__link' to='/about'>About</NavLink></li>
@@ -23,7 +25,10 @@ const Footer = () => {
         <li><NavLink className='footer__link' to='/contact'>Contact Us</NavLink></li>
         <li><NavLink className='footer__link' to='/emergency'>24-Hour Emergency Service</NavLink></li>
       </ul>
-    </>
+      <div className='footer__sub-footer'>
+
+      </div>
+    </div>
   )
 }
 

@@ -21,7 +21,7 @@ const OurWork = () => {
       <BodySection styleClasses='color-primary padding-x-standard' sectionTitle='Gallery'>
         <ImageGallery gallerySections={mockGallerySections} />
       </BodySection>
-      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='body-section__reviews-section--padding color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
     </>

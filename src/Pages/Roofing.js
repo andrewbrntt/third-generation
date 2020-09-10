@@ -63,7 +63,7 @@ const Roofing = () => {
       </BodySection>
       <BodySection
         linkRoute='/reviews'
-        styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Reviews'
+        styleClasses='background-color-primary color-white padding-x-standard body-section__reviews-section--padding' sectionTitle='Reviews'
                    linkText='Reviews'>
         <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
       </BodySection>

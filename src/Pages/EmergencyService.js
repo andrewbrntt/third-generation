@@ -1,7 +1,6 @@
 import React from 'react'
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
-import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
@@ -22,9 +21,9 @@ const EmergencyService = () => {
         <p>We're proud of our work and love showing it off.</p>
         <p className='p--top-spacing'>
           Let 3RD Generation Construction transform your current space into the home of your dreams.</p>
-        <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
+        {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
-      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='body-section__reviews-section--padding color-primary'>
         <ReviewList randomCount='1'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>

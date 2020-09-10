@@ -4,16 +4,16 @@ import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
-import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { beforeAfterMockData, formFieldsData, reviewSites } from '../helpers/mockData.js'
+import { formFieldsData, mockGalleryImageObjects1, reviewSites } from '../helpers/mockData.js'
 
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
 import SidingImage from '../assets/service-placeholder-women-2.jpg'
 import AboutImage from '../assets/group-people.jpg'
+import ImageGallerySection from '../components/ImageGallerySection'
 
 const Home = () => {
 
@@ -21,7 +21,7 @@ const Home = () => {
     formClasses: '',
     fieldContainerClasses: '',
     labelElementClasses: '',
-    labelTextClasses:'color-white',
+    labelTextClasses: 'color-white',
     requiredTextClasses: 'color-white'
   }
 
@@ -39,7 +39,8 @@ const Home = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary section-container--1200' sectionTitle='Our Services'>
-        <div className='default-text home__our-services-p-container--mobile home__our-services-p-container--margin padding-x-standard'>
+        <div
+          className='default-text home__our-services-p-container--mobile home__our-services-p-container--margin padding-x-standard'>
           <p>
             Whatever your home needs. Third Generation Construction can help.
           </p>
@@ -59,13 +60,14 @@ const Home = () => {
             </div>
           </div>
           <div className='home__service-cards-desktop-container'>
-              <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
-              <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
-              <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
-              <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
+            <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
+            <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
+            <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
+            <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
           </div>
         </div>
-        <div className='default-text home__our-services-p-container--desktop home__our-services-p-container--margin padding-x-standard'>
+        <div
+          className='default-text home__our-services-p-container--desktop home__our-services-p-container--margin padding-x-standard'>
           <p>
             Whatever your home needs. Third Generation Construction can help.
           </p>
@@ -74,7 +76,8 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='/about' linkText='About Us' styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
+      <BodySection linkRoute='/about' linkText='About Us'
+                   styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='body-section__p-container padding-x-standard'>
           <p>
@@ -85,21 +88,26 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='color-primary' sectionTitle='Our Work'>
-        <div className='body-section__p-container body-section--width-965 home__our-work-p-container padding-x-standard'>
-        <p>
-          We offer a personal experience for each customer by ensuring every project is unique.
-        </p>
-        <p className='p--top-spacing'>
-          Let Third Generation Construction transform your current space into the home of your dreams.
-        </p>
+      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary' sectionTitle='Our Work'>
+        <div
+          className='body-section__p-container home__our-work-p-container padding-x-standard'>
+          <p>
+            We offer a personal experience for each customer by ensuring every project is unique.
+          </p>
+          <p className='p--top-spacing'>
+            Let Third Generation Construction transform your current space into the home of your dreams.
+          </p>
         </div>
-        <BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>
+        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
+        {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
-      <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white' sectionTitle='Contact Us'>
+      <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
+                   sectionTitle='Contact Us'>
         <ContactForm formStyleClasses={formStyles} formFieldsData={formFieldsData}/>
       </BodySection>
-      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary padding-x-standard' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews'
+                   styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'
+                   sectionTitle='Reviews'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <ReviewSitesSection reviewSites={reviewSites}/>

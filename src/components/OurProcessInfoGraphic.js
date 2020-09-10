@@ -32,6 +32,3 @@ const OurProcessInfoGraphic = ({ stepList }) => {
   )
 }
 export default OurProcessInfoGraphic
-
-// 88 88
-// #main-content > section.body-section.default-text.background-color-primary.color-white.test-height > ol >

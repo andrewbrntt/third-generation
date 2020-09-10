@@ -1,7 +1,6 @@
 import React from 'react'
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
-import BeforeAfterGallerySection from '../components/BeforeAfterGallerySection'
 import AboutImage from '../assets/group-people.jpg'
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
@@ -62,7 +61,7 @@ const Remodel = () => {
         <p className='p--top-spacing p--bottom-margin-40 padding-x-standard'>
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
-        <BeforeAfterGallerySection galleryImages={galleryImages}/>
+        {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
       <BodySection sectionTitle='Our Suppliers' styleClasses='color-primary'>
         <p className='padding-x-standard'>

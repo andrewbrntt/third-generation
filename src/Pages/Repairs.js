@@ -64,7 +64,7 @@ const Repairs = () => {
         </p>
         <VendorSection vendors={vendors}/>
       </BodySection>
-      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='color-primary' sectionTitle='Reviews'>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='body-section__reviews-section--padding color-primary' sectionTitle='Reviews'>
         <ReviewList randomCount='1'/>
       </BodySection>
     </>

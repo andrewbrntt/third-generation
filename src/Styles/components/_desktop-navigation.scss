@@ -47,6 +47,10 @@
   border: 3px solid $primary;
 }
 
+.desktop-nav__services-li:hover > .desktop-nav__services-submenu {
+  display: block;
+}
+
 .desktop-nav__services-submenu li {
   display: block;
   margin-bottom: 20px;
@@ -55,7 +59,6 @@
 .desktop-nav__services-submenu li:first-child {
   margin-top: 20px;
 }
-
 
 .desktop-nav__services-li {
   position: relative;
@@ -66,7 +69,7 @@
 }
 
 .desktop-nav__services-submenu li a:hover,
-.desktop-nav__services-submenu li a:focus {
+.desktop-nav__services-submenu li > a:focus {
   text-decoration: none;
   border-bottom: 3px dashed $primary;
   outline: transparent;
@@ -76,3 +79,4 @@
 .desktop-nav__submenu-is-open {
   display: block;
 }
+
