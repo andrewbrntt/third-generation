@@ -7,27 +7,54 @@
 //Misc
 
 .image-gallery-section__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-right: 8px;
+  padding-left: 8px;
   text-align: left;
-padding-right: 34px;
-padding-left: 34px;
+
+  @include md {
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
   @include lg {
-    width: 768px;
+    width: 965px;
     margin-bottom: 45px;
+    padding-right: 34px;
+    padding-left: 34px;
   }
 }
 
 .image-gallery-section__title {
   display: inline-block;
+  width: 304px;
   margin-bottom: 1.25rem;
 
   //Typography
   font-size: 20px;
   font-family: $san-serif-font;
   letter-spacing: 0.05px;
+
+  @include sm {
+    width: 500px;
+  }
+
+  @include md {
+    width: 700px;
+  }
+
+  @include lg {
+    width: 965px;
+  }
 }
 
 .image-gallery-section__hero-img {
   width: 100%;
+  height: 100%;
+
   @include lg {
     width: 60.3125rem;
     height: 60.3125rem;
@@ -35,9 +62,81 @@ padding-left: 34px;
 }
 
 .image-gallery-section__img {
-  width: 50%;
+
+  @include lg {
+    //width: 321px;
+    //height: 321px;
+  }
+}
+
+.image-gallery-section__hero-link {
+  display: block;
+  width: 304px;
+  height: 304px;
+  margin-bottom: 3px;
+
+  @include sm {
+    width: 500px;
+  }
+
+  @include md {
+    width: 700px;
+    height: 700px;
+    margin-bottom: 6px;
+  }
+
+  @include lg {
+    width: 965px;
+    height: 965px;
+  }
+}
+
+.image-gallery-section__img-link {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  border: 1px solid black;
+
+  @include sm {
+    width: 250px;
+    height: 250px;
+  }
+
+  @include md {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 6px;
+  }
+
   @include lg {
     width: 321px;
     height: 321px;
+  }
+}
+
+.image-gallery-section__img-link:nth-child(even) {
+  //margin-right: 3px;
+}
+
+.image-gallery-section__img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 304px;
+
+  @include sm {
+    justify-content: space-between;
+    width: 500px;
+  }
+
+  @include md {
+    width: 700px;
+  }
+
+  @include lg {
+    justify-content: center;
+    width: 965px;
   }
 }

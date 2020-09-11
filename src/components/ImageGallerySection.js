@@ -1,16 +1,36 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState, useRef } from 'react'
 import shortId from 'shortid'
+
 import ImageGalleryModal from './ImageGalleryModal'
 
-const ImageGallerySection = ({ title, images }) => {
+const clone = require('rfdc')()
+
+const ImageGallerySection = ({ title, images, hero }) => {
+
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImageId, setSelectedImageId] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
+  const [galleryImages, setGalleryImages] = useState(null)
+
+  const createGallerySectionHero = () => {
+    if (heroImage) {
+      return (
+        <a className='image-gallery-section__hero-link' href='#' key={shortId.generate()}
+           onClick={() => onImageClick(heroImage.id)}>
+          <img className='image-gallery-section__hero-img'
+               src={heroImage.src}
+               alt={heroImage.altText}/>
+        </a>
+      )
+    }
+  }
 
   const createGallerySectionItem = (imageObject) => {
     return (
-      <a  href='#' key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
-        <img className={imageObject.isHero ? 'image-gallery-section__hero-img' : 'image-gallery-section__img'}
+      <a className='image-gallery-section__img-link'
+         href='#' key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
+        <img className=''
              src={imageObject.src}
              alt={imageObject.altText}/>
       </a>
@@ -25,31 +45,40 @@ const ImageGallerySection = ({ title, images }) => {
     if (isModalOpen !== !isModalOpen) {
       setIsModalOpen(!isModalOpen)
     }
-
   }
 
   useLayoutEffect(() => {
-    if (isModalOpen) {
-      const reactRootDiv = document.getElementById('root')
-      reactRootDiv.setAttribute('style', 'position: fixed;')
-    } else {
-      const reactRootDiv = document.getElementById('root')
-      reactRootDiv.setAttribute('style', 'position: initial;')
+    if (images && JSON.stringify(images) !== JSON.stringify(galleryImages)) {
+
+      let hero = images.find(image => image.isHero)
+      const galleryImagesClone = clone(images)
+
+      if (galleryImagesClone) {
+        setHeroImage(hero)
+        galleryImagesClone.shift()
+        setGalleryImages(galleryImagesClone)
+      }
+
     }
-  }, [isModalOpen])
+  }, [])
 
   return (
     <>
       {selectedImageId &&
-      <ImageGalleryModal isModalOpen={isModalOpen}
+      <ImageGalleryModal
+        isModalOpen={isModalOpen}
                          handleModalClose={setIsModalOpen}
                          gallerySectionImages={images}
                          initialImageId={selectedImageId}
       />}
       <div className='image-gallery-section__container'>
         <span className='image-gallery-section__title'>{title}</span>
+        {heroImage && createGallerySectionHero(heroImage)}
         <div className='image-gallery-section__img-container'>
-          {images.map(image => createGallerySectionItem(image))}
+          {galleryImages && galleryImages.map(image => {
+            return createGallerySectionItem(image)
+          })
+          }
         </div>
       </div>
     </>

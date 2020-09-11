@@ -14,10 +14,10 @@ const ReviewSitesSection = ({ reviewSites = [] }) => {
 
   const reviewSiteImg = (site) => {
     return (
-        <picture>
+        <picture key={`review-sites-section_${shortId.generate()}`}>
           <source media='(min-width:992px)' srcSet={site.imgLarge}/>
           <source media='(min-width:768px)' srcSet={site.imgMedium}/>
-          <img key={`review-sites-section_${shortId.generate()}`} src={site.imgDefault} alt={site.altText}/>
+          <img src={site.imgDefault} alt={site.altText}/>
         </picture>
     )
   }
