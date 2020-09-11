@@ -23,7 +23,7 @@
 
 .footer__container {
   @include lg {
-    width: 965px;
+    width: 60.3125rem;
   }
 }
 
@@ -71,7 +71,7 @@
 
 .footer__sub-footer {
   width: 100%;
-  height: 30px;
-  margin-bottom: 10px;
-  border: 1px solid palegreen;
+  height: 1.875rem;
+  margin-bottom: 0.625rem;
+  border: 0.0625rem solid palegreen;
 }

@@ -49,7 +49,6 @@ const ImageGallerySection = ({ title, images, hero }) => {
 
   useLayoutEffect(() => {
     if (images && JSON.stringify(images) !== JSON.stringify(galleryImages)) {
-
       let hero = images.find(image => image.isHero)
       const galleryImagesClone = clone(images)
 

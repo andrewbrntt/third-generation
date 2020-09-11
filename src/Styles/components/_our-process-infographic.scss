@@ -47,8 +47,8 @@ display: block;
   list-style: none;
 
   @include lg {
-    width: 183px;
-    height: 266px;
+    width: 11.4375rem;
+    height: 16.625rem;
     background-color: transparent;
   }
 }
@@ -78,41 +78,29 @@ display: block;
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 20px;
-    font-size: 23px;
-    letter-spacing: 0.07px;
-  }
-}
-
-.our-process-infographic__icon-text {
-  @include lg {
-    //margin-top: 30px;
+    margin-top: 1.25rem;
+    font-size: 1.4375rem;
+    letter-spacing: 0.004375rem;
   }
 }
 
 .our-process-infographic__text-container--width {
   @include lg {
-    width: 130px;
+    width: 8.125rem;
   }
 }
 
 .our-process-infographic__desktop-line {
   position: absolute;
-  top: 15px;
-  left: 100px;
-  width: 730px;
-  height: 45px;
-  border-bottom: 2px solid $white;
+  top: 0.9375rem;
+  left: 6.25rem;
+  width: 45.625rem;
+  height: 2.8125rem;
+  border-bottom: 0.125rem solid $white;
 }
 
 .our-process-infographic__desktop-caret-right {
-  font-size: 50px;
-}
-
-.our-process-infographic__desktop-caret-right-container {
-  //display: flex;
-  //justify-content: space-between;
-  //color: $white;
+  font-size: 3.125rem;
 }
 
 .our-process-infographic__desktop-container {
@@ -124,29 +112,25 @@ display: block;
   }
 }
 
-.our-process-infographic__desktop-ol-container {
-  //display: none;
-}
-
 .our-process-infographic__desktop-caret-container {
   position: absolute;
-  bottom: 182px;
-  width: 50px;
-  height: 50px;
+  bottom: 11.375rem;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
 .our-process-infographic__desktop-caret-container:first-child {
-  left: 160px;
+  left: 10rem;
 }
 
 .our-process-infographic__desktop-caret-container:nth-child(2) {
-  left: 342px;
+  left: 21.375rem;
 }
 
 .our-process-infographic__desktop-caret-container:nth-child(3) {
-  left: 524px;
+  left: 32.75rem;
 }
 
 .our-process-infographic__desktop-caret-container:nth-child(4) {
-  left: 707px;
+  left: 44.1875rem;
 }

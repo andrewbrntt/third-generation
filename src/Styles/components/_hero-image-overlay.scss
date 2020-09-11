@@ -24,14 +24,10 @@
   }
 
   @include lg {
-    width: 965px;
-    height: 581px;
-    padding: 100px 32px 80px;
+    width: 60.3125rem;
+    height: 36.3125rem;
+    padding: 6.25rem 2rem 5rem;
   }
-}
-
-.hero-image-overlay__container h1 {
-
 }
 
 .hero-image-overlay__h1--margin {
@@ -49,8 +45,8 @@
     font-size: 1.5rem;
   }
   @include lg {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 }
 

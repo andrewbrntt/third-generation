@@ -1,11 +1,10 @@
 import React from 'react'
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
-import AboutImage from '../assets/group-people.jpg'
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
-import DecorativeImage from '../components/DecorativeImage'
 import { beforeAfterMockData } from '../helpers/mockData'
+import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 
 const galleryImages = beforeAfterMockData
 
@@ -18,18 +17,7 @@ const vendors = [
 const Remodel = () => {
   return (
     <>
-      <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='Remodel'
-                   styleClasses='remove-padding-x color-primary'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='padding-x-standard'>
-          Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
-          Construction is here.
-        </p>
-        <p className='p--top-spacing padding-x-standard'>
-          We pride ourselves in using quality products to create beautiful projects at an
-          affordable price.
-        </p>
-      </BodySection>
+      <DesktopBodySectionHeader/>
       <BodySection linkRoute='/contact'
                    styleClasses='background-color-primary color-white'
                    sectionTitle='Free Consultation'

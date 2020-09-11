@@ -65,6 +65,6 @@ main > h1:active {
 
 .section-container--1200 {
   @include lg {
-    max-width: 1200px;
+    max-width: 75rem;
   }
 }
