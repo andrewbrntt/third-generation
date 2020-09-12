@@ -1,6 +1,5 @@
 import React from 'react'
 import DecorativeImage from './DecorativeImage'
-import AboutImage from '../assets/group-people.jpg'
 import ThemedLink from './ThemedLink'
 
 const DesktopBodySectionHeader = ({ sectionTitle, children, styleClasses, heroImage, linkText, linkRoute }) => {

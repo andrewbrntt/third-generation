@@ -103,7 +103,7 @@
   }
 
   @include lg {
-    width: 30.1875rem;
+    width: 60.3125rem;
     height: 37.5rem;
   }
 }
@@ -157,6 +157,13 @@
   height: 31.6875rem;
   margin-right: 1.625rem;
 }
+
+.desktop-body-section__section-img {
+  width: 60.3125rem;
+  height: 31.6875rem;
+  margin-right: 1.625rem;
+}
+
 
 .desktop-body-section__link-container {
   margin-top: 4.375rem;

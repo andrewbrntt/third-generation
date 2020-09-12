@@ -6,24 +6,55 @@
 //Animation
 //Misc
 
-.vendor__owens-corning {}
+.vendor__owens-corning {
+  @include lg {
+    width: 146px;
+    height: 146px;
+    margin-bottom: 80px;
+  }
+}
 
-.vendor__james-hardie {}
+.vendor__james-hardie {
+  @include lg {
+    width: 275px;
+    height: 60px;
+  }
+}
 
-.vendor__royal-building {}
+.vendor__royal-building {
+  @include lg {
+    width: 275px;
+    height: 37px;
+  }
+}
 
-.vendor__alside {}
+.vendor__alside {
+  @include lg {
+    width: 259px;
+    height: 63px;
+  }
+}
 
 .vendor__firestone {
   width: 14.0625rem;
   @include md {
     width: 25.4375rem;
   }
+
+  @include lg {
+    width: 275px;
+    height: 71px;
+  }
 }
 
 .vendor__certainteed {
   @include md {
     width: 25.4375rem;
+  }
+
+  @include lg {
+    width: 275px;
+    height: 65px;
   }
 }
 

@@ -17,12 +17,12 @@ import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 const Siding = () => {
 
   const vendors = [
-    { logo: owensCorningLogo, altText: 'Owens Corning Logo' },
-    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo' },
-    { logo: royalSidingLogo, altText: 'Royal Building Products Logo' },
-    { logo: alsideLogo, altText: 'Alside Siding Logo' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
-    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo' }
+    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
+    { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
+    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
+    { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
+    { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
   ]
 
   return (
@@ -38,23 +38,33 @@ const Siding = () => {
           Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
         </p>
       </BodySection>
-      <DesktopBodySectionHeader />
-      <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Pros to Siding'
+      <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Siding'
+                                heroImage={AboutImage}>
+        <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
+          makes your home beautiful.</p>
+        <p className='p--top-spacing padding-x-standard'>
+          Third Generation Construction is here to help increase your curb appeal and secure your home.
+        </p>
+        <p className='p--top-spacing padding-x-standard'>
+          Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
+        </p>
+      </DesktopBodySectionHeader>
+      <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard body-section--width-full' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
-        <p>
+        <p className='body-section--width-965'>
           Replacing your siding has a number of benefits, including increase the value of your home.
         </p>
-        <p className='p--top-spacing'>A home's siding not only protects your most valuable asset from the harsh Lake
+        <p className='p--top-spacing body-section--width-965'>A home's siding not only protects your most valuable asset from the harsh Lake
           Erie weather, but it can also
           play a huge role in your maintenance and utility costs.</p>
-        <p className='p--top-spacing p--bottom-margin-40'>Ensure your house is protected and economically efficient by
+        <p className='p--top-spacing p--bottom-margin-40 body-section--width-full'>Ensure your house is protected and economically efficient by
           scheduling a free inspection and consultation
           with our team today.</p>
         <div>
           <SidingInfographic/>
         </div>
       </BodySection>
-      <BodySection styleClasses='color-primary padding-x-standard' sectionTitle='Outlast the Elements' linkText='FAQ'>
+      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Outlast the Elements' linkRoute='/contact' linkText='Contact Us'>
         <p>
           Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County
           homes.
@@ -63,16 +73,16 @@ const Siding = () => {
           Replacing your home’s weather-worn or damaged siding can increase your home’s value, curb appeal, and safety.
         </p>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' sectionTitle='Our Work' linkText='View Gallery'>
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' sectionTitle='Our Work' linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='padding-x-standard'>
+        <p className='padding-x-standard body-section--width-965'>
           We're proud of our work and love showing it off.
         </p>
-        <p className='p--top-spacing padding-x-standard'>
+        <p className='p--top-spacing padding-x-standard body-section--width-965'>
           Let 3RD Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary padding-x-standard' sectionTitle='Materials'>
+      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Materials'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>
@@ -80,7 +90,9 @@ const Siding = () => {
           Third Generation Construction uses dependable and affordable products to ensure your project is secure,
           beautiful, and reliable.
         </p>
-        <VendorSection vendors={vendors}/>
+        <div className='vendor-section--alignment'>
+          <VendorSection vendors={vendors}/>
+        </div>
       </BodySection>
     </>
   )

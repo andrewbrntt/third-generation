@@ -48,9 +48,9 @@ const DesktopNavigationMenu = () => {
   }
 
   useLayoutEffect(() => {
-    if (servicesSubMenuIsOpen) {
-        servicesFirstSubMenuItem.current.focus()
-      }
+    // if (servicesSubMenuIsOpen) {
+    //     servicesFirstSubMenuItem.current.focus()
+    //   }
 
     if(!servicesSubMenuIsOpen && servicesSubMenuEventType === 'blur') {
         ourWorkMenuItem.current.focus()
