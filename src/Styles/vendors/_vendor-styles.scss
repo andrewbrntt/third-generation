@@ -26,3 +26,24 @@
     width: 25.4375rem;
   }
 }
+
+.vendor__carter-lumber {
+  @include lg {
+    width: 292px;
+    height: 71px;
+  }
+}
+
+.vendor__gaf {
+  @include lg {
+    width: 275px;
+    height: 183px;
+  }
+}
+
+.vendor__allied {
+  @include lg {
+    width: 275px;
+    height: 167px;
+  }
+}

@@ -7,34 +7,63 @@
 //Misc
 
 .icon-with-line__container {
-  height: 5rem;
-  margin: -1.875rem 0 2.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .icon-with-line__hr {
+  width: 140px;
   height: 0.45rem;
-  margin-top: 6.25rem;
   background-color: $white;
   border: 0;
   border-radius: 0.625rem;
+
+  @include md {
+    width: 340px;
+  }
+
+  @include lg {
+    width: 450px;
+  }
 }
 
 .icon-with-line__fa-icon {
-  position: relative;
-  top: -5.5rem;
   font-size: 8rem;
 }
 
 .icon-with-line__icon {
-  position: relative;
-  top: -4.5rem;
+  width: 95px;
+  height: 95px;
+  margin-right: -35px;
+  margin-left: -35px;
+
+  @include md {
+    width: 120px;
+    height: 120px;
+    margin-right: -45px;
+    margin-left: -45px;
+  }
+
+  @include lg {
+    width: 160px;
+    height: 160px;
+    margin-right: -57px;
+    margin-left: -57px;;
+  }
 }
 
-.icon-with-line__fa-icon-line__icon .fa-primary,
 .icon-with-line__fa-icon .fa-secondary {
   //Visual
   opacity: 1;
   fill: $primary;
   stroke: $white;
   stroke-width: 1.4375rem;
+}
+
+.icon-with-line__right-line,
+.icon-with-line__left-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

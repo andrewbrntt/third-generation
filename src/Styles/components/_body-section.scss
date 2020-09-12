@@ -84,6 +84,14 @@
   }
 }
 
+.body-section--display {
+  display: block;
+
+  @include lg {
+    display: none;
+  }
+}
+
 .body-section__hero-img {
   width: 100%;
   height: 16.25rem;
@@ -108,6 +116,8 @@
 }
 
 .desktop-body-section__header-container {
+  display: none;
+
   @include lg {
     display: inline-flex;
     flex-direction: row;
@@ -150,4 +160,17 @@
 
 .desktop-body-section__link-container {
   margin-top: 4.375rem;
+}
+
+.body-section__has-line > .body-section__title {
+  margin-top: 40px;
+  margin-bottom: 16px;
+
+  @include md {
+    margin-top: 100px;
+  }
+
+  @include lg {
+    margin-top: 80px;
+  }
 }

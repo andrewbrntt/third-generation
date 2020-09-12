@@ -5,7 +5,7 @@ import ImageGalleryModal from './ImageGalleryModal'
 
 const clone = require('rfdc')()
 
-const ImageGallerySection = ({ title, images, hero }) => {
+const ImageGallerySection = ({ title, images, isSection }) => {
 
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -71,7 +71,7 @@ const ImageGallerySection = ({ title, images, hero }) => {
                          initialImageId={selectedImageId}
       />}
       <div className='image-gallery-section__container'>
-        <span className='image-gallery-section__title'>{title}</span>
+        {!isSection && <span className='image-gallery-section__title'>{title}</span>}
         {heroImage && createGallerySectionHero(heroImage)}
         <div className='image-gallery-section__img-container'>
           {galleryImages && galleryImages.map(image => {

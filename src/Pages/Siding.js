@@ -12,6 +12,7 @@ import {
   royalSidingLogo
 } from '../helpers/vendorAssetLibrary'
 import DecorativeImage from '../components/DecorativeImage'
+import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 
 const Siding = () => {
 
@@ -26,7 +27,7 @@ const Siding = () => {
 
   return (
     <>
-      <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='Siding' linkText='Contact Us'>
+      <BodySection linkRoute='/contact' styleClasses='color-primary body-section--display' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
           makes your home beautiful.</p>
@@ -37,6 +38,7 @@ const Siding = () => {
           Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
         </p>
       </BodySection>
+      <DesktopBodySectionHeader />
       <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
         <p>

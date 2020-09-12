@@ -6,6 +6,7 @@ import VendorSection from '../components/VendorSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
 import {carterLogo, gafLogo, alliedLogo} from '../helpers/vendorAssetLibrary'
+import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 
 const Repairs = () => {
 
@@ -29,6 +30,7 @@ const Repairs = () => {
           Our services include painting, fence building, flooring, and more.
         </p>
       </BodySection>
+      <DesktopBodySectionHeader />
       <BodySection linkRoute='/contact' styleClasses='background-color-primary color-white' iconName={Tools} sectionTitle='Free Consultation'
                    linkText='Contact Us'>
         <p>You have questions.</p>
