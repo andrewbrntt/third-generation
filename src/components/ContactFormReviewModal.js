@@ -29,7 +29,7 @@ const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, hand
         </button>
       </div>
       <BodySection sectionTitle='Verify Info'>
-        <p className='default-text padding-x-standard'>Please ensure the information is correct before submitting</p>
+        <p className='padding-x-standard'>Please ensure the information is correct before submitting</p>
         <ul className='contact-form__ul padding-x-standard'>
           {formInputData.map(element => {
             return (
@@ -40,8 +40,8 @@ const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, hand
           })}
         </ul>
         <section className='contact-form__bottom-section'>
-          <button className='contact-form__btn action-text' onClick={handleClose}>Edit</button>
-          <button onBlur={handleSubmitButtonBlur} className='contact-form__btn action-text' onClick={handleSubmit}>Submit</button>
+          <button className='contact-form__btn' onClick={handleClose}>Edit</button>
+          <button onBlur={handleSubmitButtonBlur} className='contact-form__btn' onClick={handleSubmit}>Submit</button>
         </section>
       </BodySection>
     </Modal>

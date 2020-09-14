@@ -5,14 +5,16 @@ import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { reviewSites } from '../helpers/mockData'
+import { mockGalleryImageObjects1, mockGallerySections, reviewSites } from '../helpers/mockData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
+import ImageGallery from '../components/ImageGallery'
+import ImageGallerySection from '../components/ImageGallerySection'
 
 const About = () => {
 
   const stepList = [
     { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
-    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection'},
+    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection' },
     { icon: ['far', 'file-signature'], text: 'Sign Contract', srText: 'step 3 sign contract' },
     { icon: ['far', 'hammer'], text: 'Labor', srText: 'step 4 labor starts' },
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
@@ -21,6 +23,7 @@ const About = () => {
   return (
     <>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
+        <h1 className='about-us__title-lg'>About Us</h1>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard body-section--width-965'>
           <p>
@@ -38,7 +41,8 @@ const About = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white body-section--width-full' sectionTitle='Our Process'>
+      <BodySection styleClasses='background-color-primary color-white body-section--width-full'
+                   sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
         <OurProcessInfographicDesktop stepList={stepList}/>
       </BodySection>
@@ -54,16 +58,19 @@ const About = () => {
       </BodySection>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' linkText='View Gallery'
                    sectionTitle='Our Work'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='padding-x-standard'>
-          We're proud of our work and love showing it off.
-        </p>
-        <p className='p--top-spacing padding-x-standard'>Let Third Generation Construction transform your current space into
-          the home of
-          your dreams.
-        </p>
+        <div className='padding-x-standard'>
+          <p>
+            We're proud of our work and love showing it off.
+          </p>
+          <p className='p--top-spacing'>Let Third Generation Construction transform your current space into
+            the home of
+            your dreams.
+          </p>
+        </div>
+        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
       </BodySection>
-      <BodySection sectionTitle='Reviews' linkText='Reviews' styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
+      <BodySection sectionTitle='Reviews' linkText='Reviews'
+                   styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
         <ReviewList randomCount='1'/>
       </BodySection>
     </>

@@ -9,4 +9,9 @@
 .reviews__review-list-title {
   font-size: 1.375rem;
   text-align: left;
+
+  @include lg {
+    font-size: 1.875rem;
+    font-family: $action-font;
+  }
 }

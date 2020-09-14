@@ -40,7 +40,7 @@ const Home = () => {
       </BodyHeader>
       <BodySection styleClasses='color-primary section-container--1200' sectionTitle='Our Services'>
         <div
-          className='default-text home__our-services-p-container--mobile home__our-services-p-container--margin padding-x-standard'>
+          className='home__our-services-p-container--mobile padding-x-standard p--margin-bottom-standard'>
           <p>
             Whatever your home needs. Third Generation Construction can help.
           </p>
@@ -67,7 +67,7 @@ const Home = () => {
           </div>
         </div>
         <div
-          className='default-text home__our-services-p-container--desktop home__our-services-p-container--margin padding-x-standard'>
+          className='home__our-services-p-container--desktop p--margin-bottom-standard padding-x-standard'>
           <p>
             Whatever your home needs. Third Generation Construction can help.
           </p>
@@ -79,7 +79,7 @@ const Home = () => {
       <BodySection linkRoute='/about' linkText='About Us'
                    styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <div className='body-section__p-container padding-x-standard'>
+        <div className='p--margin-bottom-standard padding-x-standard'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
           </p>
@@ -90,7 +90,7 @@ const Home = () => {
       </BodySection>
       <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary' sectionTitle='Our Work'>
         <div
-          className='body-section__p-container home__our-work-p-container padding-x-standard'>
+          className='p--margin-bottom-standard body-section__p-container home__our-work-p-container padding-x-standard'>
           <p>
             We offer a personal experience for each customer by ensuring every project is unique.
           </p>

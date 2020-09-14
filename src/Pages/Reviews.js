@@ -18,7 +18,7 @@ const Reviews = () => {
           and customer satisfaction.
         </p>
       </BodyHeader>
-      <BodySection styleClasses='body-section__reviews-section--padding'>
+      <BodySection styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
         <ReviewList randomCount='5'/>
       </BodySection>
       <BodySection styleClasses='color-primary'>

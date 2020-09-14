@@ -10,11 +10,9 @@ const BodySection = ({ sectionTitle, children, styleClasses, pageHeader, iconNam
 
   return (
     <>
-      <div className='body-section--display'>
         {pageHeader && <PageHeader header={pageHeader}/>}
-      </div>
         <section style={styles}
-               className={`${pageHeader ? 'remove-padding-top' : ''} body-section default-text ${styleClasses || ''}`}>
+               className={`${pageHeader ? 'remove-padding-top' : ''} body-section ${styleClasses || ''}`}>
         {iconName && <IconWithLine icon={iconName}/>}
         {sectionTitle && <h2 className='body-section__title'>{sectionTitle}</h2>}
         {children}

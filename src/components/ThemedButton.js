@@ -2,7 +2,7 @@ import React from 'react'
 
 const ThemedButton = ({ styleClasses, text }) => {
   return (
-    <button className={`themed-button action-text ${styleClasses || ''}`}>
+    <button className={`themed-button ${styleClasses || ''}`}>
       {text}
       <span className='themed-button__hr-container'>
       <hr className='themed-button__hr remove-margin'/>

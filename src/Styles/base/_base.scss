@@ -5,24 +5,35 @@ html {
 body {
   margin: 0;
   padding: 0;
-
-  //Typography
-  font-size: $default-font-size;
-  font-family: $san-serif-font;
-  line-height: $default-line-height;
-  letter-spacing: $default-letter-spacing;
-  word-spacing: $default-word-spacing;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
   margin: 0;
   padding: 0;
+}
+
+html h1 {
+  @extend %h1-page-title-text;
+}
+
+html h2 {
+  @extend %h2-section-title-text;
+  margin: 0;
+  padding: 0;
+}
+
+html p {
+  @extend %default-text;
+}
+
+a,
+button {
+  @extend %button-text;
 }
 
 .sr-only {

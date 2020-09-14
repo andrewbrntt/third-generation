@@ -9,6 +9,7 @@ const OurWork = () => {
   return (
     <>
       <BodyHeader pageHeader='Our Work' linkText='Contact Us'>
+        <div className='p--margin-bottom-standard'>
         <p>
           Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful
           homes and guarantee well-built projects that ensure customer satisfaction.
@@ -17,12 +18,13 @@ const OurWork = () => {
           View our gallery to see dramatic
           before-and-after transformations.
         </p>
+        </div>
       </BodyHeader>
       <BodySection styleClasses='color-primary padding-x-standard' sectionTitle='Gallery'>
         <ImageGallery gallerySections={mockGallerySections} />
       </BodySection>
-      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='body-section__reviews-section--padding color-primary' sectionTitle='Reviews'>
-        <ReviewList randomCount='5'/>
+      <BodySection linkRoute='/reviews' linkText='Reviews' styleClasses='padding-x-standard body-section__reviews-section--padding' sectionTitle='Reviews'>
+        <ReviewList styleClasses='background-color-white color-primary' randomCount='5'/>
       </BodySection>
     </>
   )

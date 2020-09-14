@@ -17,12 +17,12 @@ import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 const Siding = () => {
 
   const vendors = [
-    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
     { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
-    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
+    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
     { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
+    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' }
   ]
 
   return (
@@ -51,18 +51,18 @@ const Siding = () => {
       </DesktopBodySectionHeader>
       <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard body-section--width-full' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
-        <p className='body-section--width-965'>
+        <div className='body-section--width-965 p--margin-bottom-standard'>
+        <p>
           Replacing your siding has a number of benefits, including increase the value of your home.
         </p>
-        <p className='p--top-spacing body-section--width-965'>A home's siding not only protects your most valuable asset from the harsh Lake
+        <p className='p--top-spacing'>A home's siding not only protects your most valuable asset from the harsh Lake
           Erie weather, but it can also
           play a huge role in your maintenance and utility costs.</p>
-        <p className='p--top-spacing p--bottom-margin-40 body-section--width-full'>Ensure your house is protected and economically efficient by
+        <p className='p--top-spacing body-section--width-full'>Ensure your house is protected and economically efficient by
           scheduling a free inspection and consultation
           with our team today.</p>
-        <div>
-          <SidingInfographic/>
         </div>
+          <SidingInfographic/>
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Outlast the Elements' linkRoute='/contact' linkText='Contact Us'>
         <p>
@@ -82,7 +82,7 @@ const Siding = () => {
           Let 3RD Generation Construction transform your current space into the home of your dreams.
         </p>
       </BodySection>
-      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Materials'>
+      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Our Materials'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>

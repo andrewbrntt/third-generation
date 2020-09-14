@@ -4,7 +4,7 @@ import DecorativeImage from './DecorativeImage'
 
 const IconWithLine = ({ icon }) => {
   return (
-    <div className='icon-with-line__container'>
+    <div className='icon-with-line__container p--margin-bottom-standard'>
       <div className='icon-with-line__left-line'>
         <hr className='icon-with-line__hr'/>
       </div>

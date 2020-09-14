@@ -59,6 +59,11 @@
 }
 
 .vendor__carter-lumber {
+  @include md {
+    width: 21.875rem;
+    height: 5.3125rem;
+  }
+
   @include lg {
     width: 292px;
     height: 71px;
@@ -66,6 +71,11 @@
 }
 
 .vendor__gaf {
+  @include md {
+    width: 20.3125rem;
+    height: 13.5625rem;
+  }
+
   @include lg {
     width: 275px;
     height: 183px;
@@ -73,6 +83,11 @@
 }
 
 .vendor__allied {
+  @include md {
+    width: 20.3125rem;
+    height: 13.3125rem;
+  }
+
   @include lg {
     width: 275px;
     height: 167px;

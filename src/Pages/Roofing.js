@@ -19,12 +19,12 @@ import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 const Roofing = () => {
 
   const vendors = [
-    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
     { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
-    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
+    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
     { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
+    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' }
   ]
 
   return (
@@ -54,14 +54,17 @@ const Roofing = () => {
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' sectionTitle='Our Work'
                    linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='body-section--width-965'>
+        <div className='p--margin-bottom-standard body-section--width-965 padding-x-standard'>
+        <p>
           We're proud of our work and love showing it off.
         </p>
-        <p className='p--top-spacing body-section--width-965'>
+        <p className='p--top-spacing'>
           Let Third Generation Construction transform your current space into the home of your dreams.
         </p>
+        </div>
       </BodySection>
       <BodySection sectionTitle='Materials' styleClasses='color-primary padding-x-standard body-section--width-965'>
+        <div className='p--margin-bottom-standard padding-x-standard'>
         <p>
           We're proud to use trusted quality materials that give you peace of mind.
         </p>
@@ -69,6 +72,7 @@ const Roofing = () => {
           Third Generation Construction uses dependable and affordable products to ensure your project is secure,
           beautiful, and reliable.
         </p>
+        </div>
         <div className='vendor-section--alignment'>
           <VendorSection vendors={vendors}/>
         </div>
