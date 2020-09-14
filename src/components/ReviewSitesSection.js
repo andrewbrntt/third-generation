@@ -1,7 +1,7 @@
 import React from 'react'
 import shortId from 'shortid'
 
-const ReviewSitesSection = ({ reviewSites = [] }) => {
+const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
 
   const imageExtension = (imgName) => {
     return imgName.substr(imgName.length - 3)
@@ -23,7 +23,7 @@ const ReviewSitesSection = ({ reviewSites = [] }) => {
   }
 
   return (
-    <div className='review-sites-section__container'>
+    <div className={`review-sites-section__container review-sites__mobile-margin-bottom ${containerStyleClasses ? containerStyleClasses : ''}`}>
       {
         reviewSites.map(site => {
             if(imageExtension(site.imgDefault) !== 'svg') {

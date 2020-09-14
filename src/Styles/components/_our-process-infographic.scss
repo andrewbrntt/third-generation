@@ -65,11 +65,10 @@ display: block;
   width: 11.25rem;
   font-size: 1.875rem;
   font-family: $san-serif-font;
-
   @include md {
     position: absolute;
     top: 2.6875rem;
-    width: 100%;
+    width: 725px;
     font-size: 2.5rem;
   }
 

@@ -3,7 +3,7 @@ import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
-import { reviewSites } from '../helpers/mockData'
+import { reviewSites } from '../DataObjects/mockData'
 
 const Reviews = () => {
 
@@ -21,9 +21,8 @@ const Reviews = () => {
       <BodySection styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
         <ReviewList randomCount='5'/>
       </BodySection>
-      <BodySection styleClasses='color-primary'>
-        <h2 className='default-text padding-x-standard reviews__review-list-title remove-margin-y'>Find More Reviews</h2>
-        <ReviewSitesSection reviewSites={reviewSites}/>
+      <BodySection styleClasses='color-primary desktop--padding-top-0' sectionTitle='Find More Reviews'>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0' reviewSites={reviewSites}/>
       </BodySection>
     </>
   )

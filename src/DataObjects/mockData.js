@@ -8,7 +8,6 @@ import AfterImage3 from '../assets/image-gallery/placeholders/after-temp-3.jpg'
 import AfterImage4 from '../assets/image-gallery/placeholders/after-temp-4.jpg'
 import SingleImage from '../assets/image-gallery/placeholders/single-temp-1.jpg'
 import SingleImage2 from '../assets/image-gallery/placeholders/single-temp-2.jpg'
-import SingleImage3 from '../assets/image-gallery/placeholders/single-temp-3.jpg'
 import SingleImage4 from '../assets/image-gallery/placeholders/single-temp-4.jpg'
 import AngiesList from '../assets/review-sites/angies-list/angies-list-seal.png'
 import AngiesListMedium from '../assets/review-sites/angies-list/angies-list-seal@2x.png'
@@ -80,37 +79,44 @@ export const mockGalleryImageObjects1 = [
 ]
 
 export const mockGalleryImageObjects2 = [
-  { id: 'remodel-single-3', pairId: '', src: SingleImage, altText: 'After Image of a remodel' },
+  {
+    id: 'remodel-single-3',
+    isHero: false,
+    src: SingleImage,
+    altText: 'After Image of a remodel',
+    subText: ''
+  },
   {
     id: 'remodel-before-3',
-    pairId: 'remodel-after-3',
+    isHero: false,
     src: BeforeImage3,
     altText: 'Before image of a roof',
     subText: 'Before'
   },
   {
     id: 'remodel-after-3',
-    pairId: 'remodel-before-3',
+    isHero: false,
     src: AfterImage3,
     altText: 'After Image of a roof',
     subText: 'After'
   },
   {
     id: 'remodel-single-4',
-    pairId: '',
+    isHero: true,
     src: SingleImage4,
-    altText: 'After Image of a remodel'
+    altText: 'After Image of a remodel',
+    subText: 'After'
   },
   {
     id: 'remodel-before-4',
-    pairId: 'remodel-after-4',
+    isHero: false,
     src: BeforeImage4,
     altText: 'Before image of siding',
     subText: 'Before'
   },
   {
     id: 'remodel-after-4',
-    pairId: 'remodel-before-4',
+    isHero: false,
     src: AfterImage4,
     altText: 'After Image of a remodel',
     subText: 'After'

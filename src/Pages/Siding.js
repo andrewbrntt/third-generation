@@ -17,17 +17,17 @@ import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 const Siding = () => {
 
   const vendors = [
-    { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
     { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
+    { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
+    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
     { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
     { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
-    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' }
+    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
   ]
 
   return (
     <>
-      <BodySection linkRoute='/contact' styleClasses='color-primary body-section--display' pageHeader='Siding' linkText='Contact Us'>
+      <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display' pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
           makes your home beautiful.</p>
@@ -40,14 +40,17 @@ const Siding = () => {
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Siding'
                                 heroImage={AboutImage}>
-        <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
+        <div className='padding-x-standard desktop-header--width-492 desktop__p--margin-bottom-50'>
+        <p className='desktop--margin-0'>
+          Durable siding and energy-efficient doors and windows are all part of what
           makes your home beautiful.</p>
-        <p className='p--top-spacing padding-x-standard'>
+        <p className='p--top-spacing'>
           Third Generation Construction is here to help increase your curb appeal and secure your home.
         </p>
-        <p className='p--top-spacing padding-x-standard'>
+        <p className='p--top-spacing'>
           Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
         </p>
+        </div>
       </DesktopBodySectionHeader>
       <BodySection linkRoute='our-work' styleClasses='background-color-primary color-white padding-x-standard body-section--width-full' sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
@@ -62,9 +65,12 @@ const Siding = () => {
           scheduling a free inspection and consultation
           with our team today.</p>
         </div>
+        <div className='p--margin-bottom-standard'>
           <SidingInfographic/>
+        </div>
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Outlast the Elements' linkRoute='/contact' linkText='Contact Us'>
+        <div className='p--margin-bottom-standard'>
         <p>
           Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County
           homes.
@@ -72,15 +78,18 @@ const Siding = () => {
         <p className='p--top-spacing'>
           Replacing your home’s weather-worn or damaged siding can increase your home’s value, curb appeal, and safety.
         </p>
+        </div>
       </BodySection>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' sectionTitle='Our Work' linkText='View Gallery'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        <div className='p--margin-bottom-standard'>
         <p className='padding-x-standard body-section--width-965'>
           We're proud of our work and love showing it off.
         </p>
         <p className='p--top-spacing padding-x-standard body-section--width-965'>
           Let 3RD Generation Construction transform your current space into the home of your dreams.
         </p>
+        </div>
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Our Materials'>
         <p>

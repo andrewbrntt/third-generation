@@ -10,6 +10,10 @@
   position: relative;
   display: flex;
   justify-content: center;
+
+  @include lg {
+    margin-bottom: 0;
+  }
 }
 
 .icon-with-line__hr {
@@ -66,4 +70,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.desktop--margin-0 {
+  @include lg {
+    margin: 0;
+  }
+}
+
+.desktop--margin-bottom-0 {
+  @include lg {
+    margin-bottom: 0;
+  }
+}
+
+.desktop--margin-top-0 {
+  @include lg {
+    margin-top: 0;
+  }
+}
+
+.desktop--padding-top-0 {
+  @include lg {
+    padding-top: 0;
+  }
+}
+
+.mobile--padding-top-0 {
+padding-top: 0;
 }

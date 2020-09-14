@@ -23,7 +23,7 @@ const Footer = () => {
         <li><NavLink className='footer__link' to='/our-work'>Our Work</NavLink></li>
         <li><NavLink className='footer__link' to='/reviews'>Reviews</NavLink></li>
         <li><NavLink className='footer__link' to='/contact'>Contact Us</NavLink></li>
-        <li><NavLink className='footer__link' to='/emergency'>24-Hour Emergency Service</NavLink></li>
+        <li><NavLink className='footer__link' to='/emergency-service'>24-Hour Emergency Service</NavLink></li>
       </ul>
       <div className='footer__sub-footer'>
 

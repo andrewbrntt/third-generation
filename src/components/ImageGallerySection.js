@@ -30,9 +30,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     return (
       <a className='image-gallery-section__img-link'
          href='#' key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
-        <img className=''
-             src={imageObject.src}
-             alt={imageObject.altText}/>
+        <img src={imageObject.src} alt={imageObject.altText}/>
       </a>
     )
   }

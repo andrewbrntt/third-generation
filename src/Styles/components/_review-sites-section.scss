@@ -12,15 +12,17 @@
   justify-content: space-between;
   margin-right: 0.25rem;
   margin-left: 0.25rem;
+  margin-bottom: 2.1875rem;
 
   @include md {
-    padding-top: 6.25rem;
-    padding-left: 2.125rem;
+    margin-bottom: 3.4375rem;
     padding-right: 2.125rem;
+    padding-left: 2.125rem;
   }
 
   @include lg {
-    width: 57.5rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 

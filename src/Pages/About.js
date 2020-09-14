@@ -5,7 +5,7 @@ import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1, mockGallerySections, reviewSites } from '../helpers/mockData'
+import { mockGalleryImageObjects1, mockGallerySections, reviewSites } from '../DataObjects/mockData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
 import ImageGallery from '../components/ImageGallery'
 import ImageGallerySection from '../components/ImageGallerySection'
@@ -23,9 +23,8 @@ const About = () => {
   return (
     <>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
-        <h1 className='about-us__title-lg'>About Us</h1>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <div className='padding-x-standard body-section--width-965'>
+        <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
             surrounding
@@ -44,9 +43,10 @@ const About = () => {
       <BodySection styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
-        <OurProcessInfographicDesktop stepList={stepList}/>
+        {/*<OurProcessInfographicDesktop stepList={stepList}/>*/}
       </BodySection>
-      <BodySection styleClasses='color-primary padding-x-standard'>
+      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965'>
+        <div className='p--margin-bottom-standard'>
         <p>
           Our work begins and ends with customer satisfaction as our services are customizable to each project.
         </p>
@@ -54,11 +54,12 @@ const About = () => {
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>
-        <ReviewSitesSection reviewSites={reviewSites}/>
+        </div>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' linkText='View Gallery'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' linkText='View Gallery'
                    sectionTitle='Our Work'>
-        <div className='padding-x-standard'>
+        <div className='padding-x-standard p--margin-bottom-standard body-section--width-965'>
           <p>
             We're proud of our work and love showing it off.
           </p>
@@ -71,7 +72,9 @@ const About = () => {
       </BodySection>
       <BodySection sectionTitle='Reviews' linkText='Reviews'
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
+        <div className='p--margin-bottom-standard'>
         <ReviewList randomCount='1'/>
+        </div>
       </BodySection>
     </>
   )

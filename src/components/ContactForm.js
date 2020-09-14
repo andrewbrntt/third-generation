@@ -3,7 +3,7 @@ import FormInputField from './FormInputField'
 import ThemedButton from './ThemedButton'
 import ContactFormReviewModal from './ContactFormReviewModal'
 import FormErrorField from './FormErrorField'
-import { formFieldsData } from '../helpers/mockData'
+import { formFieldsData } from '../DataObjects/mockData'
 import {
   validateEmail,
   validateFullName,

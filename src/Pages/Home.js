@@ -6,7 +6,7 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { formFieldsData, mockGalleryImageObjects1, reviewSites } from '../helpers/mockData.js'
+import { formFieldsData, mockGalleryImageObjects1, reviewSites } from '../DataObjects/mockData.js'
 
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
@@ -88,7 +88,8 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary' sectionTitle='Our Work'>
+      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary'
+                   sectionTitle='Our Work'>
         <div
           className='p--margin-bottom-standard body-section__p-container home__our-work-p-container padding-x-standard'>
           <p>
@@ -108,9 +109,11 @@ const Home = () => {
       <BodySection linkRoute='/reviews' linkText='Reviews'
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'
                    sectionTitle='Reviews'>
+        <div className='p--margin-bottom-standard'>
         <ReviewList randomCount='5'/>
+        </div>
       </BodySection>
-      <ReviewSitesSection reviewSites={reviewSites}/>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
     </>
   )
 }
