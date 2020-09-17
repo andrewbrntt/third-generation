@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
@@ -7,10 +7,13 @@ import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1, mockGallerySections, reviewSites } from '../DataObjects/mockData'
+import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
+
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
 import ImageGallery from '../components/ImageGallery'
 import ImageGallerySection from '../components/ImageGallerySection'
+import {routesData} from '../DataObjects/routes'
 
 const About = () => {
 
@@ -77,7 +80,7 @@ const About = () => {
         </div>
         <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
       </BodySection>
-      <BodySection sectionTitle='Reviews' linkText='Reviews'
+      <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
         <div className='p--margin-bottom-standard'>
         <ReviewList randomCount='1'/>

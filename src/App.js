@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 import SkipLink from './components/SkipLink'

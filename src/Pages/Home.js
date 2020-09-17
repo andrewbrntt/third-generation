@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
@@ -8,7 +8,10 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { formFieldsData, mockGalleryImageObjects1, reviewSites } from '../DataObjects/mockData.js'
+import {mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
+import {formFieldsData} from '../DataObjects/contactFormData'
+import {reviewSites} from '../DataObjects/socialMediaData'
+import {routesData} from '../DataObjects/routes'
 
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
@@ -34,7 +37,7 @@ const Home = () => {
         <title>3rd Generation Construction | Home</title>
         <meta name="description" content="Third Generation Construction Home Page" />
       </Helmet>
-      <BodyHeader linkRoute='/contact' linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
+      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName} pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
         </p>

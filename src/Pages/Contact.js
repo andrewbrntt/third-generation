@@ -1,10 +1,10 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import ContactForm from '../components/ContactForm'
 import BodySection from '../components/BodySection'
 import ReviewSitesSection from '../components/ReviewSitesSection'
-import { reviewSites } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
 
 const Contact = () => {
 

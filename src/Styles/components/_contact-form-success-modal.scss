@@ -61,6 +61,15 @@
   }
 }
 
+.contact-form__error-modal-icon {
+  color: $red;
+  font-size: 5.9375rem;
+
+  @include md {
+    font-size: 15.625rem;
+  }
+}
+
 .contact-form__success-modal-ul-container {
   display: flex;
   flex-direction: column;
@@ -131,6 +140,13 @@
   margin-bottom: 1.875rem;
 }
 
+.contact-phone-link {
+  text-decoration: none;
+}
 
-
-
+.contact-phone-link:hover,
+.contact-phone-link:focus {
+  text-decoration: none;
+  border-bottom: 0.1875rem dashed $secondary;
+  outline: transparent;
+}

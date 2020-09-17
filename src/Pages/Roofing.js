@@ -1,12 +1,12 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import DecorativeImage from '../components/DecorativeImage'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
-import { reviewSites } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
 import AboutImage from '../assets/group-people.jpg'
 import {
   alsideLogo,

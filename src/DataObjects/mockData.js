@@ -16,6 +16,7 @@ import HomeAdvisor from '../assets/review-sites/home-advisor/home-advisor-seal.p
 import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-seal@2x.png'
 import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
 import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
+import { socialMediaRoutes } from './routes'
 
 //TODO: Sort this data out better because it is not all mock data anymore
 export const beforeAfterMockData = [
@@ -121,92 +122,6 @@ export const mockGallerySections = [
   { title: 'Roofing - Vermilion, OH', images: mockGalleryImageObjects2 }
 ]
 
-export const reviewSites = [
-  {
-    imgDefault: AngiesList,
-    imgMedium: AngiesListMedium,
-    imgLarge: AngiesListLarge,
-    id: 'AL',
-    altText: 'Angie\\\'s List Certified seal'
-  },
-  {
-    imgDefault: HomeAdvisor,
-    imgMedium: HomeAdvisorMedium,
-    imgLarge: HomeAdvisorLarge,
-    id: 'HA',
-    altText: 'Home Advisor Approved Seal'
-  },
-  {
-    imgDefault: BBB,
-    imgMedium: BBB,
-    imgLarge: BBB,
-    id: 'bbb',
-    altText: 'Better Business Bureau Accredited Seal'
-  }
-]
 
-const fullName = {
-  id: 'contact-form__full-name',
-  name: 'full-name',
-  labelText: 'Full Name',
-  type: 'text',
-  isRequired: true,
-  value: '',
-  hasError: false,
-  errorMessage: ''
-}
 
-const email = {
-  id: 'contact-form__email',
-  name: 'email',
-  labelText: 'Email',
-  inputFormat: '(email@domain.com)',
-  type: 'email',
-  isRequired: true,
-  value: '',
-  hasError: false,
-  errorMessage: ''
-}
 
-const phone = {
-  id: 'contact-form__phone',
-  name: 'phone',
-  labelText: 'Phone Number',
-  type: 'tel',
-  isRequired: true,
-  value: '',
-  hasError: false,
-  errorMessage: ''
-}
-
-const message = {
-  id: 'contact-form__message',
-  name: 'message',
-  labelText: 'Message',
-  inputType: 'text',
-  isRequired: false,
-  elementType: 'textarea',
-  hasError: false,
-  value: '',
-  errorMessage: ''
-}
-
-const services = {
-  id: 'contact-form__services',
-  name: 'services',
-  labelText: 'Type of Service',
-  type: 'text',
-  elementType: 'select',
-  options: [
-    { value: 'remodel', text: 'Remodel' },
-    { value: 'repairs', text: 'Repairs' },
-    { value: 'roofing', text: 'Roofing' },
-    { value: 'siding', text: 'Siding' }
-  ],
-  isRequired: true,
-  value: '',
-  hasError: false,
-  errorMessage: ''
-}
-
-export const formFieldsData = { fullName, email, phone, message, services }

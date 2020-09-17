@@ -2,42 +2,44 @@ import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock'
 
 
 import BodySection from './BodySection'
 
-const ContactFormSuccessModal = ({ isSuccessModalOpen, handleClose }) => {
-
-  const successModal = useRef(null)
+const ContactFormSubmitErrorModal = ({ isErrorModalOpen, handleClose }) => {
+  const errorModal = useRef(null)
 
   useEffect(() => {
-    if(isSuccessModalOpen) {
-      disableBodyScroll(successModal.current, {reserveScrollBarGap: true})
+    if(isErrorModalOpen) {
+      disableBodyScroll(errorModal.current, {reserveScrollBarGap: true})
     } else {
-      enableBodyScroll(successModal.current)
+      enableBodyScroll(errorModal.current)
     }
 
     return () => clearAllBodyScrollLocks()
-      }, [isSuccessModalOpen])
+      }, [isErrorModalOpen])
 
   return (
-    <div ref={successModal} className={`modal contact-form__success-modal color-primary ${isSuccessModalOpen ? 'modal__lg--display-flex' : 'modal--display-none'}`}>
+    <div ref={errorModal} className={`modal contact-form__success-modal color-primary ${isErrorModalOpen ? 'modal__lg--display-flex' : 'modal--display-none'}`}>
       <div className='contact-form__success-modal-container background-color-white modal--height-100'>
       <div className='modal__close-btn-container'>
         <button className='modal__close-btn background-color-white' onClick={handleClose}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
-      <BodySection sectionTitle='Thank You!'>
-        <p className='padding-x-standard modal__subtext'>
-          We have received your message.
-          <span className='p--top-spacing modal--display-block'>We will contact you within 1-3 business days. </span>
-        </p>
+      <BodySection styleClasses='color-red' sectionTitle='Sorry'>
         <div className='contact-form__success-modal--padding-bottom-50'>
-          <FontAwesomeIcon className='contact-form__success-modal-icon' icon={['far', 'check-circle']}/>
+          <FontAwesomeIcon className='contact-form__error-modal-icon color-red' icon={['far', 'times-circle']}/>
         </div>
+        <p className='padding-x-standard modal__subtext'>
+          There seems to have been a error sending your message.
+            <span className='p--top-spacing modal--display-block'>
+            Please try again later or give us a call at <a className='color-primary contact-phone-link' href='tel:4405223324'>(440)-522-3324</a>
+          </span>
+        </p>
         <div className='contact-form__success-modal-ul-container'>
-        <ul className='contact-form__success-modal-ul remove-padding-left'>
+        <ul className='contact-form__success-modal-ul remove-padding-left color-primary'>
           <li>
             <span className='contact-form__success-modal-text'>View</span>
             <Link to='/our-work' className='contact-form__success-modal-link'>Our Work</Link>
@@ -58,5 +60,5 @@ const ContactFormSuccessModal = ({ isSuccessModalOpen, handleClose }) => {
   )
 }
 
-export default ContactFormSuccessModal
+export default ContactFormSubmitErrorModal
 

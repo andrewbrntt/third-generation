@@ -1,12 +1,14 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import BodyHeader from '../components/BodyHeader'
-import { mockGallerySections, reviewSites } from '../DataObjects/mockData'
+import { mockGallerySections } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
 import ReviewList from '../components/ReviewList'
 import ImageGallery from '../components/ImageGallery'
 import ReviewSitesSection from '../components/ReviewSitesSection'
+import {routesData} from '../DataObjects/routes'
 
 const OurWork = () => {
   return (
@@ -16,7 +18,7 @@ const OurWork = () => {
         <title>3rd Generation Construction | Our Work</title>
         <meta name="description" content="Third Generation Construction Our Work Page" />
       </Helmet>
-      <BodyHeader pageHeader='Our Work' linkText='Contact Us'>
+      <BodyHeader pageHeader='Our Work' linkText={routesData.contactUs.routeName} linkRoute={routesData.contactUs.routeTo}>
         <div className='p--margin-bottom-standard'>
           <p>
             Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful

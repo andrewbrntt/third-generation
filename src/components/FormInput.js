@@ -10,6 +10,7 @@ const FormInput = ({ fieldElementData, handleOnChange }) => {
       required={fieldElementData.isRequired}
       onChange={e => handleOnChange(fieldElementData, e.target)}
       value={fieldElementData.value ? fieldElementData.value : ''}
+      name={fieldElementData.name}
     />
   )
 }

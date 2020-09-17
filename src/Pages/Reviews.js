@@ -1,11 +1,11 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
-import { reviewSites } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
 
 const Reviews = () => {
 

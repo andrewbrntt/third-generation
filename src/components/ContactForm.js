@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import FormInputField from './FormInputField'
 import ThemedButton from './ThemedButton'
 import ContactFormReviewModal from './ContactFormReviewModal'
 import FormErrorField from './FormErrorField'
-import { formFieldsData } from '../DataObjects/mockData'
+import {formFieldsData, FORM_CONSTANTS} from '../DataObjects/contactFormData'
 import {
   validateEmail,
   validateFullName,
@@ -13,25 +13,31 @@ import {
   validateService
 } from '../helpers/formValidation'
 import ContactFormSuccessModal from './ContactFormSuccessModal'
+import ContactFormSubmitErrorModal from './ContactFormSubmitErrorModal'
 
 const ContactForm = ({ formStyleClasses = {} }) => {
+
+  const contactFormElement = useRef(null)
 
   const [fullName, setFullName] = useState(formFieldsData.fullName)
   const [email, setEmail] = useState(formFieldsData.email)
   const [phone, setPhone] = useState(formFieldsData.phone)
   const [services, setServices] = useState(formFieldsData.services)
   const [message, setMessage] = useState(formFieldsData.message)
+  const [formSubmitStatus, setFormSubmitStatus] = useState({ status: '' })
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false)
+  const [isSendingEmail, setIsSendingEmail] = useState(false)
 
   const [fieldErrors, setFieldErrors] = useState([])
 
   const handleReviewModalSubmit = (e) => {
     e.preventDefault()
-    toggleReviewModal()
     let formErrors = validateForm()
     if(formErrors.length === 0) {
-      toggleSuccessModal()
+      setIsSendingEmail(true)
+      handleFormSubmit()
       clearState()
     } else {
       setFieldErrors(formErrors)
@@ -46,13 +52,45 @@ const ContactForm = ({ formStyleClasses = {} }) => {
     setMessage({...message, value: '', hasError: false})
   }
 
-  const handleFormSubmit = (e) => {
+  const handleContactFormSubmit = (e) => {
     e.preventDefault()
     toggleReviewModal()
   }
 
+  const handleFormSubmit = () => {
+    const data = new FormData(contactFormElement.current);
+    const xhr = new XMLHttpRequest();
+    xhr.open(FORM_CONSTANTS.POST, FORM_CONSTANTS.SUBMIT_URL);
+    xhr.setRequestHeader(FORM_CONSTANTS.ACCEPT, FORM_CONSTANTS.DATA_TYPE);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+      if (xhr.status === 200) {
+        contactFormElement.current.reset();
+        setFormSubmitStatus({ status: FORM_CONSTANTS.SUCCESS });
+        toggleReviewModal()
+        toggleSuccessModal()
+        setIsSendingEmail(false)
+      } else {
+        setFormSubmitStatus({ status: FORM_CONSTANTS.ERROR });
+        toggleReviewModal()
+        toggleErrorModal()
+
+        setIsSendingEmail(false)
+      }
+    };
+    xhr.send(data);
+  }
+
   const toggleReviewModal = () => {
     setIsReviewModalOpen(!isReviewModalOpen)
+  }
+
+
+  const toggleErrorModal = () => {
+    setFieldErrors([])
+    clearState()
+    setIsErrorModalOpen(!isErrorModalOpen)
   }
 
   const toggleSuccessModal = () => {
@@ -65,19 +103,19 @@ const ContactForm = ({ formStyleClasses = {} }) => {
     let newElementData = Object.assign({}, currentElementData, { value: newValue.value })
 
     switch (currentElementData.name) {
-      case 'full-name':
+      case FORM_CONSTANTS.FULL_NAME:
         setFullName(newElementData)
         break
-      case 'email':
+      case FORM_CONSTANTS.EMAIL:
         setEmail(newElementData)
         break
-      case 'phone':
+      case FORM_CONSTANTS.PHONE:
         setPhone(newElementData)
         break
-      case 'message':
+      case FORM_CONSTANTS.MESSAGE:
         setMessage(newElementData)
         break
-      case 'services':
+      case FORM_CONSTANTS.SERVICES:
         setServices(newElementData)
         break
       default:
@@ -159,18 +197,20 @@ const ContactForm = ({ formStyleClasses = {} }) => {
         handleClose={toggleReviewModal}
         handleSubmit={handleReviewModalSubmit}
         isReviewModalOpen={isReviewModalOpen}
+        isSendingData={isSendingEmail}
         formInputData={[fullName, email, phone, services, message]}
       />
       <ContactFormSuccessModal handleClose={toggleSuccessModal} isSuccessModalOpen={isSuccessModalOpen} />
+      <ContactFormSubmitErrorModal handleClose={toggleErrorModal} isErrorModalOpen={isErrorModalOpen} />
         {fieldErrors.length > 0 && <FormErrorField formFieldsData={fieldErrors}/>}
-        <form id='contact-form' className={`contact-form ${formStyleClasses.formClasses}`} onSubmit={handleFormSubmit}>
+        <form ref={contactFormElement} id='contact-form' className={`contact-form ${formStyleClasses.formClasses}`} onSubmit={handleContactFormSubmit}>
           <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={fullName} handleStateChange={handleFormValueChange}/>
           <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={phone} handleStateChange={handleFormValueChange}/>
           <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={email} handleStateChange={handleFormValueChange}/>
           <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={services} handleStateChange={handleFormValueChange}/>
           <FormInputField inputFieldStylesClasses={formStyleClasses} fieldData={message} textArea formId='contact-form' handleStateChange={handleFormValueChange}/>
           <div className='contact-form__button-container contact-form__button--spacing'>
-            <ThemedButton type='submit' text='Submit'/>
+            <ThemedButton type={FORM_CONSTANTS.SUBMIT} text='Submit'/>
           </div>
         </form>
     </>

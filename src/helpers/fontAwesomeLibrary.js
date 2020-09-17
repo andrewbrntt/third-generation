@@ -25,7 +25,9 @@ import {
   faSun,
   faCheckCircle,
   faArrowCircleRight,
-  faArrowCircleLeft
+  faArrowCircleLeft,
+  faTimesCircle,
+  faSpinnerThird
 } from '@fortawesome/pro-regular-svg-icons'
 import { faTools as duoTools } from '@fortawesome/pro-duotone-svg-icons'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
@@ -58,7 +60,9 @@ const fontAwesomeLibrary = () => {
     faArrowCircleRight,
     faArrowCircleLeft,
     faCaretDown,
-    faCaretRight
+    faCaretRight,
+    faTimesCircle,
+    faSpinnerThird
   )
 }
 

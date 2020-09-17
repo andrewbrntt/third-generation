@@ -8,6 +8,7 @@ const FormSelect = ({ fieldElementData, handleOnChange }) => {
       className='form-input-field__input'
       onChange={e => handleOnChange(fieldElementData, e.target)}
       value={fieldElementData.value ? fieldElementData.value : ''}
+      name={fieldElementData.name}
     >
       <option value=''>Select Service</option>
       {fieldElementData.options.map(option => {

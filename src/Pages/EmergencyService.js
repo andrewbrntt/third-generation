@@ -1,12 +1,14 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
-import { mockGallerySections, reviewSites } from '../DataObjects/mockData'
+import { mockGallerySections } from '../DataObjects/mockData'
+import {reviewSites} from '../DataObjects/socialMediaData'
+
 import ImageGallery from '../components/ImageGallery'
 
 const EmergencyService = () => {

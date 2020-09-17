@@ -1,5 +1,7 @@
 import React from 'react'
 import shortId from 'shortid'
+import ExternalLink from './ExternalLink'
+import { socialMediaRoutes } from '../DataObjects/routes'
 
 const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
 
@@ -9,16 +11,20 @@ const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
 
   const reviewSiteSvg = (site) => {
     return (
-          <img key={`review-sites-section_${shortId.generate()}`} className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+      <ExternalLink key={`review-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
+          <img  className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+      </ExternalLink>
     )  }
 
   const reviewSiteImg = (site) => {
     return (
-        <picture key={`review-sites-section_${shortId.generate()}`}>
+      <ExternalLink key={`review-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
+        <picture>
           <source media='(min-width:992px)' srcSet={site.imgLarge}/>
           <source media='(min-width:768px)' srcSet={site.imgMedium}/>
           <img src={site.imgDefault} alt={site.altText}/>
         </picture>
+      </ExternalLink>
     )
   }
 
