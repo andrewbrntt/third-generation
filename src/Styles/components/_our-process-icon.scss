@@ -6,6 +6,7 @@
 //Animation
 //Misc
 
+
 .our-process-infographic__circle {
   font-size: 5.3125rem;
 
@@ -14,9 +15,14 @@
     font-size: 9.125rem;
   }
 
-  svg {
-    margin-left: 0;
+  @include lg {
+    font-size: 7.4375rem;
   }
+
+  // TODO: May need this for mobile
+  //svg {
+  //  margin-left: 0;
+  //}
 
 
   [data-icon='phone-alt'].our-process-infographic__icon {
@@ -25,6 +31,10 @@
     @include md {
       font-size: 6rem;
     }
+
+    @include lg {
+      font-size: 4.5625rem;
+    }
   }
 
   [data-icon='clipboard-list-check'].our-process-infographic__icon {
@@ -32,6 +42,10 @@
 
     @include md {
       font-size: 6rem;
+    }
+
+    @include lg {
+      font-size: 4.5625rem;
     }
   }
 
@@ -43,6 +57,10 @@
       margin-left: 2.9375rem;
       font-size: 6rem;
     }
+
+    @include lg {
+      font-size: 4.5625rem;
+    }
   }
 
   [data-icon='hammer'].our-process-infographic__icon {
@@ -51,6 +69,10 @@
     @include md {
       margin-top: 1.375rem;
       font-size: 6rem;
+    }
+
+    @include lg {
+      font-size: 4.5625rem;
     }
   }
 
@@ -62,5 +84,11 @@
       margin-top: 1.125rem;
       font-size: 6.5rem;
     }
+
+    @include lg {
+      font-size: 4.5625rem;
+    }
   }
 }
+
+

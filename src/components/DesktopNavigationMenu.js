@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import shortId from 'shortid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { routesData } from '../DataObjects/routes'
 
 const DesktopNavigationMenu = () => {
 
@@ -11,6 +12,12 @@ const DesktopNavigationMenu = () => {
 
   const [servicesSubMenuIsOpen, setServicesSubMenuIsOpen] = useState(false)
   const [servicesSubMenuEventType, setServicesSubMenuEventType] = useState('')
+
+  const handleSubmenuToggle = (e) => {
+    e.preventDefault()
+
+      setServicesSubMenuIsOpen(!servicesSubMenuIsOpen)
+  }
 
   const handleSubmenuOpen = (e) => {
     e.preventDefault()
@@ -41,9 +48,9 @@ const DesktopNavigationMenu = () => {
   }
 
   useLayoutEffect(() => {
-    if (servicesSubMenuIsOpen && servicesSubMenuEventType === 'click') {
-        servicesFirstSubMenuItem.current.focus()
-      }
+    // if (servicesSubMenuIsOpen) {
+    //     servicesFirstSubMenuItem.current.focus()
+    //   }
 
     if(!servicesSubMenuIsOpen && servicesSubMenuEventType === 'blur') {
         ourWorkMenuItem.current.focus()
@@ -56,13 +63,13 @@ const DesktopNavigationMenu = () => {
         <li key={shortId.generate()}>
           <NavLink
             className=''
-            to=''
+            to={routesData.about.routeTo}
           >
-            About
+            {routesData.about.routeName}
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
-        <li onMouseOver={handleSubmenuOpen} onMouseLeave={handleSubmenuCloseTimeout} onClick={handleSubmenuOpen}
+        <li
             className='desktop-nav__services-li' key={shortId.generate()}>
           <a href='#'>
             Services
@@ -77,34 +84,34 @@ const DesktopNavigationMenu = () => {
               <NavLink
                 ref={servicesFirstSubMenuItem}
                 className=''
-                to=''
+                to={routesData.remodel.routeTo}
               >
-                Remodel
+                {routesData.remodel.routeName}
               </NavLink>
             </li>
             <li>
               <NavLink
                 className=''
-                to=''
+                to={routesData.roofing.routeTo}
               >
-                Roofing
+                {routesData.roofing.routeName}
               </NavLink>
             </li>
             <li>
               <NavLink
                 className=''
-                to=''
+                to={routesData.siding.routeTo}
               >
-                Siding
+                {routesData.siding.routeName}
               </NavLink>
             </li>
             <li onBlur={handleSubmenuClose}>
               <NavLink
                 ref={servicesLastSubMenuItem}
                 className=''
-                to=''
+                to={routesData.repairs.routeTo}
               >
-                Repairs
+                {routesData.repairs.routeName}
               </NavLink>
             </li>
           </ul>
@@ -114,27 +121,27 @@ const DesktopNavigationMenu = () => {
           <NavLink
             ref={ourWorkMenuItem}
             className=''
-            to=''
+            to={routesData.ourWork.routeTo}
           >
-            Our Work
+            {routesData.ourWork.routeName}
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
         <li key={shortId.generate()}>
           <NavLink
             className=''
-            to=''
+            to={routesData.reviews.routeTo}
           >
-            Reviews
+            {routesData.reviews.routeName}
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
         <li key={shortId.generate()}>
           <NavLink
             className=''
-            to=''
+            to={routesData.contactUs.routeTo}
           >
-            Contact Us
+            {routesData.contactUs.routeName}
           </NavLink>
         </li>
       </ul>

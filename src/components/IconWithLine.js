@@ -2,18 +2,23 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import DecorativeImage from './DecorativeImage'
 
-const IconWithLine = ({icon}) => {
+const IconWithLine = ({ icon }) => {
   return (
-    <div className='icon-with-line__container'>
-      <hr className='icon-with-line__hr' />
+    <div className='icon-with-line__container p--margin-bottom-standard'>
+      <div className='icon-with-line__left-line'>
+        <hr className='icon-with-line__hr'/>
+      </div>
       {Array.isArray(icon) ?
-      <FontAwesomeIcon
-        className='icon-with-line__fa-icon'
-        icon={icon}
-      /> : <DecorativeImage
+        <FontAwesomeIcon
+          className='icon-with-line__fa-icon'
+          icon={icon}
+        /> : <DecorativeImage
           src={icon}
           className='icon-with-line__icon'
         />}
+        <div className='icon-with-line__right-line'>
+        <hr className='icon-with-line__hr'/>
+      </div>
     </div>
   )
 }

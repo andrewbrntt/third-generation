@@ -17,32 +17,60 @@ $action-font: 'Arvo', 'Times New Roman', Times, serif;
 
 // ----- Size and Spacing ------- //
 $default-font-size: 1rem;
-$default-letter-spacing: 0.05rem;
+$default-letter-spacing: 0.004375rem;
 $default-line-height: 1.5;
 $default-word-spacing: 0.09375rem;
 // ------------------ //
 
-.h1-page-header-text {
+.h1-page-title-text h1,
+%h1-page-title-text {
+  font-weight: 400;
   font-size: 2.5rem;
   font-family: $serif-font;
-  letter-spacing: $default-letter-spacing;
-  word-spacing: $default-word-spacing;
+  letter-spacing: 0.0025rem;
 
   @include md {
     font-size: 3.125rem;
+    letter-spacing: 0.001875rem;
   }
 
+  @include lg {
+    font-size: 2.625rem;
+    letter-spacing: 0.015625rem;
+  }
 }
 
-.default-text {
-  font-size: 1.25rem;
-  font-family: $san-serif-font;
-  line-height: $default-line-height;
-  letter-spacing: $default-letter-spacing;
-  word-spacing: $default-word-spacing;
+.h2-section-title-text,
+%h2-section-title-text {
+  font-size: 2.25rem;
+  font-family: $serif-font;
+  letter-spacing: 0.0025rem;
 
   @include md {
+    font-size: 2.875rem;
+    letter-spacing: 0.015625rem;
+  }
+
+  @include lg {
+    font-size: 2.25rem;
+    letter-spacing: 0.0125rem;
+  }
+}
+
+.default-text,
+%default-text {
+  font-size: 1.25rem;
+  font-family: $san-serif-font;
+  letter-spacing: 0.003125rem;
+
+  @include md {
+    font-size: 1.875rem;
+    letter-spacing: 0.006875rem;
+  }
+
+  @include lg {
     font-size: 1.5rem;
+    letter-spacing: 0.004375rem;
   }
 }
 
@@ -54,6 +82,24 @@ $default-word-spacing: 0.09375rem;
   word-spacing: $default-word-spacing;
 }
 
+.button-text,
+%button-text {
+  //Typography
+  font-size: 1.5rem;
+  font-family: $action-font;
+  letter-spacing: 0.00125rem;
+
+  @include md {
+    font-size: 1.625rem;
+    letter-spacing: 0.001875rem;
+  }
+
+  @include lg {
+    font-size: 1.625rem;
+    letter-spacing: 0.001875rem;
+  }
+}
+
 .banner-text {
   font-weight: bold;
   font-size: 1.25rem;
@@ -61,3 +107,10 @@ $default-word-spacing: 0.09375rem;
   letter-spacing: 0.025625rem;
 }
 
+.align-text--center {
+  text-align: center;
+}
+
+.font-weight--normal {
+  font-weight: 400;
+}

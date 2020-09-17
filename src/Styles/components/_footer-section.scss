@@ -10,4 +10,13 @@
   //Typography
   color: $white;
   font-weight: bold;
+
+  @include lg {
+    margin-top: 0.125rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+
+  }
 }
+
+

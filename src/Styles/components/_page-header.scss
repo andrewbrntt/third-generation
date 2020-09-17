@@ -8,8 +8,19 @@
 
 .h1-page-header {
   //Box Model
-  margin: 3.125rem 0 2.1875rem;
+  margin-top: 3.125rem;
+  margin-bottom: 2.5rem;
 
   //Typography
   text-align: center;
+
+  @include md {
+    margin-top: 6.25rem;
+    margin-bottom: 5rem;
+  }
+
+  @include lg {
+    margin-top: 6.25rem;
+    margin-bottom: 5rem;
+  }
 }

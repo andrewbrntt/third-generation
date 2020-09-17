@@ -6,8 +6,13 @@
 // Animation
 // Misc
 
-.mobile-navigation__toggle-button {
+.mobile-navigation--display {
+  @include lg {
+    display: none;
+  }
+}
 
+.mobile-navigation__toggle-button {
   // Box Model
   width: 3.125rem;
   height: 3.125rem;
@@ -42,8 +47,11 @@
   text-decoration: none;
 }
 
+.mobile-navigation__ul li > a:hover {
+  text-decoration: underline;
+}
+
 .mobile-navigation__ul li .mobile-navigation__emergency-service {
-  display: inline-block;
   font-size: 1.1875rem;
 }
 

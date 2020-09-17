@@ -9,25 +9,29 @@
 .review-sites-section__container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 2.5rem 0.25rem 2.1875rem;
-}
-
-.review-sites-section__badge-container {
-  display: flex;
-  align-items: center;
-  width: 6.25rem;
-  height: 6.25rem;
-  text-align: center;
+  justify-content: space-between;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  margin-bottom: 2.1875rem;
 
   @include md {
-    width: 12.5rem;
-    height: 12.5rem;
+    margin-bottom: 3.4375rem;
+    padding-right: 2.125rem;
+    padding-left: 2.125rem;
+  }
+
+  @include lg {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
-.review-site-svg {
+.review-sites__svg {
   @include md {
     width: 12.5rem;
+  }
+
+  @include lg {
+    width: 16.625rem;
   }
 }

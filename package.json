@@ -15,14 +15,20 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/react": "^16.9.38",
+    "body-scroll-lock": "^3.0.3",
     "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "shortid": "^2.2.15"
+    "react-scrolllock": "^5.0.1",
+    "rfdc": "^1.1.4",
+    "shortid": "^2.2.15",
+    "tua-body-scroll-lock": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

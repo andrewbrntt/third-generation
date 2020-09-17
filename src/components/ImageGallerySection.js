@@ -1,75 +1,78 @@
-import React, { useEffect, useState } from 'react'
-import BeforeAfter from './BeforeAfter'
+import React, { useLayoutEffect, useState } from 'react'
 import shortId from 'shortid'
 import ImageGalleryModal from './ImageGalleryModal'
+const clone = require('rfdc')()
 
-const ImageGallerySection = ({ title, images }) => {
+const ImageGallerySection = ({ title, images, isSection }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImageId, setSelectedImageId] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
+  const [galleryImages, setGalleryImages] = useState(null)
 
-  const createBeforeAfterPair = (image) => {
-    const imagePairObject = images.find(currentImage => image.pairId === currentImage.id)
-    return { id: image.id, before: image, after: imagePairObject }
+  const createGallerySectionHero = () => {
+    if (heroImage) {
+      return (
+        <a className='image-gallery-section__hero-link' href='#' key={shortId.generate()}
+           onClick={onImageClick}>
+          <img id={heroImage.id} className='image-gallery-section__hero-img'
+               src={heroImage.src}
+               alt={heroImage.altText}/>
+        </a>
+      )
+    }
   }
 
   const createGallerySectionItem = (imageObject) => {
-    if (imageObject.subText && imageObject.subText.toLowerCase() === 'after') {
-      return
-    }
-    if (imageObject.pairId && imageObject.subText.toLowerCase() === 'before') {
-      imageObject = createBeforeAfterPair(imageObject)
-      return (
-        <div key={shortId.generate()} className='image-gallery-section__img--border'>
-          <button onClick={() => onImageClick(imageObject.id)}>
-            <BeforeAfter before={imageObject.before} after={imageObject.after}/>
-          </button>
-        </div>
-      )
-    } else {
-      return (
-        <button key={shortId.generate()} onClick={() => onImageClick(imageObject.id)}>
-          <img className='image-gallery-section__single-img image-gallery-section__img'
-               src={imageObject.src}
-               alt={imageObject.altText}/>
-        </button>
-      )
-    }
+    return (
+      <a className='image-gallery-section__img-link'
+         href='#' key={shortId.generate()} onClick={onImageClick}>
+        <img id={imageObject.id} src={imageObject.src} alt={imageObject.altText}/>
+      </a>
+    )
   }
 
-  const onImageClick = (imageId) => {
-    if (imageId !== selectedImageId) {
-      setSelectedImageId(imageId)
+  const onImageClick = (e) => {
+    e.preventDefault()
+    const element = e.target
+    if (element.id !== selectedImageId) {
+      setSelectedImageId(element.id)
     }
 
-    if (isModalOpen !== !isModalOpen) {
-      setIsModalOpen(!isModalOpen)
-    }
-
+    setIsModalOpen(true)
   }
 
-  // useEffect(() => {
-  //   if (isModalOpen) {
-  //     const body = document.getElementsByTagName('body')[0]
-  //     body.setAttribute('style', 'position: fixed;')
-  //   } else {
-  //     const body = document.getElementsByTagName('body')[0]
-  //     body.setAttribute('style', 'position: initial;')
-  //   }
-  // }, [isModalOpen])
+  useLayoutEffect(() => {
+    if (images && JSON.stringify(images) !== JSON.stringify(galleryImages)) {
+      let hero = images.find(image => image.isHero)
+      const galleryImagesClone = clone(images)
+
+      if (galleryImagesClone) {
+        setHeroImage(hero)
+        galleryImagesClone.shift()
+        setGalleryImages(galleryImagesClone)
+      }
+
+    }
+  }, [])
 
   return (
     <>
       {selectedImageId &&
-      <ImageGalleryModal isModalOpen={isModalOpen}
-                         handleModalClose={setIsModalOpen}
-                         gallerySectionImages={images}
-                         initialImageId={selectedImageId}
+      <ImageGalleryModal
+        isModalOpen={isModalOpen}
+        handleModalClose={setIsModalOpen}
+        gallerySectionImages={images}
+        initialImageId={selectedImageId}
       />}
       <div className='image-gallery-section__container'>
-        <span className='image-gallery-section__title'>{title}</span>
+        {!isSection && <span className='image-gallery-section__title'>{title}</span>}
+        {heroImage && createGallerySectionHero(heroImage)}
         <div className='image-gallery-section__img-container'>
-          {images.map(image => createGallerySectionItem(image))}
+          {galleryImages && galleryImages.map(image => {
+            return createGallerySectionItem(image)
+          })
+          }
         </div>
       </div>
     </>

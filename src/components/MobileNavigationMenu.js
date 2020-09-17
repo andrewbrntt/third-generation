@@ -5,6 +5,7 @@ import MobileNavigationButton from './MobileNavigationButton'
 
 const MobileNavigationMenu = ({ createRouteObject }) => {
 
+  // TODO: Update these objects to use the routesData object
   const serviceRoutes = [
     { routeName: 'Remodel', routeTo: '/remodel' },
     { routeName: 'Roofing', routeTo: '/roofing' },
@@ -68,7 +69,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
   }
 
   return (
-    <nav role='navigation'>
+    <nav className='mobile-navigation--display' role='navigation'>
       <MobileNavigationButton
         navIsOpen={navIsOpen}
         toggleNavMenu={toggleMobileNav}

@@ -6,8 +6,32 @@
 //Animation
 //Misc
 
+.p--margin-bottom-standard {
+  margin-bottom: 2.5rem;
+
+  @include md {
+    margin-bottom: 6.25rem;
+  }
+
+  @include lg {
+    margin-bottom: 5rem;
+  }
+}
+
 .p--top-spacing {
   margin-top: 1rem;
+
+  @include md {
+    margin-top: 0;
+  }
+
+  @include lg {
+    margin-top: 1.25rem;
+  }
+}
+
+.p--bottom-margin-16 {
+  margin-bottom: 1rem;
 }
 
 .p--bottom-margin-40 {

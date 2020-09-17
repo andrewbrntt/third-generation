@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import {Helmet} from 'react-helmet'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 import SkipLink from './components/SkipLink'
@@ -23,13 +24,17 @@ fontAwesomeLibrary()
 function App () {
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Home</title>
+        <meta name="description" content="Third Generation Construction Home Page" />
+      </Helmet>
       <header className='background-color-primary'>
         <SkipLink/>
         <Banner/>
         <Header/>
       </header>
       <main id='main-content'>
-        <div className='main-content__container'>
           <Switch>
             <Route path='/about'>
               <About/>
@@ -67,7 +72,6 @@ function App () {
               <Home/>
             </Route>
           </Switch>
-        </div>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
         <Footer/>

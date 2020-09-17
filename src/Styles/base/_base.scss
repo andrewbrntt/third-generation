@@ -5,46 +5,77 @@ html {
 body {
   margin: 0;
   padding: 0;
-
-  //Typography
-  font-size: $default-font-size;
-  font-family: $san-serif-font;
-  line-height: $default-line-height;
-  letter-spacing: $default-letter-spacing;
-  word-spacing: $default-word-spacing;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
   margin: 0;
   padding: 0;
+}
+
+html h1 {
+  @extend %h1-page-title-text;
+}
+
+html h2 {
+  @extend %h2-section-title-text;
+  margin: 0;
+  padding: 0;
+}
+
+html p {
+  @extend %default-text;
+}
+
+a,
+button {
+  @extend %button-text;
 }
 
 .sr-only {
   padding: 0.5rem 1rem;
 
   //Typography
-  color: #fff;
+  color: $primary;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
 
   //Visual
-  background-color: #3b2d4a;
 }
 
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  outline: 0.125rem solid $secondary;
+  width: 100%;
+  outline: 0.125rem solid $white;
 }
 
-main > h1:focus,
-main > h1:active {
+h1:focus,
+h1:active {
   outline: 0.1875rem dashed $secondary;
   outline-offset: 0.625rem;
+}
+
+.root__container {
+  @include lg {
+    width: 100%;
+  }
+}
+
+.root__container > main {
+  @include lg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.section-container--1200 {
+  @include lg {
+    max-width: 75rem;
+  }
 }

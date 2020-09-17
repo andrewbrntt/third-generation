@@ -1,7 +1,7 @@
 import React from 'react'
 import shortId from 'shortid'
 
-const ReviewSitesSection = ({ reviewSites = [] }) => {
+const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
 
   const imageExtension = (imgName) => {
     return imgName.substr(imgName.length - 3)
@@ -9,25 +9,21 @@ const ReviewSitesSection = ({ reviewSites = [] }) => {
 
   const reviewSiteSvg = (site) => {
     return (
-      <div key={`review-sites-section_${shortId.generate()}`} className='review-sites-section__badge-container'>
-          <img className='review-site-svg' role='img' src={site.imgDefault} alt={site.altText}/>
-      </div>
+          <img key={`review-sites-section_${shortId.generate()}`} className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
     )  }
 
   const reviewSiteImg = (site) => {
     return (
-      <div key={`review-sites-section_${shortId.generate()}`} className='review-sites-section__badge-container'>
-        <picture>
+        <picture key={`review-sites-section_${shortId.generate()}`}>
           <source media='(min-width:992px)' srcSet={site.imgLarge}/>
           <source media='(min-width:768px)' srcSet={site.imgMedium}/>
           <img src={site.imgDefault} alt={site.altText}/>
         </picture>
-      </div>
     )
   }
 
   return (
-    <div className='review-sites-section__container'>
+    <div className={`review-sites-section__container review-sites__mobile-margin-bottom ${containerStyleClasses ? containerStyleClasses : ''}`}>
       {
         reviewSites.map(site => {
             if(imageExtension(site.imgDefault) !== 'svg') {

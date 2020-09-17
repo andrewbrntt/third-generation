@@ -13,3 +13,15 @@
     font-size: 1.875rem;
   }
 }
+
+.contact__title-lg {
+  display: none;
+  @include lg {
+    display: block;
+    width: 100%;
+    height: 3.125rem;
+    margin-bottom: 5rem;
+    font-size: 2.625rem;
+    font-family: $action-font;
+  }
+}

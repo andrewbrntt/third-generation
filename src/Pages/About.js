@@ -1,17 +1,22 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import { reviewSites } from '../helpers/mockData'
+import { mockGalleryImageObjects1, mockGallerySections, reviewSites } from '../DataObjects/mockData'
+import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
+import ImageGallery from '../components/ImageGallery'
+import ImageGallerySection from '../components/ImageGallerySection'
 
 const About = () => {
 
   const stepList = [
     { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
-    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection'},
+    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection' },
     { icon: ['far', 'file-signature'], text: 'Sign Contract', srText: 'step 3 sign contract' },
     { icon: ['far', 'hammer'], text: 'Labor', srText: 'step 4 labor starts' },
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
@@ -19,9 +24,14 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | About Us</title>
+        <meta name="description" content="Third Generation Construction About Us Page" />
+      </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <div className='padding-x-standard'>
+        <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
             surrounding
@@ -37,33 +47,41 @@ const About = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection styleClasses='background-color-primary color-white test-height' sectionTitle='Our Process'>
+      <BodySection styleClasses='background-color-primary color-white body-section--width-full'
+                   sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
+        <OurProcessInfographicDesktop stepList={stepList}/>
       </BodySection>
-      <BodySection styleClasses='color-primary padding-x-standard'>
+      <BodySection styleClasses='color-primary padding-x-standard body-section--width-965'>
+        <div className='p--margin-bottom-standard'>
         <p>
           Our work begins and ends with customer satisfaction as our services are customizable to each project.
         </p>
         <p className='p--top-spacing'>
-          Third
-          Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
+          Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>
-        <ReviewSitesSection reviewSites={reviewSites}/>
+        </div>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white' linkText='View Gallery'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' linkText='View Gallery'
                    sectionTitle='Our Work'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
-        <p className='padding-x-standard'>
-          We're proud of our work and love showing it off.
-        </p>
-        <p className='p--top-spacing padding-x-standard'>Let Third Generation Construction transform your current space into
-          the home of
-          your dreams.
-        </p>
+        <div className='padding-x-standard p--margin-bottom-standard body-section--width-965'>
+          <p>
+            We're proud of our work and love showing it off.
+          </p>
+          <p className='p--top-spacing'>Let Third Generation Construction transform your current space into
+            the home of
+            your dreams.
+          </p>
+        </div>
+        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
       </BodySection>
-      <BodySection sectionTitle='Reviews' styleClasses='color-primary padding-x-standard'>
+      <BodySection sectionTitle='Reviews' linkText='Reviews'
+                   styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
+        <div className='p--margin-bottom-standard'>
         <ReviewList randomCount='1'/>
+        </div>
       </BodySection>
     </>
   )

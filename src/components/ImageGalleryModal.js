@@ -1,6 +1,10 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock';
+
 import ImageGalleryArrow from './ImageGalleryArrow'
+import ScrollLock from 'react-scrolllock'
 
 const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages, handleModalClose, isModalOpen }) => {
 
@@ -9,17 +13,18 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
     NEXT: 'next'
   }
 
+  const modalContainer = useRef(null)
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [modalPreviousArrowVisible, setModalPreviousArrowVisible] = useState(false)
   const [modalNextArrowVisible, setModalNextArrowVisible] = useState(false)
-  const [currentImage, setCurrentImage] = useState('')
+  const [currentImage, setCurrentImage] = useState({})
 
   const handleArrowClick = (direction) => {
-
     if (arrows.PREVIOUS === direction && !isFirstImage()) {
-        setCurrentImageIndex(currentImageIndex - 1)
+      setCurrentImageIndex(currentImageIndex - 1)
     } else if (arrows.NEXT === direction && !isFinalImage()) {
-        setCurrentImageIndex(currentImageIndex + 1)
+      setCurrentImageIndex(currentImageIndex + 1)
     }
   }
   const isFirstImage = () => {
@@ -45,8 +50,7 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
     }
   }, [currentImageIndex])
 
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isModalOpen) {
       const initialImageIndex = gallerySectionImages.findIndex(image => image.id === initialImageId)
       setCurrentImageIndex(initialImageIndex)
@@ -54,9 +58,20 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
     }
   }, [isModalOpen])
 
+  useEffect(() => {
+    if (isModalOpen) {
+      disableBodyScroll(modalContainer.current)
+    } else {
+      enableBodyScroll(modalContainer.current)
+    }
+
+    return () => clearAllBodyScrollLocks()
+
+  }, [isModalOpen])
+
   return (
-    <div
-      className={`image-gallery__modal ${isModalOpen ? 'modal--display-block' : 'modal--display-none'} ${styleClasses || ''}`}>
+    <div ref={modalContainer}
+         className={`image-gallery__modal ${isModalOpen ? 'modal--display-block' : 'modal--display-none'} ${styleClasses || ''}`}>
       <div className='image-gallery__close-btn-container'>
         <button className='image-gallery__modal-btn modal__close-btn' onClick={() => handleModalClose(!isModalOpen)}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>

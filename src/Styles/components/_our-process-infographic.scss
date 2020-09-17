@@ -6,7 +6,7 @@
 //Animation
 //Misc
 
-.our-process-infographic__container {
+.our-process-infographic__ol-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,20 @@
     max-width: 61.9375rem;
     padding-right: 2.875rem;
     padding-left: 3.625rem;
+  }
+
+  @include lg {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.our-process-infographic__container {
+  display: block;
+  @include lg {
+    display: none;
   }
 }
 
@@ -31,6 +45,12 @@
 .our-process-infographic__li {
   width: 100%;
   list-style: none;
+
+  @include lg {
+    width: 11.4375rem;
+    height: 16.625rem;
+    background-color: transparent;
+  }
 }
 
 .our-process-infographic__step-container {
@@ -45,23 +65,71 @@
   width: 11.25rem;
   font-size: 1.875rem;
   font-family: $san-serif-font;
-
   @include md {
     position: absolute;
     top: 2.6875rem;
-    width: 100%;
+    width: 45.3125rem;
     font-size: 2.5rem;
+  }
+
+  @include lg {
+    position: initial;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.25rem;
+    font-size: 1.4375rem;
+    letter-spacing: 0.004375rem;
   }
 }
 
-.grid-column-1 {
-  grid-column: 1;
+.our-process-infographic__text-container--width {
+  @include lg {
+    width: 8.125rem;
+  }
 }
 
-.grid-column-2 {
-  grid-column: 2;
+.our-process-infographic__desktop-line {
+  position: absolute;
+  top: 0.9375rem;
+  left: 6.25rem;
+  width: 45.625rem;
+  height: 2.8125rem;
+  border-bottom: 0.125rem solid $white;
 }
 
-.grid-column-3 {
-  grid-column: 3;
+.our-process-infographic__desktop-caret-right {
+  font-size: 3.125rem;
+}
+
+.our-process-infographic__desktop-container {
+  display: none;
+
+  @include lg {
+    position: relative;
+    display: initial;
+  }
+}
+
+.our-process-infographic__desktop-caret-container {
+  position: absolute;
+  bottom: 11.375rem;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.our-process-infographic__desktop-caret-container:first-child {
+  left: 10rem;
+}
+
+.our-process-infographic__desktop-caret-container:nth-child(2) {
+  left: 21.375rem;
+}
+
+.our-process-infographic__desktop-caret-container:nth-child(3) {
+  left: 32.75rem;
+}
+
+.our-process-infographic__desktop-caret-container:nth-child(4) {
+  left: 44.1875rem;
 }

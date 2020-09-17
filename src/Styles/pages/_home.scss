@@ -12,7 +12,7 @@
 }
 
 //Service Cards
-.home__service-cards-container {
+.home__service-cards-mobile-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,7 +31,16 @@
   }
 
   @include lg {
-    flex-direction: inherit;
+    display: none;
+  }
+}
+
+.home__service-cards-desktop-container {
+  display: none;
+
+  @include lg {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
   }
 }
@@ -46,8 +55,37 @@
   margin-bottom: 1.6rem;
 }
 
+.home__our-services-p-container--mobile {
+  @include lg {
+    display: none;
+  }
+}
+
+.home__our-services-p-container--desktop {
+  display: none;
+
+  @include lg {
+    display: block;
+    margin-top: 5rem;
+  }
+}
+
 .home__our-services-p-container--margin {
   margin-bottom: 4.6875rem;
+
+  @include lg {
+    margin-bottom: 0;
+  }
+}
+
+.home__service-cards--center {
+  display: flex;
+  justify-content: center;
+
+
+  @include lg {
+    width: 100%;
+  }
 }
 //
 
@@ -56,9 +94,22 @@
   margin-bottom: 2.5rem;
 }
 
-.home__service-cards--center {
-  display: flex;
-  justify-content: center;
+.home__our-work-p-container > p:first-child {
+  @include lg {
+    white-space: nowrap;
+  }
 }
+
+.home__our-work-p-container > p:nth-child(2) {
+  @include lg {
+    width: 51.375rem;
+  }
+}
+
 //
 
+.home__contact-us-section {
+  @include lg {
+    width: 100%;
+  }
+}

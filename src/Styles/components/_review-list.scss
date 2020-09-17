@@ -6,6 +6,12 @@
 //Animation
 //Misc
 
+.reviews-list__container {
+  @include lg {
+    width: 60.3125rem;
+  }
+}
+
 .reviews-list__container > .review-list__review--spacing:last-child {
   margin-bottom: 0;
 }

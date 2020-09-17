@@ -5,7 +5,13 @@ import shortId from 'shortid'
 const ImageGallery = ({ gallerySections }) => {
   return (
     <>
-      {gallerySections.map(section => <ImageGallerySection key={shortId.generate()} images={section.images} title={section.title}/> )}
+      {gallerySections.map(section => {
+        return (
+          <ImageGallerySection key={shortId.generate()} images={section.images}
+                               title={section.title}/>
+        )
+      })
+      }
     </>
   )
 }

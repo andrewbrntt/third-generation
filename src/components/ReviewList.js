@@ -38,7 +38,7 @@ const currentReviewList = randomCount > 0 ? createRandomReviewList(randomCount) 
   return (
     <div className='reviews-list__container'>
       {currentReviewList.map(currentReview =>
-        <div key={shortId.generate()} className='review-list__review--spacing'>
+        <div key={shortId.generate()} className='review-list__review review-list__review--spacing'>
           <Review review={currentReview}/>
         </div>
       )}

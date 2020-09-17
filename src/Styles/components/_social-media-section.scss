@@ -10,12 +10,28 @@
   height: 10rem;
   padding: 0.875rem 0.5rem;
   border: 0.0625rem solid $white;
+
+  @include lg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60.3125rem;
+    height: 5.9375rem;
+    padding: 0 2.5rem;
+  }
 }
 
 .social-media-section__header-text {
   margin-bottom: 1.5625rem;
   font-size: 1.125rem;
-  font-family: $serif-font;
+  font-family: $san-serif-font;
+
+  @include lg {
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+    font-size: 1.875rem;
+  }
 }
 
 .social-media-section__icon-container {
@@ -27,6 +43,11 @@
 .social-media-section__icon {
   font-size: 4.6875rem;
 }
+
+.social-media-section__icon:first-child {
+  margin-right: 4.0625rem;
+}
+
 
 .social-media__fa-instagram--size {
   font-size: 3.4375rem;
