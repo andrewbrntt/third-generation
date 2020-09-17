@@ -69,7 +69,7 @@ const DesktopNavigationMenu = () => {
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
-        <li onClick={handleSubmenuToggle}
+        <li
             className='desktop-nav__services-li' key={shortId.generate()}>
           <a href='#'>
             Services

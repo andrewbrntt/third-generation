@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
@@ -9,6 +11,11 @@ const Reviews = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Reviews</title>
+        <meta name="description" content="Third Generation Construction Reviews Page" />
+      </Helmet>
       <BodyHeader linkRoute='/contact' pageHeader='Reviews' linkText='Contact Us'>
         <p>
           We are proud to be endorsed by Angie's List, Home Advisor, and the Better Business Bureau.

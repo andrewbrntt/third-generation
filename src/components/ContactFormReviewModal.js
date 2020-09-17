@@ -1,30 +1,31 @@
-import React, { useEffect, useRef } from 'react'
-import Modal from './Modal'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import BodySection from './BodySection'
 import shortId from 'shortid'
 import ModalCard from './ModalCard'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, handleClose }) => {
+const ContactFormReviewModal = ({ formInputData, isReviewModalOpen, handleSubmit, handleClose }) => {
 
-  const modalCloseButtonRef = useRef(null)
-
-  const handleSubmitButtonBlur = () => {
-    modalCloseButtonRef.current.focus()
-  }
+  const reviewModal = useRef(null)
 
   useEffect(() => {
-    if(isModalOpen) {
-      modalCloseButtonRef.current.focus()
+    if(isReviewModalOpen) {
+      console.log(reviewModal.current)
+
+      disableBodyScroll(reviewModal.current)
+    } else {
+      enableBodyScroll(reviewModal.current)
     }
-  }, [isModalOpen])
+
+    return () => clearAllBodyScrollLocks()
+  }, [isReviewModalOpen])
 
   return (
-    <Modal
-      styleClasses={`contact-form__review-modal color-primary 
-      ${isModalOpen ? 'modal--display-block' : 'modal--display-none'}`}>
+    <div ref={reviewModal} className={`modal contact-form__review-modal color-primary ${isReviewModalOpen ? 'modal__lg--display-flex' : 'modal--display-none'}`}>
+      <div className='contact-form__review-modal-container background-color-white'>
       <div className='modal__close-btn-container'>
-        <button ref={modalCloseButtonRef} className='modal__close-btn background-color-white' onClick={handleClose}>
+        <button className='modal__close-btn background-color-white' onClick={handleClose}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
         </button>
       </div>
@@ -41,10 +42,11 @@ const ContactFormReviewModal = ({ formInputData, isModalOpen, handleSubmit, hand
         </ul>
         <section className='contact-form__bottom-section'>
           <button className='contact-form__btn' onClick={handleClose}>Edit</button>
-          <button onBlur={handleSubmitButtonBlur} className='contact-form__btn' onClick={handleSubmit}>Submit</button>
+          <button className='contact-form__btn' onClick={handleSubmit}>Submit</button>
         </section>
       </BodySection>
-    </Modal>
+    </div>
+    </div>
   )
 }
 

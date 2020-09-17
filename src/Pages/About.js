@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
@@ -22,6 +24,11 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | About Us</title>
+        <meta name="description" content="Third Generation Construction About Us Page" />
+      </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
@@ -43,7 +50,7 @@ const About = () => {
       <BodySection styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Process'>
         <OurProcessInfoGraphic stepList={stepList}/>
-        {/*<OurProcessInfographicDesktop stepList={stepList}/>*/}
+        <OurProcessInfographicDesktop stepList={stepList}/>
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965'>
         <div className='p--margin-bottom-standard'>

@@ -3,6 +3,7 @@ import 'react-app-polyfill/stable'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import 'normalize.css';
 import './index.css'
 import './Styles/main.scss'
 import App from './App'

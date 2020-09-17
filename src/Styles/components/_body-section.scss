@@ -172,15 +172,15 @@
 }
 
 .body-section__has-line > .body-section__title {
-  margin-top: 40px;
-  margin-bottom: 16px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 
   @include md {
-    margin-top: 100px;
+    margin-top: 6.25rem;
   }
 
   @include lg {
-    margin-top: 80px;
+    margin-top: 5rem;
   }
 }
 
@@ -204,5 +204,5 @@
 }
 
 .desktop-header--width-492 {
-  width: 492px;
+  width: 30.75rem;
 }

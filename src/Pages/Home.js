@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
@@ -27,6 +29,11 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Home</title>
+        <meta name="description" content="Third Generation Construction Home Page" />
+      </Helmet>
       <BodyHeader linkRoute='/contact' linkText='Contact Us' pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
@@ -50,7 +57,7 @@ const Home = () => {
         </div>
         <div className='home__service-cards--center'>
           <div className='home__service-cards-mobile-container'>
-            <div className='home__service-cards-row'>
+            <div className='home__service-cards-row home__service-cards--margin-bottom'>
               <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
               <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
             </div>

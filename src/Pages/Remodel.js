@@ -1,4 +1,7 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
+
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
 import AboutImage from '../assets/group-people.jpg'
@@ -18,6 +21,11 @@ const vendors = [
 const Remodel = () => {
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Remodeling</title>
+        <meta name="description" content="Third Generation Construction Remodeling Page" />
+      </Helmet>
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us' pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>

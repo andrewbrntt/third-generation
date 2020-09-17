@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 965px;
+  max-width: 60.3125rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   text-align: left;
@@ -92,7 +92,6 @@
   height: 9.375rem;
   margin-bottom: 0.1875rem;
   overflow: hidden;
-  border: 0.0625rem solid black;
 
   @include sm {
     width: 15.625rem;

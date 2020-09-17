@@ -34,7 +34,7 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children }) => {
         <source media='(min-width:768px)' srcSet={bgData.medium}/>
         <img src={bgData.small} alt='' aria-hidden='true' className='body-header__background-hero-img'/>
       </picture>
-      <HeroImageOverlay elementRef={overlayContainer} styleClasses='w3-display-middle' linkText={linkText}
+      <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkText={linkText}
                         pageHeader={pageHeader}>
         {children}
       </HeroImageOverlay>

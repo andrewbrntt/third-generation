@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import SidingInfographic from '../components/SidingInfographic'
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
@@ -27,6 +29,11 @@ const Siding = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Siding</title>
+        <meta name="description" content="Third Generation Construction Siding Page" />
+      </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display' pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what

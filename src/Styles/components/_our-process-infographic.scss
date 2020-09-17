@@ -28,7 +28,7 @@
 }
 
 .our-process-infographic__container {
-display: block;
+  display: block;
   @include lg {
     display: none;
   }
@@ -68,7 +68,7 @@ display: block;
   @include md {
     position: absolute;
     top: 2.6875rem;
-    width: 725px;
+    width: 45.3125rem;
     font-size: 2.5rem;
   }
 

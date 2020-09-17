@@ -1,8 +1,10 @@
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react'
+import React, { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock';
 
-import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock'
 import ImageGalleryArrow from './ImageGalleryArrow'
+import ScrollLock from 'react-scrolllock'
 
 const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages, handleModalClose, isModalOpen }) => {
 
@@ -20,9 +22,9 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
 
   const handleArrowClick = (direction) => {
     if (arrows.PREVIOUS === direction && !isFirstImage()) {
-        setCurrentImageIndex(currentImageIndex - 1)
+      setCurrentImageIndex(currentImageIndex - 1)
     } else if (arrows.NEXT === direction && !isFinalImage()) {
-        setCurrentImageIndex(currentImageIndex + 1)
+      setCurrentImageIndex(currentImageIndex + 1)
     }
   }
   const isFirstImage = () => {
@@ -50,21 +52,26 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
 
   useLayoutEffect(() => {
     if (isModalOpen) {
-      lock(modalContainer.current)
       const initialImageIndex = gallerySectionImages.findIndex(image => image.id === initialImageId)
       setCurrentImageIndex(initialImageIndex)
       setCurrentImage(gallerySectionImages[initialImageIndex])
+    }
+  }, [isModalOpen])
+
+  useEffect(() => {
+    if (isModalOpen) {
+      disableBodyScroll(modalContainer.current)
     } else {
-      unlock(modalContainer.current)
+      enableBodyScroll(modalContainer.current)
     }
 
-    return () => clearBodyLocks()
+    return () => clearAllBodyScrollLocks()
+
   }, [isModalOpen])
 
   return (
     <div ref={modalContainer}
-      className={`image-gallery__modal ${isModalOpen ? 'modal--display-block' : 'modal--display-none'} ${styleClasses || ''}`}
-    >
+         className={`image-gallery__modal ${isModalOpen ? 'modal--display-block' : 'modal--display-none'} ${styleClasses || ''}`}>
       <div className='image-gallery__close-btn-container'>
         <button className='image-gallery__modal-btn modal__close-btn' onClick={() => handleModalClose(!isModalOpen)}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>

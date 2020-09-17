@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import ContactForm from '../components/ContactForm'
 import BodySection from '../components/BodySection'
 import ReviewSitesSection from '../components/ReviewSitesSection'
@@ -16,6 +18,11 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Contact Us</title>
+        <meta name="description" content="Third Generation Construction Contact Us Page" />
+      </Helmet>
       <BodySection styleClasses='color-primary body-section--width-965' pageHeader='Contact Us'>
         <ContactForm formStyleClasses={formStyles}/>
       </BodySection>

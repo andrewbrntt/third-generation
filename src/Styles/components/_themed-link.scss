@@ -8,10 +8,12 @@
 
 .themed-link {
   //Box Model
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 13.125rem;
   height: 3.125rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0 1.25rem;
 
   //Typography
   color: $white;
@@ -26,18 +28,24 @@
   }
 }
 
+.themed-link:hover,
+.themed-link:focus {
+  outline-color: $primary;
+}
 
 .themed-link__hr-container {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  //justify-content: center;
 }
 
 .themed-link__hr {
   //Box Model
-  width: 0;
   margin-top: -0.3125rem;
+  color: $white;
   border: 0;
-  border-bottom: 0.3125rem solid;
+  border-bottom: 0.125rem solid;
 }
 
 @media (prefers-reduced-motion: no-preference) {

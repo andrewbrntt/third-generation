@@ -5,9 +5,9 @@ import React from 'react'
 const Banner = () => {
   return (
     <section role='banner' className='background-color-secondary banner'>
-      <p className='remove-margin banner-text'>
+      <span className='remove-margin banner-text'>
         24-Hour Emergency Service
-      </p>
+      </span>
     </section>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/3gc-mobile-logo.svg'
+import logo from '../assets/3gc-logo-white.svg'
 import FooterSection from './FooterSection'
 import { NavLink } from 'react-router-dom'
 import SocialMediaSection from './SocialMediaSection'
@@ -10,7 +10,6 @@ const Footer = () => {
   return (
     <div className='footer__container'>
       <SocialMediaSection/>
-      {/* BEM would an image be footer__img--logo? */}
       <div className='footer__logo-container'>
       <img alt='Third Generation Construction Company Logo' className='footer__logo' src={logo}/>
       </div>
@@ -25,9 +24,6 @@ const Footer = () => {
         <li><NavLink className='footer__link' to='/contact'>Contact Us</NavLink></li>
         <li><NavLink className='footer__link' to='/emergency-service'>24-Hour Emergency Service</NavLink></li>
       </ul>
-      <div className='footer__sub-footer'>
-
-      </div>
     </div>
   )
 }

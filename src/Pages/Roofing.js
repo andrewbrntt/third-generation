@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodySection from '../components/BodySection'
 import DecorativeImage from '../components/DecorativeImage'
 import ReviewSitesSection from '../components/ReviewSitesSection'
@@ -29,6 +31,11 @@ const Roofing = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Roofing</title>
+        <meta name="description" content="Third Generation Construction Roofing Page" />
+      </Helmet>
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' pageHeader='Roofing' linkText='Contact Us' styleClasses='color-primary body-section--mobile-display'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <p className='padding-x-standard'>

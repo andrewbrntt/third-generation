@@ -56,7 +56,7 @@ const Review = ({ review }) => {
               aria-label={`Rated ${calculateAdjustedReviewScore(1)} stars out of 5`}>
         {calculateReviewStars()}
       </figure>
-      <div className='w3-left-align review__details-container'>
+      <div className='review__details-container'>
         <p className='review__name'>{review.name}</p>
         <p className='review__location'>{review.location}</p>
         <p className='review__comment'>

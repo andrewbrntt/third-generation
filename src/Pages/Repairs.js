@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import Tools from '../assets/icon-tools.svg'
@@ -20,6 +22,11 @@ const Repairs = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | Repairs</title>
+        <meta name="description" content="Third Generation Construction Repairs Page" />
+      </Helmet>
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
                    pageHeader='Repairs'
                    linkText='Contact Us'>

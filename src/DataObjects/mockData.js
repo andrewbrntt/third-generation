@@ -80,9 +80,9 @@ export const mockGalleryImageObjects1 = [
 
 export const mockGalleryImageObjects2 = [
   {
-    id: 'remodel-single-3',
-    isHero: false,
-    src: SingleImage,
+    id: 'remodel-single-4',
+    isHero: true,
+    src: SingleImage4,
     altText: 'After Image of a remodel',
     subText: ''
   },
@@ -91,35 +91,28 @@ export const mockGalleryImageObjects2 = [
     isHero: false,
     src: BeforeImage3,
     altText: 'Before image of a roof',
-    subText: 'Before'
+    subText: ''
   },
   {
     id: 'remodel-after-3',
     isHero: false,
     src: AfterImage3,
     altText: 'After Image of a roof',
-    subText: 'After'
-  },
-  {
-    id: 'remodel-single-4',
-    isHero: true,
-    src: SingleImage4,
-    altText: 'After Image of a remodel',
-    subText: 'After'
+    subText: ''
   },
   {
     id: 'remodel-before-4',
     isHero: false,
     src: BeforeImage4,
     altText: 'Before image of siding',
-    subText: 'Before'
+    subText: ''
   },
   {
     id: 'remodel-after-4',
     isHero: false,
     src: AfterImage4,
     altText: 'After Image of a remodel',
-    subText: 'After'
+    subText: ''
   }
 ]
 

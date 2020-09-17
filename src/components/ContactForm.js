@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import FormInputField from './FormInputField'
 import ThemedButton from './ThemedButton'
 import ContactFormReviewModal from './ContactFormReviewModal'
@@ -38,11 +39,11 @@ const ContactForm = ({ formStyleClasses = {} }) => {
   }
 
   const clearState = () => {
-    setFullName({...fullName, value: ''})
-    setPhone({...phone, value: ''})
-    setEmail({...email, value: ''})
-    setServices({...services, value: ''})
-    setMessage({...message, value: ''})
+    setFullName({...fullName, value: '', hasError: false})
+    setPhone({...phone, value: '', hasError: false})
+    setEmail({...email, value: '', hasError: false})
+    setServices({...services, value: '', hasError: false})
+    setMessage({...message, value: '', hasError: false})
   }
 
   const handleFormSubmit = (e) => {
@@ -55,6 +56,8 @@ const ContactForm = ({ formStyleClasses = {} }) => {
   }
 
   const toggleSuccessModal = () => {
+    setFieldErrors([])
+    clearState()
     setIsSuccessModalOpen(!isSuccessModalOpen)
   }
 
@@ -89,6 +92,9 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       let updatedName = { ...fullName, hasError: true, errorMessage: 'Full Name: must only contain letters and spaces' }
       setFullName(updatedName)
       validationArray.push(updatedName)
+    } else {
+      let updatedName = { ...fullName, hasError: false, errorMessage: '' }
+      setFullName(updatedName)
     }
 
     if (!validateEmail(email.value)) {
@@ -99,6 +105,14 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       }
       setEmail(updatedEmail)
       validationArray.push(updatedEmail)
+    } else {
+      let updatedEmail = {
+        ...email,
+        hasError: false,
+        errorMessage: ''
+      }
+      setEmail(updatedEmail)
+
     }
 
     if (!validatePhoneNumber(phone.value)) {
@@ -109,39 +123,42 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       }
       setPhone(updatedPhone)
       validationArray.push(updatedPhone)
+    } else {
+      let updatedPhone = {
+        ...phone,
+        hasError: false,
+        errorMessage: ''
+      }
+      setPhone(updatedPhone)
     }
 
     if (!validateService(services.value)) {
       let updatedService = { ...services, hasError: true, errorMessage: 'You must select a type of service' }
       setServices(updatedService)
       validationArray.push(updatedService)
+    } else {
+      let updatedService = { ...services, hasError: false, errorMessage: '' }
+      setServices(updatedService)
     }
 
     if (!validateMessage(message.value)) {
       let updatedMessage = { ...message, hasError: true, errorMessage: 'Your message cannot contain HTML tags' }
       setMessage(updatedMessage)
       validationArray.push(updatedMessage)
+    } else {
+      let updatedMessage = { ...message, hasError:  false, errorMessage: '' }
+      setMessage(updatedMessage)
     }
 
     return validationArray
   }
-
-  useEffect(() => {
-    if (isReviewModalOpen || isSuccessModalOpen) {
-      const body = document.getElementsByTagName('body')[0]
-      body.setAttribute('style', 'position: fixed;')
-    } else {
-      const body = document.getElementsByTagName('body')[0]
-      body.setAttribute('style', 'position: initial;')
-    }
-  }, [isReviewModalOpen, isSuccessModalOpen])
 
   return (
     <>
       <ContactFormReviewModal
         handleClose={toggleReviewModal}
         handleSubmit={handleReviewModalSubmit}
-        isModalOpen={isReviewModalOpen}
+        isReviewModalOpen={isReviewModalOpen}
         formInputData={[fullName, email, phone, services, message]}
       />
       <ContactFormSuccessModal handleClose={toggleSuccessModal} isSuccessModalOpen={isSuccessModalOpen} />

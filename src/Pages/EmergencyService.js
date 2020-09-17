@@ -1,4 +1,6 @@
 import React from 'react'
+import {Helmet} from 'react-helmet'
+
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import ReviewList from '../components/ReviewList'
@@ -11,6 +13,11 @@ const EmergencyService = () => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>3rd Generation Construction | 24-Hour Emergency Services</title>
+        <meta name="description" content="Third Generation Construction 24 Hour Emergency Services Page" />
+      </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>

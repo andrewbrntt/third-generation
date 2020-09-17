@@ -5,9 +5,9 @@ const ThemedLink = ({ styleClasses, text, route }) => {
   return (
     <NavLink to={{ pathname: route, state: { navIsOpen: false } }}
              className={`themed-link action-text ${styleClasses || ''}`}>
-      {text}
       <span className='themed-link__hr-container'>
-        <hr className='themedd-link__hr remove-margin'/>
+              {text}
+        <hr className='themed-link__hr remove-margin'/>
       </span>
     </NavLink>
   )
