@@ -22,7 +22,7 @@ const Header = () => {
         <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
       </NavLink>
       </div>
-      {/*<DesktopNavigationMenu />*/}
+      <DesktopNavigationMenu />
     </div>
   )
 }
