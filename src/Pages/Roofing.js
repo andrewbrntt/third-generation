@@ -17,6 +17,7 @@ import {
   royalSidingLogo
 } from '../helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
+import { roofReviews } from '../DataObjects/reviewsData'
 
 const Roofing = () => {
 
@@ -91,7 +92,7 @@ const Roofing = () => {
         styleClasses='background-color-primary color-white padding-x-standard body-section__reviews-section--padding body-section--width-full' sectionTitle='Reviews'
                    linkText='Reviews'>
         <div className='p--margin-bottom-standard'>
-        <ReviewList styleClasses='background-color-white color-primary' randomCount='3'/>
+        <ReviewList containerClasses='background-color-primary' reviewClasses='background-color-white color-primary'  reviewsList={roofReviews}/>
         </div>
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965'>

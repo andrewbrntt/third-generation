@@ -1,7 +1,6 @@
 import React from 'react'
 import {Helmet} from 'react-helmet-async'
 
-
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
 import AboutImage from '../assets/group-people.jpg'

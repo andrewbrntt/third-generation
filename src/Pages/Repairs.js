@@ -11,6 +11,7 @@ import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import ImageGallerySection from '../components/ImageGallerySection'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
+import { repairReviews } from '../DataObjects/reviewsData'
 
 const Repairs = () => {
 
@@ -112,7 +113,7 @@ const Repairs = () => {
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white repairs__review-list body-section--width-full'
                    sectionTitle='Reviews'>
         <div className='desktop__p--margin-bottom-80'>
-          <ReviewList randomCount='1'/>
+          <ReviewList containerClasses='background-color-primary' reviewClasses='background-color-white color-primary' reviewsList={repairReviews}/>
         </div>
       </BodySection>
     </>

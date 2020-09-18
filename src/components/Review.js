@@ -2,7 +2,7 @@ import React from 'react'
 import shortId from 'shortid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Review = ({ review }) => {
+const Review = ({ review, styleClasses }) => {
 
   const calculateReviewStars = () => {
     const starLimit = 5
@@ -51,7 +51,7 @@ const Review = ({ review }) => {
   }
 
   return (
-    <div className={`review__container ${review.styleClasses ||''}`}>
+    <div className={`review__container ${styleClasses ||''}`}>
       <figure role='img' className='review__star-container'
               aria-label={`Rated ${calculateAdjustedReviewScore(1)} stars out of 5`}>
         {calculateReviewStars()}

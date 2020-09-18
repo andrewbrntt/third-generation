@@ -9,7 +9,7 @@ import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
 import {reviewSites} from '../DataObjects/socialMediaData'
-
+import {roofReviews} from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
 import ImageGallery from '../components/ImageGallery'
 import ImageGallerySection from '../components/ImageGallerySection'
@@ -83,7 +83,7 @@ const About = () => {
       <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
         <div className='p--margin-bottom-standard'>
-        <ReviewList randomCount='1'/>
+        <ReviewList reviewsList={roofReviews}/>
         </div>
       </BodySection>
     </>

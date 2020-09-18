@@ -6,6 +6,7 @@ import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import {reviewSites} from '../DataObjects/socialMediaData'
+import {allReviews} from '../DataObjects/reviewsData'
 
 const Reviews = () => {
 
@@ -26,7 +27,7 @@ const Reviews = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
-        <ReviewList randomCount='5'/>
+        <ReviewList reviewsList={allReviews}/>
       </BodySection>
       <BodySection styleClasses='color-primary desktop--padding-top-0' sectionTitle='Find More Reviews'>
         <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0' reviewSites={reviewSites}/>

@@ -12,7 +12,7 @@ import {mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
 import {formFieldsData} from '../DataObjects/contactFormData'
 import {reviewSites} from '../DataObjects/socialMediaData'
 import {routesData} from '../DataObjects/routes'
-
+import {randomReviews} from '../DataObjects/reviewsData'
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
@@ -120,7 +120,7 @@ const Home = () => {
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'
                    sectionTitle='Reviews'>
         <div className='p--margin-bottom-standard'>
-        <ReviewList randomCount='5'/>
+        <ReviewList reviewsList={randomReviews} />
         </div>
       </BodySection>
         <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>

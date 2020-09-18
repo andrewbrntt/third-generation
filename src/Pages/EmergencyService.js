@@ -8,6 +8,7 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGallerySections } from '../DataObjects/mockData'
 import {reviewSites} from '../DataObjects/socialMediaData'
+import {remodelReviews} from '../DataObjects/reviewsData'
 
 import ImageGallery from '../components/ImageGallery'
 
@@ -42,7 +43,7 @@ const EmergencyService = () => {
       <BodySection linkRoute='/reviews' linkText='Reviews' sectionTitle='Reviews'
                    styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
         <div className='desktop__p--margin-bottom-80'>
-        <ReviewList randomCount='1'/>
+        <ReviewList reviewsList={remodelReviews}/>
         </div>
       </BodySection>
       <BodySection styleClasses='desktop--padding-top-0 mobile--padding-top-0'>

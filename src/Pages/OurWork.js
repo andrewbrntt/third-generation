@@ -9,6 +9,7 @@ import ReviewList from '../components/ReviewList'
 import ImageGallery from '../components/ImageGallery'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import {routesData} from '../DataObjects/routes'
+import { randomReviews } from '../DataObjects/reviewsData'
 
 const OurWork = () => {
   return (
@@ -37,7 +38,7 @@ const OurWork = () => {
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white body-section--width-full'
                    sectionTitle='Reviews'>
         <div className='desktop__p--margin-bottom-80'>
-          <ReviewList styleClasses='background-color-white color-primary' randomCount='5'/>
+          <ReviewList containerClasses='background-color-primary' reviewClasses='background-color-white color-primary'  reviewsList={randomReviews} />
         </div>
       </BodySection>
       <BodySection>
