@@ -6,11 +6,11 @@ import AboutImage from '../assets/group-people.jpg'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
-import { mockGallerySections } from '../DataObjects/mockData'
+import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
 import {reviewSites} from '../DataObjects/socialMediaData'
 import {remodelReviews} from '../DataObjects/reviewsData'
 
-import ImageGallery from '../components/ImageGallery'
+import ImageGallerySection from '../components/ImageGallerySection'
 
 const EmergencyService = () => {
 
@@ -30,15 +30,21 @@ const EmergencyService = () => {
           <p className='p--top-spacing'>We're available 24/7 and can help fix urgent needs as they happen.</p>
         </div>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='color-white background-color-primary body-section--width-full' sectionTitle='Our Work'
-                   linkText='View Gallery'>
-        <div className='padding-x-standard'>
-          <p>We're proud of our work and love showing it off.</p>
-          <p className='p--top-spacing desktop__p--margin-bottom-80'>
-            Let 3RD Generation Construction transform your current space into the home of your dreams.</p>
-          {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
-          <ImageGallery gallerySections={mockGallerySections} />
+      <BodySection
+        linkRoute='/our-work'
+        styleClasses='background-color-primary color-white body-section--width-full'
+        sectionTitle='Our Work'
+        linkText='View Gallery'>
+        <div className='p--margin-bottom-standard'>
+          <p className='padding-x-standard body-section--width-965 desktop--margin-0'>
+            We're proud of our work and love showing it off.
+          </p>
+          <p className='p--top-spacing p--bottom-margin-40 padding-x-standard body-section--width-965'>
+            Let Third Generation Construction transform your current space into the home of your dreams.
+          </p>
         </div>
+        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1} isSection={true}/>
+        {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews' sectionTitle='Reviews'
                    styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
