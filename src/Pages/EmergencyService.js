@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async'
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import ReviewList from '../components/ReviewList'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../components/ImageGallerySection'
@@ -58,8 +58,8 @@ const EmergencyService = () => {
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
-                            reviewSites={reviewSites}/>
+        <AccreditedSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
+                                accreditationSites={accreditationSites}/>
       </BodySection>
     </>
   )

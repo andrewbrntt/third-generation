@@ -7,7 +7,7 @@ import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-
 import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
 import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
 
-export const reviewSites = [
+export const accreditationSites = [
   {
     imgDefault: AngiesList,
     imgMedium: AngiesListMedium,

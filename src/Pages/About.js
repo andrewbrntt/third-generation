@@ -4,11 +4,11 @@ import { Helmet } from 'react-helmet-async'
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
 import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import { accreditationSites } from '../DataObjects/socialMediaData'
 import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
 import ImageGallerySection from '../components/ImageGallerySection'
@@ -65,7 +65,7 @@ const About = () => {
             quality of work as well as our commitment to outstanding results.
           </p>
         </div>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
+        <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>
       </BodySection>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
                    linkText='View Gallery'

@@ -19,6 +19,7 @@ import Reviews from './Pages/Reviews'
 import EmergencyService from './Pages/EmergencyService'
 import Test from './Pages/Test'
 import Header from './components/Header'
+import Error from './Pages/Error'
 
 fontAwesomeLibrary()
 
@@ -37,6 +38,9 @@ function App () {
       </header>
       <main id='main-content'>
         <Switch>
+          <Route exact path='/'>
+            <Home/>
+          </Route>
           <Route path='/about'>
             <About/>
           </Route>
@@ -70,8 +74,8 @@ function App () {
               <Test/>
             </Route>
           }
-          <Route path='/'>
-            <Home/>
+          <Route path='*'>
+            <Error />
           </Route>
         </Switch>
       </main>

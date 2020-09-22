@@ -8,30 +8,75 @@
 
 .review-sites-section__container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 0.25rem;
-  margin-bottom: 2.1875rem;
-  margin-left: 0.25rem;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 10.625rem;
 
   @include md {
-    margin-bottom: 3.4375rem;
-    padding-right: 2.125rem;
-    padding-left: 2.125rem;
+    height: 21.875rem;
   }
 
   @include lg {
-    padding-right: 0;
-    padding-left: 0;
+    height: 23.625rem;
   }
 }
 
-.review-sites__svg {
+.review-sites-section__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 6rem;
+  height: 100%;
+  padding-top: 0.625rem;
+  padding-bottom: 0.1875rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  @include sm {
+    width: 8rem;
+  }
+
   @include md {
-    width: 12.5rem;
+    width: 13.8125rem;
+    padding-top: 2rem;
+    padding-bottom: 1.125rem;
   }
 
   @include lg {
-    width: 16.625rem;
+    width: 19.0625rem;
   }
+}
+
+.review-sites-section__card-text {
+  margin-top: 0.4375rem;
+  color: $secondary;
+  font-size: 1.5rem;
+  font-family: $action-font;
+
+  @include md {
+    font-size: 2.25rem;
+  }
+
+  @include lg {
+    font-size: 1.5rem;
+  }
+}
+
+.review-sites-section__icon-container--dimensions {
+  width: 5.125rem;
+  height: 5.125rem;
+
+  @include md {
+    width: 11.875rem;
+    height: 11.875rem;
+  }
+
+  @include lg {
+    width: 16.3125rem;
+    height: 16.3125rem;
+  }
+}
+
+.review-sites-section__icon--dimensions {
+  width: 100%;
+  height: 100%;
 }

@@ -1,0 +1,41 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.accreditation-sites-section__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2.1875rem;
+
+
+  @include sm {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+  }
+
+  @include md {
+    margin-bottom: 3.4375rem;
+    padding-right: 2.125rem;
+    padding-left: 2.125rem;
+  }
+
+  @include lg {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.accreditation-sites__svg {
+  @include md {
+    width: 12.5rem;
+  }
+
+  @include lg {
+    width: 16.625rem;
+  }
+}

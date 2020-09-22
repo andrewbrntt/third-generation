@@ -6,6 +6,47 @@
 //Animation
 //Misc
 
+.contact__phone-link-mobile {
+  display: block;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.contact__phone-link-desktop {
+  display: none;
+
+  @include lg {
+    display: block;
+  }
+}
+
+.contact-us__header-p {
+  padding-right: 1.625rem;
+  padding-left: 1.625rem;
+}
+
+.contact-us__header-p div {
+  margin-top: 20px;
+}
+
+.contact-us__header-p div:nth-child(3) {
+  margin-top: 0;
+}
+
+.contact-us__header-p div:nth-child(5) {
+  margin-bottom: 3.125rem;
+
+  @include md {
+    margin-bottom: 3.75rem;
+  }
+
+  @include lg {
+    margin-bottom: 5rem;
+  }
+}
+
 .contact__p {
   margin-top: 4.5rem;
 

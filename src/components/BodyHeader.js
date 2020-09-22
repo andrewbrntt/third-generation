@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import useElementDimensions from '../helpers/useElementDimensions'
-import LazyLoad from 'react-lazyload'
 
 import backgroundImage1x from '../assets/mobile-wide-kitchen-stock.jpg'
 import backgroundImage2x from '../assets/white-kitchen-3-lrg.jpg'
@@ -31,13 +30,11 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children }) => {
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
              className='body-header-container body-header__background-hero-img--overflow'>
-      <LazyLoad once>
       <picture>
         <source media='(min-width:992px)' srcSet={bgData.large}/>
         <source media='(min-width:768px)' srcSet={bgData.medium}/>
         <img src={bgData.small} alt='' aria-hidden='true' className='body-header__background-hero-img'/>
       </picture>
-      </LazyLoad>
       <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute} linkText={linkText}
                         pageHeader={pageHeader}>
         {children}

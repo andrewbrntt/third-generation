@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async'
 import BodySection from '../components/BodySection'
 import BodyHeader from '../components/BodyHeader'
 import { mockGallerySections } from '../DataObjects/mockData'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import { accreditationSites } from '../DataObjects/socialMediaData'
 import ReviewList from '../components/ReviewList'
 import ImageGallery from '../components/ImageGallery'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
 
@@ -44,8 +44,8 @@ const OurWork = () => {
         </div>
       </BodySection>
       <BodySection>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
-                            reviewSites={reviewSites}/>
+        <AccreditedSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
+                                accreditationSites={accreditationSites}/>
       </BodySection>
     </>
   )

@@ -1,50 +1,48 @@
 import React from 'react'
-import shortId from 'shortid'
-import LazyLoad from 'react-lazyload'
+import google from '../assets/review-sites/google/google-thunb.png'
+import google2x from '../assets/review-sites/google/google-thunb@2x.png'
+import angiesList from '../assets/review-sites/angies-list/angies-list-thumb.png'
+import angiesList2x from '../assets/review-sites/angies-list/angies-list-thumb@2x.png'
+import homeAdvisor from '../assets/review-sites/home-advisor/home-advisor-thumb.png'
+import homeAdvisor2x from '../assets/review-sites/home-advisor/home-advisor-thumb@2x.png'
 
-import ExternalLink from './ExternalLink'
-
-const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
-
-  const imageExtension = (imgName) => {
-    return imgName.substr(imgName.length - 3)
-  }
-
-  const reviewSiteSvg = (site) => {
-    return (
-      <ExternalLink key={`review-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
-        <img className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
-      </ExternalLink>
-    )
-  }
-
-  const reviewSiteImg = (site) => {
-    return (
-      <ExternalLink key={`review-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
-        <picture>
-          <source media='(min-width:992px)' srcSet={site.imgLarge}/>
-          <source media='(min-width:768px)' srcSet={site.imgMedium}/>
-          <img src={site.imgDefault} alt={site.altText}/>
-        </picture>
-      </ExternalLink>
-    )
-  }
-
+const ReviewSitesSection = () => {
   return (
-    <LazyLoad once>
-    <div
-      className={`review-sites-section__container review-sites__mobile-margin-bottom ${containerStyleClasses ? containerStyleClasses : ''}`}>
-      {
-        reviewSites.map(site => {
-          if (imageExtension(site.imgDefault) !== 'svg') {
-            return reviewSiteImg(site)
-          } else {
-            return reviewSiteSvg(site)
-          }
-        })
-      }
+    <div className='review-sites-section__container'>
+      <div className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={angiesList2x}/>
+            <img src={angiesList} alt='' className='review-sites-section__icon--dimensions' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Angie's List
+        </span>
+      </div>
+      <div className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={homeAdvisor2x}/>
+            <img src={homeAdvisor} alt='' className='review-sites-section__icon--dimensions' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Home Advisor
+        </span>
+      </div>
+      <div className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={google2x}/>
+            <img src={google} className='review-sites-section__icon--dimensions' alt='' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Google
+        </span>
+      </div>
     </div>
-    </LazyLoad>
   )
 }
 

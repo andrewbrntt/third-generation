@@ -4,9 +4,10 @@ import { Helmet } from 'react-helmet-async'
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import { reviewSites } from '../DataObjects/socialMediaData'
 import { allReviews } from '../DataObjects/reviewsData'
+import ReviewSitesSection from '../components/ReviewSitesSection'
 
 const Reviews = () => {
 
@@ -29,9 +30,8 @@ const Reviews = () => {
       <BodySection styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
         <ReviewList reviewsList={allReviews}/>
       </BodySection>
-      <BodySection styleClasses='color-primary desktop--padding-top-0' sectionTitle='Find More Reviews'>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
-                            reviewSites={reviewSites}/>
+      <BodySection styleClasses='color-primary desktop--padding-top-0 body-section--width-965' sectionTitle='Find More Reviews'>
+        <ReviewSitesSection />
       </BodySection>
     </>
   )

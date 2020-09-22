@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import DecorativeImage from '../components/DecorativeImage'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import { accreditationSites } from '../DataObjects/socialMediaData'
 import AboutImage from '../assets/group-people.jpg'
 import {
   alsideLogo,
@@ -101,7 +101,7 @@ const Roofing = () => {
           quality of work as well as our commitment to outstanding results.
         </p>
       </BodySection>
-      <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
+      <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>
 
     </>
   )

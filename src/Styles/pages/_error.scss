@@ -1,0 +1,105 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+div .error__container {
+  padding-top: 4.375rem;
+}
+
+.error__container .icon-with-line__center-text {
+  margin-right: 0.3125rem;
+  margin-bottom: 1.5625rem;
+  margin-left: 0.3125rem;
+  color: $primary;
+
+  @include md {
+    font-size: 3.125rem;
+  }
+}
+
+.error__container .icon-with-line__hr {
+  width: 7.5rem;
+  background-color: $secondary;
+
+  @include md {
+    width: 18.875rem;
+  }
+
+  @include lg {
+    width: 25rem;
+  }
+}
+
+.error__container .icon-with-line__container {
+  margin-bottom: 3.125rem;
+
+  @include md {
+    margin-bottom: 3.75rem;
+  }
+
+  @include lg {
+    margin-bottom: 5rem;
+  }
+}
+
+.error__container h2 {
+  margin-bottom: 2.5rem;
+  color: $primary;
+  font-size: 1.25rem;
+  font-family: $san-serif-font;
+
+  @include md {
+    margin-bottom: 3.125rem;
+    font-size: 1.875rem;
+  }
+
+  @include lg {
+    margin-bottom: 5.625rem;
+  }
+}
+
+.error-tools {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 2.5rem;
+
+  @include md {
+    width: 15.625rem;
+    height: 15.625rem;
+    margin-bottom: 3.125rem;
+  }
+}
+
+.error__container p {
+  margin-right: 2.5rem;
+  margin-bottom: 1.875rem;
+  margin-left: 2.5rem;
+  color: $primary;
+  font-size: 1.25rem;
+
+  @include md {
+    margin-bottom: 3.125rem;
+    font-size: 1.875rem;
+  }
+
+  @include lg {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+  }
+}
+
+.error__container ul {
+  color: $primary;
+  font-size: 1.5rem;
+}
+
+.error__ul-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

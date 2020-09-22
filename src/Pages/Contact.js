@@ -3,8 +3,9 @@ import { Helmet } from 'react-helmet-async'
 
 import ContactForm from '../components/ContactForm'
 import BodySection from '../components/BodySection'
-import ReviewSitesSection from '../components/ReviewSitesSection'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
+import { accreditationSites } from '../DataObjects/socialMediaData'
+import ContactPhoneLink from '../components/ContactPhoneLink'
 
 const Contact = () => {
 
@@ -24,6 +25,16 @@ const Contact = () => {
         <meta name="description" content="Third Generation Construction Contact Us Page"/>
       </Helmet>
       <BodySection styleClasses='color-primary body-section--width-965' pageHeader='Contact Us'>
+        <p className='contact-us__header-p'>
+          We are here to help you with whatever home repair needs you may have.
+          <div>Third Generation Construction is available to our clients 24/7.</div>
+          <div className='contact__phone-link-mobile'>Call us at:</div>
+          <ContactPhoneLink className='contact__phone-link-mobile' />
+          <div className='contact__phone-link-desktop'>Call us at: <ContactPhoneLink /></div>
+          <div>
+            Or email us by filling out the contact form below and we will get back to you within 3 business days.
+          </div>
+        </p>
         <ContactForm formStyleClasses={formStyles}/>
       </BodySection>
       <div
@@ -35,9 +46,9 @@ const Contact = () => {
         </p>
       </div>
       <BodySection styleClasses='color-primary desktop--padding-top-0'>
-        <ReviewSitesSection
+        <AccreditedSitesSection
           containerStyleClasses='body-section--width-965 desktop--margin-bottom-0 desktop--margin-top-0'
-          reviewSites={reviewSites}/>
+          accreditationSites={accreditationSites}/>
       </BodySection>
     </>
   )

@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet-async'
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ContactForm from '../components/ContactForm'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
 import { formFieldsData } from '../DataObjects/contactFormData'
-import { reviewSites } from '../DataObjects/socialMediaData'
+import { accreditationSites } from '../DataObjects/socialMediaData'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
 import RemodelImage from '../assets/service-placeholder-man.jpg'
@@ -123,7 +123,7 @@ const Home = () => {
           <ReviewList reviewsList={randomReviews}/>
         </div>
       </BodySection>
-      <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
+      <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>
     </>
   )
 }
