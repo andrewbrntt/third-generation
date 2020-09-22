@@ -12,10 +12,10 @@
   border: 0.0625rem solid $secondary;
 
   @include lg {
-    height: 25.875rem;
     padding: 0.9375rem 0.9375rem 2.8125rem;
   }
 }
+
 .review__details-container {
   text-align: left;
 }

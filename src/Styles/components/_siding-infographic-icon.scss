@@ -17,11 +17,6 @@
   }
 }
 
-.siding-icon--justify-self {
-  justify-self: center;
-  padding: 3.125rem 0;
-}
-
 // Beautify Exterior Icon
 .siding-infographic__beautify-exterior-icon {
   font-size: 6.25rem;
@@ -45,14 +40,6 @@
 
   @include md {
     font-size: 11.875rem;
-  }
-}
-
-.beautify-exterior__fa-home-icon {
-  font-size: 6.25rem;
-
-  @include md {
-    font-size: 15.625rem;
   }
 }
 

@@ -1,21 +1,21 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
-import {reviewSites} from '../DataObjects/socialMediaData'
-import {allReviews} from '../DataObjects/reviewsData'
+import { reviewSites } from '../DataObjects/socialMediaData'
+import { allReviews } from '../DataObjects/reviewsData'
 
 const Reviews = () => {
 
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | Reviews</title>
-        <meta name="description" content="Third Generation Construction Reviews Page" />
+        <meta name="description" content="Third Generation Construction Reviews Page"/>
       </Helmet>
       <BodyHeader linkRoute='/contact' pageHeader='Reviews' linkText='Contact Us'>
         <p>
@@ -30,7 +30,8 @@ const Reviews = () => {
         <ReviewList reviewsList={allReviews}/>
       </BodySection>
       <BodySection styleClasses='color-primary desktop--padding-top-0' sectionTitle='Find More Reviews'>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0' reviewSites={reviewSites}/>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
+                            reviewSites={reviewSites}/>
       </BodySection>
     </>
   )

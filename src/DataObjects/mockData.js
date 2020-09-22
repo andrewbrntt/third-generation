@@ -9,14 +9,6 @@ import AfterImage4 from '../assets/image-gallery/placeholders/after-temp-4.jpg'
 import SingleImage from '../assets/image-gallery/placeholders/single-temp-1.jpg'
 import SingleImage2 from '../assets/image-gallery/placeholders/single-temp-2.jpg'
 import SingleImage4 from '../assets/image-gallery/placeholders/single-temp-4.jpg'
-import AngiesList from '../assets/review-sites/angies-list/angies-list-seal.png'
-import AngiesListMedium from '../assets/review-sites/angies-list/angies-list-seal@2x.png'
-import AngiesListLarge from '../assets/review-sites/angies-list/angies-list-seal@3x.png'
-import HomeAdvisor from '../assets/review-sites/home-advisor/home-advisor-seal.png'
-import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-seal@2x.png'
-import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
-import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
-import { socialMediaRoutes } from './routes'
 
 //TODO: Sort this data out better because it is not all mock data anymore
 export const beforeAfterMockData = [

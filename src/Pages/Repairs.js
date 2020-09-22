@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
@@ -24,11 +24,12 @@ const Repairs = () => {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | Repairs</title>
-        <meta name="description" content="Third Generation Construction Repairs Page" />
+        <meta name="description" content="Third Generation Construction Repairs Page"/>
       </Helmet>
-      <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
+      <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact'
+                   styleClasses='color-primary body-section--mobile-display'
                    pageHeader='Repairs'
                    linkText='Contact Us'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
@@ -113,7 +114,8 @@ const Repairs = () => {
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white repairs__review-list body-section--width-full'
                    sectionTitle='Reviews'>
         <div className='desktop__p--margin-bottom-80'>
-          <ReviewList containerClasses='background-color-primary' reviewClasses='background-color-white color-primary' reviewsList={repairReviews}/>
+          <ReviewList containerClasses='background-color-primary' reviewClasses='background-color-white color-primary'
+                      reviewsList={repairReviews}/>
         </div>
       </BodySection>
     </>

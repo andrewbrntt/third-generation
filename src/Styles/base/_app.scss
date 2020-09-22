@@ -10,39 +10,42 @@
 //// Extra large devices (large desktops, 1200px and up)
 //@media (min-width: 1200px) { }
 
-/* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
+/* W3.CSS 4.13 June 2019 */
+
+
+/* stylelint-disable */
 html {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit
+  box-sizing: inherit;
 }
 
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html {
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0
+  margin: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
-  display: block
+  display: block;
 }
 
 summary {
-  display: list-item
+  display: list-item;
 }
 
 audio, canvas, progress, video {
-  display: inline-block
+  display: inline-block;
 }
 
 progress {
-  vertical-align: baseline
+  vertical-align: baseline;
 }
 
 audio:not([controls]) {
@@ -65,7 +68,7 @@ a:active, a:hover {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted
+  text-decoration-style: dotted;
 }
 
 b, strong {
@@ -146,7 +149,8 @@ button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-fo
 }
 
 button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
-  outline: 1px dotted linkText
+  //noinspection CssInvalidPropertyValue
+  outline: 1px dotted linkText;
 }
 
 fieldset {
@@ -268,3 +272,5 @@ a {
 .w3-card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+
+/* stylelint-enable */

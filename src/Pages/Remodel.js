@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
@@ -21,11 +21,12 @@ const Remodel = () => {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | Remodeling</title>
-        <meta name="description" content="Third Generation Construction Remodeling Page" />
+        <meta name="description" content="Third Generation Construction Remodeling Page"/>
       </Helmet>
-      <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us' pageHeader='Remodel'
+      <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us'
+                   pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
         <div className='p--margin-bottom-standard'>

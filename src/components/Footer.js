@@ -4,14 +4,15 @@ import FooterSection from './FooterSection'
 import { NavLink } from 'react-router-dom'
 import SocialMediaSection from './SocialMediaSection'
 import { routesData } from '../DataObjects/routes'
+import ContactPhoneLink from './ContactPhoneLink'
 
 const Footer = () => {
 
   const serviceRoutes = [
-    { routeName: 'Remodel', routeTo: '/remodel' },
-    { routeName: 'Roofing', routeTo: '/roofing' },
-    { routeName: 'Siding', routeTo: '/siding' },
-    { routeName: 'Repairs', routeTo: '/repairs' }
+    { routeName: routesData.remodel.routeName, routeTo: routesData.remodel.routeTo },
+    { routeName: routesData.roofing.routeName, routeTo: routesData.roofing.routeTo },
+    { routeName: routesData.siding.routeName, routeTo: routesData.siding.routeTo },
+    { routeName: routesData.repairs.routeName, routeTo: routesData.repairs.routeTo }
     ]
 
   return (
@@ -57,6 +58,7 @@ const Footer = () => {
           </NavLink>
         </li>
       </ul>
+      <div className='color-white'>Contact Us: <ContactPhoneLink /></div>
     </div>
   )
 }

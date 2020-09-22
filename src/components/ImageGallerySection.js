@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react'
 import shortId from 'shortid'
+import LazyLoad from 'react-lazyload'
 import ImageGalleryModal from './ImageGalleryModal'
 const clone = require('rfdc')()
 
@@ -13,7 +14,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   const createGallerySectionHero = () => {
     if (heroImage) {
       return (
-        <a className='image-gallery-section__hero-link' href='#' key={shortId.generate()}
+        <a className='image-gallery-section__hero-link' href='/' key={shortId.generate()}
            onClick={onImageClick}>
           <img id={heroImage.id} className='image-gallery-section__hero-img'
                src={heroImage.src}
@@ -65,6 +66,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
         gallerySectionImages={images}
         initialImageId={selectedImageId}
       />}
+      <LazyLoad once>
       <div className='image-gallery-section__container'>
         {!isSection && <span className='image-gallery-section__title'>{title}</span>}
         {heroImage && createGallerySectionHero(heroImage)}
@@ -75,6 +77,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
           }
         </div>
       </div>
+      </LazyLoad>
     </>
   )
 }

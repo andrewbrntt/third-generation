@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
@@ -7,8 +7,8 @@ import ReviewList from '../components/ReviewList'
 import ReviewSitesSection from '../components/ReviewSitesSection'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
-import {reviewSites} from '../DataObjects/socialMediaData'
-import {remodelReviews} from '../DataObjects/reviewsData'
+import { reviewSites } from '../DataObjects/socialMediaData'
+import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../components/ImageGallerySection'
 
@@ -17,9 +17,9 @@ const EmergencyService = () => {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | 24-Hour Emergency Services</title>
-        <meta name="description" content="Third Generation Construction 24 Hour Emergency Services Page" />
+        <meta name="description" content="Third Generation Construction 24 Hour Emergency Services Page"/>
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
@@ -49,15 +49,17 @@ const EmergencyService = () => {
       <BodySection linkRoute='/reviews' linkText='Reviews' sectionTitle='Reviews'
                    styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>
         <div className='desktop__p--margin-bottom-80'>
-        <ReviewList reviewsList={remodelReviews}/>
+          <ReviewList reviewsList={remodelReviews}/>
         </div>
       </BodySection>
       <BodySection styleClasses='desktop--padding-top-0 mobile--padding-top-0'>
-        <p className='padding-x-standard align-text--center color-primary body-section--width-965 desktop__p--margin-bottom-80 desktop--margin-top-0'>
+        <p
+          className='padding-x-standard align-text--center color-primary body-section--width-965 desktop__p--margin-bottom-80 desktop--margin-top-0'>
           Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
           quality of work as well as our commitment to outstanding results.
         </p>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0' reviewSites={reviewSites}/>
+        <ReviewSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
+                            reviewSites={reviewSites}/>
       </BodySection>
     </>
   )

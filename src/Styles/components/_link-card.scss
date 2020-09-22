@@ -29,11 +29,6 @@
   width: 100%;
 }
 
-.link-card__title {
-  color: $primary;
-  text-align: center;
-}
-
 .w3-half {
   float: left;
   width: 49.99999%;
@@ -41,10 +36,10 @@
 }
 
 .w3-card {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .w3-image {
   max-width: 100%;
-  height: auto
+  height: auto;
 }

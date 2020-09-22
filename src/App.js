@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
+import LazyLoad from 'react-lazyload'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 import SkipLink from './components/SkipLink'
@@ -25,9 +26,9 @@ function App () {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | Home</title>
-        <meta name="description" content="Third Generation Construction Home Page" />
+        <meta name="description" content="Third Generation Construction Home Page"/>
       </Helmet>
       <header className='background-color-primary'>
         <SkipLink/>
@@ -35,46 +36,49 @@ function App () {
         <Header/>
       </header>
       <main id='main-content'>
-          <Switch>
-            <Route path='/about'>
-              <About/>
-            </Route>
-            <Route path='/roofing'>
-              <Roofing/>
-            </Route>
-            <Route path='/remodel'>
-              <Remodel/>
-            </Route>
-            <Route path='/siding'>
-              <Siding/>
-            </Route>
-            <Route path='/repairs'>
-              <Repairs/>
-            </Route>
-            <Route path='/contact'>
-              <Contact/>
-            </Route>
-            <Route path='/our-work'>
-              <OurWork/>
-            </Route>
-            <Route path='/reviews'>
-              <Reviews/>
-            </Route>
-            <Route path='/emergency-service'>
-              <EmergencyService/>
-            </Route>
-
-            // TODO: Remove this before prod
+        <Switch>
+          <Route path='/about'>
+            <About/>
+          </Route>
+          <Route path='/roofing'>
+            <Roofing/>
+          </Route>
+          <Route path='/remodel'>
+            <Remodel/>
+          </Route>
+          <Route path='/siding'>
+            <Siding/>
+          </Route>
+          <Route path='/repairs'>
+            <Repairs/>
+          </Route>
+          <Route path='/contact'>
+            <Contact/>
+          </Route>
+          <Route path='/our-work'>
+            <OurWork/>
+          </Route>
+          <Route path='/reviews'>
+            <Reviews/>
+          </Route>
+          <Route path='/emergency-service'>
+            <EmergencyService/>
+          </Route>
+          {
+            process.env.NODE_ENV === 'development' &&
             <Route path='/test'>
               <Test/>
             </Route>
-            <Route path='/'>
-              <Home/>
-            </Route>
-          </Switch>
+          }
+          <Route path='/'>
+            <Home/>
+          </Route>
+        </Switch>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
-        <Footer/>
+        <LazyLoad>
+          <Footer/>
+        </LazyLoad>
       </footer>
     </>
   )

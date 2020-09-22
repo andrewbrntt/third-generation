@@ -19,7 +19,17 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 
+
+// Header Custom Breakpoints
+$screen-header-sm-min: 352px;
+
 // Small devices
+@mixin sm-header {
+  @media (min-width: #{$screen-header-sm-min}) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
     @content;

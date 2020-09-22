@@ -21,7 +21,9 @@ const SidingInfographic = () => {
         </div>
       </div>
       <div className='siding-infographic__section-container siding-infographic__section-container--icon-right'>
-        <h3 className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Lower Utility Costs</h3>
+        <h3
+          className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Lower
+          Utility Costs</h3>
         <div className=''>
           <h3 className='siding-infographic__section-title-tablet'>Lower Utility Costs</h3>
           <p className='siding-infographic__section-text'>
@@ -31,7 +33,9 @@ const SidingInfographic = () => {
         <LowerUtilityCostIcon/>
       </div>
       <div className='siding-infographic__section-container siding-infographic__section-container--icon-left'>
-        <h3 className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Lower Maintenance Costs</h3>
+        <h3
+          className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Lower
+          Maintenance Costs</h3>
         <LowerMaintenanceCostsIcon/>
         <div>
           <h3 className='siding-infographic__section-title-tablet'>Lower Maintenance Costs</h3>
@@ -41,7 +45,9 @@ const SidingInfographic = () => {
         </div>
       </div>
       <div className='siding-infographic__section-container siding-infographic__section-container--icon-right'>
-        <h3 className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Protect Structural Integrity</h3>
+        <h3
+          className='siding-infographic__section-title-mobile siding-infographic__section-title-mobile--margin-top-40'>Protect
+          Structural Integrity</h3>
         <div className='siding-infographic--v-align-center'>
           <h3 className='siding-infographic__section-title-tablet'>Protect Structural Integrity</h3>
           <p className='siding-infographic__section-text'>
@@ -56,21 +62,3 @@ const SidingInfographic = () => {
 }
 
 export default SidingInfographic
-
-// <>
-// <SidingInfographicText sectionTitle='Lower Utility Bills'
-// sectionText="Make your home's curb appeal stand out and increase its value."/>
-//   <LowerUtilityCostIcon />
-//   </>
-// <>
-//   <div className='lower-maintenance-cost__icon-container'>
-//     <LowerMaintenanceCostsIcon/>
-//   </div>
-//   <SidingInfographicText sectionTitle='Lower Maintenance Costs'
-//                          sectionText='Replace worn siding and reduce the number of repairs your home needs.'/>
-// </>
-// <>
-//   <SidingInfographicText sectionTitle='Protect Structural Integrity'
-//                          sectionText='Defend your home from harsh Lake Erie weather and extreme temperatures.'/>
-//   <ProtectStructuralIntegrityIcon />
-// </>

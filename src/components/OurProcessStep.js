@@ -1,7 +1,7 @@
 import React from 'react'
 import OurProcessIcon from './OurProcessIcon'
 
-const OurProcessStep = ({ step, iconPlacementSide, index }) => {
+const OurProcessStep = ({ step, iconPlacementSide }) => {
   const right = 'right'
   const left = 'left'
   const infoStepStyles = iconPlacementSide === right ? 'our-process-infographic__step--right' : ''

@@ -16,13 +16,9 @@ const DesktopNavigationMenu = () => {
   const handleSubmenuToggle = (e) => {
     e.preventDefault()
 
+    if (e.keyCode === 13) {
       setServicesSubMenuIsOpen(!servicesSubMenuIsOpen)
-  }
-
-  const handleSubmenuOpen = (e) => {
-    e.preventDefault()
-    setServicesSubMenuIsOpen(true)
-    setServicesSubMenuEventType(e.type)
+    }
   }
 
   const handleSubmenuClose = (e) => {
@@ -31,29 +27,9 @@ const DesktopNavigationMenu = () => {
     setServicesSubMenuEventType(e.type)
   }
 
-  const handleShiftTab = (e) => {
-    e.preventDefault()
-
-    // if(e.key === 9 && e.shiftKey) {
-    //   setServicesSubMenuIsOpen(true)
-    //   servicesLastSubMenuItem.current.focus()
-    // }
-  }
-
-
-  const handleSubmenuCloseTimeout = () => {
-    setTimeout(() => {
-      setServicesSubMenuIsOpen(false)
-    }, 700)
-  }
-
   useLayoutEffect(() => {
-    // if (servicesSubMenuIsOpen) {
-    //     servicesFirstSubMenuItem.current.focus()
-    //   }
-
-    if(!servicesSubMenuIsOpen && servicesSubMenuEventType === 'blur') {
-        ourWorkMenuItem.current.focus()
+    if (!servicesSubMenuIsOpen && servicesSubMenuEventType === 'blur') {
+      ourWorkMenuItem.current.focus()
     }
   }, [servicesSubMenuIsOpen, servicesSubMenuEventType])
 
@@ -69,7 +45,7 @@ const DesktopNavigationMenu = () => {
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
-        <li
+        <li onKeyUp={handleSubmenuToggle}
             className='desktop-nav__services-li' key={shortId.generate()}>
           <a href='#'>
             Services
@@ -78,8 +54,7 @@ const DesktopNavigationMenu = () => {
               icon={'caret-down'}
             />
           </a>
-          <ul
-            className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
+          <ul className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
             <li>
               <NavLink
                 ref={servicesFirstSubMenuItem}

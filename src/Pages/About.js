@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import AboutImage from '../assets/group-people.jpg'
@@ -8,12 +8,11 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
 import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
-import {reviewSites} from '../DataObjects/socialMediaData'
-import {roofReviews} from '../DataObjects/reviewsData'
+import { reviewSites } from '../DataObjects/socialMediaData'
+import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
-import ImageGallery from '../components/ImageGallery'
 import ImageGallerySection from '../components/ImageGallerySection'
-import {routesData} from '../DataObjects/routes'
+import { routesData } from '../DataObjects/routes'
 
 const About = () => {
 
@@ -28,9 +27,9 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | About Us</title>
-        <meta name="description" content="Third Generation Construction About Us Page" />
+        <meta name="description" content="Third Generation Construction About Us Page"/>
       </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
@@ -57,17 +56,19 @@ const About = () => {
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965'>
         <div className='p--margin-bottom-standard'>
-        <p>
-          Our work begins and ends with customer satisfaction as our services are customizable to each project.
-        </p>
-        <p className='p--top-spacing'>
-          Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
-          quality of work as well as our commitment to outstanding results.
-        </p>
+          <p>
+            Our work begins and ends with customer satisfaction as our services are customizable to each project.
+          </p>
+          <p className='p--top-spacing'>
+            Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on
+            the
+            quality of work as well as our commitment to outstanding results.
+          </p>
         </div>
         <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' linkText='View Gallery'
+      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
+                   linkText='View Gallery'
                    sectionTitle='Our Work'>
         <div className='padding-x-standard p--margin-bottom-standard body-section--width-965'>
           <p>
@@ -83,7 +84,7 @@ const About = () => {
       <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>
         <div className='p--margin-bottom-standard'>
-        <ReviewList reviewsList={roofReviews}/>
+          <ReviewList reviewsList={roofReviews}/>
         </div>
       </BodySection>
     </>

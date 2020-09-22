@@ -1,10 +1,9 @@
-import React, { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock';
+import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import LazyLoad from 'react-lazyload'
 
 import ImageGalleryArrow from './ImageGalleryArrow'
-import ScrollLock from 'react-scrolllock'
 
 const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages, handleModalClose, isModalOpen }) => {
 
@@ -88,9 +87,11 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
           </div>
           <div className={`image-gallery__img-container ${currentImage.subText ? 'background-color-primary' : ''}`}>
             <div className='image-gallery__img--display-block'>
+              <LazyLoad once>
               <img className='image-gallery__img'
                    src={currentImage.src}
                    alt={currentImage.altText}/>
+              </LazyLoad>
               {currentImage.subText &&
               <div className='image-gallery__text default-text color-white'>
                 {currentImage.subText}

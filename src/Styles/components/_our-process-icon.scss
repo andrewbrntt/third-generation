@@ -6,7 +6,6 @@
 //Animation
 //Misc
 
-
 .our-process-infographic__circle {
   font-size: 5.3125rem;
 
@@ -18,12 +17,6 @@
   @include lg {
     font-size: 7.4375rem;
   }
-
-  // TODO: May need this for mobile
-  //svg {
-  //  margin-left: 0;
-  //}
-
 
   [data-icon='phone-alt'].our-process-infographic__icon {
     font-size: 3.4375rem;

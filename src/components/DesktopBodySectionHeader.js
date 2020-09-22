@@ -2,7 +2,7 @@ import React from 'react'
 import DecorativeImage from './DecorativeImage'
 import ThemedLink from './ThemedLink'
 
-const DesktopBodySectionHeader = ({ sectionTitle, children, styleClasses, heroImage, linkText, linkRoute }) => {
+const DesktopBodySectionHeader = ({ sectionTitle, children, heroImage, linkText, linkRoute }) => {
   return (
     <section className='desktop-body-section__header-container'>
       <DecorativeImage className='desktop-body-section__hero-img' src={heroImage}/>

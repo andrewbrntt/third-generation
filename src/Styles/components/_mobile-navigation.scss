@@ -43,11 +43,12 @@
 .mobile-navigation__ul li > a {
   display: block;
   padding-left: 0.625rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
-.mobile-navigation__ul li > a:hover {
+.mobile-navigation__ul li > a:hover,
+.mobile-navigation__ul li > a:focus {
   text-decoration: underline;
 }
 
@@ -61,7 +62,15 @@
 
 .mobile-navigation__menu-button {
   position: absolute;
-  top: 4.75rem;
+  top: 8rem;
   left: 0.9375rem;
   z-index: 1;
+
+  @include sm-header {
+    top: 6rem;
+  }
+
+  @include md {
+    top: 3.5rem;
+  }
 }

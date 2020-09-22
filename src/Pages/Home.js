@@ -1,6 +1,5 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
-
+import { Helmet } from 'react-helmet-async'
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
@@ -8,11 +7,11 @@ import ReviewSitesSection from '../components/ReviewSitesSection'
 import ContactForm from '../components/ContactForm'
 import ReviewList from '../components/ReviewList'
 import DecorativeImage from '../components/DecorativeImage'
-import {mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
-import {formFieldsData} from '../DataObjects/contactFormData'
-import {reviewSites} from '../DataObjects/socialMediaData'
-import {routesData} from '../DataObjects/routes'
-import {randomReviews} from '../DataObjects/reviewsData'
+import { mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
+import { formFieldsData } from '../DataObjects/contactFormData'
+import { reviewSites } from '../DataObjects/socialMediaData'
+import { routesData } from '../DataObjects/routes'
+import { randomReviews } from '../DataObjects/reviewsData'
 import RemodelImage from '../assets/service-placeholder-man.jpg'
 import RepairImage from '../assets/service-placeholder-man-2.jpg'
 import RoofingImage from '../assets/service-placeholder-women.jpg'
@@ -33,11 +32,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang="en"/>
         <title>3rd Generation Construction | Home</title>
-        <meta name="description" content="Third Generation Construction Home Page" />
+        <meta name="description" content="Third Generation Construction Home Page"/>
       </Helmet>
-      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName} pageHeader='Transform Your House Into Your Dream Home'>
+      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
+                  pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
         </p>
@@ -109,7 +109,7 @@ const Home = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
+          <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
@@ -120,10 +120,10 @@ const Home = () => {
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'
                    sectionTitle='Reviews'>
         <div className='p--margin-bottom-standard'>
-        <ReviewList reviewsList={randomReviews} />
+          <ReviewList reviewsList={randomReviews}/>
         </div>
       </BodySection>
-        <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
+      <ReviewSitesSection containerStyleClasses='body-section--width-965' reviewSites={reviewSites}/>
     </>
   )
 }

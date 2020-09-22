@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import {HelmetProvider} from 'react-helmet-async'
 import 'normalize.css';
-import './index.css'
 import './Styles/main.scss'
 import App from './App'
 

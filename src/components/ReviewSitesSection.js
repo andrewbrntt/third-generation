@@ -1,7 +1,8 @@
 import React from 'react'
 import shortId from 'shortid'
+import LazyLoad from 'react-lazyload'
+
 import ExternalLink from './ExternalLink'
-import { socialMediaRoutes } from '../DataObjects/routes'
 
 const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
 
@@ -12,9 +13,10 @@ const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
   const reviewSiteSvg = (site) => {
     return (
       <ExternalLink key={`review-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
-          <img  className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+        <img className='review-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
       </ExternalLink>
-    )  }
+    )
+  }
 
   const reviewSiteImg = (site) => {
     return (
@@ -29,17 +31,20 @@ const ReviewSitesSection = ({ reviewSites = [], containerStyleClasses }) => {
   }
 
   return (
-    <div className={`review-sites-section__container review-sites__mobile-margin-bottom ${containerStyleClasses ? containerStyleClasses : ''}`}>
+    <LazyLoad once>
+    <div
+      className={`review-sites-section__container review-sites__mobile-margin-bottom ${containerStyleClasses ? containerStyleClasses : ''}`}>
       {
         reviewSites.map(site => {
-            if(imageExtension(site.imgDefault) !== 'svg') {
-              return reviewSiteImg(site)
-            } else {
-              return reviewSiteSvg(site)
-            }
+          if (imageExtension(site.imgDefault) !== 'svg') {
+            return reviewSiteImg(site)
+          } else {
+            return reviewSiteSvg(site)
+          }
         })
       }
     </div>
+    </LazyLoad>
   )
 }
 

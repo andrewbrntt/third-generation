@@ -54,7 +54,8 @@
   border: 0.1875rem solid $primary;
 }
 
-.desktop-nav__services-li:hover > .desktop-nav__services-submenu {
+.desktop-nav__services-li:hover > .desktop-nav__services-submenu,
+.desktop-nav__services-li:focus > .desktop-nav__services-submenu {
   display: block;
 }
 
