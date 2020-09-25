@@ -1,11 +1,22 @@
 import React from 'react'
 import DecorativeImage from './DecorativeImage'
 import ThemedLink from './ThemedLink'
+import { Image } from 'cloudinary-react'
+import BodySection from './BodySection'
 
 const DesktopBodySectionHeader = ({ sectionTitle, children, heroImage, linkText, linkRoute }) => {
+
+  const selectHeroImageContainer = (image) => {
+    if(image && image.public_id) {
+      return (<Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={image.public_id}/>)
+    } else {
+      return (<DecorativeImage className='desktop-body-section__hero-img' src={image}/>)
+    }
+  }
+
   return (
     <section className='desktop-body-section__header-container'>
-      <DecorativeImage className='desktop-body-section__hero-img' src={heroImage}/>
+      {selectHeroImageContainer(heroImage)}
       <div className='desktop-body-section__text-container'>
         <h1 className='desktop-body-section__header-text'>{sectionTitle}</h1>
         {children}

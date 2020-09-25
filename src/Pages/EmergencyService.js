@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
-import AboutImage from '../assets/group-people.jpg'
+
 import ReviewList from '../components/ReviewList'
 import AccreditedSitesSection from '../components/AccreditedSitesSection'
-import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../components/ImageGallerySection'
 
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { Image } from 'cloudinary-react'
+
+
 const EmergencyService = () => {
+  const [imageGalleryImages, setImageGalleryImages] = useState([])
+  const [heroImage, setHeroImage] = useState([])
+
+  useImagesCDN(setImageGalleryImages, 'group-2')
+  useImagesCDNSingleStockArt(setHeroImage,'emergency')
 
   return (
     <>
@@ -23,7 +30,7 @@ const EmergencyService = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
           <p>Life is full of curveballs and emergencies happen.</p>
           <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>
@@ -43,7 +50,7 @@ const EmergencyService = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1} isSection={true}/>
+        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages} isSection={true}/>
         {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews' sectionTitle='Reviews'

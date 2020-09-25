@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
-import AboutImage from '../assets/group-people.jpg'
 import OurProcessInfoGraphic from '../components/OurProcessInfoGraphic'
 import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ReviewList from '../components/ReviewList'
-import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../components/OurProcessInfographicDesktop'
 import ImageGallerySection from '../components/ImageGallerySection'
 import { routesData } from '../DataObjects/routes'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { Image } from 'cloudinary-react'
 
 const About = () => {
+
+const [imageGalleryImages, setImageGalleryImages] = useState([])
+  const [heroImage, setHeroImage] = useState([])
 
   const stepList = [
     { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
@@ -24,6 +26,9 @@ const About = () => {
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
   ]
 
+  useImagesCDN(setImageGalleryImages, 'group-1')
+  useImagesCDNSingleStockArt(setHeroImage,'about-us')
+
   return (
     <>
       <Helmet>
@@ -32,7 +37,7 @@ const About = () => {
         <meta name="description" content="Third Generation Construction About Us Page"/>
       </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
@@ -79,7 +84,7 @@ const About = () => {
             your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
+        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages}/>
       </BodySection>
       <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>

@@ -2,10 +2,11 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import LazyLoad from 'react-lazyload'
+import {Image} from 'cloudinary-react'
 
 import ImageGalleryArrow from './ImageGalleryArrow'
 
-const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages, handleModalClose, isModalOpen }) => {
+const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImages, handleModalClose, isModalOpen }) => {
 
   const arrows = {
     PREVIOUS: 'previous',
@@ -51,7 +52,6 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
 
   useLayoutEffect(() => {
     if (isModalOpen) {
-      const initialImageIndex = gallerySectionImages.findIndex(image => image.id === initialImageId)
       setCurrentImageIndex(initialImageIndex)
       setCurrentImage(gallerySectionImages[initialImageIndex])
     }
@@ -77,7 +77,7 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
         </button>
       </div>
       <div className='image-gallery--display-flex'>
-        <div className='image-gallery__container'>
+        <div className='image-gallery__modal-container'>
           <div style={{ visibility: modalPreviousArrowVisible ? 'visible' : 'hidden' }}
                className='image-gallery__arrow-btn-container image-gallery__modal-arrow-btn-left'>
             <button className='image-gallery__modal-arrow-btn image-gallery__modal-btn'
@@ -88,9 +88,7 @@ const ImageGalleryModal = ({ styleClasses, initialImageId, gallerySectionImages,
           <div className={`image-gallery__img-container ${currentImage.subText ? 'background-color-primary' : ''}`}>
             <div className='image-gallery__img--display-block'>
               <LazyLoad once>
-              <img className='image-gallery__img'
-                   src={currentImage.src}
-                   alt={currentImage.altText}/>
+                <Image className='image-gallery__modal-image' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={currentImage.public_id}/>
               </LazyLoad>
               {currentImage.subText &&
               <div className='image-gallery__text default-text color-white'>

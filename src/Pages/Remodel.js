@@ -1,23 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
-import AboutImage from '../assets/group-people.jpg'
+
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
-import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1 } from '../DataObjects/mockData'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import ImageGallerySection from '../components/ImageGallerySection'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { Image } from 'cloudinary-react'
 
-const vendors = [
-  { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
-  { logo: gafLogo, altText: 'GAF Roofing Shingles and Materials Logo', styleClasses: 'vendor__gaf' },
-  { logo: alliedLogo, altText: 'Allied Roofing Supply Company Logo', styleClasses: 'vendor__allied' }
-]
 
 const Remodel = () => {
+  const [imageGalleryImages, setImageGalleryImages] = useState([])
+  const [heroImage, setHeroImage] = useState([])
+
+  const vendors = [
+    { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
+    { logo: gafLogo, altText: 'GAF Roofing Shingles and Materials Logo', styleClasses: 'vendor__gaf' },
+    { logo: alliedLogo, altText: 'Allied Roofing Supply Company Logo', styleClasses: 'vendor__allied' }
+  ]
+
+
+  useImagesCDN(setImageGalleryImages, 'group-3')
+  useImagesCDNSingleStockArt(setHeroImage,'remodel')
+
   return (
     <>
       <Helmet>
@@ -28,7 +36,7 @@ const Remodel = () => {
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us'
                    pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard'>
             Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
@@ -41,7 +49,7 @@ const Remodel = () => {
         </div>
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Remodel'
-                                heroImage={AboutImage}>
+                                heroImage={heroImage}>
         <div className='desktop__p--margin-bottom-80'>
           <p className='desktop--margin-0'>
             Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
@@ -90,7 +98,7 @@ const Remodel = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1} isSection={true}/>
+        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages} isSection={true}/>
         {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
       <BodySection sectionTitle='Our Suppliers' styleClasses='color-primary body-section--width-965'>

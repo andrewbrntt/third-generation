@@ -1,23 +1,20 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import useElementDimensions from '../helpers/useElementDimensions'
-
-import backgroundImage1x from '../assets/mobile-wide-kitchen-stock.jpg'
-import backgroundImage2x from '../assets/white-kitchen-3-lrg.jpg'
-import backgroundImage3x from '../assets/wide-kitchen-stock.jpg'
 import HeroImageOverlay from './HeroImageOverlay'
+import { Image } from 'cloudinary-react'
+import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 
-const BodyHeader = ({ linkRoute, linkText, pageHeader, children }) => {
+const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }) => {
 
-  const bgData = {
-    small: backgroundImage1x,
-    medium: backgroundImage2x,
-    large: backgroundImage3x,
-  }
+  const [heroImage, setHeroImage] = useState({})
 
   const overlayContainer = useRef(null)
   const overlayDimensions = useElementDimensions(overlayContainer)
 
   const [elementHeight, setElementHeight] = useState(0)
+
+  useImagesCDNSingleStockArt(setHeroImage,heroImageName)
+
 
   useLayoutEffect(() => {
     if (overlayDimensions.height) {
@@ -30,11 +27,7 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children }) => {
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
              className='body-header-container body-header__background-hero-img--overflow'>
-      <picture>
-        <source media='(min-width:992px)' srcSet={bgData.large}/>
-        <source media='(min-width:768px)' srcSet={bgData.medium}/>
-        <img src={bgData.small} alt='' aria-hidden='true' className='body-header__background-hero-img'/>
-      </picture>
+        {heroImage && <Image  alt='' aria-hidden='true' className='body-header__background-hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
       <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute} linkText={linkText}
                         pageHeader={pageHeader}>
         {children}

@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
 import BodyHeader from '../components/BodyHeader'
-import { mockGallerySections } from '../DataObjects/mockData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import ReviewList from '../components/ReviewList'
 import ImageGallery from '../components/ImageGallery'
 import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
+import { useImagesCDNAllImages } from '../helpers/useImageCDN'
 
 const OurWork = () => {
+  const [imageGallerySections, setImageGallerySections] = useState(null)
+
+  useImagesCDNAllImages(setImageGallerySections)
+
   return (
     <>
       <Helmet>
@@ -19,7 +23,7 @@ const OurWork = () => {
         <title>3rd Generation Construction | Our Work</title>
         <meta name="description" content="Third Generation Construction Our Work Page"/>
       </Helmet>
-      <BodyHeader pageHeader='Our Work' linkText={routesData.contactUs.routeName}
+      <BodyHeader pageHeader='Our Work' linkText={routesData.contactUs.routeName} heroImageName='our-work'
                   linkRoute={routesData.contactUs.routeTo}>
         <div className='p--margin-bottom-standard'>
           <p>
@@ -33,7 +37,9 @@ const OurWork = () => {
         </div>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-        <ImageGallery gallerySections={mockGallerySections}/>
+
+        <ImageGallery gallerySections={imageGallerySections}/>
+
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews'
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white body-section--width-full'

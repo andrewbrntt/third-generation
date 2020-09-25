@@ -82,8 +82,11 @@
 
   @include lg {
     width: 60.3125rem;
-    height: 60.3125rem;
   }
+}
+
+.image-gallery__thumbnail-img {
+  overflow: hidden;
 }
 
 .image-gallery-section__img-link {

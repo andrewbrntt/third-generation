@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodyHeader from '../components/BodyHeader'
@@ -8,8 +8,13 @@ import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import { reviewSites } from '../DataObjects/socialMediaData'
 import { allReviews } from '../DataObjects/reviewsData'
 import ReviewSitesSection from '../components/ReviewSitesSection'
+import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 
 const Reviews = () => {
+  const [heroImage, setHeroImage] = useState([])
+
+  useImagesCDNSingleStockArt(setHeroImage,'repairs')
+
 
   return (
     <>
@@ -18,7 +23,7 @@ const Reviews = () => {
         <title>3rd Generation Construction | Reviews</title>
         <meta name="description" content="Third Generation Construction Reviews Page"/>
       </Helmet>
-      <BodyHeader linkRoute='/contact' pageHeader='Reviews' linkText='Contact Us'>
+      <BodyHeader linkRoute='/contact' pageHeader='Reviews' linkText='Contact Us' heroImageName='reviews'>
         <p>
           We are proud to be endorsed by Angie's List, Home Advisor, and the Better Business Bureau.
         </p>

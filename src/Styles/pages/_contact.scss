@@ -27,15 +27,15 @@
   padding-left: 1.625rem;
 }
 
-.contact-us__header-p div {
+.contact-us__header-p div:not(:first-child) {
   margin-top: 20px;
 }
 
-.contact-us__header-p div:nth-child(3) {
+.contact-us__header-p div:nth-child(4) {
   margin-top: 0;
 }
 
-.contact-us__header-p div:nth-child(5) {
+.contact-us__header-p div:nth-child(6) {
   margin-bottom: 3.125rem;
 
   @include md {

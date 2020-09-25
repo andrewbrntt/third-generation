@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import SidingInfographic from '../components/SidingInfographic'
 import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
-import AboutImage from '../assets/group-people.jpg'
+
 import {
   alsideLogo,
   certainteedSidingLogo,
@@ -15,8 +15,14 @@ import {
 } from '../helpers/vendorAssetLibrary'
 import DecorativeImage from '../components/DecorativeImage'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
+import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { Image } from 'cloudinary-react'
 
 const Siding = () => {
+
+  const [heroImage, setHeroImage] = useState([])
+  const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
+
 
   const vendors = [
     { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
@@ -27,6 +33,10 @@ const Siding = () => {
     { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
   ]
 
+
+  useImagesCDNSingleStockArt(setHeroImage,'siding')
+  useImagesCDNSingleStockArt(setOurWorkSectionImage,'our-work-section')
+
   return (
     <>
       <Helmet>
@@ -36,7 +46,7 @@ const Siding = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
                    pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <p className='padding-x-standard'>Durable siding and energy-efficient doors and windows are all part of what
           makes your home beautiful.</p>
         <p className='p--top-spacing padding-x-standard'>
@@ -47,7 +57,7 @@ const Siding = () => {
         </p>
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Siding'
-                                heroImage={AboutImage}>
+                                heroImage={heroImage}>
         <div className='padding-x-standard desktop-header--width-492 desktop__p--margin-bottom-50'>
           <p className='desktop--margin-0'>
             Durable siding and energy-efficient doors and windows are all part of what
@@ -95,7 +105,7 @@ const Siding = () => {
       </BodySection>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work' linkText='View Gallery'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {ourWorkSectionImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={ourWorkSectionImage.public_id}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965'>
             We're proud of our work and love showing it off.

@@ -1,25 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import BodyHeader from '../components/BodyHeader'
 import BodySection from '../components/BodySection'
 import LinkCard from '../components/LinkCard'
 import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ContactForm from '../components/ContactForm'
 import ReviewList from '../components/ReviewList'
-import DecorativeImage from '../components/DecorativeImage'
-import { mockGalleryImageObjects1 } from '../DataObjects/mockData.js'
+
 import { formFieldsData } from '../DataObjects/contactFormData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
-import RemodelImage from '../assets/service-placeholder-man.jpg'
-import RepairImage from '../assets/service-placeholder-man-2.jpg'
-import RoofingImage from '../assets/service-placeholder-women.jpg'
-import SidingImage from '../assets/service-placeholder-women-2.jpg'
-import AboutImage from '../assets/group-people.jpg'
 import ImageGallerySection from '../components/ImageGallerySection'
+import { Image } from 'cloudinary-react'
 
 const Home = () => {
+const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [aboutImage, setAboutImage] = useState({})
+  const [remodelCardImage, setRemodelCardImage] = useState({})
+  const [roofingCardImage, setRoofingCardImage] = useState({})
+  const [sidingCardImage, setSidingCardImage] = useState({})
+  const [repairsCardImage, setRepairsCardImage] = useState({})
 
   const formStyles = {
     formClasses: '',
@@ -29,6 +31,13 @@ const Home = () => {
     requiredTextClasses: 'color-white'
   }
 
+  useImagesCDN(setImageGalleryImages, 'group-1')
+  useImagesCDNSingleStockArt(setAboutImage,'about-us')
+  useImagesCDNSingleStockArt(setRemodelCardImage,'remodel-card')
+  useImagesCDNSingleStockArt(setRepairsCardImage,'repairs-card')
+  useImagesCDNSingleStockArt(setSidingCardImage,'siding-card')
+  useImagesCDNSingleStockArt(setRoofingCardImage,'roofing-card')
+
   return (
     <>
       <Helmet>
@@ -36,7 +45,7 @@ const Home = () => {
         <title>3rd Generation Construction | Home</title>
         <meta name="description" content="Third Generation Construction Home Page"/>
       </Helmet>
-      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
+      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName} heroImageName='home'
                   pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made to beautiful through its siding, trim, and roofing.
@@ -61,19 +70,19 @@ const Home = () => {
         <div className='home__service-cards--center'>
           <div className='home__service-cards-mobile-container'>
             <div className='home__service-cards-row home__service-cards--margin-bottom'>
-              <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
-              <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
+              <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+              <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
             </div>
             <div className='home__service-cards-row'>
-              <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
-              <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
+              <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+              <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
             </div>
           </div>
           <div className='home__service-cards-desktop-container'>
-            <LinkCard urlPath='remodel' imgSrc={RemodelImage} cardTitle='Remodel'/>
-            <LinkCard urlPath='roofing' imgSrc={RoofingImage} cardTitle='Roofing'/>
-            <LinkCard urlPath='siding' imgSrc={SidingImage} cardTitle='Siding'/>
-            <LinkCard urlPath='repairs' imgSrc={RepairImage} cardTitle='Repairs'/>
+            <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+            <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+            <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+            <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
           </div>
         </div>
         <div
@@ -88,7 +97,7 @@ const Home = () => {
       </BodySection>
       <BodySection linkRoute='/about' linkText='About Us'
                    styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {aboutImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={aboutImage.public_id}/>}
         <div className='p--margin-bottom-standard padding-x-standard'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
@@ -109,7 +118,7 @@ const Home = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-          <ImageGallerySection title='Booty Sweat' images={mockGalleryImageObjects1}/>
+          <ImageGallerySection title='Booty Sweat' images={imageGalleryImages}/>
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'

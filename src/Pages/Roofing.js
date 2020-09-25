@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../components/BodySection'
@@ -7,7 +7,7 @@ import AccreditedSitesSection from '../components/AccreditedSitesSection'
 import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
-import AboutImage from '../assets/group-people.jpg'
+
 import {
   alsideLogo,
   certainteedSidingLogo,
@@ -18,8 +18,12 @@ import {
 } from '../helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
+import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { Image } from 'cloudinary-react'
 
 const Roofing = () => {
+  const [heroImage, setHeroImage] = useState([])
+  const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
 
   const vendors = [
     { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
@@ -29,6 +33,8 @@ const Roofing = () => {
     { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
     { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
   ]
+  useImagesCDNSingleStockArt(setHeroImage,'roofing')
+  useImagesCDNSingleStockArt(setOurWorkSectionImage,'our-work-section')
 
   return (
     <>
@@ -38,7 +44,7 @@ const Roofing = () => {
         <meta name="description" content="Third Generation Construction Roofing Page" />
       </Helmet>
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' pageHeader='Roofing' linkText='Contact Us' styleClasses='color-primary body-section--mobile-display'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
           roof replacement.
@@ -49,7 +55,7 @@ const Roofing = () => {
         </p>
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Roofing'
-                                heroImage={AboutImage}>
+                                heroImage={heroImage}>
         <div className='padding-x-standard desktop__p--margin-bottom-50'>
         <p className='desktop--margin-0'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
@@ -63,7 +69,7 @@ const Roofing = () => {
       </DesktopBodySectionHeader>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full' sectionTitle='Our Work'
                    linkText='View Gallery'>
-        <DecorativeImage className='body-section__hero-img' src={AboutImage}/>
+        {ourWorkSectionImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={ourWorkSectionImage.public_id}/>}
         <div className='p--margin-bottom-standard body-section--width-965 padding-x-standard'>
         <p>
           We're proud of our work and love showing it off.
@@ -102,7 +108,6 @@ const Roofing = () => {
         </p>
       </BodySection>
       <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>
-
     </>
   )
 }
