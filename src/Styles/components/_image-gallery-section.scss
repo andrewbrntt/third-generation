@@ -56,28 +56,25 @@
 
 .image-gallery-section__hero-img {
   width: 100%;
-  height: 100%;
 
   @include lg {
     width: 60.3125rem;
-    height: 60.3125rem;
   }
 }
 
 .image-gallery-section__hero-link {
   display: block;
   width: 19rem;
-  height: 19rem;
   margin-bottom: 0.1875rem;
+  overflow-y: hidden;
 
   @include sm {
     width: 31.25rem;
+    margin-bottom: 0.375rem;
   }
 
   @include md {
     width: 43.75rem;
-    height: 43.75rem;
-    margin-bottom: 0.375rem;
   }
 
   @include lg {
@@ -86,30 +83,33 @@
 }
 
 .image-gallery__thumbnail-img {
+  width: 100%;
   overflow: hidden;
 }
 
 .image-gallery-section__img-link {
   display: inline-block;
-  width: 9.375rem;
-  height: 9.375rem;
+  width: 9.4375rem;
+  height: 9.4375rem;
   margin-bottom: 0.1875rem;
   overflow: hidden;
 
   @include sm {
-    width: 15.625rem;
+    width: 15.4375rem;
     height: 15.625rem;
   }
 
   @include md {
-    width: 21.875rem;
-    height: 21.875rem;
+    width: 21.6875rem;
+    height: 21.6875rem;
     margin-bottom: 0.375rem;
   }
 
   @include lg {
-    width: 20.0625rem;
-    height: 20.0625rem;
+    display: flex;
+    justify-content: space-between;
+    width: 19.8125rem;
+    height: 19.8125rem;
   }
 }
 
@@ -121,7 +121,6 @@
   margin-bottom: 2.5rem;
 
   @include sm {
-    justify-content: space-between;
     width: 31.25rem;
   }
 
@@ -130,7 +129,6 @@
   }
 
   @include lg {
-    justify-content: center;
     width: 60.3125rem;
   }
 }

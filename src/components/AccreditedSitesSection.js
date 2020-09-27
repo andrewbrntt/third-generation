@@ -32,13 +32,13 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
 
   const accreditationSiteSvgNoLink = (site) => {
     return (
-        <img className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+        <img key={`accreditation-sites-section_${shortId.generate()}`} className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
     )
   }
 
   const accreditationSiteImgNoLink = (site) => {
     return (
-        <picture>
+        <picture key={`accreditation-sites-section_${shortId.generate()}`}>
           <source media='(min-width:992px)' srcSet={site.imgLarge}/>
           <source media='(min-width:768px)' srcSet={site.imgMedium}/>
           <img src={site.imgDefault} alt={site.altText}/>

@@ -98,7 +98,7 @@ const Remodel = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages} isSection={true}/>
+        <ImageGallerySection images={imageGalleryImages} isSection={true}/>
         {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
       <BodySection sectionTitle='Our Suppliers' styleClasses='color-primary body-section--width-965'>

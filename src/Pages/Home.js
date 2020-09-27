@@ -118,7 +118,7 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-          <ImageGallerySection title='Booty Sweat' images={imageGalleryImages}/>
+          <ImageGallerySection images={imageGalleryImages}/>
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'

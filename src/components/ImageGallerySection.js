@@ -1,19 +1,19 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
 import { Image } from 'cloudinary-react'
 import ImageGalleryModal from './ImageGalleryModal'
 
-
 const ImageGallerySection = ({ title, images, isSection }) => {
+
+  const ImageGallerySectionContainer = useRef(null)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
   const [heroImage, setHeroImage] = useState(null)
   const [galleryThumbnailImages, setGalleryThumbnailImages] = useState(null)
   const [galleryModalImages, setGalleryModalImages] = useState([])
-
-
+  const [galleryImagesWidth, setGalleryImagesWidth] = useState([])
 
   const derivedPublicId = (imageSrc) => {
     return imageSrc.substring(imageSrc.indexOf('/image-gallery') + 1)
@@ -48,7 +48,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   }
 
   const sortImageArray = (array) => {
- return array.sort((imageA, imageB) => {
+    return array.sort((imageA, imageB) => {
       let imageANumber = imageA.public_id.match(/(\d+(\.\d+))/g)
       let imageBNumber = imageB.public_id.match(/(\d+(\.\d+))/g)
 
@@ -57,7 +57,6 @@ const ImageGallerySection = ({ title, images, isSection }) => {
 
       return pooA - pooB
     })
-
   }
 
   const createGallerySectionHero = () => {
@@ -65,7 +64,8 @@ const ImageGallerySection = ({ title, images, isSection }) => {
       return (
         <a className='image-gallery-section__hero-link' href='/' key={shortId.generate()}
            onClick={onImageClick}>
-          <Image className='image-gallery-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>
+          <Image className='image-gallery-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                 publicId={heroImage.public_id}/>
         </a>
       )
     }
@@ -76,7 +76,8 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     return (
       <a className='image-gallery-section__img-link'
          href='#' key={shortId.generate()} onClick={onImageClick}>
-        <Image className='image-gallery__thumbnail-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={imageObject.public_id}/>
+        <Image className='image-gallery__thumbnail-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+               publicId={imageObject.public_id}/>
       </a>
     )
   }
@@ -98,7 +99,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
 
     sortedModalImages.unshift(hero)
 
-    if(JSON.stringify(sortedModalImages) !== JSON.stringify(galleryModalImages)) {
+    if (JSON.stringify(sortedModalImages) !== JSON.stringify(galleryModalImages)) {
       setGalleryModalImages(sortedModalImages)
     }
   }
@@ -112,13 +113,17 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     if (images) {
       let hero = images.find(image => image.public_id.includes('hero'))
       if (hero !== heroImage) {
-          setHeroImage(hero)
-        }
+        setHeroImage(hero)
+      }
 
-    createThumbnails()
+      createThumbnails()
       createModalImages(hero)
+
+      if (ImageGallerySectionContainer.current && galleryImagesWidth !== ImageGallerySectionContainer.current.offsetWidth) {
+        setGalleryImagesWidth(ImageGallerySectionContainer.current.offsetWidth)
+      }
     }
-  }, [images])
+  }, [images, ImageGallerySectionContainer.current])
 
   return (
     <>
@@ -129,14 +134,14 @@ const ImageGallerySection = ({ title, images, isSection }) => {
         gallerySectionImages={galleryModalImages}
         initialImageIndex={selectedImageIndex}
       />}
-      <LazyLoad once>
-      <div className='image-gallery-section__container'>
-        {!isSection && <span className='image-gallery-section__title'>{title}</span>}
-        {heroImage && createGallerySectionHero(heroImage)}
-        <div className='image-gallery-section__img-container'>
-          {galleryThumbnailImages && galleryThumbnailImages.map(image => createGallerySectionItem(image))}
+      <LazyLoad>
+        <div className='image-gallery-section__container'>
+          {!isSection && <span className='image-gallery-section__title'>{title}</span>}
+          {heroImage && createGallerySectionHero(heroImage)}
+          <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
+            {galleryThumbnailImages && galleryThumbnailImages.map(image => createGallerySectionItem(image))}
+          </div>
         </div>
-      </div>
       </LazyLoad>
     </>
   )

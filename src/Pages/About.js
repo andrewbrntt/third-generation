@@ -84,7 +84,7 @@ const [imageGalleryImages, setImageGalleryImages] = useState([])
             your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages}/>
+        <ImageGallerySection images={imageGalleryImages}/>
       </BodySection>
       <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>

@@ -102,7 +102,7 @@ const Repairs = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection title='Booty Sweat' images={imageGalleryImages}/>
+        <ImageGallerySection images={imageGalleryImages}/>
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965' sectionTitle='Our Suppliers'>
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
