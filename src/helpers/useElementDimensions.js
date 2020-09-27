@@ -1,6 +1,6 @@
-import { useState, useLayoutEffect, useCallback } from 'react'
+import React, { useState, useLayoutEffect, useCallback } from 'react'
 
-function getElementDimensions (element) {
+function getDimensions (element) {
   if (!element) {
     return {
       width: 0,
@@ -14,37 +14,20 @@ function getElementDimensions (element) {
   }
 }
 
-function getWindowDimensions () {
-  if (!window) {
-    return {
-      width: 0,
-      height: 0
-    }
-  } else {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight
-    }
-  }
-}
-
-
 function useElementDimensions (ref) {
 
-  const [dimensions, setDimensions] = useState(getElementDimensions(ref ? ref.current : {}))
+  const [dimensions, setDimensions] = useState(getDimensions(ref ? ref.current : {}))
 
   const handleResize = useCallback(() => {
     if(ref.current) {
-      setDimensions(getElementDimensions(ref.current))
-    } else {
-      setDimensions(getWindowDimensions())
+      setDimensions(getDimensions(ref.current))
     }
   }, [ref])
 
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [handleResize])
+  }, [ref.current])
 
   return dimensions
 }

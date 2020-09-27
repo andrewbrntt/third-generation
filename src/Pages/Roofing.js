@@ -56,7 +56,7 @@ const Roofing = () => {
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Roofing'
                                 heroImage={heroImage}>
-        <div className='padding-x-standard desktop__p--margin-bottom-50'>
+        <div className='desktop__p--margin-bottom-50'>
         <p className='desktop--margin-0'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
           roof replacement.

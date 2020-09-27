@@ -80,9 +80,7 @@ function App () {
         </Switch>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
-        <LazyLoad>
           <Footer/>
-        </LazyLoad>
       </footer>
     </>
   )

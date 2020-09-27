@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
 import { Image } from 'cloudinary-react'
@@ -102,6 +102,11 @@ const ImageGallerySection = ({ title, images, isSection }) => {
       setGalleryModalImages(sortedModalImages)
     }
   }
+
+  useEffect(() => {
+    console.log('render/mount')
+    return () => console.log('unmount')
+  }, [])
 
   useLayoutEffect(() => {
     if (images) {

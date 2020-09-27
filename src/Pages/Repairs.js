@@ -55,7 +55,7 @@ const Repairs = () => {
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Repairs'
                                 heroImage={heroImage}>
-        <div className='desktop-header--width-492 desktop__p--margin-bottom-60 padding-x-standard'>
+        <div className='desktop-header--width-492 desktop__p--margin-bottom-60'>
           <p className='desktop--margin-0'>
             Sometimes all it takes to transform your home is a few minor fixes.
           </p>

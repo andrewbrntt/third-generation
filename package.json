@@ -32,9 +32,11 @@
     "react-scrolllock": "^5.0.1",
     "rfdc": "^1.1.4",
     "shortid": "^2.2.15",
+    "source-map-explorer": "^2.5.0",
     "tua-body-scroll-lock": "^1.2.0"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

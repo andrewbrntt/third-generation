@@ -58,7 +58,6 @@ const Footer = () => {
           </NavLink>
         </li>
       </ul>
-      <div className='color-white'>Contact Us: <ContactPhoneLink /></div>
     </div>
   )
 }

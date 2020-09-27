@@ -58,7 +58,7 @@ const Siding = () => {
       </BodySection>
       <DesktopBodySectionHeader linkText='Contact Us' linkRoute='/contact' sectionTitle='Siding'
                                 heroImage={heroImage}>
-        <div className='padding-x-standard desktop-header--width-492 desktop__p--margin-bottom-50'>
+        <div className='desktop-header--width-492 desktop__p--margin-bottom-50'>
           <p className='desktop--margin-0'>
             Durable siding and energy-efficient doors and windows are all part of what
             makes your home beautiful.</p>

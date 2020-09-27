@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import axios from 'axios'
 
 function createImageSections (images) {
@@ -9,7 +9,7 @@ function createImageSections (images) {
   return [{ title: '', images: group1 }, { title: '', images: group2 }, { title: '', images: group3 }]
 }
 
-function getWindowWidth () {
+export function getWindowWidth () {
   let windowSize = ''
 
   if (window.innerWidth >= 992) {

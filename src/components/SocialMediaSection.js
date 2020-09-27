@@ -1,6 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { socialMediaRoutes } from '../DataObjects/routes'
+import FBLogo from '../assets/facebook-logo@logotyp.us.svg'
+import InstaLogo from '../assets/instagram-logo@logotyp.us.svg'
 import ExternalLink from './ExternalLink'
 
 const SocialMediaSection = () => {
@@ -9,22 +11,11 @@ const SocialMediaSection = () => {
       <h2 className='color-white social-media-section__header-text remove-margin-top'>Follow Us On Social</h2>
       <div className='social-media-section__icon-container'>
         <ExternalLink routeTo={socialMediaRoutes.facebook.routeTo}>
-          <FontAwesomeIcon
-            className='color-white social-media-section__icon'
-            icon={['fab', 'facebook']}
-          />
+          <img alt='check us out on facebook' src={FBLogo} />
+          <img alt='check us out on facebook' src={InstaLogo} />
         </ExternalLink>
         <ExternalLink routeTo={socialMediaRoutes.instagram.routeTo}>
-        <span className='fa-layers fa-fw social-media-section__icon'>
-          <FontAwesomeIcon
-            className='color-white'
-            icon={['fa', 'circle']}
-          />
-          <FontAwesomeIcon
-            className='color-primary social-media__fa-instagram--size'
-            icon={['fab', 'instagram']}
-          />
-        </span>
+
         </ExternalLink>
       </div>
     </div>
