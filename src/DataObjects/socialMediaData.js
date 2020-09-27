@@ -22,7 +22,8 @@ export const accreditationSites = [
     imgLarge: HomeAdvisorLarge,
     id: 'HA',
     altText: 'Home Advisor Approved Seal',
-    routeTo: socialMediaRoutes.homeAdvisor.routeTo
+    routeTo: socialMediaRoutes.homeAdvisor.routeTo,
+    noLink: true
   },
   {
     imgDefault: BBB,

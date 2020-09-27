@@ -30,17 +30,42 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
     )
   }
 
+  const accreditationSiteSvgNoLink = (site) => {
+    return (
+        <img className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+    )
+  }
+
+  const accreditationSiteImgNoLink = (site) => {
+    return (
+        <picture>
+          <source media='(min-width:992px)' srcSet={site.imgLarge}/>
+          <source media='(min-width:768px)' srcSet={site.imgMedium}/>
+          <img src={site.imgDefault} alt={site.altText}/>
+        </picture>
+    )
+  }
+
   return (
     <LazyLoad once>
     <div
       className={`accreditation-sites-section__container ${containerStyleClasses ? containerStyleClasses : ''}`}>
       {
         accreditationSites.map(site => {
-          if (imageExtension(site.imgDefault) !== 'svg') {
-            return accreditationSiteImg(site)
+          if(site.noLink) {
+            if (imageExtension(site.imgDefault) !== 'svg') {
+              return accreditationSiteImgNoLink(site)
+            } else {
+              return accreditationSiteSvgNoLink(site)
+            }
           } else {
-            return accreditationSiteSvg(site)
+            if (imageExtension(site.imgDefault) !== 'svg') {
+              return accreditationSiteImg(site)
+            } else {
+              return accreditationSiteSvg(site)
+            }
           }
+
         })
       }
     </div>

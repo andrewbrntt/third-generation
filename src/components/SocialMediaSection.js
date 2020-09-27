@@ -12,10 +12,9 @@ const SocialMediaSection = () => {
       <div className='social-media-section__icon-container'>
         <ExternalLink routeTo={socialMediaRoutes.facebook.routeTo}>
           <img alt='check us out on facebook' src={FBLogo} />
-          <img alt='check us out on facebook' src={InstaLogo} />
         </ExternalLink>
         <ExternalLink routeTo={socialMediaRoutes.instagram.routeTo}>
-
+          <img alt='check us out on facebook' src={InstaLogo} />
         </ExternalLink>
       </div>
     </div>
