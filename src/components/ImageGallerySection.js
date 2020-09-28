@@ -71,10 +71,10 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     }
   }
 
-  const createGallerySectionItem = (imageObject) => {
+  const createGallerySectionItem = (imageObject, index) => {
     console.log(imageObject)
     return (
-      <a className='image-gallery-section__img-link'
+      <a className={`${index % 3 === 1 ? 'image-gallery-section__img-link-margin-x' : ''} image-gallery-section__img-link`}
          href='#' key={shortId.generate()} onClick={onImageClick}>
         <Image className='image-gallery__thumbnail-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
                publicId={imageObject.public_id}/>
@@ -139,7 +139,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
           {!isSection && <span className='image-gallery-section__title'>{title}</span>}
           {heroImage && createGallerySectionHero(heroImage)}
           <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-            {galleryThumbnailImages && galleryThumbnailImages.map(image => createGallerySectionItem(image))}
+            {galleryThumbnailImages && galleryThumbnailImages.map((image, index) => createGallerySectionItem(image, index))}
           </div>
         </div>
       </LazyLoad>

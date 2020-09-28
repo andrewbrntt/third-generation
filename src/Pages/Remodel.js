@@ -10,18 +10,18 @@ import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import ImageGallerySection from '../components/ImageGallerySection'
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
+import SuppliersSection from '../components/SuppliersSection'
 
 
 const Remodel = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [heroImage, setHeroImage] = useState([])
 
-  const vendors = [
+  const suppliers = [
     { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
     { logo: gafLogo, altText: 'GAF Roofing Shingles and Materials Logo', styleClasses: 'vendor__gaf' },
     { logo: alliedLogo, altText: 'Allied Roofing Supply Company Logo', styleClasses: 'vendor__allied' }
   ]
-
 
   useImagesCDN(setImageGalleryImages, 'group-3')
   useImagesCDNSingleStockArt(setHeroImage,'remodel')
@@ -97,18 +97,18 @@ const Remodel = () => {
         <ImageGallerySection images={imageGalleryImages} isSection={true}/>
         {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
       </BodySection>
-      <BodySection sectionTitle='Our Suppliers' styleClasses='color-primary body-section--width-965'>
-        <div className='p--margin-bottom-standard desktop--margin-bottom-0'>
-          <p className='padding-x-standard desktop--margin-0'>
+      <BodySection styleClasses='color-primary body-section--width-965' sectionTitle='Our Suppliers'>
+        <div className='padding-x-standard desktop__p--margin-bottom-80'>
+          <p>
             We're proud to be local and support local.
           </p>
-          <p className='p--top-spacing padding-x-standard'>
+          <p className='p--top-spacing'>
             Third Generation Construction uses proven products from trusted local suppliers to offer affordable home
             remodeling projects.
           </p>
         </div>
         <div className='vendor-section--alignment'>
-          <VendorSection vendors={vendors}/>
+          <SuppliersSection suppliers={suppliers}/>
         </div>
       </BodySection>
     </>

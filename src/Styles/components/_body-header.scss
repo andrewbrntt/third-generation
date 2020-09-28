@@ -15,6 +15,7 @@
   height: 100%;
 
   @include lg {
+    width: auto;
     height: 46.875rem;
   }
 }

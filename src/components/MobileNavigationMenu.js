@@ -47,7 +47,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
       <li key={shortId.generate()}>
         <NavLink
           {...ariaAttributes}
-          activeClassName='background-color-secondary'
+          activeClassName='background-color-white color-primary mobile-navigation__color-inverse'
           exact={exact}
           className={styleClasses}
           to={createRouteObject(routeTo)}

@@ -1,0 +1,23 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.suppliers-section-container {
+  @include lg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.suppliers-section-container .suppliers-section__img-container:not(:last-child) {
+  margin-bottom: 75px;
+
+  @include lg {
+    margin-bottom: 0;
+  }
+}

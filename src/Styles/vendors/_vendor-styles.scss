@@ -10,7 +10,6 @@
   @include lg {
     width: 146px;
     height: 146px;
-    margin-bottom: 80px;
   }
 }
 
@@ -91,5 +90,27 @@
   @include lg {
     width: 275px;
     height: 167px;
+  }
+}
+
+.vendor__norandex {
+  @include md {
+    width: 20.3125rem;
+  }
+
+  @include lg {
+    width: 275px;
+  }
+}
+
+.vendor__vinylmax {
+  @include md {
+    width: 20.3125rem;
+    //height: 13.3125rem;
+  }
+
+  @include lg {
+    width: 275px;
+    //height: 167px;
   }
 }

@@ -32,6 +32,12 @@ import alliedLogo1x from '../assets/vendor-assets/allied/allied-logo.png'
 import alliedLogo2x from '../assets/vendor-assets/allied/allied-logo@2x.png'
 import alliedLogo3x from '../assets/vendor-assets/allied/allied-logo@3x.png'
 
+import vinylmax from '../assets/vendor-assets/vinylmax/vinylmax-logo_160x80.svg'
+
+import norandex1x from '../assets/vendor-assets/norandex/norandex-logo.png'
+import norandex2x from '../assets/vendor-assets/norandex/norandex-logo@2x.png'
+import norandex3x from '../assets/vendor-assets/norandex/norandex-logo@3x.png'
+
 export const owensCorningLogo = {
   small: owensCorningLogo1x,
   medium: owensCorningLogo2x,
@@ -85,3 +91,28 @@ export const alliedLogo = {
   medium: alliedLogo2x,
   large: alliedLogo3x,
 }
+
+export const norandexLogo = {
+  small: norandex1x,
+  medium: norandex2x,
+  large: norandex3x
+}
+
+export const vinylmaxLogo = {
+  small: vinylmax
+}
+
+export const getImageExtension = (imgName) => {
+  return imgName.substr(imgName.length - 3)
+}
+
+export const vendors = [
+  { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
+  { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
+  { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
+  { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
+  { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
+  { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' },
+  { logo: vinylmaxLogo, altText: 'Vinylmax Products Logo', styleClasses: 'vendor__vinylmax' },
+  { logo: norandexLogo, altText: 'Norandex Products Logo', styleClasses: 'vendor__norandex' }
+]

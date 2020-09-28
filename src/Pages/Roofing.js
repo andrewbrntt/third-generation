@@ -8,14 +8,8 @@ import ReviewList from '../components/ReviewList'
 import VendorSection from '../components/VendorSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 
-import {
-  alsideLogo,
-  certainteedSidingLogo,
-  firestoneLogo,
-  jamesHardieLogo,
-  owensCorningLogo,
-  royalSidingLogo
-} from '../helpers/vendorAssetLibrary'
+import { vendors } from '../helpers/vendorAssetLibrary'
+
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
 import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
@@ -25,14 +19,6 @@ const Roofing = () => {
   const [heroImage, setHeroImage] = useState([])
   const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
 
-  const vendors = [
-    { logo: jamesHardieLogo, altText: 'James Hardie Siding Logo', styleClasses: 'vendor__james-hardie' },
-    { logo: owensCorningLogo, altText: 'Owens Corning Logo', styleClasses: 'vendor__owens-corning' },
-    { logo: certainteedSidingLogo, altText: 'Certainteed Siding Logo', styleClasses: 'vendor__certainteed' },
-    { logo: royalSidingLogo, altText: 'Royal Building Products Logo', styleClasses: 'vendor__royal-building' },
-    { logo: alsideLogo, altText: 'Alside Siding Logo', styleClasses: 'vendor__alside' },
-    { logo: firestoneLogo, altText: 'Firestone Building Products Logo', styleClasses: 'vendor__firestone' }
-  ]
   useImagesCDNSingleStockArt(setHeroImage,'roofing')
   useImagesCDNSingleStockArt(setOurWorkSectionImage,'our-work-section')
 

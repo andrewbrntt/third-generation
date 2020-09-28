@@ -1,14 +1,10 @@
 import React from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
-
+import {getImageExtension} from '../helpers/vendorAssetLibrary'
 import ExternalLink from './ExternalLink'
 
 const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses }) => {
-
-  const imageExtension = (imgName) => {
-    return imgName.substr(imgName.length - 3)
-  }
 
   const accreditationSiteSvg = (site) => {
     return (
@@ -53,13 +49,13 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
       {
         accreditationSites.map(site => {
           if(site.noLink) {
-            if (imageExtension(site.imgDefault) !== 'svg') {
+            if (getImageExtension(site.imgDefault) !== 'svg') {
               return accreditationSiteImgNoLink(site)
             } else {
               return accreditationSiteSvgNoLink(site)
             }
           } else {
-            if (imageExtension(site.imgDefault) !== 'svg') {
+            if (getImageExtension(site.imgDefault) !== 'svg') {
               return accreditationSiteImg(site)
             } else {
               return accreditationSiteSvg(site)
