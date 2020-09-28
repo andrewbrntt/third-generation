@@ -31,7 +31,7 @@ const Contact = () => {
           <div className='contact__phone-link-mobile'>Call us at:</div>
           <ContactPhoneLink className='contact__phone-link-mobile' />
           <div className='contact__phone-link-desktop'>Call us at: <ContactPhoneLink /></div>
-          <div>Or email us by filling out the contact form below and we will get back to you within 3 business days.</div>
+          <div>Or email us by filling out the contact form below, and we will get back to you within three business days.</div>
         </div>
         <ContactForm formStyleClasses={formStyles}/>
       </BodySection>

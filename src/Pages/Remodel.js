@@ -39,12 +39,10 @@ const Remodel = () => {
         {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard'>
-            Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
-            Construction is here.
+            Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation Construction can help.
           </p>
           <p className='p--top-spacing padding-x-standard'>
-            We pride ourselves in using quality products to create beautiful projects at an
-            affordable price.
+            We pride ourselves in using quality products to create beautiful projects at an affordable price.
           </p>
         </div>
       </BodySection>
@@ -62,19 +60,17 @@ const Remodel = () => {
         </div>
       </DesktopBodySectionHeader>
       <BodySection linkRoute='/contact'
-                   styleClasses='body-section__has-line background-color-primary color-white body-section--width-full'
-                   sectionTitle='Free Consultation'
+                   styleClasses='body-section__has-line background-color-primary color-white body-section--width-full padding-x-standard'
+                   sectionTitle='Free Consultation. Free Estimate.'
                    iconName={Tools} linkText='Contact Us'>
         <div className='p--margin-bottom-standard'>
-          <p>
-            You have questions.
-          </p>
           <p className='p--top-spacing p--bottom-margin-40 body-section--width-965'>
-            We have answers.
+            Let us help you turn your house into the home you're dreaming of.
           </p>
-          <p className='p--top-spacing padding-x-standard body-section--width-965'>
-            Schedule a free consultation and let us help you turn your current house into the home you're dreaming of.
+          <p>
+            Schedule your free consultation and estimate today.
           </p>
+
         </div>
       </BodySection>
       <BodySection linkRoute='/contact' sectionTitle='24-Hour Emergency Service' linkText='Contact Us'

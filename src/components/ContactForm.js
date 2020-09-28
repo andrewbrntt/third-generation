@@ -39,6 +39,7 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       clearState()
     } else {
       setFieldErrors(formErrors)
+      toggleReviewModal()
     }
   }
 

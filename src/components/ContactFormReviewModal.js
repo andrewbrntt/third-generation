@@ -32,7 +32,7 @@ const ContactFormReviewModal = ({ formInputData, isReviewModalOpen, handleSubmit
         <BodySection sectionTitle='Verify Info'>
           {!isSendingData ?
             (<>
-              <p className='padding-x-standard'>Please ensure the information is correct before submitting</p>
+              <p className='padding-x-standard'>Please ensure the information you provided is correct before submitting it.</p>
               <ul className='contact-form__ul padding-x-standard'>
                 {formInputData.map(element => {
                   return (

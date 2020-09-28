@@ -43,17 +43,14 @@ const [imageGalleryImages, setImageGalleryImages] = useState([])
         {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
-            Third Generation Construction is a family-owned and operated business serving Lorain County and its
-            surrounding
-            areas.
+            Third Generation Construction is a family-owned and operated business serving Lorain County and its surrounding areas.
           </p>
           <p className='p--top-spacing'>
-            Our team of professionals has more than 15-years of experience values honesty and integrity and treats your
-            home or business as if it were our own.
+            Our team of professionals has more than 30-years of experience and values honesty and integrity.
           </p>
           <p className='p--top-spacing'>
-            We look forward to building lasting relationships and guarantee your
-            satisfaction.
+            We treat every home or business as if it were our own.
+            We look forward to building lasting relationships and guarantee your satisfaction.
           </p>
         </div>
       </BodySection>

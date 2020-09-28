@@ -48,10 +48,10 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
       <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName} heroImageName='home'
                   pageHeader='Transform Your House Into Your Dream Home'>
         <p>
-          A home's exterior is made to beautiful through its siding, trim, and roofing.
+          A home's exterior is made beautiful through its siding, trim, and roofing.
         </p>
         <p className='p--top-spacing'>
-          It's interior should frame your personal style.
+          Its interior should frame your personal style.
         </p>
         <p className='p--top-spacing'>
           Let Third Generation Construction help you create the home of your dreams.
@@ -61,10 +61,10 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
         <div
           className='home__our-services-p-container--mobile padding-x-standard p--margin-bottom-standard'>
           <p>
-            Whatever your home needs. Third Generation Construction can help.
+            Whatever your home needs, Third Generation Construction can help.
           </p>
           <p className='p--top-spacing'>
-            We offer quality home remodeling and roofing services from a team with more than 15 years of experience.
+            We offer quality home remodeling and roofing services from a team of professionals with more than 30 years of experience.
           </p>
         </div>
         <div className='home__service-cards--center'>
