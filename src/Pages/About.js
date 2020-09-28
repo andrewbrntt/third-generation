@@ -18,9 +18,12 @@ const About = () => {
 const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [heroImage, setHeroImage] = useState([])
 
+  const BEFORE = 'before'
+  const AFTER = 'after'
+
   const stepList = [
-    { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us' },
-    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection', srText: 'step 2 we do a free inspection' },
+    { icon: ['far', 'phone-alt'], text: 'Contact Us', srText: 'step 1 contact us', margin: BEFORE },
+    { icon: ['far', 'clipboard-list-check'], text: 'Free Inspection & Estimate', srText: 'step 2 we do a free inspection', margin: AFTER, isTextLong: true },
     { icon: ['far', 'file-signature'], text: 'Sign Contract', srText: 'step 3 sign contract' },
     { icon: ['far', 'hammer'], text: 'Labor', srText: 'step 4 labor starts' },
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }

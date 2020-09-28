@@ -65,6 +65,7 @@
   width: 11.25rem;
   font-size: 1.875rem;
   font-family: $san-serif-font;
+
   @include md {
     position: absolute;
     top: 2.6875rem;
@@ -80,6 +81,15 @@
     margin-top: 1.25rem;
     font-size: 1.4375rem;
     letter-spacing: 0.004375rem;
+  }
+}
+
+.our-process-infographic__free-inspection {
+  width: 10.25rem;
+  @include md {
+    top: 13px;
+    left: 210px;
+    width: 20rem;
   }
 }
 

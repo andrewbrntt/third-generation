@@ -4,8 +4,8 @@ import { GraphicLeftLines, GraphicRightLines } from './OurProcessLine'
 import OurProcessStep from './OurProcessStep'
 
 const OurProcessInfoGraphic = ({ stepList }) => {
-  const right = 'right'
-  const left = 'left'
+  const RIGHT = 'right'
+  const LEFT = 'left'
 
   return (
     <ol
@@ -15,15 +15,16 @@ const OurProcessInfoGraphic = ({ stepList }) => {
       remove-padding-left
       remove-margin'>
       {stepList.map((step, index) => {
-        let iconPlacementSide = index % 2 === 0 ? left : right
-        let lineElement = iconPlacementSide === right ? <GraphicRightLines/> : <GraphicLeftLines/>
+        let iconPlacementSide = index % 2 === 0 ? LEFT : RIGHT
+        let lineElement = iconPlacementSide === RIGHT ? <GraphicRightLines margin={step.margin} /> : <GraphicLeftLines margin={step.margin} />
         return (
           <li key={shortId.generate()} className='our-process-infographic__li'>
             <div className='our-process-infographic__step-container'>
               <OurProcessStep step={step} index={index} iconPlacementSide={iconPlacementSide}/>
+              {index < stepList.length - 1 &&
               <div className='our-process-infographic__line-div--dimensions'>
-                {index < stepList.length - 1 && lineElement}
-              </div>
+                {lineElement}
+              </div>}
             </div>
           </li>
         )

@@ -152,7 +152,7 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       let updatedPhone = {
         ...phone,
         hasError: true,
-        errorMessage: `Phone Number: "${phone.value}" can only contain parentheses, numbers and dashes`
+        errorMessage: `Phone Number: "${phone.value}" must be 10 digits and can only contain parentheses, numbers and dashes`
       }
       setPhone(updatedPhone)
       validationArray.push(updatedPhone)

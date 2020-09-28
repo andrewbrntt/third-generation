@@ -2,19 +2,19 @@ import React from 'react'
 import OurProcessIcon from './OurProcessIcon'
 
 const OurProcessStep = ({ step, iconPlacementSide }) => {
-  const right = 'right'
-  const left = 'left'
-  const infoStepStyles = iconPlacementSide === right ? 'our-process-infographic__step--right' : ''
+  const RIGHT = 'right'
+  const LEFT = 'left'
+
+  const infoStepStyles = iconPlacementSide === RIGHT ? 'our-process-infographic__step--right' : ''
 
   return (
     <div className={`our-process-infographic__step ${infoStepStyles}`}>
-      {iconPlacementSide === right &&
-      <label className='our-process-infographic__text-container'>{step.text}</label>}
-      <OurProcessIcon icon={step.icon} styleClass={iconPlacementSide === right && 'grid-column-3'}/>
-      {iconPlacementSide === left &&
-      <label className='our-process-infographic__text-container'>{step.text}</label>}
+      {iconPlacementSide === RIGHT &&
+      <label className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
+      <OurProcessIcon icon={step.icon} styleClass={iconPlacementSide === RIGHT && 'grid-column-3'}/>
+      {iconPlacementSide === LEFT &&
+      <label className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
     </div>
   )
 }
 export default OurProcessStep
-

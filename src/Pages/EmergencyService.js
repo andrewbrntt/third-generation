@@ -32,7 +32,7 @@ const EmergencyService = () => {
                    linkText='Contact Us'>
         {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
-          <p>Life is full of curveballs and emergencies happen.</p>
+          <p>Life is full of curveballs, and emergencies happen.</p>
           <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>
           <p className='p--top-spacing'>We're available 24/7 and can help fix urgent needs as they happen.</p>
         </div>
