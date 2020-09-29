@@ -11,10 +11,10 @@ const SocialMediaSection = () => {
       <h2 className='color-white social-media-section__header-text remove-margin-top'>Follow Us On Social</h2>
       <div className='social-media-section__icon-container'>
         <ExternalLink routeTo={socialMediaRoutes.facebook.routeTo}>
-          <img alt='check us out on facebook' src={FBLogo} />
+          <img className='social-media-section__icon' alt='check us out on facebook' src={FBLogo} />
         </ExternalLink>
         <ExternalLink routeTo={socialMediaRoutes.instagram.routeTo}>
-          <img alt='check us out on facebook' src={InstaLogo} />
+          <img className='social-media-section__icon' alt='check us out on facebook' src={InstaLogo} />
         </ExternalLink>
       </div>
     </div>

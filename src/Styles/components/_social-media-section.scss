@@ -23,7 +23,6 @@
 }
 
 .social-media-section__header-text {
-  margin-bottom: 1.5625rem;
   font-size: 1.125rem;
   font-family: $san-serif-font;
 
@@ -40,14 +39,10 @@
   justify-content: space-evenly;
 }
 
-.social-media-section__icon {
-  font-size: 4.6875rem;
-}
-
 .social-media-section__icon-container > a:first-child {
-  margin-right: 4.0625rem;
 }
 
-.social-media__fa-instagram--size {
-  font-size: 3.4375rem;
+.social-media-section__icon {
+  width: 150px;
+  height: 100%;
 }
