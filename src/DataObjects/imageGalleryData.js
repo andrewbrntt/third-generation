@@ -1,24 +1,4 @@
-// import Group_1Image_Hero_Mobile from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.1-hero.jpg'
-// import Group_1Image_Hero_Tablet from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.1-hero.jpg'
-// import Group_1Image_Hero_Desktop from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.1-hero.jpg'
-//
-// import Group_1Image_1_Mobile_Thumb from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.2-small.jpg'
-// import Group_1Image_1_Mobile from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.2.jpg'
-//
-// import Group_1Image_1_Tablet_Thumb from '../assets/image-gallery/tablet/group-1/tablet.third-generation-construction-our-work-gallery-house-1.2-small.jpg'
-// import Group_1Image_1_Tablet from '../assets/image-gallery/tablet/group-1/tablet.third-generation-construction-our-work-gallery-house-1.2.jpg'
-//
-// import Group_1Image_1_Desktop_Thumb from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.1-hero.jpg'
-// import Group_1Image_1_Desktop from '../assets/image-gallery/mobile/group-1/mobile.third-generation-construction-our-work-gallery-house-1.1-hero.jpg'
-//
-//
-// import BeforeImage from '../assets/image-gallery/placeholders/before-temp.jpg'
-// import AfterImage from '../assets/image-gallery/placeholders/after-temp.jpg'
-// import SingleImage2 from '../assets/image-gallery/placeholders/single-temp-2.jpg'
-// import BeforeImage2 from '../assets/image-gallery/placeholders/before-temp-2.png'
-// import AfterImage2 from '../assets/image-gallery/placeholders/after-temp-2.jpg'
 
-//
 export const GalleryImageGroup1 = [
   {
     id: 'remodel-single-1',

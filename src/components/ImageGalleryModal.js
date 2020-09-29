@@ -1,9 +1,8 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import LazyLoad from 'react-lazyload'
 import {Image} from 'cloudinary-react'
-
 import ImageGalleryArrow from './ImageGalleryArrow'
 
 const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImages, handleModalClose, isModalOpen }) => {

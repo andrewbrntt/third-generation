@@ -10,7 +10,11 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
     { routeName: 'Remodel', routeTo: '/remodel' },
     { routeName: 'Roofing', routeTo: '/roofing' },
     { routeName: 'Siding', routeTo: '/siding' },
-    { routeName: 'Repairs', routeTo: '/repairs' }
+    { routeName: 'Repairs', routeTo: '/repairs' },
+    {
+      routeName: '24-Hour Emergency',
+      routeTo: '/emergency-service',
+    }
   ]
   const topMenuRoutes = [
     { routeName: 'Home', routeTo: '/', exact: true },
@@ -19,12 +23,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
   const bottomMenuRoutes = [
     { routeName: 'Our Work', routeTo: '/our-work' },
     { routeName: 'Reviews', routeTo: '/reviews' },
-    { routeName: 'Contact Us', routeTo: '/contact' },
-    {
-      routeName: '24-Hour Emergency Service',
-      routeTo: '/emergency-service',
-      styleClasses: 'mobile-navigation__emergency-service'
-    },
+    { routeName: 'Contact Us', routeTo: '/contact' }
   ]
   const [navIsOpen, setNavIsOpen] = useState(false)
 

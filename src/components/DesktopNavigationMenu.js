@@ -80,13 +80,22 @@ const DesktopNavigationMenu = () => {
                 {routesData.siding.routeName}
               </NavLink>
             </li>
-            <li onBlur={handleSubmenuClose}>
+            <li>
               <NavLink
                 ref={servicesLastSubMenuItem}
                 className=''
                 to={routesData.repairs.routeTo}
               >
                 {routesData.repairs.routeName}
+              </NavLink>
+            </li>
+            <li onBlur={handleSubmenuClose}>
+              <NavLink
+                ref={servicesLastSubMenuItem}
+                className=''
+                to={routesData.emergency.routeTo}
+              >
+                {routesData.emergency.routeName}
               </NavLink>
             </li>
           </ul>

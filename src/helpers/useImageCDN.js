@@ -1,12 +1,13 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
 
 function createImageSections (images) {
   const group1 = images.filter(image => image.public_id.includes('group-1'))
   const group2 = images.filter(image => image.public_id.includes('group-2'))
   const group3 = images.filter(image => image.public_id.includes('group-3'))
+  const group4 = images.filter(image => image.public_id.includes('group-4'))
 
-  return [{ title: '', images: group1 }, { title: '', images: group2 }, { title: '', images: group3 }]
+  return [{ title: '', images: group1 }, { title: '', images: group2 }, { title: '', images: group3 }, { title: '', images: group4 }]
 }
 
 export function getWindowWidth () {

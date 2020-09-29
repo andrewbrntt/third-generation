@@ -9,9 +9,8 @@ export const routesData = {
   reviews: { routeName: 'Reviews', routeTo: '/reviews' },
   contactUs: { routeName: 'Contact Us', routeTo: '/contact' },
   emergency: {
-    routeName: '24-Hour Emergency Service',
-    routeTo: '/emergency-service',
-    styleClasses: 'mobile-navigation__emergency-service'
+    routeName: '24-Hour Emergency',
+    routeTo: '/emergency-service'
   }
 }
 
