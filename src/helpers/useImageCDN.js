@@ -28,7 +28,7 @@ export function useImagesCDN (setState, imageGroupTag) {
   const windowSize = getWindowWidth()
 
   useEffect(() => {
-    axios.get(`https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-${imageGroupTag}.json`)
+    axios.get(`https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${imageGroupTag}.json`)
       .then(res => {
         setState(res.data.resources)
       })
@@ -40,7 +40,7 @@ export function useImagesCDNAllImages (setState) {
   const windowSize = getWindowWidth()
 
   useEffect(() => {
-    axios.get(`https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-all.json`)
+    axios.get(`https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-all.json`)
       .then(res => {
         setState(createImageSections(res.data.resources))
       })
@@ -49,7 +49,7 @@ export function useImagesCDNAllImages (setState) {
 
 export function useImagesCDNThumbnails (setState, imageGroupTag) {
   useEffect(() => {
-    axios.get(`https://res.cloudinary.com/dop1zc5k4/image/list/${imageGroupTag}.json`)
+    axios.get(`https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${imageGroupTag}.json`)
       .then(res => {
         setState(res.data.resources)
       })
@@ -58,7 +58,7 @@ export function useImagesCDNThumbnails (setState, imageGroupTag) {
 
 export function useImagesCDNFullSize (setState, imageGroupTag) {
   useEffect(() => {
-    axios.get(`https://res.cloudinary.com/dop1zc5k4/image/list/${imageGroupTag}.json`)
+    axios.get(`https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${imageGroupTag}.json`)
       .then(res => {
         setState(res.data.resources)
       })
@@ -69,7 +69,7 @@ export function useImagesCDNStockArt (setState) {
   const windowSize = getWindowWidth()
 
   useEffect(() => {
-    axios.get(`https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-stock-art.json`)
+    axios.get(`https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-stock-art.json`)
       .then(res => {
         setState(res.data.resources)
       })
@@ -79,7 +79,7 @@ export function useImagesCDNStockArt (setState) {
 export function useImagesCDNSingleStockArt (setState, suffix) {
   const windowSize = getWindowWidth()
 
-let url = `https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-${suffix}.json`
+let url = `https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
 
   useEffect(() => {
     axios.get(url)
@@ -92,7 +92,7 @@ let url = `https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-${suffi
 export function useImagesCDNServiceCards (setState) {
   const windowSize = getWindowWidth()
 
-  let url = `https://res.cloudinary.com/dop1zc5k4/image/list/${windowSize}-service-card.json`
+  let url = `https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-service-card.json`
 
   useEffect(() => {
     axios.get(url)

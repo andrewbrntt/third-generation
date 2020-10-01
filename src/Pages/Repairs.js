@@ -94,7 +94,7 @@ const Repairs = () => {
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work'
                    linkText='View Gallery'>
-        <div className='p--margin-bottom-standard'>
+        <div className='p--margin-bottom-standard padding-x-standard'>
           <p className='body-section--width-965'>
             We're proud of our work and love showing it off.
           </p>
