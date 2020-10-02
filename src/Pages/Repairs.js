@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
 
-import Tools from '../Assets/icon-tools.svg'
+import Tools from '../assets/icon-tools.svg'
 import VendorSection from '../Components/VendorSection'
 import ReviewList from '../Components/ReviewList'
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'

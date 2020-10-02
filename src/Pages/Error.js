@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import IconWithLine from '../Components/IconWithLine'
 import BodySection from '../Components/BodySection'
-import Tools from '../Assets/icon-tools-orange.svg'
+import Tools from '../assets/icon-tools-orange.svg'
 import DecorativeImage from '../Components/DecorativeImage'
 
 const Error = () => {

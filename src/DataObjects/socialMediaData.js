@@ -1,11 +1,11 @@
-import AngiesList from '../Assets/review-sites/angies-list/angies-list-seal.png'
-import AngiesListMedium from '../Assets/review-sites/angies-list/angies-list-seal@2x.png'
-import AngiesListLarge from '../Assets/review-sites/angies-list/angies-list-seal@3x.png'
+import AngiesList from '../assets/review-sites/angies-list/angies-list-seal.png'
+import AngiesListMedium from '../assets/review-sites/angies-list/angies-list-seal@2x.png'
+import AngiesListLarge from '../assets/review-sites/angies-list/angies-list-seal@3x.png'
 import { socialMediaRoutes } from './routes'
-import HomeAdvisor from '../Assets/review-sites/home-advisor/home-advisor-seal.png'
-import HomeAdvisorMedium from '../Assets/review-sites/home-advisor/home-advisor-seal@2x.png'
-import HomeAdvisorLarge from '../Assets/review-sites/home-advisor/home-advisor-seal@3x.png'
-import BBB from '../Assets/review-sites/bbb/bbb-seal.svg'
+import HomeAdvisor from '../assets/review-sites/home-advisor/home-advisor-seal.png'
+import HomeAdvisorMedium from '../assets/review-sites/home-advisor/home-advisor-seal@2x.png'
+import HomeAdvisorLarge from '../assets/review-sites/home-advisor/home-advisor-seal@3x.png'
+import BBB from '../assets/review-sites/bbb/bbb-seal.svg'
 
 export const accreditationSites = [
   {
