@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from 'react'
+import { useCallback, useLayoutEffect, useState } from 'react'
 
 function getDimensions (element) {
   if (!element) {
@@ -27,7 +27,7 @@ function useElementDimensions (ref) {
   useLayoutEffect(() => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [ref.current])
+  }, [handleResize])
 
   return dimensions
 }

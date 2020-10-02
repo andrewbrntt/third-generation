@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
 import { Image } from 'cloudinary-react'
 import ImageGalleryModal from './ImageGalleryModal'
-
+import {unstable_trace as trace} from 'scheduler/tracing'
 const ImageGallerySection = ({ title, images, isSection }) => {
 
   const ImageGallerySectionContainer = useRef(null)
@@ -42,7 +42,9 @@ const ImageGallerySection = ({ title, images, isSection }) => {
 
     const selectedImageIndex = galleryModalImages.findIndex(image => image.public_id.includes(imageName))
 
-    setSelectedImageIndex(selectedImageIndex)
+    trace('modal image clicked', performance.now(), () => {
+      setSelectedImageIndex(selectedImageIndex)
+    })
 
     setIsModalOpen(true)
   }
@@ -113,7 +115,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   useLayoutEffect(() => {
     if (images) {
       let hero = images.find(image => image.public_id.includes('hero'))
-      if (hero !== heroImage) {
+      if (JSON.stringify(hero) !== JSON.stringify(heroImage)) {
         setHeroImage(hero)
       }
 
@@ -124,7 +126,21 @@ const ImageGallerySection = ({ title, images, isSection }) => {
         setGalleryImagesWidth(ImageGallerySectionContainer.current.offsetWidth)
       }
     }
-  }, [images, ImageGallerySectionContainer.current])
+  }, [images])
+
+  const GallerySection = useMemo(() => {
+    return (
+      <LazyLoad>
+        <div className='image-gallery-section__container'>
+          {!isSection && <span className='image-gallery-section__title'>{title}</span>}
+          {heroImage && createGallerySectionHero(heroImage)}
+          <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
+            {galleryThumbnailImages && galleryThumbnailImages.map((image, index) => createGallerySectionItem(image, index))}
+          </div>
+        </div>
+      </LazyLoad>
+    )
+  }, [galleryThumbnailImages, heroImage])
 
   return (
     <>
@@ -135,15 +151,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
         gallerySectionImages={galleryModalImages}
         initialImageIndex={selectedImageIndex}
       />}
-      <LazyLoad>
-        <div className='image-gallery-section__container'>
-          {!isSection && <span className='image-gallery-section__title'>{title}</span>}
-          {heroImage && createGallerySectionHero(heroImage)}
-          <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-            {galleryThumbnailImages && galleryThumbnailImages.map((image, index) => createGallerySectionItem(image, index))}
-          </div>
-        </div>
-      </LazyLoad>
+      {GallerySection}
     </>
   )
 }

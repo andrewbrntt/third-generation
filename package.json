@@ -31,6 +31,7 @@
     "react-scripts": "3.4.1",
     "react-scrolllock": "^5.0.1",
     "rfdc": "^1.1.4",
+    "scheduler": "^0.19.1",
     "shortid": "^2.2.15",
     "source-map-explorer": "^2.5.0",
     "tua-body-scroll-lock": "^1.2.0"

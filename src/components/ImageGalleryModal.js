@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
 import LazyLoad from 'react-lazyload'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
@@ -26,13 +26,13 @@ const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImag
       setCurrentImageIndex(currentImageIndex + 1)
     }
   }
-  const isFirstImage = () => {
+  const isFirstImage = useCallback(() => {
     return currentImageIndex === 0 && gallerySectionImages.length > 1
-  }
+  }, [gallerySectionImages.length, currentImageIndex])
 
-  const isFinalImage = () => {
+  const isFinalImage = useCallback(() => {
     return currentImageIndex === gallerySectionImages.length - 1 && gallerySectionImages.length > 1
-  }
+  }, [gallerySectionImages.length, currentImageIndex])
 
   useLayoutEffect(() => {
     setCurrentImage(gallerySectionImages[currentImageIndex])
@@ -47,7 +47,7 @@ const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImag
     } else {
       setModalNextArrowVisible(true)
     }
-  }, [currentImageIndex])
+  }, [currentImageIndex, isFirstImage, isFinalImage, gallerySectionImages])
 
   useLayoutEffect(() => {
     if (isModalOpen) {

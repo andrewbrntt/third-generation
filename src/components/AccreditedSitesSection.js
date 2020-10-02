@@ -9,6 +9,7 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
   const accreditationSiteSvg = (site) => {
     return (
       <ExternalLink key={`accreditation-sites-section_${shortId.generate()}`} routeTo={site.routeTo}>
+        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
         <img className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
       </ExternalLink>
     )
@@ -28,7 +29,8 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
 
   const accreditationSiteSvgNoLink = (site) => {
     return (
-        <img key={`accreditation-sites-section_${shortId.generate()}`} className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+      /* eslint-disable-next-line jsx-a11y/no-redundant-roles */
+      <img key={`accreditation-sites-section_${shortId.generate()}`} className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
     )
   }
 

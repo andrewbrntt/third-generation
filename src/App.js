@@ -1,29 +1,32 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import LazyLoad from 'react-lazyload'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
+
 import SkipLink from './components/SkipLink'
-import Footer from './components/Footer'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Roofing from './Pages/Roofing'
-import Siding from './Pages/Siding'
-import Contact from './Pages/Contact'
-import Repairs from './Pages/Repairs'
 import Banner from './components/Banner'
-import Remodel from './Pages/Remodel'
-import OurWork from './Pages/OurWork'
-import Reviews from './Pages/Reviews'
-import EmergencyService from './Pages/EmergencyService'
-import Test from './Pages/Test'
 import Header from './components/Header'
-import Error from './Pages/Error'
+import Footer from './components/Footer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const Home = lazy(() => import('./Pages/Home'))
+const About = lazy(() => import('./Pages/About'))
+const Roofing = lazy(() => import('./Pages/Roofing'))
+const Siding = lazy(() => import('./Pages/Siding'))
+const Contact = lazy(() => import('./Pages/Contact'))
+const Repairs = lazy(() => import('./Pages/Repairs'))
+const OurWork = lazy(() => import('./Pages/OurWork'))
+const Remodel = lazy(() => import('./Pages/Remodel'))
+const Reviews = lazy(() => import('./Pages/Reviews'))
+const EmergencyService = lazy(() => import('./Pages/EmergencyService'))
+const Error = lazy(() => import('./Pages/Error'))
 
 fontAwesomeLibrary()
 
 function App () {
+  const loadingIcon = <FontAwesomeIcon className='modal__times-icon' icon={['far', 'spinner-third']} spin='spin'/>
+  
   return (
     <>
       <Helmet>
@@ -37,50 +40,46 @@ function App () {
         <Header/>
       </header>
       <main id='main-content'>
-        <Switch>
-          <Route exact path='/'>
-            <Home/>
-          </Route>
-          <Route path='/about'>
-            <About/>
-          </Route>
-          <Route path='/roofing'>
-            <Roofing/>
-          </Route>
-          <Route path='/remodel'>
-            <Remodel/>
-          </Route>
-          <Route path='/siding'>
-            <Siding/>
-          </Route>
-          <Route path='/repairs'>
-            <Repairs/>
-          </Route>
-          <Route path='/contact'>
-            <Contact/>
-          </Route>
-          <Route path='/our-work'>
-            <OurWork/>
-          </Route>
-          <Route path='/reviews'>
-            <Reviews/>
-          </Route>
-          <Route path='/emergency-service'>
-            <EmergencyService/>
-          </Route>
-          {
-            process.env.NODE_ENV === 'development' &&
-            <Route path='/test'>
-              <Test/>
+        <Suspense fallback={loadingIcon}>
+          <Switch>
+            <Route exact path='/'>
+              <Home/>
             </Route>
-          }
-          <Route path='*'>
-            <Error />
-          </Route>
-        </Switch>
+            <Route path='/about'>
+              <About/>
+            </Route>
+            <Route path='/roofing'>
+              <Roofing/>
+            </Route>
+            <Route path='/remodel'>
+              <Remodel/>
+            </Route>
+            <Route path='/siding'>
+              <Siding/>
+            </Route>
+            <Route path='/repairs'>
+              <Repairs/>
+            </Route>
+            <Route path='/contact'>
+              <Contact/>
+            </Route>
+            <Route path='/our-work'>
+              <OurWork/>
+            </Route>
+            <Route path='/reviews'>
+              <Reviews/>
+            </Route>
+            <Route path='/emergency-service'>
+              <EmergencyService/>
+            </Route>
+            <Route path='*'>
+              <Error/>
+            </Route>
+          </Switch>
+        </Suspense>
       </main>
       <footer id='footer-content' className='footer background-color-primary'>
-          <Footer/>
+        <Footer/>
       </footer>
     </>
   )

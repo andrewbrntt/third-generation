@@ -35,7 +35,7 @@ const About = () => {
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
   ]
 
-  useImagesCDN(setImageGalleryImages, 'group-1')
+  useImagesCDN(setImageGalleryImages, 'group-1', imageGalleryImages)
   useImagesCDNSingleStockArt(setHeroImage, 'about-us')
 
   return (

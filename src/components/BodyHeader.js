@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import useElementDimensions from '../helpers/useElementDimensions'
 import HeroImageOverlay from './HeroImageOverlay'
 import { Image } from 'cloudinary-react'

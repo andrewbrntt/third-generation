@@ -14,7 +14,8 @@ const VendorSection = ({ vendors = [] }) => {
       )
     } else {
       return (
-        <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
+        /* eslint-disable-next-line jsx-a11y/no-redundant-roles */
+      <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
       )
     }
   }
