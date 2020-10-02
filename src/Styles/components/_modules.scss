@@ -3,7 +3,6 @@ Description: contains each self-contained component in its own .scss partial
 \*------------*/
 @import 'accreditation-sites-section';
 @import 'banner';
-@import 'before-after';
 @import 'body-header';
 @import 'body-section';
 @import 'contact-form';
@@ -31,11 +30,7 @@ Description: contains each self-contained component in its own .scss partial
 @import 'review-sites-section';
 @import 'skip-link';
 @import 'siding-infographic';
-// TEST COMPONENTS
 @import 'siding-infographic-icon';
-@import 'siding-infographic-text';
-//
-
 @import 'social-media-section';
 @import 'suppliers-section';
 @import 'themed-button';

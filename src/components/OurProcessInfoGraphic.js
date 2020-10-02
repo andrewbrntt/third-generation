@@ -16,7 +16,8 @@ const OurProcessInfoGraphic = ({ stepList }) => {
       remove-margin'>
       {stepList.map((step, index) => {
         let iconPlacementSide = index % 2 === 0 ? LEFT : RIGHT
-        let lineElement = iconPlacementSide === RIGHT ? <GraphicRightLines margin={step.margin} /> : <GraphicLeftLines margin={step.margin} />
+        let lineElement = iconPlacementSide === RIGHT ? <GraphicRightLines margin={step.margin}/> : <GraphicLeftLines
+          margin={step.margin}/>
         return (
           <li key={shortId.generate()} className='our-process-infographic__li'>
             <div className='our-process-infographic__step-container'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import BodyHeader from '../components/BodyHeader'
@@ -16,7 +16,7 @@ import ImageGallerySection from '../components/ImageGallerySection'
 import { Image } from 'cloudinary-react'
 
 const Home = () => {
-const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
   const [aboutImage, setAboutImage] = useState({})
   const [remodelCardImage, setRemodelCardImage] = useState({})
   const [roofingCardImage, setRoofingCardImage] = useState({})
@@ -32,11 +32,11 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
   }
 
   useImagesCDN(setImageGalleryImages, 'group-1')
-  useImagesCDNSingleStockArt(setAboutImage,'about-us')
-  useImagesCDNSingleStockArt(setRemodelCardImage,'remodel-card')
-  useImagesCDNSingleStockArt(setRepairsCardImage,'repairs-card')
-  useImagesCDNSingleStockArt(setSidingCardImage,'siding-card')
-  useImagesCDNSingleStockArt(setRoofingCardImage,'roofing-card')
+  useImagesCDNSingleStockArt(setAboutImage, 'about-us')
+  useImagesCDNSingleStockArt(setRemodelCardImage, 'remodel-card')
+  useImagesCDNSingleStockArt(setRepairsCardImage, 'repairs-card')
+  useImagesCDNSingleStockArt(setSidingCardImage, 'siding-card')
+  useImagesCDNSingleStockArt(setRoofingCardImage, 'roofing-card')
 
   return (
     <>
@@ -45,7 +45,8 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
         <title>3rd Generation Construction | Home</title>
         <meta name="description" content="Third Generation Construction Home Page"/>
       </Helmet>
-      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName} heroImageName='home'
+      <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
+                  heroImageName='home'
                   pageHeader='Transform Your House Into Your Dream Home'>
         <p>
           A home's exterior is made beautiful through its siding, trim, and roofing.
@@ -64,7 +65,8 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
             Whatever your home needs, Third Generation Construction can help.
           </p>
           <p className='p--top-spacing'>
-            We offer quality home remodeling and roofing services from a team of professionals with more than 30 years of experience.
+            We offer quality home remodeling and roofing services from a team of professionals with more than 30 years
+            of experience.
           </p>
         </div>
         <div className='home__service-cards--center'>
@@ -97,7 +99,8 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
       </BodySection>
       <BodySection linkRoute='/about' linkText='About Us'
                    styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
-        {aboutImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={aboutImage.public_id}/>}
+        {aboutImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                              publicId={aboutImage.public_id}/>}
         <div className='p--margin-bottom-standard padding-x-standard'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
@@ -118,7 +121,7 @@ const [imageGalleryImages, setImageGalleryImages] = useState(null)
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-          <ImageGallerySection images={imageGalleryImages}/>
+        <ImageGallerySection images={imageGalleryImages}/>
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'

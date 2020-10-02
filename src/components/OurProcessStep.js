@@ -10,10 +10,12 @@ const OurProcessStep = ({ step, iconPlacementSide }) => {
   return (
     <div className={`our-process-infographic__step ${infoStepStyles}`}>
       {iconPlacementSide === RIGHT &&
-      <label className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
+      <label
+        className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
       <OurProcessIcon icon={step.icon} styleClass={iconPlacementSide === RIGHT && 'grid-column-3'}/>
       {iconPlacementSide === LEFT &&
-      <label className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
+      <label
+        className={`our-process-infographic__text-container ${step.isTextLong ? 'our-process-infographic__free-inspection' : ''}`}>{step.text}</label>}
     </div>
   )
 }

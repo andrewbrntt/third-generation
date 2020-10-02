@@ -43,7 +43,7 @@ const Review = ({ review, styleClasses }) => {
   }
 
   const calculateAdjustedReviewScore = () => {
-    if(review.score > 0 && review.score < 0.5) {
+    if (review.score > 0 && review.score < 0.5) {
       return 0.5
     }
 
@@ -51,7 +51,7 @@ const Review = ({ review, styleClasses }) => {
   }
 
   return (
-    <div className={`review__container ${styleClasses ||''}`}>
+    <div className={`review__container ${styleClasses || ''}`}>
       <figure role='img' className='review__star-container'
               aria-label={`Rated ${calculateAdjustedReviewScore(1)} stars out of 5`}>
         {calculateReviewStars()}

@@ -17,15 +17,15 @@ export const LowerUtilityCostIcon = () => {
   return (
     <div className='lower-utility-cost__icon-container'>
       <FontAwesomeIcon icon={['far', 'temperature-down']}/>
-      </div>
+    </div>
   )
 }
 
 export const LowerMaintenanceCostsIcon = () => {
   return (
     <div className='lower-maintenance-cost__icon'>
-        <DecorativeImage src={Tools} role='img'/>
-      </div>
+      <DecorativeImage src={Tools} role='img'/>
+    </div>
   )
 }
 
@@ -35,9 +35,9 @@ export const ProtectStructuralIntegrityIcon = () => {
         <span className='protect-structural-integrity__icon-weather-column color-secondary'>
           <FontAwesomeIcon icon={['far', 'raindrops']} className='protect-structural-integrity__icon-weather'/>
           <FontAwesomeIcon icon={['far', 'sun']} className='protect-structural-integrity__icon-weather'/>
-          <FontAwesomeIcon icon={['far', 'snowflake']} />
+          <FontAwesomeIcon icon={['far', 'snowflake']}/>
         </span>
-          <FontAwesomeIcon icon={['far', 'house']} className='protect-structural-integrity__fa-home-icon'/>
-      </div>
+      <FontAwesomeIcon icon={['far', 'house']} className='protect-structural-integrity__fa-home-icon'/>
+    </div>
   )
 }

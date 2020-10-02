@@ -8,7 +8,7 @@ const FormTextArea = ({ formId, fieldElementData, handleOnChange }) => {
       className={`form-input-field__text-area ${fieldElementData.hasError ? 'form-input-field__error' : ''}`}
       form={formId}
       name={fieldElementData.name}
-      onChange={ e => handleOnChange(fieldElementData, e.target)}
+      onChange={e => handleOnChange(fieldElementData, e.target)}
       value={fieldElementData.value ? fieldElementData.value : ''}
     >{}</textarea>
   )

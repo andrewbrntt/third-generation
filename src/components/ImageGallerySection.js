@@ -74,8 +74,9 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   const createGallerySectionItem = (imageObject, index) => {
     console.log(imageObject)
     return (
-      <a className={`${index % 3 === 1 ? 'image-gallery-section__img-link-margin-x' : ''} image-gallery-section__img-link`}
-         href='#' key={shortId.generate()} onClick={onImageClick}>
+      <a
+        className={`${index % 3 === 1 ? 'image-gallery-section__img-link-margin-x' : ''} image-gallery-section__img-link`}
+        href='#' key={shortId.generate()} onClick={onImageClick}>
         <Image className='image-gallery__thumbnail-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
                publicId={imageObject.public_id}/>
       </a>

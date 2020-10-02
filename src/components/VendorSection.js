@@ -1,7 +1,6 @@
 import React from 'react'
 import shortId from 'shortid'
-import {getImageExtension} from '../helpers/vendorAssetLibrary'
-import ExternalLink from './ExternalLink'
+import { getImageExtension } from '../helpers/vendorAssetLibrary'
 
 const VendorSection = ({ vendors = [] }) => {
   const getElementByType = (vendor) => {
@@ -15,7 +14,7 @@ const VendorSection = ({ vendors = [] }) => {
       )
     } else {
       return (
-          <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
+        <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
       )
     }
   }
@@ -34,3 +33,6 @@ const VendorSection = ({ vendors = [] }) => {
 }
 
 export default VendorSection
+
+
+

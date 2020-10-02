@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import LazyLoad from 'react-lazyload'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import {Image} from 'cloudinary-react'
+import { Image } from 'cloudinary-react'
 import ImageGalleryArrow from './ImageGalleryArrow'
 
 const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImages, handleModalClose, isModalOpen }) => {
@@ -87,7 +87,8 @@ const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImag
           <div className={`image-gallery__img-container ${currentImage.subText ? 'background-color-primary' : ''}`}>
             <div className='image-gallery__img--display-block'>
               <LazyLoad once>
-                <Image className='image-gallery__modal-image' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={currentImage.public_id}/>
+                <Image className='image-gallery__modal-image' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                       publicId={currentImage.public_id}/>
               </LazyLoad>
               {currentImage.subText &&
               <div className='image-gallery__text default-text color-white'>

@@ -1,33 +1,33 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faStar as faStarSolid,
-  faStarHalfAlt,
-  faHorizontalRule,
-  faTools,
+  faCaretDown,
+  faCaretRight,
   faCircle,
   faHome,
+  faHorizontalRule,
+  faStar as faStarSolid,
+  faStarHalfAlt,
   faTimes,
-  faCaretDown,
-  faCaretRight
+  faTools
 } from '@fortawesome/pro-solid-svg-icons'
 import {
-  faStar as faStarRegular,
-  faPhoneAlt,
-  faClipboardListCheck,
-  faFileSignature,
-  faFileContract,
-  faHammer,
-  faSparkles,
-  faTemperatureDown,
-  faHouse,
-  faSnowflake,
-  faRaindrops,
-  faSun,
-  faCheckCircle,
-  faArrowCircleRight,
   faArrowCircleLeft,
-  faTimesCircle,
-  faSpinnerThird
+  faArrowCircleRight,
+  faCheckCircle,
+  faClipboardListCheck,
+  faFileContract,
+  faFileSignature,
+  faHammer,
+  faHouse,
+  faPhoneAlt,
+  faRaindrops,
+  faSnowflake,
+  faSparkles,
+  faSpinnerThird,
+  faStar as faStarRegular,
+  faSun,
+  faTemperatureDown,
+  faTimesCircle
 } from '@fortawesome/pro-regular-svg-icons'
 import { faTools as duoTools } from '@fortawesome/pro-duotone-svg-icons'
 

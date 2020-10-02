@@ -6,7 +6,7 @@ import angiesList2x from '../assets/review-sites/angies-list/angies-list-thumb@2
 import homeAdvisor from '../assets/review-sites/home-advisor/home-advisor-thumb.png'
 import homeAdvisor2x from '../assets/review-sites/home-advisor/home-advisor-thumb@2x.png'
 import { Link } from 'react-router-dom'
-import { socialMediaRoutes} from '../DataObjects/routes'
+import { socialMediaRoutes } from '../DataObjects/routes'
 
 const ReviewSitesSection = () => {
   return (

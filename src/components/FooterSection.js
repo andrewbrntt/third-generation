@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import shortId from 'shortid'
+
 const FooterSection = ({ header, listItems }) => {
   return (
     <div className='footer-section'>

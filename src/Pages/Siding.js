@@ -6,7 +6,6 @@ import BodySection from '../components/BodySection'
 import VendorSection from '../components/VendorSection'
 
 import { vendors } from '../helpers/vendorAssetLibrary'
-import DecorativeImage from '../components/DecorativeImage'
 import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
 import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
@@ -16,8 +15,8 @@ const Siding = () => {
   const [heroImage, setHeroImage] = useState([])
   const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
 
-  useImagesCDNSingleStockArt(setHeroImage,'siding')
-  useImagesCDNSingleStockArt(setOurWorkSectionImage,'our-work-section')
+  useImagesCDNSingleStockArt(setHeroImage, 'siding')
+  useImagesCDNSingleStockArt(setOurWorkSectionImage, 'our-work-section')
 
   return (
     <>
@@ -28,7 +27,8 @@ const Siding = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
                    pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                             publicId={heroImage.public_id}/>}
         <p className='padding-x-standard'>
           Durable siding and energy-efficient doors and windows are all part of what makes your home beautiful.
         </p>
@@ -62,10 +62,12 @@ const Siding = () => {
             Replacing your siding has many benefits, including increasing the value of your home.
           </p>
           <p className='p--top-spacing'>
-            A home's siding not only protects your most valuable asset from the harsh Lake Erie weather, but it can also play a massive role in your maintenance and utility costs.
+            A home's siding not only protects your most valuable asset from the harsh Lake Erie weather, but it can also
+            play a massive role in your maintenance and utility costs.
           </p>
           <p className='p--top-spacing body-section--width-full'>
-            Ensure your house is protected and economically efficient by scheduling a free inspection and consultation with our team today.
+            Ensure your house is protected and economically efficient by scheduling a free inspection and consultation
+            with our team today.
           </p>
         </div>
         <div className='p--margin-bottom-standard'>
@@ -87,7 +89,9 @@ const Siding = () => {
       </BodySection>
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work' linkText='View Gallery'>
-        {ourWorkSectionImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={ourWorkSectionImage.public_id}/>}
+        {ourWorkSectionImage &&
+        <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+               publicId={ourWorkSectionImage.public_id}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965'>
             We're proud of our work and love showing it off.

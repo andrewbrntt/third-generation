@@ -7,7 +7,10 @@ function createImageSections (images) {
   const group3 = images.filter(image => image.public_id.includes('group-3'))
   const group4 = images.filter(image => image.public_id.includes('group-4'))
 
-  return [{ title: '', images: group1 }, { title: '', images: group2 }, { title: '', images: group3 }, { title: '', images: group4 }]
+  return [{ title: '', images: group1 }, { title: '', images: group2 }, { title: '', images: group3 }, {
+    title: '',
+    images: group4
+  }]
 }
 
 export function getWindowWidth () {
@@ -79,7 +82,7 @@ export function useImagesCDNStockArt (setState) {
 export function useImagesCDNSingleStockArt (setState, suffix) {
   const windowSize = getWindowWidth()
 
-let url = `https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
+  let url = `https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
 
   useEffect(() => {
     axios.get(url)

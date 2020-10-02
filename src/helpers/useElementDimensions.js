@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useCallback } from 'react'
+import React, { useCallback, useLayoutEffect, useState } from 'react'
 
 function getDimensions (element) {
   if (!element) {
@@ -19,7 +19,7 @@ function useElementDimensions (ref) {
   const [dimensions, setDimensions] = useState(getDimensions(ref ? ref.current : {}))
 
   const handleResize = useCallback(() => {
-    if(ref.current) {
+    if (ref.current) {
       setDimensions(getDimensions(ref.current))
     }
   }, [ref])

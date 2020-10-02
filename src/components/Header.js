@@ -13,16 +13,15 @@ const Header = () => {
     }
   }
 
-
   return (
     <div className='header'>
-      <MobileNavigationMenu createRouteObject={createRouteObject} />
+      <MobileNavigationMenu createRouteObject={createRouteObject}/>
       <div className='header__logo-container'>
-      <NavLink to={createRouteObject('/')}>
-        <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
-      </NavLink>
+        <NavLink to={createRouteObject('/')}>
+          <img alt='Third Generation Construction Company Logo' className='header__logo' src={logo}/>
+        </NavLink>
       </div>
-      <DesktopNavigationMenu />
+      <DesktopNavigationMenu/>
     </div>
   )
 }

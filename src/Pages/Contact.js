@@ -27,11 +27,15 @@ const Contact = () => {
       <BodySection styleClasses='color-primary body-section--width-965' pageHeader='Contact Us'>
         <div className='contact-us__header-p'>
           <div>We are here to help you with whatever home repair needs you may have.</div>
-          <div className='p--top-spacing' style={{position: 'relative'}}>Third Generation Construction is available to our clients 24/7.</div>
+          <div className='p--top-spacing' style={{ position: 'relative' }}>Third Generation Construction is available to
+            our clients 24/7.
+          </div>
           <div className='contact__phone-link-mobile'>Call us at:</div>
-          <ContactPhoneLink className='contact__phone-link-mobile' />
-          <div className='contact__phone-link-desktop'>Call us at: <ContactPhoneLink /></div>
-          <div>Or email us by filling out the contact form below, and we will get back to you within three business days.</div>
+          <ContactPhoneLink className='contact__phone-link-mobile'/>
+          <div className='contact__phone-link-desktop'>Call us at: <ContactPhoneLink/></div>
+          <div>Or email us by filling out the contact form below, and we will get back to you within three business
+            days.
+          </div>
         </div>
         <ContactForm formStyleClasses={formStyles}/>
       </BodySection>

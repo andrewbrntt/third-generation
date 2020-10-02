@@ -126,7 +126,7 @@
   text-align: center;
 }
 
-.desktop-body-section__header-text {
+.desktop-body-section__text-container {
   margin-top: 0;
   margin-bottom: 3.75rem;
   font-size: 2.625rem;
@@ -142,17 +142,6 @@
   width: 30.125rem;
   height: 31.6875rem;
   margin-right: 1.25rem;
-}
-
-.desktop-body-section__section-img {
-  width: 60.3125rem;
-  height: 31.6875rem;
-  margin-right: 1.625rem;
-}
-
-
-.desktop-body-section__link-container {
-  //margin-top: 4.375rem;
 }
 
 .desktop__p--margin-bottom-80 {
@@ -190,12 +179,6 @@
 .body-section--margin-bottom-100-lg {
   @include lg {
     margin-bottom: 6.25rem;
-  }
-}
-
-.body-section__review-sites-margin-top {
-  @include md {
-    margin-top: 3.125rem;
   }
 }
 

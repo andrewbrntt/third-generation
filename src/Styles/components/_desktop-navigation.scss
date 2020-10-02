@@ -55,11 +55,6 @@
   border: 0.1875rem solid $primary;
 }
 
-.desktop-nav__services-li:hover > .desktop-nav__services-submenu,
-.desktop-nav__services-li:focus > .desktop-nav__services-submenu {
-  display: block;
-}
-
 .desktop-nav__services-submenu li {
   display: block;
   margin-bottom: 1.25rem;
@@ -67,10 +62,6 @@
 
 .desktop-nav__services-submenu li:first-child {
   margin-top: 1.25rem;
-}
-
-.desktop-nav__services-li {
-  position: relative;
 }
 
 .desktop-nav__services-submenu li a {
@@ -84,6 +75,14 @@
   outline: transparent;
 }
 
+.desktop-nav__services-li:hover > .desktop-nav__services-submenu,
+.desktop-nav__services-li:focus > .desktop-nav__services-submenu {
+  display: block;
+}
+
+.desktop-nav__services-li {
+  position: relative;
+}
 
 .desktop-nav__submenu-is-open {
   display: block;

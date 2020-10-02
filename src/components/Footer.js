@@ -4,7 +4,6 @@ import FooterSection from './FooterSection'
 import { NavLink } from 'react-router-dom'
 import SocialMediaSection from './SocialMediaSection'
 import { routesData } from '../DataObjects/routes'
-import ContactPhoneLink from './ContactPhoneLink'
 
 const Footer = () => {
 
@@ -13,16 +12,16 @@ const Footer = () => {
     { routeName: routesData.roofing.routeName, routeTo: routesData.roofing.routeTo },
     { routeName: routesData.siding.routeName, routeTo: routesData.siding.routeTo },
     { routeName: routesData.repairs.routeName, routeTo: routesData.repairs.routeTo }
-    ]
+  ]
 
   return (
     <div className='footer__container'>
       <SocialMediaSection/>
       <div className='footer__logo-container'>
         <NavLink to={routesData.home.routeTo}>
-        <img alt='Third Generation Construction Company Logo' className='footer__logo' src={logo}/>
+          <img alt='Third Generation Construction Company Logo' className='footer__logo' src={logo}/>
         </NavLink>
-        </div>
+      </div>
       <ul className='footer__ul'>
         <li>
           <NavLink className='footer__link' to={routesData.home.routeTo}>

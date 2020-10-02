@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const ImageGalleryArrow = ({styleClasses, icon}) => {
+const ImageGalleryArrow = ({ styleClasses, icon }) => {
   return (
     <span className={`fa-layers fa-fw ${styleClasses || ''}`}>
           <FontAwesomeIcon

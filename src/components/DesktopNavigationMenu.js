@@ -54,7 +54,8 @@ const DesktopNavigationMenu = () => {
               icon={'caret-down'}
             />
           </a>
-          <ul className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
+          <ul
+            className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
             <li>
               <NavLink
                 ref={servicesFirstSubMenuItem}

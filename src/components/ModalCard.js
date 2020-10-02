@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModalCard = ({inputName, inputValue }) => {
+const ModalCard = ({ inputName, inputValue }) => {
   return (
     <div className='contact-form__review-modal-card-container'>
       <span className='action-text contact-form__review-modal-card-title'>{`${inputName}:`}</span>
