@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
+import BodySection from '../Components/BodySection'
 
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
-import Tools from '../assets/icon-tools.svg'
-import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
-import ImageGallerySection from '../components/ImageGallerySection'
+import Tools from '../Assets/icon-tools.svg'
+import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
+import ImageGallerySection from '../Components/ImageGallerySection'
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
-import SuppliersSection from '../components/SuppliersSection'
+import SuppliersSection from '../Components/SuppliersSection'
 
 const Remodel = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])

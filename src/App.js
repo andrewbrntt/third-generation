@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async'
 import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 
-import SkipLink from './components/SkipLink'
-import Banner from './components/Banner'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import SkipLink from './Components/SkipLink'
+import Banner from './Components/Banner'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Home = lazy(() => import('./Pages/Home'))

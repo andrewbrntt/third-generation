@@ -1,11 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import ContactForm from '../components/ContactForm'
-import BodySection from '../components/BodySection'
-import AccreditedSitesSection from '../components/AccreditedSitesSection'
+import ContactForm from '../Components/ContactForm'
+import BodySection from '../Components/BodySection'
+import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
-import ContactPhoneLink from '../components/ContactPhoneLink'
+import ContactPhoneLink from '../Components/ContactPhoneLink'
 
 const Contact = () => {
 

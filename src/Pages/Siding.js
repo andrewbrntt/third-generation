@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import SidingInfographic from '../components/SidingInfographic'
-import BodySection from '../components/BodySection'
-import VendorSection from '../components/VendorSection'
+import SidingInfographic from '../Components/SidingInfographic'
+import BodySection from '../Components/BodySection'
+import VendorSection from '../Components/VendorSection'
 
 import { vendors } from '../helpers/vendorAssetLibrary'
-import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
+import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 

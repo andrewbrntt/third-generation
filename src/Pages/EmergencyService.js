@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
+import BodySection from '../Components/BodySection'
 
-import ReviewList from '../components/ReviewList'
-import AccreditedSitesSection from '../components/AccreditedSitesSection'
+import ReviewList from '../Components/ReviewList'
+import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
-import ImageGallerySection from '../components/ImageGallerySection'
+import ImageGallerySection from '../Components/ImageGallerySection'
 
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import DecorativeImage from './DecorativeImage'
-import Tools from '../assets/icon-tools.svg'
+import Tools from '../Assets/icon-tools.svg'
 
 export const BeautifyExteriorIcon = () => {
   return (

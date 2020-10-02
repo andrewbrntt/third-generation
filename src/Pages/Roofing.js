@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
-import AccreditedSitesSection from '../components/AccreditedSitesSection'
-import ReviewList from '../components/ReviewList'
-import VendorSection from '../components/VendorSection'
+import BodySection from '../Components/BodySection'
+import AccreditedSitesSection from '../Components/AccreditedSitesSection'
+import ReviewList from '../Components/ReviewList'
+import VendorSection from '../Components/VendorSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 
 import { vendors } from '../helpers/vendorAssetLibrary'
 
-import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
+import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
 import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'

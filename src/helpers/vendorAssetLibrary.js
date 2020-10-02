@@ -1,42 +1,42 @@
-import owensCorningLogo1x from '../assets/vendor-assets/owens-corning/owens-corning.png'
-import owensCorningLogo2x from '../assets/vendor-assets/owens-corning/owens-corning@2x.png'
-import owensCorningLogo3x from '../assets/vendor-assets/owens-corning/owens-corning@3x.png'
+import owensCorningLogo1x from '../Assets/vendor-assets/owens-corning/owens-corning.png'
+import owensCorningLogo2x from '../Assets/vendor-assets/owens-corning/owens-corning@2x.png'
+import owensCorningLogo3x from '../Assets/vendor-assets/owens-corning/owens-corning@3x.png'
 
-import jamesHardieLogo1x from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo.png'
-import jamesHardieLogo2x from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo@2x.png'
-import jamesHardieLogo3x from '../assets/vendor-assets/james-hardie/siding-james-hardie-logo@3x.png'
+import jamesHardieLogo1x from '../Assets/vendor-assets/james-hardie/siding-james-hardie-logo.png'
+import jamesHardieLogo2x from '../Assets/vendor-assets/james-hardie/siding-james-hardie-logo@2x.png'
+import jamesHardieLogo3x from '../Assets/vendor-assets/james-hardie/siding-james-hardie-logo@3x.png'
 
-import royalSidingLogo1x from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color.png'
-import royalSidingLogo2x from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color@2x.png'
-import royalSidingLogo3x from '../assets/vendor-assets/royal-building/siding-royal-building-logo-color@3x.png'
+import royalSidingLogo1x from '../Assets/vendor-assets/royal-building/siding-royal-building-logo-color.png'
+import royalSidingLogo2x from '../Assets/vendor-assets/royal-building/siding-royal-building-logo-color@2x.png'
+import royalSidingLogo3x from '../Assets/vendor-assets/royal-building/siding-royal-building-logo-color@3x.png'
 
-import alsideLogo1x from '../assets/vendor-assets/alside/alside.png'
+import alsideLogo1x from '../Assets/vendor-assets/alside/alside.png'
 
-import alsideLogo2x from '../assets/vendor-assets/alside/alside@2x.png'
-import alsideLogo3x from '../assets/vendor-assets/alside/alside@3x.png'
-import firestoneLogo1x from '../assets/vendor-assets/firestone/firestone_logo.png'
+import alsideLogo2x from '../Assets/vendor-assets/alside/alside@2x.png'
+import alsideLogo3x from '../Assets/vendor-assets/alside/alside@3x.png'
+import firestoneLogo1x from '../Assets/vendor-assets/firestone/firestone_logo.png'
 
-import certainteedSidingLogo1x from '../assets/vendor-assets/certainteed/siding-certainteed-logo.png'
-import certainteedSidingLogo2x from '../assets/vendor-assets/certainteed/siding-certainteed-logo@2x.png'
-import certainteedSidingLogo3x from '../assets/vendor-assets/certainteed/siding-certainteed-logo@3x.png'
+import certainteedSidingLogo1x from '../Assets/vendor-assets/certainteed/siding-certainteed-logo.png'
+import certainteedSidingLogo2x from '../Assets/vendor-assets/certainteed/siding-certainteed-logo@2x.png'
+import certainteedSidingLogo3x from '../Assets/vendor-assets/certainteed/siding-certainteed-logo@3x.png'
 
-import carterLogo1x from '../assets/vendor-assets/carter/carterlumber.png'
-import carterLogo2x from '../assets/vendor-assets/carter/carterlumber.png'
-import carterLogo3x from '../assets/vendor-assets/carter/carterlumber.png'
+import carterLogo1x from '../Assets/vendor-assets/carter/carterlumber.png'
+import carterLogo2x from '../Assets/vendor-assets/carter/carterlumber.png'
+import carterLogo3x from '../Assets/vendor-assets/carter/carterlumber.png'
 
-import gafLogo1x from '../assets/vendor-assets/gaf/gaf-logo.png'
-import gafLogo2x from '../assets/vendor-assets/gaf/gaf-logo@2x.png'
-import gafLogo3x from '../assets/vendor-assets/gaf/gaf-logo@3x.png'
+import gafLogo1x from '../Assets/vendor-assets/gaf/gaf-logo.png'
+import gafLogo2x from '../Assets/vendor-assets/gaf/gaf-logo@2x.png'
+import gafLogo3x from '../Assets/vendor-assets/gaf/gaf-logo@3x.png'
 
-import alliedLogo1x from '../assets/vendor-assets/allied/allied-logo.png'
-import alliedLogo2x from '../assets/vendor-assets/allied/allied-logo@2x.png'
-import alliedLogo3x from '../assets/vendor-assets/allied/allied-logo@3x.png'
+import alliedLogo1x from '../Assets/vendor-assets/allied/allied-logo.png'
+import alliedLogo2x from '../Assets/vendor-assets/allied/allied-logo@2x.png'
+import alliedLogo3x from '../Assets/vendor-assets/allied/allied-logo@3x.png'
 
-import vinylmax from '../assets/vendor-assets/vinylmax/vinylmax-logo_160x80.svg'
+import vinylmax from '../Assets/vendor-assets/vinylmax/vinylmax-logo_160x80.svg'
 
-import norandex1x from '../assets/vendor-assets/norandex/norandex-logo.png'
-import norandex2x from '../assets/vendor-assets/norandex/norandex-logo@2x.png'
-import norandex3x from '../assets/vendor-assets/norandex/norandex-logo@3x.png'
+import norandex1x from '../Assets/vendor-assets/norandex/norandex-logo.png'
+import norandex2x from '../Assets/vendor-assets/norandex/norandex-logo@2x.png'
+import norandex3x from '../Assets/vendor-assets/norandex/norandex-logo@3x.png'
 
 export const owensCorningLogo = {
   small: owensCorningLogo1x,

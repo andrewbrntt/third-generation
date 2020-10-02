@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import BodyHeader from '../components/BodyHeader'
-import BodySection from '../components/BodySection'
-import ReviewList from '../components/ReviewList'
+import BodyHeader from '../Components/BodyHeader'
+import BodySection from '../Components/BodySection'
+import ReviewList from '../Components/ReviewList'
 import { allReviews } from '../DataObjects/reviewsData'
-import ReviewSitesSection from '../components/ReviewSitesSection'
+import ReviewSitesSection from '../Components/ReviewSitesSection'
 
 const Reviews = () => {
 
