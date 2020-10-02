@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
 import LinkCard from '../Components/LinkCard'

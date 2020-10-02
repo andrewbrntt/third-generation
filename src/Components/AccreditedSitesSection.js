@@ -1,7 +1,7 @@
 import React from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
-import {getImageExtension} from '../helpers/vendorAssetLibrary'
+import {getImageExtension} from '../Helpers/vendorAssetLibrary'
 import ExternalLink from './ExternalLink'
 
 const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses }) => {

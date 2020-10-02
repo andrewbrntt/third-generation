@@ -1,6 +1,6 @@
 import React from 'react'
 import shortId from 'shortid'
-import { getImageExtension } from '../helpers/vendorAssetLibrary'
+import { getImageExtension } from '../Helpers/vendorAssetLibrary'
 
 const VendorSection = ({ vendors = [] }) => {
   const getElementByType = (vendor) => {

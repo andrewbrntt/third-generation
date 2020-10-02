@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import fontAwesomeLibrary from './helpers/fontAwesomeLibrary'
+import fontAwesomeLibrary from './Helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 
 import SkipLink from './Components/SkipLink'

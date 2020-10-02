@@ -5,9 +5,9 @@ import SidingInfographic from '../Components/SidingInfographic'
 import BodySection from '../Components/BodySection'
 import VendorSection from '../Components/VendorSection'
 
-import { vendors } from '../helpers/vendorAssetLibrary'
+import { vendors } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
-import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Siding = () => {

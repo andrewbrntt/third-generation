@@ -10,7 +10,7 @@ import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../Components/ImageGallerySection'
 
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const EmergencyService = () => {

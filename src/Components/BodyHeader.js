@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import useElementDimensions from '../helpers/useElementDimensions'
+import useElementDimensions from '../Helpers/useElementDimensions'
 import HeroImageOverlay from './HeroImageOverlay'
 import { Image } from 'cloudinary-react'
-import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 
 const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }) => {
 

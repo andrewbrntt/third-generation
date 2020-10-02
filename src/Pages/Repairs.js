@@ -6,11 +6,11 @@ import BodySection from '../Components/BodySection'
 import Tools from '../assets/icon-tools.svg'
 import VendorSection from '../Components/VendorSection'
 import ReviewList from '../Components/ReviewList'
-import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
+import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallerySection'
 import { repairReviews } from '../DataObjects/reviewsData'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Repairs = () => {

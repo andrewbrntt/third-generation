@@ -9,7 +9,7 @@ import ImageGallery from '../Components/ImageGallery'
 import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
-import { useImagesCDNAllImages } from '../helpers/useImageCDN'
+import { useImagesCDNAllImages } from '../Helpers/useImageCDN'
 
 const OurWork = () => {
   const [imageGallerySections, setImageGallerySections] = useState(null)

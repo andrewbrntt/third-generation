@@ -10,7 +10,7 @@ import {
   validateMessage,
   validatePhoneNumber,
   validateService
-} from '../helpers/formValidation'
+} from '../Helpers/formValidation'
 import ContactFormSuccessModal from './ContactFormSuccessModal'
 import ContactFormSubmitErrorModal from './ContactFormSubmitErrorModal'
 

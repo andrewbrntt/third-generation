@@ -3,11 +3,11 @@ import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
 
-import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
+import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallerySection'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 import SuppliersSection from '../Components/SuppliersSection'
 

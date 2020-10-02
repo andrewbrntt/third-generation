@@ -7,11 +7,11 @@ import ReviewList from '../Components/ReviewList'
 import VendorSection from '../Components/VendorSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 
-import { vendors } from '../helpers/vendorAssetLibrary'
+import { vendors } from '../Helpers/vendorAssetLibrary'
 
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
-import { useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Roofing = () => {
