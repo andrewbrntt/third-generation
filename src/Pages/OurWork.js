@@ -15,7 +15,6 @@ const OurWork = () => {
   const [imageGallerySections, setImageGallerySections] = useState(null)
 
   useImagesCDNAllImages(setImageGallerySections)
-console.log('knock him out the box luke')
   return (
     <>
       <Helmet>
@@ -25,6 +24,7 @@ console.log('knock him out the box luke')
       </Helmet>
       <BodyHeader pageHeader='Our Work' linkText={routesData.contactUs.routeName} heroImageName='our-work'
                   linkRoute={routesData.contactUs.routeTo}>
+      <span className='color-red'>TEST TEST TEST</span>
         <p>
           Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful homes and guarantee well-built projects that ensure customer satisfaction.
         </p>
