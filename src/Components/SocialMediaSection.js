@@ -1,7 +1,7 @@
 import React from 'react'
 import { socialMediaRoutes } from '../DataObjects/routes'
-import FBLogo from '../Assets/facebook-logo@logotyp.us.svg'
-import InstaLogo from '../Assets/instagram-logo@logotyp.us.svg'
+import FBLogo from '../assets/facebook-logo@logotyp.us.svg'
+import InstaLogo from '../assets/instagram-logo@logotyp.us.svg'
 import ExternalLink from './ExternalLink'
 
 const SocialMediaSection = () => {

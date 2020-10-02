@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../Assets/3gc-logo-white.svg'
+import logo from '../assets/3gc-logo-white.svg'
 import MobileNavigationMenu from './MobileNavigationMenu'
 import { NavLink } from 'react-router-dom'
 import DesktopNavigationMenu from './DesktopNavigationMenu'
