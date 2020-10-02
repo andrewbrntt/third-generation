@@ -1,0 +1,51 @@
+import React from 'react'
+import google from '../Assets/review-sites/google/google-thunb.png'
+import google2x from '../Assets/review-sites/google/google-thunb@2x.png'
+import angiesList from '../Assets/review-sites/angies-list/angies-list-thumb.png'
+import angiesList2x from '../Assets/review-sites/angies-list/angies-list-thumb@2x.png'
+import homeAdvisor from '../Assets/review-sites/home-advisor/home-advisor-thumb.png'
+import homeAdvisor2x from '../Assets/review-sites/home-advisor/home-advisor-thumb@2x.png'
+import { Link } from 'react-router-dom'
+import { socialMediaRoutes } from '../DataObjects/routes'
+
+const ReviewSitesSection = () => {
+  return (
+    <div className='review-sites-section__container'>
+      <a href={socialMediaRoutes.angies.routeTo} className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={angiesList2x}/>
+            <img src={angiesList} alt='' className='review-sites-section__icon--dimensions' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Angie's List
+        </span>
+      </a>
+      <Link className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={homeAdvisor2x}/>
+            <img src={homeAdvisor} alt='' className='review-sites-section__icon--dimensions' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Home Advisor
+        </span>
+      </Link>
+      <Link className='review-sites-section__card'>
+        <div className='review-sites-section__icon-container--dimensions'>
+          <picture>
+            <source media='(min-width:768px)' srcSet={google2x}/>
+            <img src={google} className='review-sites-section__icon--dimensions' alt='' aria-hidden='true'/>
+          </picture>
+        </div>
+        <span className='review-sites-section__card-text'>
+          Google
+        </span>
+      </Link>
+    </div>
+  )
+}
+
+export default ReviewSitesSection

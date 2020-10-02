@@ -1,25 +1,24 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
+import BodySection from '../Components/BodySection'
 
-import ReviewList from '../components/ReviewList'
-import AccreditedSitesSection from '../components/AccreditedSitesSection'
+import ReviewList from '../Components/ReviewList'
+import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
-import ImageGallerySection from '../components/ImageGallerySection'
+import ImageGallerySection from '../Components/ImageGallerySection'
 
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
-
 
 const EmergencyService = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [heroImage, setHeroImage] = useState([])
 
   useImagesCDN(setImageGalleryImages, 'group-2')
-  useImagesCDNSingleStockArt(setHeroImage,'emergency')
+  useImagesCDNSingleStockArt(setHeroImage, 'emergency')
 
   return (
     <>
@@ -30,7 +29,8 @@ const EmergencyService = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                             publicId={heroImage.public_id}/>}
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
           <p>Life is full of curveballs, and emergencies happen.</p>
           <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>

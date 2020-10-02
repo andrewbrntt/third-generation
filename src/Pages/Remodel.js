@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
-import VendorSection from '../components/VendorSection'
+import BodySection from '../Components/BodySection'
 
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
-import Tools from '../assets/icon-tools.svg'
-import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
-import ImageGallerySection from '../components/ImageGallerySection'
+import Tools from '../Assets/icon-tools.svg'
+import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
+import ImageGallerySection from '../Components/ImageGallerySection'
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
-import SuppliersSection from '../components/SuppliersSection'
-
+import SuppliersSection from '../Components/SuppliersSection'
 
 const Remodel = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
@@ -24,7 +22,7 @@ const Remodel = () => {
   ]
 
   useImagesCDN(setImageGalleryImages, 'group-3')
-  useImagesCDNSingleStockArt(setHeroImage,'remodel')
+  useImagesCDNSingleStockArt(setHeroImage, 'remodel')
 
   return (
     <>
@@ -36,10 +34,12 @@ const Remodel = () => {
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us'
                    pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                             publicId={heroImage.public_id}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard'>
-            Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation Construction can help.
+            Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
+            Construction can help.
           </p>
           <p className='p--top-spacing padding-x-standard'>
             We pride ourselves in using quality products to create beautiful projects at an affordable price.

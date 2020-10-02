@@ -19,6 +19,20 @@
   padding: 0;
 }
 
+.contact-form__review-modal section > h2:nth-of-type(1) {
+  @include md {
+    margin-bottom: 3.75rem;
+    font-size: 3.125rem;
+  }
+}
+
+.contact-form__review-modal section > p:nth-of-type(1) {
+  @include md {
+    padding-bottom: 3.75rem;
+    font-size: 1.875rem;
+  }
+}
+
 .contact-form__review-modal-container {
   @include lg {
     max-width: 60.3125rem;
@@ -28,8 +42,8 @@
 .contact-form__review-modal-card-container {
   margin-bottom: 1.875rem;
   padding: 0.625rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   list-style: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .contact-form__review-modal-card-title {
@@ -55,17 +69,5 @@
   }
 }
 
-.contact-form__review-modal section > h2:nth-of-type(1) {
-  @include md {
-    margin-bottom: 3.75rem;
-    font-size: 3.125rem;
-  }
-}
 
-.contact-form__review-modal section > p:nth-of-type(1) {
-  @include md {
-    padding-bottom: 3.75rem;
-    font-size: 1.875rem;
-  }
-}
 

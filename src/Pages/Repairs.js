@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import BodySection from '../components/BodySection'
+import BodySection from '../Components/BodySection'
 
-import Tools from '../assets/icon-tools.svg'
-import VendorSection from '../components/VendorSection'
-import ReviewList from '../components/ReviewList'
-import DecorativeImage from '../components/DecorativeImage'
+import Tools from '../Assets/icon-tools.svg'
+import VendorSection from '../Components/VendorSection'
+import ReviewList from '../Components/ReviewList'
 import { alliedLogo, carterLogo, gafLogo } from '../helpers/vendorAssetLibrary'
-import DesktopBodySectionHeader from '../components/DesktopBodySectionHeader'
-import ImageGallerySection from '../components/ImageGallerySection'
+import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
+import ImageGallerySection from '../Components/ImageGallerySection'
 import { repairReviews } from '../DataObjects/reviewsData'
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../helpers/useImageCDN'
 import { Image } from 'cloudinary-react'
@@ -19,7 +18,6 @@ const Repairs = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [heroImage, setHeroImage] = useState([])
 
-
   const vendors = [
     { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
     { logo: gafLogo, altText: 'GAF Roofing Shingles and Materials Logo', styleClasses: 'vendor__gaf' },
@@ -27,7 +25,7 @@ const Repairs = () => {
   ]
 
   useImagesCDN(setImageGalleryImages, 'group-2')
-  useImagesCDNSingleStockArt(setHeroImage,'repairs')
+  useImagesCDNSingleStockArt(setHeroImage, 'repairs')
 
   return (
     <>
@@ -40,7 +38,8 @@ const Repairs = () => {
                    styleClasses='color-primary body-section--mobile-display'
                    pageHeader='Repairs'
                    linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>}
+        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                             publicId={heroImage.public_id}/>}
         <div className='padding-x-standard'>
           <p>
             Sometimes all it takes to transform your home is a few minor fixes.

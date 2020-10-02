@@ -90,6 +90,10 @@
   }
 }
 
+.contact-form__success-modal-ul > li:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
 .contact-form__success-modal--padding-bottom-50 {
   padding-bottom: 3.125rem;
 }
@@ -120,10 +124,6 @@
   @include lg {
     width: 8.26rem;
   }
-}
-
-.contact-form__success-modal-ul > li:not(:last-child) {
-  margin-bottom: 1.875rem;
 }
 
 .contact-form__phone-link {
