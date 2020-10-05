@@ -25,11 +25,10 @@ const OurWork = () => {
       <BodyHeader pageHeader='Our Work' linkText={routesData.contactUs.routeName} heroImageName='our-work'
                   linkRoute={routesData.contactUs.routeTo}>
         <p>
-          Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful homes
-          and guarantee well-built projects that ensure customer satisfaction.
+          Third Generation Construction uses affordable, quality products to convert mundane spaces into beautiful homes and guarantee well-built projects that ensure customer satisfaction.
         </p>
         <p className='p--top-spacing'>
-          View our gallery to see the beautiful results of our work and dramatic before-and-after transformations.
+          View our gallery to see the beautiful results of our work and dramatic transformations.
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>

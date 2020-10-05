@@ -42,9 +42,7 @@ const Contact = () => {
       <div
         className='padding-x-standard p--margin-bottom-standard body-section--width-965 color-primary align-text--center'>
         <p>
-          Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on
-          the
-          quality of work as well as our commitment to outstanding results.
+          Third Generation Construction is licensed, bonded, and insured. Our team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
       </div>
       <BodySection styleClasses='color-primary desktop--padding-top-0'>

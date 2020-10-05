@@ -62,8 +62,7 @@ const EmergencyService = () => {
       <BodySection styleClasses='desktop--padding-top-0 mobile--padding-top-0'>
         <p
           className='padding-x-standard align-text--center color-primary body-section--width-965 desktop__p--margin-bottom-80 desktop--margin-top-0'>
-          Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on the
-          quality of work as well as our commitment to outstanding results.
+          Third Generation Construction is licensed, bonded, and insured. Our team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
         <AccreditedSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
                                 accreditationSites={accreditationSites}/>

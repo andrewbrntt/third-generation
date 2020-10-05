@@ -26,8 +26,8 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
 
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
-             className='body-header-container body-header__background-hero-img--overflow'>
-        <Image  alt='' className='body-header__background-hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>
+             className='body-header-container'>
+        <Image alt='' className='body-header__background-hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME} publicId={heroImage.public_id}/>
       {heroImage && <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute} linkText={linkText}
                         pageHeader={pageHeader}>
         {children}

@@ -8,6 +8,11 @@
 
 .body-header-container {
   position: relative;
+
+  @include lg {
+    width: 100%;
+    max-width: 75rem;
+  }
 }
 
 .body-header__background-hero-img {
@@ -15,7 +20,6 @@
   height: 100%;
 
   @include lg {
-    width: auto;
     height: 46.875rem;
   }
 }

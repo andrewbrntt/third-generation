@@ -30,7 +30,7 @@ const Siding = () => {
         {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
                              publicId={heroImage.public_id}/>}
         <p className='padding-x-standard'>
-          Durable siding and energy-efficient doors and windows are all part of what makes your home beautiful.
+          Durable siding, energy-efficient doors, and windows are all part of what makes your home beautiful.
         </p>
         <p className='p--top-spacing padding-x-standard'>
           Third Generation Construction is here to help increase your curb appeal and secure your home.
@@ -43,13 +43,12 @@ const Siding = () => {
                                 heroImage={heroImage}>
         <div className='desktop-header--width-492 desktop__p--margin-bottom-50'>
           <p className='desktop--margin-0'>
-            Durable siding and energy-efficient doors and windows are all part of what
-            makes your home beautiful.</p>
+            Durable siding, energy-efficient doors, and windows are all part of what makes your home beautiful.</p>
           <p className='p--top-spacing'>
             Third Generation Construction is here to help increase your curb appeal and secure your home.
           </p>
           <p className='p--top-spacing'>
-            Our team are well-trained to handle fiber, vinyl, steel, and cement siding.
+            Our team is well-trained to handle fiber, vinyl, steel, and cement siding.
           </p>
         </div>
       </DesktopBodySectionHeader>
@@ -69,6 +68,9 @@ const Siding = () => {
             Ensure your house is protected and economically efficient by scheduling a free inspection and consultation
             with our team today.
           </p>
+          <p className='p--top-spacing body-section--width-full'>
+            Make your home’s curb appeal stand out and increase its value.
+          </p>
         </div>
         <div className='p--margin-bottom-standard'>
           <SidingInfographic/>
@@ -78,12 +80,10 @@ const Siding = () => {
                    sectionTitle='Outlast the Elements' linkRoute='/contact' linkText='Contact Us'>
         <div className='p--margin-bottom-standard'>
           <p>
-            Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County
-            homes.
+            Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County homes.
           </p>
           <p className='p--top-spacing'>
-            Replacing your home’s weather-worn or damaged siding can increase your home’s value, curb appeal, and
-            safety.
+            Replacing your home’s weather-worn or damaged siding can increase its value, curb appeal, and safety.
           </p>
         </div>
       </BodySection>
@@ -103,7 +103,7 @@ const Siding = () => {
       </BodySection>
       <BodySection styleClasses='color-primary padding-x-standard body-section--width-965' sectionTitle='Our Materials'>
         <p>
-          We're proud to use trusted quality materials that give you peace of mind.
+          We use trusted quality materials to give you peace of mind.
         </p>
         <p className='p--top-spacing p--bottom-margin-40 p--bottom-margin-100'>
           Third Generation Construction uses dependable and affordable products to ensure your project is secure,

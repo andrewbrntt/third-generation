@@ -73,7 +73,7 @@ const Roofing = () => {
       <BodySection sectionTitle='Materials' styleClasses='color-primary padding-x-standard body-section--width-965'>
         <div className='p--margin-bottom-standard padding-x-standard'>
           <p>
-            We're proud to use trusted quality materials that give you peace of mind.
+            We use trusted quality materials to give you peace of mind.
           </p>
           <p className='p--top-spacing'>
             Third Generation Construction uses dependable and affordable products to ensure your project is secure,
@@ -96,8 +96,7 @@ const Roofing = () => {
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965'>
         <p className='desktop--margin-0 padding-x-standard'>
-          Third Generation Construction is licensed, bonded, and insured, and our team of experts prides itself on the
-          quality of work as well as our commitment to outstanding results.
+          Third Generation Construction is licensed, bonded, and insured. Our team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
       </BodySection>
       <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>

@@ -68,7 +68,7 @@ const Repairs = () => {
       </DesktopBodySectionHeader>
       <BodySection linkRoute='/contact'
                    styleClasses='body-section__has-line background-color-primary color-white body-section--width-full'
-                   sectionTitle='Free Consultation'
+                   sectionTitle='Free consultation. Free estimate.'
                    iconName={Tools} linkText='Contact Us'>
         <div className='p--margin-bottom-standard'>
           <p>
