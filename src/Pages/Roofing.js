@@ -96,7 +96,7 @@ const Roofing = () => {
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965'>
         <p className='desktop--margin-0 padding-x-standard'>
-          Third Generation Construction is licensed, bonded, and insured. Our team prides itself on quality and is committed to guaranteeing outstanding results.
+          Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span>. Our team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
       </BodySection>
       <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>

@@ -68,9 +68,6 @@ const Siding = () => {
             Ensure your house is protected and economically efficient by scheduling a free inspection and consultation
             with our team today.
           </p>
-          <p className='p--top-spacing body-section--width-full'>
-            Make your home’s curb appeal stand out and increase its value.
-          </p>
         </div>
         <div className='p--margin-bottom-standard'>
           <SidingInfographic/>

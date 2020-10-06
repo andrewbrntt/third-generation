@@ -16,7 +16,7 @@ const SidingInfographic = () => {
         <div>
           <h3 className='siding-infographic__section-title-tablet'>Beautify Exterior</h3>
           <p className='siding-infographic__section-text'>
-            Make your homes curb appeal stand out and increase its value.
+            Make your home’s curb appeal stand out and increase its value.
           </p>
         </div>
       </div>

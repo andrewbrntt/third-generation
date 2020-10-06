@@ -93,7 +93,7 @@ const Home = () => {
             Whatever your home needs. Third Generation Construction can help.
           </p>
           <p className='p--top-spacing'>
-            We offer quality home remodeling and roofing services from a team with more than 15 years of experience.
+            We offer quality home remodeling and roofing services from a team with more than 30 years of experience.
           </p>
         </div>
       </BodySection>

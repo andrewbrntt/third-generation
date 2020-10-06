@@ -73,7 +73,7 @@ const About = () => {
             Our work begins and ends with customer satisfaction as our services are customizable to each project.
           </p>
           <p className='p--top-spacing'>
-            Third Generation Construction is licensed, bonded, and insured and our team of experts pride themselves on
+            Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span> and our team of experts pride themselves on
             the
             quality of work as well as our commitment to outstanding results.
           </p>
