@@ -16,7 +16,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
   }
 }
@@ -24,7 +24,6 @@
 .vendor-section__badge-container {
   @include lg {
     margin-top: 50px;
-    margin-right: 51px;
   }
 }
 

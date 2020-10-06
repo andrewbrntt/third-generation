@@ -8,7 +8,8 @@ import {
   faStar as faStarSolid,
   faStarHalfAlt,
   faTimes,
-  faTools
+  faTools,
+  faPhone
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faArrowCircleLeft,
@@ -59,7 +60,8 @@ const fontAwesomeLibrary = () => {
     faCaretDown,
     faCaretRight,
     faTimesCircle,
-    faSpinnerThird
+    faSpinnerThird,
+    faPhone
   )
 }
 

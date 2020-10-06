@@ -4,6 +4,7 @@ import HeroImageOverlay from './HeroImageOverlay'
 import { Image } from 'cloudinary-react'
 import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 
+// TODO: This seems to be re-rendering like 6 times on load and I need to figure out why
 const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }) => {
 
   const [heroImage, setHeroImage] = useState({})

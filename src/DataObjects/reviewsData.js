@@ -6,14 +6,12 @@ const reviewLocations = {
   grafton: 'Grafton, OH'
 }
 
-
-
 export const allReviews = [
   {
-    name: 'Nathaniel P.',
+    name: 'Jen L.',
     score: 5,
     location: reviewLocations.elyria,
-    comment: 'They where very Professional cleaned up the yard when finished',
+    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
     name: 'Sandra P.',
@@ -63,19 +61,13 @@ export const allReviews = [
   {
     name: 'William T.',
     score: 5,
-    location: 'N/A',
+    location: reviewLocations.grafton,
     comment: 'It was excellent. Their customer service and attention to detail were great. They did a lot of things that went above and beyond.',
   }
 ]
 
 export const roofReviews = [
   {
-    name: 'Nathaniel P.',
-    score: 5,
-    location: reviewLocations.elyria,
-    comment: 'They where very Professional cleaned up the yard when finished',
-  },
-  {
     name: 'Sandra P.',
     score: 5,
     location: reviewLocations.elyria,
@@ -92,19 +84,13 @@ export const roofReviews = [
   {
     name: 'William T.',
     score: 5,
-    location: 'N/A',
+    location: reviewLocations.grafton,
     comment: 'It was excellent. Their customer service and attention to detail were great. They did a lot of things that went above and beyond.',
   }
 ]
 
 export const repairReviews = [
   {
-    name: 'Nathaniel P.',
-    score: 5,
-    location: reviewLocations.elyria,
-    comment: 'They where very Professional cleaned up the yard when finished',
-  },
-  {
     name: 'Sandra P.',
     score: 5,
     location: reviewLocations.elyria,
@@ -121,7 +107,7 @@ export const repairReviews = [
   {
     name: 'William T.',
     score: 5,
-    location: 'N/A',
+    location: reviewLocations.grafton,
     comment: 'It was excellent. Their customer service and attention to detail were great. They did a lot of things that went above and beyond.',
   }
 ]
@@ -130,17 +116,22 @@ export const sidingReviews = []
 
 export const remodelReviews = [
   {
+    name: 'Jen L.',
+    score: 5,
+    location: reviewLocations.elyria,
+    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
+  },
+  {
     name: 'Nancy L.',
     score: 5,
     location: reviewLocations.elyria,
     comment: 'I received 3 different bids for job I needed to be completed. Normally you go with your gut instinct to go for the contractor with the best bid - well my gut instinct said Richard was the guy and he also had the best price! He was honest, left no footprint that he was even there and he completed the job perfectly and exactly how he quoted the job!',
   },
-
   // Need Real name and location
   {
     name: 'David R.',
     score: 5,
-    location: 'N/A',
+    location: reviewLocations.grafton,
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   // Need Real name and location
@@ -153,6 +144,12 @@ export const remodelReviews = [
 ]
 
 export const randomReviews = [
+  {
+    name: 'Jen L.',
+    score: 5,
+    location: reviewLocations.elyria,
+    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
+  },
   {
   name: 'Erin J.',
   score: 5,
@@ -169,7 +166,7 @@ export const randomReviews = [
     // Need Real name and location
     name: 'David R.',
     score: 5,
-    location: 'N/A',
+    location: reviewLocations.grafton,
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {

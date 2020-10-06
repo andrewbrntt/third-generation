@@ -7,7 +7,6 @@
 //Misc
 
 .social-media-section__container {
-  height: 10rem;
   padding: 0.875rem 0.5rem;
   border: 0.0625rem solid $white;
 
@@ -37,9 +36,23 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  @include lg {
+    width: 25rem;
+  }
 }
 
 .social-media-section__icon {
-  width: 150px;
+  width: 3.125rem;
   height: 100%;
+  margin-top: 1.25rem;
+
+  @include md {
+    width: 5rem;
+  }
+
+  @include lg {
+    width: 3.125rem;
+    margin-top: 0;
+  }
 }

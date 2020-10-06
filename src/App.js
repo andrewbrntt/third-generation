@@ -25,7 +25,7 @@ const Error = lazy(() => import('./Pages/Error'))
 fontAwesomeLibrary()
 
 function App () {
-  const loadingIcon = <FontAwesomeIcon className='modal__times-icon' icon={['far', 'spinner-third']} spin='spin'/>
+  const loadingIcon = <div className='app-load-spinner'><FontAwesomeIcon className='modal__times-icon color-primary' icon={['far', 'spinner-third']} spin={true}/></div>
   
   return (
     <>
@@ -43,7 +43,7 @@ function App () {
         <Suspense fallback={loadingIcon}>
           <Switch>
             <Route exact path='/'>
-              <Home/>
+              <Home />
             </Route>
             <Route path='/about'>
               <About/>

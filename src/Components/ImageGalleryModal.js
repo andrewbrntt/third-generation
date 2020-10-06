@@ -26,6 +26,7 @@ const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImag
       setCurrentImageIndex(currentImageIndex + 1)
     }
   }
+
   const isFirstImage = useCallback(() => {
     return currentImageIndex === 0 && gallerySectionImages.length > 1
   }, [gallerySectionImages.length, currentImageIndex])

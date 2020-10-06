@@ -80,6 +80,7 @@ const Repairs = () => {
           <p className='p--top-spacing padding-x-standard body-section--width-965'>
             Schedule a free consultation and let us help you turn your current house into the home you're dreaming of.
           </p>
+
         </div>
       </BodySection>
       <BodySection linkRoute='/contact' sectionTitle='24-Hour Emergency Service' linkText='Contact Us'

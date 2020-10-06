@@ -1,0 +1,77 @@
+/** Order of css blocks **/
+//Positioning
+//Box Model
+//Typography
+//Visual
+//Animation
+//Misc
+
+.remodel__services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 35px 25px;
+  background-color: $primary;
+  border: 1px solid $white;
+}
+
+.remodel__services-hr {
+  width: 90%;
+
+  @include lg {
+    width: 73%;
+  }
+}
+
+.remodel__services-list {
+  margin-left: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.remodel__services-list-item {
+  position: relative;
+  width: 100px;
+  margin-top: 20px;
+  padding-left: 40px;
+  font-size: 20px;
+
+  @include md {
+    padding-left: 60px;
+    font-size: 30px;
+  }
+}
+
+.remodel__services-list-item::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../assets/icon-tools.svg');
+  background-position: center;
+  background-size: cover;
+  transform: translateY(-50%);
+  content: '';
+
+  @include md {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.remodel__services-flooring-sub-list {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 16px;
+  list-style-type: '-';
+
+  @include md {
+    margin-left: 50px;
+    font-size: 30px;
+  }
+}
+
+.remodel__services-flooring-sub-list-item {
+  padding-left: 5px;
+}

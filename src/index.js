@@ -3,16 +3,18 @@ import 'react-app-polyfill/stable'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import {HelmetProvider} from 'react-helmet-async'
-import 'normalize.css';
+import { HelmetProvider } from 'react-helmet-async'
+import 'normalize.css'
 import './Styles/main.scss'
 import App from './App'
+
+const isLoading = { isLoading: false }
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter forceRefresh={true}>
       <HelmetProvider>
-      <App/>
+          <App/>
       </HelmetProvider>
     </BrowserRouter>
   </React.StrictMode>,

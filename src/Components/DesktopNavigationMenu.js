@@ -36,6 +36,15 @@ const DesktopNavigationMenu = () => {
   return (
     <nav className='desktop-nav__container'>
       <ul className='desktop-nav__ul action-text color-white'>
+        <li>
+          <NavLink
+            className=''
+            to={routesData.home.routeTo}
+          >
+            {routesData.home.routeName}
+          </NavLink>
+        </li>
+        <li aria-hidden='true'>|</li>
         <li key={shortId.generate()}>
           <NavLink
             className=''

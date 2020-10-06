@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import React, { useLayoutEffect, useMemo, useRef, useState } from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
 import { Image } from 'cloudinary-react'
 import ImageGalleryModal from './ImageGalleryModal'
-import {unstable_trace as trace} from 'scheduler/tracing'
+
 const ImageGallerySection = ({ title, images, isSection }) => {
 
   const ImageGallerySectionContainer = useRef(null)
@@ -14,6 +14,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   const [galleryThumbnailImages, setGalleryThumbnailImages] = useState(null)
   const [galleryModalImages, setGalleryModalImages] = useState([])
   const [galleryImagesWidth, setGalleryImagesWidth] = useState([])
+
 
   const derivedPublicId = (imageSrc) => {
     return imageSrc.substring(imageSrc.indexOf('/image-gallery') + 1)
@@ -41,11 +42,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     }
 
     const selectedImageIndex = galleryModalImages.findIndex(image => image.public_id.includes(imageName))
-
-    trace('modal image clicked', performance.now(), () => {
-      setSelectedImageIndex(selectedImageIndex)
-    })
-
+    setSelectedImageIndex(selectedImageIndex)
     setIsModalOpen(true)
   }
 
@@ -74,7 +71,7 @@ const ImageGallerySection = ({ title, images, isSection }) => {
   }
 
   const createGallerySectionItem = (imageObject, index) => {
-    console.log(imageObject)
+    // TODO: I need to figure out why this is rendering twice
     return (
       <a
         className={`${index % 3 === 1 ? 'image-gallery-section__img-link-margin-x' : ''} image-gallery-section__img-link`}
@@ -106,11 +103,6 @@ const ImageGallerySection = ({ title, images, isSection }) => {
       setGalleryModalImages(sortedModalImages)
     }
   }
-
-  useEffect(() => {
-    console.log('render/mount')
-    return () => console.log('unmount')
-  }, [])
 
   useLayoutEffect(() => {
     if (images) {

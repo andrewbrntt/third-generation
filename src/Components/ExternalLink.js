@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ExternalLink = ({ children, routeTo }) => {
+const ExternalLink = ({ children, routeTo, styleClasses }) => {
   return (
-    <a rel='noopener noreferrer' target='_blank' href={routeTo}>
+    <a className={styleClasses} rel='noopener noreferrer' target='_blank' href={routeTo}>
       {children}
     </a>
   )
