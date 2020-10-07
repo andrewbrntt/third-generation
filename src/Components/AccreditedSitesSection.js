@@ -45,7 +45,7 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
   }
 
   return (
-    <LazyLoad once>
+    <LazyLoad offset={400} once>
     <div
       className={`accreditation-sites-section__container ${containerStyleClasses ? containerStyleClasses : ''}`}>
       {

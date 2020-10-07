@@ -30,8 +30,7 @@ const ContactFormSuccessModal = ({ isSuccessModalOpen, handleClose }) => {
       </div>
       <BodySection sectionTitle='Thank You!'>
         <p className='padding-x-standard modal__subtext'>
-          We have received your message.
-          <span className='p--top-spacing modal--display-block'>We will contact you within 1-3 business days. </span>
+          We have received your message and will be contacting you shortly.
         </p>
         <div className='contact-form__success-modal--padding-bottom-50'>
           <FontAwesomeIcon className='contact-form__success-modal-icon' icon={['far', 'check-circle']}/>

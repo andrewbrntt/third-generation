@@ -32,3 +32,9 @@
 .link-card__title {
   width: 100%;
 }
+
+.link-card__container:focus,
+.link-card__container:hover {
+  box-shadow: 0 1px 12px -1px rgba(89, 89, 89, 0.75);
+  transform: scale(1.01);
+}

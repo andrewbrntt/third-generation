@@ -64,7 +64,7 @@ const Remodel = () => {
                    sectionTitle='Free Consultation. Free Estimate.'
                    iconName={Tools} linkText='Contact Us'>
         <div className='p--margin-bottom-standard'>
-          <p className='p--top-spacing p--bottom-margin-40 body-section--width-965'>
+          <p className='p--top-spacing p--bottom-margin-40'>
             Let us help you turn your house into the home you're dreaming of.
           </p>
           <p>

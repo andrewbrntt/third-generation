@@ -66,7 +66,7 @@ export const formFieldsData = { fullName, email, phone, message, services }
 
 export const FORM_CONSTANTS = {
   POST: 'POST',
-  SUBMIT_URL: 'https://formspree.io/xoqpabzv',
+  SUBMIT_URL: 'https://formspree.io/f/mleoebak',
   SUCCESS: 'SUCCESS',
   ERROR: 'ERROR',
   ACCEPT: 'Accept',

@@ -17,6 +17,7 @@ const DesktopNavigationMenu = () => {
     e.preventDefault()
 
     if (e.keyCode === 13) {
+      servicesFirstSubMenuItem.current.focus()
       setServicesSubMenuIsOpen(!servicesSubMenuIsOpen)
     }
   }
@@ -55,8 +56,8 @@ const DesktopNavigationMenu = () => {
         </li>
         <li aria-hidden='true'>|</li>
         <li onKeyUp={handleSubmenuToggle}
-            className='desktop-nav__services-li' key={shortId.generate()}>
-          <a href='#'>
+            className='desktop-nav__services-li'>
+          <a className='desktop-nav__services-drop-down' href='#'>
             Services
             <FontAwesomeIcon
               className='color-white desktop-nav__services-caret-down'
@@ -68,73 +69,48 @@ const DesktopNavigationMenu = () => {
             <li>
               <NavLink
                 ref={servicesFirstSubMenuItem}
-                className=''
                 to={routesData.remodel.routeTo}
               >
                 {routesData.remodel.routeName}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                className=''
-                to={routesData.roofing.routeTo}
-              >
+              <NavLink to={routesData.roofing.routeTo}>
                 {routesData.roofing.routeName}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                className=''
-                to={routesData.siding.routeTo}
-              >
+              <NavLink to={routesData.siding.routeTo}>
                 {routesData.siding.routeName}
               </NavLink>
             </li>
             <li>
-              <NavLink
-                ref={servicesLastSubMenuItem}
-                className=''
-                to={routesData.repairs.routeTo}
-              >
+              <NavLink ref={servicesLastSubMenuItem} to={routesData.repairs.routeTo}>
                 {routesData.repairs.routeName}
               </NavLink>
             </li>
             <li onBlur={handleSubmenuClose}>
-              <NavLink
-                ref={servicesLastSubMenuItem}
-                className=''
-                to={routesData.emergency.routeTo}
-              >
+              <NavLink ref={servicesLastSubMenuItem} to={routesData.emergency.routeTo}>
                 {routesData.emergency.routeName}
               </NavLink>
             </li>
           </ul>
         </li>
         <li aria-hidden='true'>|</li>
-        <li key={shortId.generate()}>
-          <NavLink
-            ref={ourWorkMenuItem}
-            className=''
-            to={routesData.ourWork.routeTo}
-          >
+        <li>
+          <NavLink ref={ourWorkMenuItem} to={routesData.ourWork.routeTo}>
             {routesData.ourWork.routeName}
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
-        <li key={shortId.generate()}>
-          <NavLink
-            className=''
-            to={routesData.reviews.routeTo}
-          >
+        <li>
+          <NavLink to={routesData.reviews.routeTo}>
             {routesData.reviews.routeName}
           </NavLink>
         </li>
         <li aria-hidden='true'>|</li>
-        <li key={shortId.generate()}>
-          <NavLink
-            className=''
-            to={routesData.contactUs.routeTo}
-          >
+        <li>
+          <NavLink to={routesData.contactUs.routeTo}>
             {routesData.contactUs.routeName}
           </NavLink>
         </li>

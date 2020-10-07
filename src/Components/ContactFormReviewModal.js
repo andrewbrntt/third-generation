@@ -28,7 +28,6 @@ const ContactFormReviewModal = ({ formInputData, isReviewModalOpen, handleSubmit
             <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']}/>
           </button>
         </div>
-
         <BodySection sectionTitle='Verify Info'>
           {!isSendingData ?
             (<>
@@ -47,10 +46,10 @@ const ContactFormReviewModal = ({ formInputData, isReviewModalOpen, handleSubmit
                 <button className='contact-form__btn' onClick={handleSubmit}>Submit</button>
               </section>
             </>) :
-            (<div className='contact-form__sending'>
+            (<div className='contact-form__sending body-section--width-965'>
               <p className='padding-x-standard'>We are sending your message</p>
               <div className='contact-form__spinner-container padding-x-standard'>
-                <FontAwesomeIcon className='modal__times-icon' icon={['far', 'spinner-third']} spin='spin'/>
+                <FontAwesomeIcon className='modal__times-icon' icon={['far', 'spinner-third']} spin={true}/>
               </div>
             </div>)
           }

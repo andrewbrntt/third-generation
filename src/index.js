@@ -8,8 +8,6 @@ import 'normalize.css'
 import './Styles/main.scss'
 import App from './App'
 
-const isLoading = { isLoading: false }
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter forceRefresh={true}>

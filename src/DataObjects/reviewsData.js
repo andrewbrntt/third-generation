@@ -3,14 +3,16 @@ const reviewLocations = {
   vermilion: 'Vermilion, OH',
   avon: 'Avon, OH',
   lorain: 'Lorain, OH',
-  grafton: 'Grafton, OH'
+  grafton: 'Grafton, OH',
+  bayVillage: 'Bay Village, OH',
+  westlake: 'Westlake, OH'
 }
 
 export const allReviews = [
   {
     name: 'Jen L.',
     score: 5,
-    location: reviewLocations.elyria,
+    location: reviewLocations.bayVillage,
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
@@ -22,27 +24,20 @@ export const allReviews = [
   {
     name: 'Liana D.',
     score: 5,
-    location: reviewLocations.grafton,
+    location: reviewLocations.westlake,
     comment: 'Richard and his company were amazing from start to finish. Needed some repair work done on my roof, they came out quickly and provided a fair and reasonable quote. Work was done perfectly!',
   },
   {
     name: 'Erin J.',
     score: 5,
     location: reviewLocations.avon,
-    comment: 'Richard is prompt, helpful and experienced. Coming from a restoration company, he is a great a partner with us in the trades industry and keeps his customers happy!  Also a great value for the work.',
+    comment: 'Richard is prompt, helpful and experienced. Coming from a restoration company, he is a great a partner with us in the trades industry and keeps his customers happy! Also a great value for the work.',
   },
   {
     name: 'Nancy L.',
     score: 5,
     location: reviewLocations.elyria,
     comment: 'I received 3 different bids for job I needed to be completed. Normally you go with your gut instinct to go for the contractor with the best bid - well my gut instinct said Richard was the guy and he also had the best price! He was honest, left no footprint that he was even there and he completed the job perfectly and exactly how he quoted the job!',
-  },
-  {
-    // Need Real name and location
-    name: 'David R.',
-    score: 5,
-    location: reviewLocations.vermilion,
-    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
     name: 'Rick S.',
@@ -118,7 +113,7 @@ export const remodelReviews = [
   {
     name: 'Jen L.',
     score: 5,
-    location: reviewLocations.elyria,
+    location: reviewLocations.bayVillage,
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
@@ -126,13 +121,6 @@ export const remodelReviews = [
     score: 5,
     location: reviewLocations.elyria,
     comment: 'I received 3 different bids for job I needed to be completed. Normally you go with your gut instinct to go for the contractor with the best bid - well my gut instinct said Richard was the guy and he also had the best price! He was honest, left no footprint that he was even there and he completed the job perfectly and exactly how he quoted the job!',
-  },
-  // Need Real name and location
-  {
-    name: 'David R.',
-    score: 5,
-    location: reviewLocations.grafton,
-    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   // Need Real name and location
   {
@@ -147,7 +135,7 @@ export const randomReviews = [
   {
     name: 'Jen L.',
     score: 5,
-    location: reviewLocations.elyria,
+    location: reviewLocations.bayVillage,
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
@@ -161,13 +149,6 @@ export const randomReviews = [
     score: 5,
     location: reviewLocations.elyria,
     comment: 'I received 3 different bids for job I needed to be completed. Normally you go with your gut instinct to go for the contractor with the best bid - well my gut instinct said Richard was the guy and he also had the best price! He was honest, left no footprint that he was even there and he completed the job perfectly and exactly how he quoted the job!',
-  },
-  {
-    // Need Real name and location
-    name: 'David R.',
-    score: 5,
-    location: reviewLocations.grafton,
-    comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
     name: 'Rick S.',
