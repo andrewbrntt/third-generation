@@ -14,7 +14,7 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
 
   const [elementHeight, setElementHeight] = useState(0)
 
-  useImagesCDNSingleStockArt(setHeroImage,heroImageName)
+  useImagesCDNSingleStockArt(setHeroImage, heroImageName, true)
 
 
   useLayoutEffect(() => {

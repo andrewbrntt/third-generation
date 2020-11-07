@@ -12,11 +12,11 @@ import { formFieldsData } from '../DataObjects/contactFormData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
-import ImageGallerySection from '../Components/ImageGallerySection'
+import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { Image } from 'cloudinary-react'
 
 const Home = () => {
-  const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [aboutImage, setAboutImage] = useState({})
   const [remodelCardImage, setRemodelCardImage] = useState({})
   const [roofingCardImage, setRoofingCardImage] = useState({})

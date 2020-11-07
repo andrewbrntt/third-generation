@@ -52,8 +52,8 @@ export function useImagesCDNAllImages (setState) {
   }, [setState, windowSize])
 }
 
-export function useImagesCDNSingleStockArt (setState, suffix) {
-  const windowSize = getWindowWidth()
+export function useImagesCDNSingleStockArt (setState, suffix, pageHero = false) {
+  const windowSize = window.innerWidth >= 1200 && pageHero ? 'desktop-large' : getWindowWidth()
 
   let url = `https://res.cloudinary.com/${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
 

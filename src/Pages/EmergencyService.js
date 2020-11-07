@@ -8,7 +8,7 @@ import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
-import ImageGallerySection from '../Components/ImageGallerySection'
+import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 
 import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
 import { Image } from 'cloudinary-react'

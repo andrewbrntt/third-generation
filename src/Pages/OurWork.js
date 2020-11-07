@@ -5,7 +5,7 @@ import BodySection from '../Components/BodySection'
 import BodyHeader from '../Components/BodyHeader'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import ReviewList from '../Components/ReviewList'
-import ImageGallery from '../Components/ImageGallery'
+import ImageGallery from '../Components/ImageGallery/ImageGallery'
 import AccreditedSitesSection from '../Components/AccreditedSitesSection'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
@@ -32,9 +32,7 @@ const OurWork = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-
         <ImageGallery gallerySections={imageGallerySections}/>
-
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews'
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white body-section--width-full'
