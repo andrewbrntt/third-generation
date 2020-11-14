@@ -1,17 +1,17 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import LazyLoad from 'react-lazyload'
+import React, { useLayoutEffect, useMemo, useRef, useState } from 'react'
 import shortId from 'shortid'
-import derivedPublicId from './derivePublicId'
-import getImageNameFromPublicId from './getImageNameFromPublicId'
-import ImageGalleryModal from './ImageGalleryModal'
-import createModalImages from './createModalImages'
-import createThumbnails from './createThumbnails'
-import sortImageArray from  './sortImageArray'
+
+import derivedPublicId from '../../Helpers/ImageCDN/derivePublicId'
+import getImageNameFromPublicId from '../../Helpers/ImageCDN/getImageNameFromPublicId'
 import ImageGallerySectionHero from './ImageGallerySectionHero'
-import GallerySectionItem from './GallerySectionItem'
+import createPhaseThumbnails from './createPhaseThumbnails'
+import GLOBAL_DEFS from '../../Helpers/GLOBAL_DEFS'
+import createThumbnails from '../../Helpers/ImageCDN/createThumbnails'
+import createHeroImage from './createHeroImage'
+import createModalImages from '../../Helpers/ImageCDN/createModalImages'
+import ImageGallerySingleImageGroup from './ImageGallerySingleImageGroup'
 
-
-const ImageGallerySection = ({ title, images, isSection }) => {
+const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
   const ImageGallerySectionContainer = useRef(null)
 
@@ -29,36 +29,37 @@ const ImageGallerySection = ({ title, images, isSection }) => {
     const currentElementPublicId = derivedPublicId(element.src)
     let imageName = ''
 
-    if (currentElementPublicId.includes('hero')) {
+    if (currentElementPublicId.includes(GLOBAL_DEFS.HERO)) {
       imageName = getImageNameFromPublicId(currentElementPublicId, false)
     } else {
       imageName = getImageNameFromPublicId(currentElementPublicId, true)
     }
 
-    const selectedImageIndex = galleryModalImages.findIndex(image => image.public_id.includes(imageName))
+    const selectedImageIndex = galleryModalImages.findIndex(image => image.src.includes(imageName))
     setSelectedImageIndex(selectedImageIndex)
     setIsModalOpen(true)
   }
 
   useLayoutEffect(() => {
-    if (images) {
-      //  Find Hero Image from response
-      let hero = images.find(image => image.public_id.includes('hero'))
-
+    if (sectionImages.images && sectionImages.images.length > 0) {
+      const hero = createHeroImage(sectionImages.images)
       // Check to see if it is different
       if (hero && JSON.stringify(hero) !== JSON.stringify(heroImage)) {
         setHeroImage(hero)
       }
 
-      // Create the thumbnails for the section
-      const thumbnails = createThumbnails(images, sortImageArray)
+      let imageThumbnails, modalImages = null
 
-      // Create the images for the modal
-      const modalImages = createModalImages(images, hero, sortImageArray)
+      if (sectionImages.phases) {
+        imageThumbnails = createPhaseThumbnails(sectionImages.images)
+      } else {
+        imageThumbnails = createThumbnails(sectionImages.images)
 
+      }
+      modalImages = createModalImages(sectionImages.images, hero)
       // Check to see if the thumbnails have changed
-      if (JSON.stringify(thumbnails) !== JSON.stringify(galleryThumbnailImages)) {
-        setGalleryThumbnailImages(thumbnails)
+      if (JSON.stringify(imageThumbnails) !== JSON.stringify(galleryThumbnailImages)) {
+        setGalleryThumbnailImages(imageThumbnails)
       }
 
       // Check to see if the modal images have changed
@@ -66,39 +67,46 @@ const ImageGallerySection = ({ title, images, isSection }) => {
         setGalleryModalImages(modalImages)
       }
 
-      // Sets image sizes
-      if (ImageGallerySectionContainer.current && galleryImagesWidth !== ImageGallerySectionContainer.current.offsetWidth) {
-        setGalleryImagesWidth(ImageGallerySectionContainer.current.offsetWidth)
-      }
     }
-  }, [images])
+  }, [sectionImages])
 
   const GallerySection = useMemo(() => {
     return (
-      <LazyLoad>
-        <div className='image-gallery-section__container'>
-          {!isSection && <span className='image-gallery-section__title'>{title}</span>}
-          {heroImage && <ImageGallerySectionHero onImageClick={onImageClick} heroImage={heroImage} />}
-          <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-            {galleryThumbnailImages && galleryThumbnailImages.map((image, index) => <GallerySectionItem key={shortId.generate()} onImageClick={onImageClick} imageObject={image} index={index} />)}
-          </div>
+      // <LazyLoad>
+      <div className='image-gallery-section__container'>
+        {!isSection && <span className='image-gallery-section__title'>{title}</span>}
+        {heroImage && <ImageGallerySectionHero onImageClick={onImageClick} heroImage={heroImage}/>}
+        <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
+          <ImageGallerySingleImageGroup onImageClick={onImageClick} groupImages={galleryThumbnailImages} />
         </div>
-      </LazyLoad>
+      </div>
+      // </LazyLoad>
     )
   }, [galleryThumbnailImages, heroImage])
 
   return (
     <>
-      {isModalOpen &&
-      <ImageGalleryModal
-        isModalOpen={isModalOpen}
-        handleModalClose={setIsModalOpen}
-        gallerySectionImages={galleryModalImages}
-        initialImageIndex={selectedImageIndex}
-      />}
       {GallerySection}
     </>
   )
 }
 
 export default ImageGallerySection
+
+/*
+* TODO:
+*   1. Get image object
+*   2. Check if the image has phases
+*   3. If no phases:
+*         1. Create Thumbnails
+*         2. Create ModalImages
+*         3. setState Thumbnails if changed
+*         4. setState ModalImages if changed
+*         5. Set Image Sizes
+*   4. If phases:
+*         1. Create Thumbnails
+*         2. Create ModalImages
+*         3. setState Thumbnails if changed
+*         4. setState ModalImages if changed
+*         5. Set Image Sizes
+* */

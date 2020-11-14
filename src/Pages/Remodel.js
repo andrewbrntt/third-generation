@@ -7,7 +7,7 @@ import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 import SuppliersSection from '../Components/SuppliersSection'
 

@@ -7,7 +7,7 @@ import VendorSection from '../Components/VendorSection'
 
 import { vendors } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
-import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Siding = () => {

@@ -11,7 +11,7 @@ import { vendors } from '../Helpers/vendorAssetLibrary'
 
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
-import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Roofing = () => {

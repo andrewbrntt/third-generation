@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Image } from 'cloudinary-react'
+import DynamicImage from './DynamicImage'
 
 const LinkCard = ({ imgSrc, cardTitle, urlPath }) => {
   return (
     <>
       <Link to={`/${urlPath}`} className='link-card__container'>
-        <Image alt='' className='link-card__image' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-               publicId={imgSrc.public_id}/>
+        <DynamicImage styleClasses='link-card__image' imageObject={imgSrc}/>
         <span className='link-card__title'>{cardTitle}</span>
       </Link>
     </>

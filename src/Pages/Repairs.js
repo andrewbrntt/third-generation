@@ -10,7 +10,7 @@ import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { repairReviews } from '../DataObjects/reviewsData'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const Repairs = () => {

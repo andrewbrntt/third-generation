@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDN } from '../Helpers/ImageCDN/useImageCDN'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
 import LinkCard from '../Components/LinkCard'
 import AccreditedSitesSection from '../Components/AccreditedSitesSection'
-import ContactForm from '../Components/ContactForm'
 import ReviewList from '../Components/ReviewList'
-
+import ContactForm from '../Components/ContactForm'
+import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { formFieldsData } from '../DataObjects/contactFormData'
 import { accreditationSites } from '../DataObjects/socialMediaData'
 import { routesData } from '../DataObjects/routes'
 import { randomReviews } from '../DataObjects/reviewsData'
-import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-import { Image } from 'cloudinary-react'
+
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import DynamicImage from '../Components/DynamicImage'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 
 const Home = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [aboutImage, setAboutImage] = useState({})
-  const [remodelCardImage, setRemodelCardImage] = useState({})
-  const [roofingCardImage, setRoofingCardImage] = useState({})
-  const [sidingCardImage, setSidingCardImage] = useState({})
-  const [repairsCardImage, setRepairsCardImage] = useState({})
+  const [aboutImage, setAboutImage] = useState(null)
+  const [remodelCardImage, setRemodelCardImage] = useState(null)
+  const [roofingCardImage, setRoofingCardImage] = useState(null)
+  const [sidingCardImage, setSidingCardImage] = useState(null)
+  const [repairsCardImage, setRepairsCardImage] = useState(null)
 
   const formStyles = {
     formClasses: '',
@@ -31,12 +34,28 @@ const Home = () => {
     requiredTextClasses: 'color-white'
   }
 
-  useImagesCDN(setImageGalleryImages, 'group-1')
-  useImagesCDNSingleStockArt(setAboutImage, 'about-us')
-  useImagesCDNSingleStockArt(setRemodelCardImage, 'remodel-card')
-  useImagesCDNSingleStockArt(setRepairsCardImage, 'repairs-card')
-  useImagesCDNSingleStockArt(setSidingCardImage, 'siding-card')
-  useImagesCDNSingleStockArt(setRoofingCardImage, 'roofing-card')
+  useEffect(() => {
+    // setImageGalleryImages(getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1))
+
+const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
+
+    const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
+    const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
+    const remodelCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REMODEL_CARD)
+    const repairsCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REPAIRS_CARD)
+    const sidingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.SIDING_CARD)
+
+    Promise.all([aboutHero, roofingCard, remodelCard, repairsCard, sidingCard, galleryImageGroup])
+      .then(res => {
+        setAboutImage(res[0])
+        setRoofingCardImage(res[1])
+        setRemodelCardImage(res[2])
+        setRepairsCardImage(res[3])
+        setSidingCardImage(res[4])
+        setImageGalleryImages(res[5])
+      })
+  }, [])
+
 
   return (
     <>
@@ -99,8 +118,7 @@ const Home = () => {
       </BodySection>
       <BodySection linkRoute='/about' linkText='About Us'
                    styleClasses='background-color-primary color-white about-us__body-section' sectionTitle='About Us'>
-        {aboutImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                              publicId={aboutImage.public_id}/>}
+        {aboutImage && <DynamicImage styleClasses='body-section__hero-img' imageObject={aboutImage}/>}
         <div className='p--margin-bottom-standard padding-x-standard'>
           <p>
             Third Generation Construction is proud to be a local, Lorain County company.
@@ -121,7 +139,7 @@ const Home = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection images={imageGalleryImages}/>
+        { imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/> }
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'

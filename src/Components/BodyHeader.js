@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react'
 import useElementDimensions from '../Helpers/useElementDimensions'
 import HeroImageOverlay from './HeroImageOverlay'
 import { Image } from 'cloudinary-react'
-import { useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 
 // TODO: This seems to be re-rendering like 6 times on load and I need to figure out why
 const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }) => {

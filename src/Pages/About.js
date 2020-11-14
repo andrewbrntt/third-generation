@@ -10,7 +10,7 @@ import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../Components/OurProcessInfographicDesktop'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { routesData } from '../DataObjects/routes'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/useImageCDN'
+import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 
 const About = () => {

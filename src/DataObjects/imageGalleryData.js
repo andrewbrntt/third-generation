@@ -143,3 +143,64 @@ export const MOCK_NEW_GALLERY_OBJECT = {
     after: [FinishedImageObject1, FinishedImageObject2, FinishedImageObject3, FinishedImageObject4]
   }
 }
+
+/*  TODO: Image Section Object */
+
+const imageSectionPhasesMock = [
+  {
+    location: 'Poop, OH',
+    type: 'before',
+    thumbnails: [{}, {}],
+    fullSize: [{}, {}]
+  },
+  {
+    location: 'Poop, OH',
+    type: 'during',
+    thumbnails: [{}, {}],
+    fullSize: [{}, {}]
+  },
+  {
+    location: 'Poop, OH',
+    type: 'after',
+    thumbnails: [{}, {}],
+    fullSize: [{}, {}]
+  }
+]
+
+const imageSectionSinglesMock = [
+  {
+    location: 'Poop, OH',
+    type: 'before',
+    thumbnails: [{}, {}],
+    fullSize: [{}, {}]
+  }]
+
+
+/* TODO: Before Pictures
+*   Location: 'Poop, OH'
+*   Type: 'before'
+*   Thumbnails: [{}, {}]
+*   FullSize: [{}, {}]
+*/
+
+/* TODO: During Pictures
+*   Location: 'Poop, OH'
+*   Type: 'during'
+*   Thumbnails: [{}, {}]
+*   FullSize: [{}, {}]
+*/
+
+/* TODO: After Pictures
+*   Location: 'Poop, OH'
+*   Type: 'after'
+*   Thumbnails: [{}, {}]
+*   FullSize: [{}, {}]
+*/
+
+/*
+*  TODO: Single Pictures
+*   Location: 'Butt OH'
+*   Type: 'single'
+*   Thumbnails: [{}, {}]
+*   FullSize: [{}, {}]
+* */

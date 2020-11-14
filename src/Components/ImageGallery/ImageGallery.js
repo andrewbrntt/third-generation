@@ -8,7 +8,7 @@ const ImageGallery = ({ gallerySections }) => {
       {
         gallerySections && gallerySections.map(section => {
           return (
-            <ImageGallerySection key={shortId.generate()} images={section.images}
+            <ImageGallerySection key={shortId.generate()} sectionImages={section.images}
                                  title={section.title}/>
           )
         })
