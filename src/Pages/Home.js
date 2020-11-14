@@ -35,7 +35,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    // setImageGalleryImages(getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1))
 
 const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
 

@@ -10,7 +10,7 @@ const createModalImages = (images, hero) => {
 
 if(images.length > 0) {
   fullImages = images.filter(image => !image.src.includes(GLOBAL_DEFS.SMALL) && !image.src.includes(GLOBAL_DEFS.HERO))
-  let modalImages = fullImages.map(modalImage => createImage(modalImage.src, modalImage.altText, modalImage.phase))
+  let modalImages = fullImages.map(modalImage => createImage(modalImage.src, modalImage.altText, modalImage.phase, modalImage.name))
 
   sortedModalImages = sortImageArray(modalImages)
 }

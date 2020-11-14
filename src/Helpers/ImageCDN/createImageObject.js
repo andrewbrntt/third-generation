@@ -1,11 +1,12 @@
 import shortId from 'shortid'
 
-const createImage = (src, altText, phase) => {
+const createImage = (src, altText, phase, name) => {
   return {
     id: shortId.generate(),
-    src: src,
-    altText: altText,
-    phase: phase
+    src,
+    altText,
+    phase,
+    name
   }
 }
 

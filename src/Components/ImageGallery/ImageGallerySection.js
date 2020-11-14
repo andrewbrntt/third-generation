@@ -10,6 +10,8 @@ import createThumbnails from '../../Helpers/ImageCDN/createThumbnails'
 import createHeroImage from './createHeroImage'
 import createModalImages from '../../Helpers/ImageCDN/createModalImages'
 import ImageGallerySingleImageGroup from './ImageGallerySingleImageGroup'
+import ImageGalleryPhaseGroup from './ImageGalleryPhaseGroup'
+import ImageGalleryModal from './ImageGalleryModal'
 
 const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
@@ -66,9 +68,20 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
       if (JSON.stringify(modalImages) !== JSON.stringify(galleryModalImages)) {
         setGalleryModalImages(modalImages)
       }
-
     }
   }, [sectionImages])
+
+  const ImageGroups = () => {
+    if (galleryThumbnailImages && galleryThumbnailImages[0] && (galleryThumbnailImages[0].beforeImages || galleryThumbnailImages[0].duringImages || galleryThumbnailImages[0].afterImages)) {
+      return galleryThumbnailImages.map(currentGroup => {
+        return <ImageGalleryPhaseGroup onImageClick={onImageClick} currentImageGroup={currentGroup} />
+      })
+    } else {
+      return (
+        <ImageGallerySingleImageGroup onImageClick={onImageClick} groupImages={galleryThumbnailImages}/>
+      )
+    }
+  }
 
   const GallerySection = useMemo(() => {
     return (
@@ -77,7 +90,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         {!isSection && <span className='image-gallery-section__title'>{title}</span>}
         {heroImage && <ImageGallerySectionHero onImageClick={onImageClick} heroImage={heroImage}/>}
         <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-          <ImageGallerySingleImageGroup onImageClick={onImageClick} groupImages={galleryThumbnailImages} />
+          <ImageGroups />
         </div>
       </div>
       // </LazyLoad>
@@ -86,6 +99,13 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
   return (
     <>
+      {isModalOpen &&
+      <ImageGalleryModal
+        isModalOpen={isModalOpen}
+        handleModalClose={setIsModalOpen}
+        gallerySectionImages={galleryModalImages}
+        initialImageIndex={selectedImageIndex}
+      />}
       {GallerySection}
     </>
   )

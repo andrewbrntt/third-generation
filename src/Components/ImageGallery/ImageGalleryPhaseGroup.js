@@ -2,7 +2,7 @@ import React from 'react'
 import ImageGalleryImageGroup from './ImageGalleryImageGroup'
 import shortId from 'shortid'
 
-const ImageGalleryPhaseGroup = () => {
+const ImageGalleryPhaseGroup = ({currentImageGroup, onImageClick}) => {
   let groupTitle = ''
   let groupImages = ''
 
