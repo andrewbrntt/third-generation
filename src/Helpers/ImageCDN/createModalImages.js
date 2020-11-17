@@ -15,6 +15,41 @@ if(images.length > 0) {
   sortedModalImages = sortImageArray(modalImages)
 }
     sortedModalImages.unshift(hero)
+
+    if(sortedModalImages[1].phase !== '') {
+     sortedModalImages = phaseGrouper(sortedModalImages)
+    }
+
     return sortedModalImages
 }
 export default createModalImages
+
+
+function phaseGrouper (images) {
+ const beforeImages = images.filter(image => {
+    return image.phase === 'before'
+  })
+
+  const duringImages = images.filter(image => {
+    return image.phase === 'during'
+  })
+
+  const afterImages = images.filter(image => {
+    return image.phase === 'after'
+  })
+
+  const heroImage = images.find(image => image.phase === 'hero')
+
+  console.log('before images', beforeImages)
+  let sortedBeforeImages = sortImageArray(beforeImages)
+  let sortedDuringImages = sortImageArray(duringImages)
+  let sortedAfterImages = sortImageArray(afterImages)
+
+  let beforeDuring = sortedBeforeImages.concat(sortedDuringImages)
+  let completePhaseArray = beforeDuring.concat(sortedAfterImages)
+  console.log('sorted before images', completePhaseArray)
+
+  completePhaseArray.unshift(heroImage)
+
+  return completePhaseArray
+}

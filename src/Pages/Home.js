@@ -20,6 +20,7 @@ import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 
 const Home = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
+  const [imageGalleryImages2, setImageGalleryImages2] = useState([])
   const [aboutImage, setAboutImage] = useState(null)
   const [remodelCardImage, setRemodelCardImage] = useState(null)
   const [roofingCardImage, setRoofingCardImage] = useState(null)
@@ -37,6 +38,7 @@ const Home = () => {
   useEffect(() => {
 
 const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
+const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
 
     const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -44,7 +46,7 @@ const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
     const repairsCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REPAIRS_CARD)
     const sidingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.SIDING_CARD)
 
-    Promise.all([aboutHero, roofingCard, remodelCard, repairsCard, sidingCard, galleryImageGroup])
+    Promise.all([aboutHero, roofingCard, remodelCard, repairsCard, sidingCard, galleryImageGroup, galleryImageGroup2])
       .then(res => {
         setAboutImage(res[0])
         setRoofingCardImage(res[1])
@@ -52,6 +54,7 @@ const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
         setRepairsCardImage(res[3])
         setSidingCardImage(res[4])
         setImageGalleryImages(res[5])
+        setImageGalleryImages2(res[6])
       })
   }, [])
 
@@ -139,6 +142,7 @@ const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
           </p>
         </div>
         { imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/> }
+        { imageGalleryImages2 && <ImageGallerySection sectionImages={imageGalleryImages2}/> }
         {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'

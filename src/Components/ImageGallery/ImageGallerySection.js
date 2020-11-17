@@ -27,16 +27,13 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
   const onImageClick = (e) => {
     e.preventDefault()
     const element = e.target
-
     const currentElementPublicId = derivedPublicId(element.src)
     let imageName = ''
-
     if (currentElementPublicId.includes(GLOBAL_DEFS.HERO)) {
       imageName = getImageNameFromPublicId(currentElementPublicId, false)
     } else {
       imageName = getImageNameFromPublicId(currentElementPublicId, true)
     }
-
     const selectedImageIndex = galleryModalImages.findIndex(image => image.src.includes(imageName))
     setSelectedImageIndex(selectedImageIndex)
     setIsModalOpen(true)
@@ -74,7 +71,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
   const ImageGroups = () => {
     if (galleryThumbnailImages && galleryThumbnailImages[0] && (galleryThumbnailImages[0].beforeImages || galleryThumbnailImages[0].duringImages || galleryThumbnailImages[0].afterImages)) {
       return galleryThumbnailImages.map(currentGroup => {
-        return <ImageGalleryPhaseGroup onImageClick={onImageClick} currentImageGroup={currentGroup} />
+        return <ImageGalleryPhaseGroup key={shortId.generate()} onImageClick={onImageClick} currentImageGroup={currentGroup} />
       })
     } else {
       return (
@@ -112,21 +109,3 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 }
 
 export default ImageGallerySection
-
-/*
-* TODO:
-*   1. Get image object
-*   2. Check if the image has phases
-*   3. If no phases:
-*         1. Create Thumbnails
-*         2. Create ModalImages
-*         3. setState Thumbnails if changed
-*         4. setState ModalImages if changed
-*         5. Set Image Sizes
-*   4. If phases:
-*         1. Create Thumbnails
-*         2. Create ModalImages
-*         3. setState Thumbnails if changed
-*         4. setState ModalImages if changed
-*         5. Set Image Sizes
-* */

@@ -80,8 +80,10 @@
 .image-gallery__text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   height: 3.125rem;
+  padding-left: 10px;
+  background-color: $primary;
 }
 
 .image-gallery__modal-arrow-btn {

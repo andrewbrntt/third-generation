@@ -86,12 +86,12 @@ const ImageGalleryModal = ({ styleClasses, initialImageIndex, gallerySectionImag
               <ImageGalleryArrow styleClasses='image-gallery__arrow-icon' icon={['far', 'arrow-circle-left']}/>
             </button>
           </div>
-          <div className={`image-gallery__img-container ${currentImage.subText ? 'background-color-primary' : ''}`}>
+          <div className={`image-gallery__img-container`}>
             <div className='image-gallery__img--display-block'>
               <LazyLoad once>
                 <DynamicImage styleClasses='image-gallery__modal-image' imageObject={currentImage}/>
               </LazyLoad>
-              {currentImage.subText &&
+              {currentImage && currentImage.subText &&
               <div className='image-gallery__text default-text color-white'>
                 {currentImage.subText}
               </div>}

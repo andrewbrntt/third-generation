@@ -5,7 +5,7 @@ const GLOBAL_DEFS = {
   THIRD_GEN_DOMAIN: '.third-generation',
 
   CDN_DEFS: {
-    SMALL_SLUG: '-small_',
+    SMALL_SLUG: '-small',
     CDN_DOMAIN_PREFIX: 'https://res.cloudinary.com/'
   },
   IMAGE_GROUPS: {
@@ -38,7 +38,3 @@ const GLOBAL_DEFS = {
 }
 
 export default GLOBAL_DEFS
-
-
-// TODO: I still need to update the tablet images in the CDN to use the project keyword
-//  Need to structure the modal images to span across the project phases
