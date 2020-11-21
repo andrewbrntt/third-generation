@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
@@ -13,6 +13,9 @@ import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
 import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 
 const Roofing = () => {
   const [heroImage, setHeroImage] = useState([])
@@ -20,6 +23,17 @@ const Roofing = () => {
 
   useImagesCDNSingleStockArt(setHeroImage, 'roofing')
   useImagesCDNSingleStockArt(setOurWorkSectionImage, 'our-work-section')
+
+  useEffect(() => {
+    const roofingHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ROOFING)
+    const ourWorkHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.OUR_WORK)
+
+    Promise.all([roofingHero, ourWorkHero])
+      .then(res => {
+        setHeroImage(res[0])
+        setOurWorkSectionImage(res[1])
+     })
+  }, [])
 
   return (
     <>

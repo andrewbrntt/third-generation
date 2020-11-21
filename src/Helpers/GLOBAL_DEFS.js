@@ -22,7 +22,12 @@ const GLOBAL_DEFS = {
     ROOFING_CARD: 'roofing-card',
   },
   PAGE_HEROS: {
-    ABOUT_US: 'about-us'
+    ABOUT_US: 'about-us',
+    EMERGENCY: 'emergency',
+    REMODEL: 'remodel',
+    REPAIRS: 'repairs',
+    ROOFING: 'roofing',
+    OUR_WORK: 'our-work-section'
   },
   WINDOW_SIZES: {
     DESKTOP_LARGE: 'desktop-large',

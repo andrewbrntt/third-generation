@@ -15,6 +15,7 @@ const OurWork = () => {
   const [imageGallerySections, setImageGallerySections] = useState(null)
 
   useImagesCDNAllImages(setImageGallerySections)
+
   return (
     <>
       <Helmet>

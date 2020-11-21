@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
@@ -10,13 +10,15 @@ import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../Components/OurProcessInfographicDesktop'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { routesData } from '../DataObjects/routes'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 
 const About = () => {
 
-  const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [heroImage, setHeroImage] = useState([])
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
 
   const BEFORE = 'before'
   const AFTER = 'after'
@@ -35,8 +37,17 @@ const About = () => {
     { icon: ['far', 'star'], text: 'Satisfied Customer', srText: 'step 5 another satisfied customer' }
   ]
 
-  useImagesCDN(setImageGalleryImages, 'group-1', imageGalleryImages)
-  useImagesCDNSingleStockArt(setHeroImage, 'about-us')
+  useEffect(() => {
+
+    const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
+
+    Promise.all([aboutHero, galleryImageGroup])
+      .then(res => {
+        setHeroImage(res[0])
+        setImageGalleryImages(res[1])
+      })
+  }, [])
 
   return (
     <>
