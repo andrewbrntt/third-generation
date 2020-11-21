@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { useImagesCDN } from '../Helpers/ImageCDN/useImageCDN'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
@@ -37,8 +36,7 @@ const Home = () => {
 
   useEffect(() => {
 
-const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_5)
-const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
 
     const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -46,7 +44,7 @@ const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
     const repairsCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REPAIRS_CARD)
     const sidingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.SIDING_CARD)
 
-    Promise.all([aboutHero, roofingCard, remodelCard, repairsCard, sidingCard, galleryImageGroup, galleryImageGroup2])
+    Promise.all([aboutHero, roofingCard, remodelCard, repairsCard, sidingCard, galleryImageGroup])
       .then(res => {
         setAboutImage(res[0])
         setRoofingCardImage(res[1])
@@ -54,7 +52,6 @@ const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
         setRepairsCardImage(res[3])
         setSidingCardImage(res[4])
         setImageGalleryImages(res[5])
-        setImageGalleryImages2(res[6])
       })
   }, [])
 

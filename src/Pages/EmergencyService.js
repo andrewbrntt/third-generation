@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
@@ -9,16 +9,27 @@ import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 
 const EmergencyService = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
   const [heroImage, setHeroImage] = useState([])
 
-  useImagesCDN(setImageGalleryImages, 'group-2')
-  useImagesCDNSingleStockArt(setHeroImage, 'emergency')
+  useEffect(() => {
+
+    const emergencyHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.EMERGENCY)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_2)
+
+    Promise.all([emergencyHero, galleryImageGroup])
+      .then(res => {
+        setHeroImage(res[0])
+        setImageGalleryImages(res[1])
+      })
+  }, [])
+
 
   return (
     <>

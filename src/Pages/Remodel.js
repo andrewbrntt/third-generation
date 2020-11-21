@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import BodySection from '../Components/BodySection'
@@ -7,9 +7,11 @@ import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-import { useImagesCDN, useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
 import SuppliersSection from '../Components/SuppliersSection'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 
 const Remodel = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
@@ -21,8 +23,17 @@ const Remodel = () => {
     { logo: alliedLogo, altText: 'Allied Roofing Supply Company Logo', styleClasses: 'vendor__allied' }
   ]
 
-  useImagesCDN(setImageGalleryImages, 'group-3')
-  useImagesCDNSingleStockArt(setHeroImage, 'remodel')
+  useEffect(() => {
+    const remodelHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.REMODEL)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_3)
+
+    Promise.all([remodelHero, galleryImageGroup])
+      .then(res => {
+        setHeroImage(res[0])
+        setImageGalleryImages(res[1])
+      })
+  }, [])
+
 
   return (
     <>
