@@ -18,7 +18,7 @@ import DynamicImage from '../Components/DynamicImage'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 
 const Home = () => {
-  const [imageGalleryImages, setImageGalleryImages] = useState([])
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
   const [aboutImage, setAboutImage] = useState(null)
   const [remodelCardImage, setRemodelCardImage] = useState(null)
   const [roofingCardImage, setRoofingCardImage] = useState(null)

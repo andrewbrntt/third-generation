@@ -19,22 +19,19 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
     if(!heroImage) {
       getStockArtImage(heroImageName, true).then(image => {
         setHeroImage(image)
+        if (overlayDimensions.height) {
+          setElementHeight(overlayDimensions.height)
+        } else {
+          setElementHeight(overlayContainer.current.offsetHeight)
+        }
       })
-    }
-
-    if(heroImage) {
-      if (overlayDimensions.height) {
-        setElementHeight(overlayDimensions.height)
-      } else {
-        setElementHeight(overlayContainer.current.offsetHeight)
-      }
     }
   }, [overlayDimensions])
 
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
              className='body-header-container'>
-        <DynamicImage styleClasses='body-header__background-hero-img' imageObject={heroImage}/>
+      {heroImage &&  <DynamicImage styleClasses='body-header__background-hero-img' imageObject={heroImage}/> }
       {heroImage && <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute} linkText={linkText}
                         pageHeader={pageHeader}>
         {children}
