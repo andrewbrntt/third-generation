@@ -29,7 +29,8 @@ const GLOBAL_DEFS = {
     REPAIRS: 'repairs',
     ROOFING: 'roofing',
     SIDING: 'siding',
-    OUR_WORK: 'our-work-section'
+    OUR_WORK_SECTION: 'our-work-section',
+    OUR_WORK: 'our-work'
   },
   WINDOW_SIZES: {
     DESKTOP_LARGE: 'desktop-large',

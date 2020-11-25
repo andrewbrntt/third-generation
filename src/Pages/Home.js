@@ -19,7 +19,6 @@ import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 
 const Home = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [imageGalleryImages2, setImageGalleryImages2] = useState([])
   const [aboutImage, setAboutImage] = useState(null)
   const [remodelCardImage, setRemodelCardImage] = useState(null)
   const [roofingCardImage, setRoofingCardImage] = useState(null)
@@ -55,7 +54,30 @@ const Home = () => {
       })
   }, [])
 
-
+const LinkCardSection = () => {
+    if(remodelCardImage && roofingCardImage && sidingCardImage && repairsCardImage) {
+    return(<div className='home__service-cards--center'>
+      <div className='home__service-cards-mobile-container'>
+        <div className='home__service-cards-row home__service-cards--margin-bottom'>
+          <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+          <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+        </div>
+        <div className='home__service-cards-row'>
+          <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+          <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
+        </div>
+      </div>
+      <div className='home__service-cards-desktop-container'>
+        <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+        <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+        <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+        <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
+      </div>
+    </div>
+    )} else {
+      return null
+    }
+  }
   return (
     <>
       <Helmet>
@@ -87,24 +109,7 @@ const Home = () => {
             of experience.
           </p>
         </div>
-        <div className='home__service-cards--center'>
-          <div className='home__service-cards-mobile-container'>
-            <div className='home__service-cards-row home__service-cards--margin-bottom'>
-              <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
-              <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
-            </div>
-            <div className='home__service-cards-row'>
-              <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
-              <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
-            </div>
-          </div>
-          <div className='home__service-cards-desktop-container'>
-            <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
-            <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
-            <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
-            <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
-          </div>
-        </div>
+<LinkCardSection />
         <div
           className='home__our-services-p-container--desktop p--margin-bottom-standard padding-x-standard'>
           <p>
