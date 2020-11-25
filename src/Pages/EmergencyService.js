@@ -21,7 +21,7 @@ const EmergencyService = () => {
   useEffect(() => {
 
     const emergencyHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.EMERGENCY)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_2)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
 
     Promise.all([emergencyHero, galleryImageGroup])
       .then(res => {

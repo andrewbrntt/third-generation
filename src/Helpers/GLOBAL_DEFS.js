@@ -9,11 +9,11 @@ const GLOBAL_DEFS = {
     CDN_DOMAIN_PREFIX: 'https://res.cloudinary.com/'
   },
   IMAGE_GROUPS: {
-    GROUP_1: 'project-1',
-    GROUP_2: 'project-2',
-    GROUP_3: 'project-3',
-    GROUP_4: 'project-4',
-    GROUP_5: 'project-5',
+    PROJECT_1: 'project-1',
+    PROJECT_2: 'project-2',
+    PROJECT_3: 'project-3',
+    PROJECT_4: 'project-4',
+    PROJECT_5: 'project-5',
   },
   IMAGE_CARDS: {
     REMODEL_CARD: 'remodel-card',
@@ -22,11 +22,13 @@ const GLOBAL_DEFS = {
     ROOFING_CARD: 'roofing-card',
   },
   PAGE_HEROS: {
+    HOME: 'home',
     ABOUT_US: 'about-us',
     EMERGENCY: 'emergency',
     REMODEL: 'remodel',
     REPAIRS: 'repairs',
     ROOFING: 'roofing',
+    SIDING: 'siding',
     OUR_WORK: 'our-work-section'
   },
   WINDOW_SIZES: {

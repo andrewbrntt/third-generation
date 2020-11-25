@@ -40,7 +40,7 @@ const About = () => {
   useEffect(() => {
 
     const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
 
     Promise.all([aboutHero, galleryImageGroup])
       .then(res => {

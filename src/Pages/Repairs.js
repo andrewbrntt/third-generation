@@ -28,7 +28,7 @@ const Repairs = () => {
 
   useEffect(() => {
     const remodelHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.REPAIRS)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_2)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
 
     Promise.all([remodelHero, galleryImageGroup])
       .then(res => {

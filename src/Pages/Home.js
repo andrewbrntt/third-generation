@@ -36,7 +36,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
 
     const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -139,8 +139,6 @@ const Home = () => {
           </p>
         </div>
         { imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/> }
-        { imageGalleryImages2 && <ImageGallerySection sectionImages={imageGalleryImages2}/> }
-        {/*<BeforeAfterGallerySection galleryImages={beforeAfterMockData}/>*/}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
                    sectionTitle='Contact Us'>

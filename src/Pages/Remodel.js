@@ -25,7 +25,7 @@ const Remodel = () => {
 
   useEffect(() => {
     const remodelHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.REMODEL)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_3)
+    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3)
 
     Promise.all([remodelHero, galleryImageGroup])
       .then(res => {

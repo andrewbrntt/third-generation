@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import GLOBAL_DEFS from '../GLOBAL_DEFS'
+import createImage from './createImageObject'
 
 function createImageSections (images) {
-  const group1 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_1))
-  const group2 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_2))
-  const group3 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_3))
-  const group4 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.GROUP_4))
+  const group1 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1))
+  const group2 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2))
+  const group3 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3))
+  const group4 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_4))
 
   return [
     { title: '', images: group1 },
@@ -17,7 +18,7 @@ function createImageSections (images) {
 }
 
 export function getWindowWidth () {
-  let windowSize = ''
+  let windowSize
 
   if (window.innerWidth >= 992) {
     windowSize = GLOBAL_DEFS.WINDOW_SIZES.DESKTOP
@@ -53,7 +54,10 @@ export function useImagesCDNSingleStockArt (setState, suffix, pageHero = false) 
   useEffect(() => {
     axios.get(url)
       .then(res => {
-        setState(res.data.resources[0])
+        const image = createImage(res.data.resources[0].public_id, '', '', '')
+        console.log('created', image)
+        console.log('response image', res.data.resources[0])
+        setState(image)
       })
   }, [setState, windowSize, suffix, url])
 }
