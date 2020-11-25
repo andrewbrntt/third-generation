@@ -37,7 +37,7 @@ const Home = () => {
 
     const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
 
-    const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
+    const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
     const remodelCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REMODEL_CARD)
     const repairsCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.REPAIRS_CARD)
@@ -54,27 +54,28 @@ const Home = () => {
       })
   }, [])
 
-const LinkCardSection = () => {
-    if(remodelCardImage && roofingCardImage && sidingCardImage && repairsCardImage) {
-    return(<div className='home__service-cards--center'>
-      <div className='home__service-cards-mobile-container'>
-        <div className='home__service-cards-row home__service-cards--margin-bottom'>
-          <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
-          <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+  const LinkCardSection = () => {
+    if (remodelCardImage && roofingCardImage && sidingCardImage && repairsCardImage) {
+      return (<div className='home__service-cards--center'>
+          <div className='home__service-cards-mobile-container'>
+            <div className='home__service-cards-row home__service-cards--margin-bottom'>
+              <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+              <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+            </div>
+            <div className='home__service-cards-row'>
+              <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+              <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
+            </div>
+          </div>
+          <div className='home__service-cards-desktop-container'>
+            <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
+            <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
+            <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
+            <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
+          </div>
         </div>
-        <div className='home__service-cards-row'>
-          <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
-          <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
-        </div>
-      </div>
-      <div className='home__service-cards-desktop-container'>
-        <LinkCard urlPath='remodel' imgSrc={remodelCardImage} cardTitle='Remodel'/>
-        <LinkCard urlPath='roofing' imgSrc={roofingCardImage} cardTitle='Roofing'/>
-        <LinkCard urlPath='siding' imgSrc={sidingCardImage} cardTitle='Siding'/>
-        <LinkCard urlPath='repairs' imgSrc={repairsCardImage} cardTitle='Repairs'/>
-      </div>
-    </div>
-    )} else {
+      )
+    } else {
       return null
     }
   }
@@ -109,7 +110,7 @@ const LinkCardSection = () => {
             of experience.
           </p>
         </div>
-<LinkCardSection />
+        <LinkCardSection/>
         <div
           className='home__our-services-p-container--desktop p--margin-bottom-standard padding-x-standard'>
           <p>
@@ -143,7 +144,7 @@ const LinkCardSection = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        { imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/> }
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
                    sectionTitle='Contact Us'>

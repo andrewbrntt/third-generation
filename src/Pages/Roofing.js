@@ -16,17 +16,15 @@ import { Image } from 'cloudinary-react'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import DynamicImage from '../Components/DynamicImage'
 
 const Roofing = () => {
-  const [heroImage, setHeroImage] = useState([])
-  const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
-
-  useImagesCDNSingleStockArt(setHeroImage, 'roofing')
-  useImagesCDNSingleStockArt(setOurWorkSectionImage, 'our-work-section')
+  const [heroImage, setHeroImage] = useState(null)
+  const [ourWorkSectionImage, setOurWorkSectionImage] = useState(null)
 
   useEffect(() => {
     const roofingHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ROOFING)
-    const ourWorkHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.OUR_WORK)
+    const ourWorkHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.OUR_WORK_SECTION)
 
     Promise.all([roofingHero, ourWorkHero])
       .then(res => {
@@ -44,8 +42,9 @@ const Roofing = () => {
       </Helmet>
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' pageHeader='Roofing'
                    linkText='Contact Us' styleClasses='color-primary body-section--mobile-display'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        }
         <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
           roof replacement.
@@ -73,8 +72,7 @@ const Roofing = () => {
                    sectionTitle='Our Work'
                    linkText='View Gallery'>
         {ourWorkSectionImage &&
-        <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-               publicId={ourWorkSectionImage.public_id}/>}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={ourWorkSectionImage}/>}
         <div className='p--margin-bottom-standard body-section--width-965 padding-x-standard'>
           <p>
             We're proud of our work and love showing it off.
