@@ -14,6 +14,7 @@ import { Image } from 'cloudinary-react'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import DynamicImage from '../Components/DynamicImage'
 
 const About = () => {
 
@@ -57,8 +58,8 @@ const About = () => {
         <meta name="description" content="Third Generation Construction About Us Page"/>
       </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
         <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
@@ -104,7 +105,7 @@ const About = () => {
             your dreams.
           </p>
         </div>
-        <ImageGallerySection images={imageGalleryImages}/>
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection sectionTitle='Reviews' linkText={routesData.reviews.routeName} linkRoute={routesData.reviews.routeTo}
                    styleClasses='body-section__reviews-section--padding color-primary padding-x-standard'>

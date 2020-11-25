@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import SidingInfographic from '../Components/SidingInfographic'
@@ -9,14 +9,25 @@ import { vendors } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
 import { Image } from 'cloudinary-react'
+import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import DynamicImage from '../Components/DynamicImage'
 
 const Siding = () => {
 
-  const [heroImage, setHeroImage] = useState([])
-  const [ourWorkSectionImage, setOurWorkSectionImage] = useState([])
+  const [heroImage, setHeroImage] = useState(null)
+  const [ourWorkSectionImage, setOurWorkSectionImage] = useState(null)
 
-  useImagesCDNSingleStockArt(setHeroImage, 'siding')
-  useImagesCDNSingleStockArt(setOurWorkSectionImage, 'our-work-section')
+  useEffect(() => {
+    const sidingHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.SIDING)
+    const ourWorkHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.OUR_WORK_SECTION)
+
+    Promise.all([sidingHero, ourWorkHero])
+      .then(res => {
+        setHeroImage(res[0])
+        setOurWorkSectionImage(res[1])
+      })
+  }, [])
 
   return (
     <>
@@ -87,8 +98,7 @@ const Siding = () => {
       <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work' linkText='View Gallery'>
         {ourWorkSectionImage &&
-        <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-               publicId={ourWorkSectionImage.public_id}/>}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={ourWorkSectionImage}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965'>
             We're proud of our work and love showing it off.

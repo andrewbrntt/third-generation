@@ -12,6 +12,7 @@ import SuppliersSection from '../Components/SuppliersSection'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
+import DynamicImage from '../Components/DynamicImage'
 
 const Remodel = () => {
   const [imageGalleryImages, setImageGalleryImages] = useState([])
@@ -45,8 +46,8 @@ const Remodel = () => {
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' linkText='Contact Us'
                    pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard'>
             Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
@@ -122,8 +123,7 @@ const Remodel = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection images={imageGalleryImages} isSection={true}/>
-        {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965' sectionTitle='Our Suppliers'>
         <div className='padding-x-standard desktop__p--margin-bottom-80'>

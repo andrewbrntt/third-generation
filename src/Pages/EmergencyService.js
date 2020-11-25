@@ -13,10 +13,11 @@ import { Image } from 'cloudinary-react'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import DynamicImage from '../Components/DynamicImage'
 
 const EmergencyService = () => {
-  const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [heroImage, setHeroImage] = useState([])
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
 
   useEffect(() => {
 
@@ -40,8 +41,8 @@ const EmergencyService = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
           <p>Life is full of curveballs, and emergencies happen.</p>
           <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>
@@ -61,8 +62,7 @@ const EmergencyService = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection images={imageGalleryImages} isSection={true}/>
-        {/*<BeforeAfterGallerySection galleryImages={galleryImages}/>*/}
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews' sectionTitle='Reviews'
                    styleClasses='body-section__reviews-section--padding padding-x-standard color-primary'>

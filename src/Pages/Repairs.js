@@ -14,11 +14,12 @@ import { Image } from 'cloudinary-react'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import DynamicImage from '../Components/DynamicImage'
 
 const Repairs = () => {
 
-  const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [heroImage, setHeroImage] = useState([])
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
 
   const vendors = [
     { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
@@ -48,8 +49,8 @@ const Repairs = () => {
                    styleClasses='color-primary body-section--mobile-display'
                    pageHeader='Repairs'
                    linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}}
         <div className='padding-x-standard'>
           <p>
             Sometimes all it takes to transform your home is a few minor fixes.
@@ -112,7 +113,7 @@ const Repairs = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        <ImageGallerySection images={imageGalleryImages}/>
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965' sectionTitle='Our Suppliers'>
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
