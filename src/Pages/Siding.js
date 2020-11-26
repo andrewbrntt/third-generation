@@ -38,8 +38,8 @@ const Siding = () => {
       </Helmet>
       <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
                    pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
-        {heroImage && <Image className='body-section__hero-img' cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
-                             publicId={heroImage.public_id}/>}
+        {heroImage &&
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
         <p className='padding-x-standard'>
           Durable siding, energy-efficient doors, and windows are all part of what makes your home beautiful.
         </p>
