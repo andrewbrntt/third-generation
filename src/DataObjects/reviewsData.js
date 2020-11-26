@@ -139,11 +139,11 @@ export const randomReviews = [
     comment: 'Wow. All I can say is Wow. These guys did a tremendous job from start to finish. This is a very professional group who pays attention to detail, communication, and even clean up. We cannot wait to have them get started on the next project! We highly recommend them!',
   },
   {
-  name: 'Erin J.',
-  score: 5,
-  location: reviewLocations.avon,
-  comment: 'Richard is prompt, helpful and experienced. Coming from a restoration company, he is a great a partner with us in the trades industry and keeps his customers happy!  Also a great value for the work.',
-},
+    name: 'Erin J.',
+    score: 5,
+    location: reviewLocations.avon,
+    comment: 'Richard is prompt, helpful and experienced. Coming from a restoration company, he is a great a partner with us in the trades industry and keeps his customers happy!  Also a great value for the work.',
+  },
   {
     name: 'Nancy L.',
     score: 5,

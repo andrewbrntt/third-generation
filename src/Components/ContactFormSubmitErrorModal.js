@@ -35,7 +35,8 @@ const ContactFormSubmitErrorModal = ({ isErrorModalOpen, handleClose }) => {
           <p className='padding-x-standard modal__subtext'>
             There seems to have been a error sending your message.
             <span className='p--top-spacing modal--display-block'>
-            Please try again later or give us a call at <ContactPhoneLink className='color-primary contact-form__phone-link' />
+            Please try again later or give us a call at <ContactPhoneLink
+              className='color-primary contact-form__phone-link'/>
           </span>
           </p>
           <div className='contact-form__success-modal-ul-container'>

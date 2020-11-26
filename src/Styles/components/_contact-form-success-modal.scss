@@ -6,6 +6,7 @@
 //Animation
 //Misc
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal {
   padding: 1.25rem 0.5rem;
   @include lg {
@@ -14,12 +15,14 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal-container {
   @include lg {
     width: 60.3125rem;
   }
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal section {
   padding-bottom: 6.25rem;
 }
@@ -38,6 +41,7 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal-icon {
   color: $secondary;
   font-size: 5.9375rem;
@@ -56,6 +60,7 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal-ul-container {
   display: flex;
   flex-direction: column;
@@ -94,10 +99,12 @@
   margin-bottom: 1.875rem;
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal--padding-bottom-50 {
   padding-bottom: 3.125rem;
 }
 
+//noinspection CssUnusedSymbol
 .contact-form__success-modal-text {
   display: inline-block;
   width: 30%;

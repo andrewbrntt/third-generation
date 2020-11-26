@@ -22,7 +22,6 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
   const [heroImage, setHeroImage] = useState(null)
   const [galleryThumbnailImages, setGalleryThumbnailImages] = useState(null)
   const [galleryModalImages, setGalleryModalImages] = useState([])
-  const [galleryImagesWidth, setGalleryImagesWidth] = useState([])
 
   const onImageClick = (e) => {
     e.preventDefault()
@@ -47,7 +46,8 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         setHeroImage(hero)
       }
 
-      let imageThumbnails, modalImages = null
+      let imageThumbnails
+      let modalImages
 
       if (sectionImages.phases) {
         imageThumbnails = createPhaseThumbnails(sectionImages.images)
@@ -71,7 +71,8 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
   const ImageGroups = () => {
     if (galleryThumbnailImages && galleryThumbnailImages[0] && (galleryThumbnailImages[0].beforeImages || galleryThumbnailImages[0].duringImages || galleryThumbnailImages[0].afterImages)) {
       return galleryThumbnailImages.map(currentGroup => {
-        return <ImageGalleryPhaseGroup key={shortId.generate()} onImageClick={onImageClick} currentImageGroup={currentGroup} />
+        return <ImageGalleryPhaseGroup key={shortId.generate()} onImageClick={onImageClick}
+                                       currentImageGroup={currentGroup}/>
       })
     } else {
       return (
@@ -87,7 +88,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         {!isSection && <span className='image-gallery-section__title'>{title}</span>}
         {heroImage && <ImageGallerySectionHero onImageClick={onImageClick} heroImage={heroImage}/>}
         <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-          <ImageGroups />
+          <ImageGroups/>
         </div>
       </div>
       // </LazyLoad>

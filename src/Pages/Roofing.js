@@ -11,9 +11,6 @@ import { vendors } from '../Helpers/vendorAssetLibrary'
 
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
-import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
-import { Image } from 'cloudinary-react'
-import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import DynamicImage from '../Components/DynamicImage'
@@ -30,7 +27,7 @@ const Roofing = () => {
       .then(res => {
         setHeroImage(res[0])
         setOurWorkSectionImage(res[1])
-     })
+      })
   }, [])
 
   return (
@@ -43,7 +40,7 @@ const Roofing = () => {
       <BodySection pageHeaderStyleClasses='body-section--mobile-display' linkRoute='/contact' pageHeader='Roofing'
                    linkText='Contact Us' styleClasses='color-primary body-section--mobile-display'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}
         }
         <p className='padding-x-standard'>
           Third Generation Construction has you covered, whether you need routine-roof repair or a complete tear-off and
@@ -108,7 +105,8 @@ const Roofing = () => {
       </BodySection>
       <BodySection styleClasses='color-primary body-section--width-965'>
         <p className='desktop--margin-0 padding-x-standard'>
-          Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span>. Our team prides itself on quality and is committed to guaranteeing outstanding results.
+          Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span>. Our
+          team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
       </BodySection>
       <AccreditedSitesSection containerStyleClasses='body-section--width-965' accreditationSites={accreditationSites}/>

@@ -1,8 +1,7 @@
-import React, { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react'
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import LazyLoad from 'react-lazyload'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Image } from 'cloudinary-react'
 import ImageGalleryArrow from './ImageGalleryArrow'
 import DynamicImage from '../DynamicImage'
 

@@ -21,12 +21,14 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .vendor-section__badge-container {
   @include lg {
     margin-top: 50px;
   }
 }
 
+//noinspection CssUnusedSymbol
 .vendor-section__container .vendor-section__badge-container:first-child,
 .vendor-section__container .vendor-section__badge-container:nth-child(2),
 .vendor-section__container .vendor-section__badge-container:nth-child(3) {
@@ -35,6 +37,7 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .vendor-section__container > .vendor-section__badge-container:not(:last-child) {
   margin-bottom: 4.6875rem;
 

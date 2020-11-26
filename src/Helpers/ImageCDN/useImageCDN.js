@@ -4,9 +4,13 @@ import GLOBAL_DEFS from '../GLOBAL_DEFS'
 import createImage from './createImageObject'
 
 function createImageSections (images) {
+  // noinspection JSUnresolvedVariable
   const group1 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1))
+  // noinspection JSUnresolvedVariable
   const group2 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2))
+  // noinspection JSUnresolvedVariable
   const group3 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3))
+  // noinspection JSUnresolvedVariable
   const group4 = images.filter(image => image.public_id.includes(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_4))
 
   return [
@@ -41,6 +45,7 @@ export function useImagesCDNAllImages (setState) {
   useEffect(() => {
     axios.get(`${GLOBAL_DEFS.CDN_DEFS.CDN_DOMAIN_PREFIX}${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-all.json`)
       .then(res => {
+        // noinspection JSUnresolvedVariable
         setState(createImageSections(res.data.resources))
       })
   }, [windowSize])
@@ -54,9 +59,8 @@ export function useImagesCDNSingleStockArt (setState, suffix, pageHero = false) 
   useEffect(() => {
     axios.get(url)
       .then(res => {
+        // noinspection JSUnresolvedVariable
         const image = createImage(res.data.resources[0].public_id, '', '', '')
-        console.log('created', image)
-        console.log('response image', res.data.resources[0])
         setState(image)
       })
   }, [setState, windowSize, suffix, url])
@@ -67,6 +71,3 @@ export function getImagesCDNSingleStockArtTest (suffix, pageHero = false) {
   let url = `${GLOBAL_DEFS.CDN_DEFS.CDN_DOMAIN_PREFIX}${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
   return axios.get(url)
 }
-
-// TODO: Maybe a way to get a count of the projects from the CDN
-//  would be to count the amount of json objects are in the list payload

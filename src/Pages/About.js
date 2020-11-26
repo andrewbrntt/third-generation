@@ -10,7 +10,6 @@ import { roofReviews } from '../DataObjects/reviewsData'
 import OurProcessInfographicDesktop from '../Components/OurProcessInfographicDesktop'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { routesData } from '../DataObjects/routes'
-import { Image } from 'cloudinary-react'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
@@ -40,7 +39,7 @@ const About = () => {
 
   useEffect(() => {
 
-    const aboutHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
+    const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
 
     Promise.all([aboutHero, galleryImageGroup])
@@ -59,7 +58,7 @@ const About = () => {
       </Helmet>
       <BodySection linkRoute='/contact' linkText='Contact Us' pageHeader='About Us' styleClasses='color-primary'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}
         <div className='padding-x-standard body-section--width-965 p--margin-bottom-standard'>
           <p>
             Third Generation Construction is a family-owned and operated business serving Lorain County and its
@@ -85,7 +84,8 @@ const About = () => {
             Our work begins and ends with customer satisfaction as our services are customizable to each project.
           </p>
           <p className='p--top-spacing'>
-            Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span> and our team of experts pride themselves on
+            Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span> and
+            our team of experts pride themselves on
             the
             quality of work as well as our commitment to outstanding results.
           </p>

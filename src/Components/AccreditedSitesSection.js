@@ -1,7 +1,7 @@
 import React from 'react'
 import shortId from 'shortid'
 import LazyLoad from 'react-lazyload'
-import {getImageExtension} from '../Helpers/vendorAssetLibrary'
+import { getImageExtension } from '../Helpers/vendorAssetLibrary'
 import ExternalLink from './ExternalLink'
 
 const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses }) => {
@@ -30,43 +30,44 @@ const AccreditedSitesSection = ({ accreditationSites = [], containerStyleClasses
   const accreditationSiteSvgNoLink = (site) => {
     return (
       /* eslint-disable-next-line jsx-a11y/no-redundant-roles */
-      <img key={`accreditation-sites-section_${shortId.generate()}`} className='accreditation-sites__svg' role='img' src={site.imgDefault} alt={site.altText}/>
+      <img key={`accreditation-sites-section_${shortId.generate()}`} className='accreditation-sites__svg' role='img'
+           src={site.imgDefault} alt={site.altText}/>
     )
   }
 
   const accreditationSiteImgNoLink = (site) => {
     return (
-        <picture key={`accreditation-sites-section_${shortId.generate()}`}>
-          <source media='(min-width:992px)' srcSet={site.imgLarge}/>
-          <source media='(min-width:768px)' srcSet={site.imgMedium}/>
-          <img src={site.imgDefault} alt={site.altText}/>
-        </picture>
+      <picture key={`accreditation-sites-section_${shortId.generate()}`}>
+        <source media='(min-width:992px)' srcSet={site.imgLarge}/>
+        <source media='(min-width:768px)' srcSet={site.imgMedium}/>
+        <img src={site.imgDefault} alt={site.altText}/>
+      </picture>
     )
   }
 
   return (
     <LazyLoad offset={400} once>
-    <div
-      className={`accreditation-sites-section__container ${containerStyleClasses ? containerStyleClasses : ''}`}>
-      {
-        accreditationSites.map(site => {
-          if(site.noLink) {
-            if (getImageExtension(site.imgDefault) !== 'svg') {
-              return accreditationSiteImgNoLink(site)
+      <div
+        className={`accreditation-sites-section__container ${containerStyleClasses ? containerStyleClasses : ''}`}>
+        {
+          accreditationSites.map(site => {
+            if (site.noLink) {
+              if (getImageExtension(site.imgDefault) !== 'svg') {
+                return accreditationSiteImgNoLink(site)
+              } else {
+                return accreditationSiteSvgNoLink(site)
+              }
             } else {
-              return accreditationSiteSvgNoLink(site)
+              if (getImageExtension(site.imgDefault) !== 'svg') {
+                return accreditationSiteImg(site)
+              } else {
+                return accreditationSiteSvg(site)
+              }
             }
-          } else {
-            if (getImageExtension(site.imgDefault) !== 'svg') {
-              return accreditationSiteImg(site)
-            } else {
-              return accreditationSiteSvg(site)
-            }
-          }
 
-        })
-      }
-    </div>
+          })
+        }
+      </div>
     </LazyLoad>
   )
 }

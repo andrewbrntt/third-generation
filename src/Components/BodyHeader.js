@@ -16,12 +16,13 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
 
   useLayoutEffect(() => {
 
-    if(!heroImage) {
+    if (!heroImage) {
       getStockArtImage(heroImageName, true).then(image => {
         setHeroImage(image)
         if (overlayDimensions.height) {
           setElementHeight(overlayDimensions.height)
         } else {
+          // noinspection JSUnresolvedVariable
           setElementHeight(overlayContainer.current.offsetHeight)
         }
       })
@@ -31,9 +32,10 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
              className='body-header-container'>
-      {heroImage &&  <DynamicImage styleClasses='body-header__background-hero-img' imageObject={heroImage}/> }
-      {heroImage && <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute} linkText={linkText}
-                        pageHeader={pageHeader}>
+      {heroImage && <DynamicImage styleClasses='body-header__background-hero-img' imageObject={heroImage}/>}
+      {heroImage && <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute}
+                                      linkText={linkText}
+                                      pageHeader={pageHeader}>
         {children}
       </HeroImageOverlay>}
     </section>

@@ -6,6 +6,7 @@
 //Animation
 //Misc
 
+//noinspection CssUnusedSymbol
 .accreditation-sites-section__container {
   display: flex;
   align-items: center;
@@ -30,6 +31,7 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .accreditation-sites__svg {
   @include md {
     width: 12.5rem;

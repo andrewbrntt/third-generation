@@ -65,6 +65,7 @@ const ContactForm = ({ formStyleClasses = {} }) => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return
 
       if (xhr.status === 200) {
+        // noinspection JSUnresolvedFunction
         contactFormElement.current.reset()
         toggleReviewModal()
         toggleSuccessModal()

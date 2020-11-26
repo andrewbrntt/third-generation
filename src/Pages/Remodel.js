@@ -7,7 +7,6 @@ import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import Tools from '../assets/icon-tools.svg'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-import { Image } from 'cloudinary-react'
 import SuppliersSection from '../Components/SuppliersSection'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
@@ -15,8 +14,8 @@ import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import DynamicImage from '../Components/DynamicImage'
 
 const Remodel = () => {
-  const [imageGalleryImages, setImageGalleryImages] = useState([])
-  const [heroImage, setHeroImage] = useState([])
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
+  const [heroImage, setHeroImage] = useState(null)
 
   const suppliers = [
     { logo: carterLogo, altText: 'Carter Lumber Logo', styleClasses: 'vendor__carter-lumber' },
@@ -35,7 +34,6 @@ const Remodel = () => {
       })
   }, [])
 
-
   return (
     <>
       <Helmet>
@@ -47,7 +45,7 @@ const Remodel = () => {
                    pageHeader='Remodel'
                    styleClasses='remove-padding-x color-primary body-section--mobile-display'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard'>
             Whether you’re updating your kitchen or upgrading your basement into the ultimate man cave, Third Generation
@@ -84,7 +82,7 @@ const Remodel = () => {
           </p>
           <div className='background-color-white remodel__services'>
             We offer a wide variety of services that can help you improve your home.
-            <hr className='remodel__services-hr' />
+            <hr className='remodel__services-hr'/>
             <ul className='remodel__services-list'>
               <li className='remodel__services-list-item'>Windows</li>
               <li className='remodel__services-list-item'>Drywall</li>

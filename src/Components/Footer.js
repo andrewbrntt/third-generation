@@ -59,8 +59,8 @@ const Footer = () => {
         </li>
       </ul>
       <div className='footer__sub-footer'>
-       <div> <span>3<sup>rd</sup></span> Generation Construction LLC 2020</div>
-      <div>Contact Us: <ContactPhoneLink className='footer__contact-link'/></div>
+        <div><span>3<sup>rd</sup></span> Generation Construction LLC 2020</div>
+        <div>Contact Us: <ContactPhoneLink className='footer__contact-link'/></div>
       </div>
     </div>
   )

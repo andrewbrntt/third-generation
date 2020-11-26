@@ -8,6 +8,7 @@ const getImageGroup = (groupId) => {
         phases: false,
         images: []
       }
+      // noinspection JSUnresolvedVariable
       imageGroup.images = rawImageGroupRes.data.resources.map(image => {
         let altText = ''
         let phase = ''
@@ -27,6 +28,7 @@ const getImageGroup = (groupId) => {
           }
 
         }
+        // noinspection JSUnresolvedVariable
         return createImage(image.public_id, altText, phase, name)
       })
       return imageGroup

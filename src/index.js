@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter forceRefresh={true}>
       <HelmetProvider>
-          <App/>
+        <App/>
       </HelmetProvider>
     </BrowserRouter>
   </React.StrictMode>,

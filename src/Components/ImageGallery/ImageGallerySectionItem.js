@@ -1,6 +1,5 @@
 import React from 'react'
 import shortId from 'shortid'
-import ImageGalleryImage from './ImageGalleryImage'
 import DynamicImage from '../DynamicImage'
 
 const ImageGallerySectionItem = ({ imageObject, index, onImageClick }) => {
