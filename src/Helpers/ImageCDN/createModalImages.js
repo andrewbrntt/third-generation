@@ -1,4 +1,3 @@
-import React from 'react'
 import sortImageArray from '../sortImageArray'
 import createImage from './createImageObject'
 import GLOBAL_DEFS from '../GLOBAL_DEFS'
@@ -27,27 +26,25 @@ export default createModalImages
 
 function phaseGrouper (images) {
  const beforeImages = images.filter(image => {
-    return image.phase === 'before'
+    return image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.BEFORE
   })
 
   const duringImages = images.filter(image => {
-    return image.phase === 'during'
+    return image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.DURING
   })
 
   const afterImages = images.filter(image => {
-    return image.phase === 'after'
+    return image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.AFTER
   })
 
   const heroImage = images.find(image => image.phase === 'hero')
 
-  console.log('before images', beforeImages)
   let sortedBeforeImages = sortImageArray(beforeImages)
   let sortedDuringImages = sortImageArray(duringImages)
   let sortedAfterImages = sortImageArray(afterImages)
 
   let beforeDuring = sortedBeforeImages.concat(sortedDuringImages)
   let completePhaseArray = beforeDuring.concat(sortedAfterImages)
-  console.log('sorted before images', completePhaseArray)
 
   completePhaseArray.unshift(heroImage)
 

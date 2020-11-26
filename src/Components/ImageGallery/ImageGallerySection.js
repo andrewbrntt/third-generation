@@ -93,7 +93,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
       </div>
       // </LazyLoad>
     )
-  }, [galleryThumbnailImages, heroImage])
+  }, [heroImage, isSection, title])
 
   return (
     <>

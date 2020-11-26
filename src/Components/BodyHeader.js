@@ -15,7 +15,6 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
   const [elementHeight, setElementHeight] = useState(0)
 
   useLayoutEffect(() => {
-
     if (!heroImage) {
       getStockArtImage(heroImageName, true).then(image => {
         setHeroImage(image)
@@ -27,7 +26,7 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
         }
       })
     }
-  }, [overlayDimensions])
+  }, [overlayDimensions, heroImage, heroImageName])
 
   return (
     <section style={window.innerWidth < 992 ? { height: `${(elementHeight + 40) / 16}rem` } : { height: '47.5625rem' }}
