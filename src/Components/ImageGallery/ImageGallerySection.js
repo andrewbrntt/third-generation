@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import React, { useLayoutEffect, useMemo, useRef, useReducer } from 'react'
 import shortId from 'shortid'
 
 import derivedPublicId from '../../Helpers/ImageCDN/derivePublicId'
@@ -12,6 +12,30 @@ import createModalImages from '../../Helpers/ImageCDN/createModalImages'
 import ImageGallerySingleImageGroup from './ImageGallerySingleImageGroup'
 import ImageGalleryPhaseGroup from './ImageGalleryPhaseGroup'
 import ImageGalleryModal from './ImageGalleryModal'
+
+const REDUCER_ACTIONS = {
+  CURRENT_IMAGE: 'current_image',
+  PREVIOUS_ARROW: 'previous_arrow',
+  NEXT_ARROW: 'next_arrow',
+  CURRENT_INDEX: 'current_index'
+}
+
+const imageGalleryReducer = (state, action) => {
+  switch (action.type) {
+    case REDUCER_ACTIONS.CURRENT_IMAGE:
+      return { ...state, currentImage: action.payload }
+    case REDUCER_ACTIONS.PREVIOUS_ARROW:
+      return { ...state, previousArrowVisible: action.payload }
+    case REDUCER_ACTIONS.NEXT_ARROW:
+      return { ...state, nextArrowVisible: action.payload }
+    case REDUCER_ACTIONS.CURRENT_INDEX:
+      return { ...state, currentImageIndex: action.payload }
+    default:
+      return state
+  }
+}
+
+
 
 const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
@@ -66,7 +90,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         setGalleryModalImages(modalImages)
       }
     }
-  }, [sectionImages])
+  }, [sectionImages, heroImage])
 
   const ImageGroups = () => {
     if (galleryThumbnailImages && galleryThumbnailImages[0] && (galleryThumbnailImages[0].beforeImages || galleryThumbnailImages[0].duringImages || galleryThumbnailImages[0].afterImages)) {
