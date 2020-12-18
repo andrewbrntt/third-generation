@@ -7,8 +7,6 @@ import VendorSection from '../Components/VendorSection'
 
 import { vendors } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
-import { useImagesCDNSingleStockArt } from '../Helpers/ImageCDN/useImageCDN'
-import { Image } from 'cloudinary-react'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import DynamicImage from '../Components/DynamicImage'
@@ -39,7 +37,7 @@ const Siding = () => {
       <BodySection linkRoute='/contact' styleClasses='color-primary body-section--mobile-display'
                    pageHeaderStyleClasses='body-section--mobile-display' pageHeader='Siding' linkText='Contact Us'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}
         <p className='padding-x-standard'>
           Durable siding, energy-efficient doors, and windows are all part of what makes your home beautiful.
         </p>
@@ -88,7 +86,8 @@ const Siding = () => {
                    sectionTitle='Outlast the Elements' linkRoute='/contact' linkText='Contact Us'>
         <div className='p--margin-bottom-standard'>
           <p>
-            Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County homes.
+            Extreme weather ranging from scorching, humid summers to frigid, icy winters wreaks havoc on Lorain County
+            homes.
           </p>
           <p className='p--top-spacing'>
             Replacing your home’s weather-worn or damaged siding can increase its value, curb appeal, and safety.

@@ -6,6 +6,7 @@
 //Animation
 //Misc
 
+//noinspection CssUnusedSymbol
 .desktop-nav__container {
   display: none;
   @include lg {
@@ -14,6 +15,7 @@
   }
 }
 
+//noinspection CssUnusedSymbol
 .desktop-nav__ul {
   display: flex;
   justify-content: space-evenly;
@@ -88,6 +90,7 @@
   display: block;
 }
 
+//noinspection Stylelint
 .desktop-nav__services-drop-down:hover {
   border: 0;
 }

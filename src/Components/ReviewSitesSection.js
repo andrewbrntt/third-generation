@@ -24,7 +24,8 @@ const ReviewSitesSection = () => {
         </span>
       </a>
       <a href={socialMediaRoutes.homeAdvisor.routeTo} className='review-sites-section__card'>
-        <div className='review-sites-section__icon-container--dimensions review-sites-section__icon-container-home-advisor'>
+        <div
+          className='review-sites-section__icon-container--dimensions review-sites-section__icon-container-home-advisor'>
           <picture>
             <source media='(min-width:992px)' srcSet={homeAdvisor3x}/>
             <source media='(min-width:768px)' srcSet={homeAdvisor2x}/>
@@ -37,7 +38,7 @@ const ReviewSitesSection = () => {
       </a>
       <a href={socialMediaRoutes.google.routeTo} className='review-sites-section__card'>
         <div className='review-sites-section__icon-container--dimensions'>
-            <img src={google} className='review-sites-section__icon--dimensions' alt='' aria-hidden='true'/>
+          <img src={google} className='review-sites-section__icon--dimensions' alt='' aria-hidden='true'/>
         </div>
         <span className='review-sites-section__card-text'>
           {socialMediaRoutes.google.routeName}

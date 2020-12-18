@@ -10,7 +10,6 @@ import { alliedLogo, carterLogo, gafLogo } from '../Helpers/vendorAssetLibrary'
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { repairReviews } from '../DataObjects/reviewsData'
-import { Image } from 'cloudinary-react'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
@@ -50,7 +49,7 @@ const Repairs = () => {
                    pageHeader='Repairs'
                    linkText='Contact Us'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}}
         <div className='padding-x-standard'>
           <p>
             Sometimes all it takes to transform your home is a few minor fixes.

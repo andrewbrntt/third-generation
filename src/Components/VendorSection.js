@@ -15,7 +15,7 @@ const VendorSection = ({ vendors = [] }) => {
     } else {
       return (
         /* eslint-disable-next-line jsx-a11y/no-redundant-roles */
-      <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
+        <img className={vendor.styleClasses} role='img' src={vendor.logo.small} alt={vendor.altText}/>
       )
     }
   }

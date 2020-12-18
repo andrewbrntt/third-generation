@@ -15,8 +15,6 @@ import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 const OurWork = () => {
   const [imageGallerySections, setImageGallerySections] = useState(null)
 
-  // useImagesCDNAllImages(setImageGallerySections)
-
   useEffect(() => {
     let allGroupSections = []
 
@@ -67,7 +65,7 @@ const OurWork = () => {
         </p>
       </BodyHeader>
       <BodySection styleClasses='color-primary' sectionTitle='Gallery'>
-        <ImageGalleryGroups />
+        <ImageGalleryGroups/>
       </BodySection>
       <BodySection linkRoute='/reviews' linkText='Reviews'
                    styleClasses='padding-x-standard body-section__reviews-section--padding background-color-primary color-white body-section--width-full'

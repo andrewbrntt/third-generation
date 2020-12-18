@@ -9,7 +9,6 @@ import { accreditationSites } from '../DataObjects/socialMediaData'
 import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
-import { Image } from 'cloudinary-react'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
@@ -21,7 +20,7 @@ const EmergencyService = () => {
 
   useEffect(() => {
 
-    const emergencyHero =  getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.EMERGENCY)
+    const emergencyHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.EMERGENCY)
     const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
 
     Promise.all([emergencyHero, galleryImageGroup])
@@ -30,7 +29,6 @@ const EmergencyService = () => {
         setImageGalleryImages(res[1])
       })
   }, [])
-
 
   return (
     <>
@@ -42,7 +40,7 @@ const EmergencyService = () => {
       <BodySection linkRoute='/contact' styleClasses='color-primary' pageHeader='24-Hour Emergency Service'
                    linkText='Contact Us'>
         {heroImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage} />}
+        <DynamicImage styleClasses='body-section__hero-img' imageObject={heroImage}/>}
         <div className='padding-x-standard desktop__p--margin-bottom-80'>
           <p>Life is full of curveballs, and emergencies happen.</p>
           <p className='p--top-spacing'>Let Third Generation Construction help keep your home safe.</p>
@@ -73,7 +71,8 @@ const EmergencyService = () => {
       <BodySection styleClasses='desktop--padding-top-0 mobile--padding-top-0'>
         <p
           className='padding-x-standard align-text--center color-primary body-section--width-965 desktop__p--margin-bottom-80 desktop--margin-top-0'>
-          Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span>. Our team prides itself on quality and is committed to guaranteeing outstanding results.
+          Third Generation Construction is <span className='font-weight-bold'>licensed, bonded, and insured</span>. Our
+          team prides itself on quality and is committed to guaranteeing outstanding results.
         </p>
         <AccreditedSitesSection containerStyleClasses='body-section--width-965 desktop--margin-bottom-0'
                                 accreditationSites={accreditationSites}/>

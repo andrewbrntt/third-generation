@@ -3,6 +3,7 @@ import { Image } from 'cloudinary-react'
 
 const DynamicImage = ({ imageObject, styleClasses }) => {
   if (imageObject) {
+    // noinspection JSUnresolvedVariable
     if (imageObject.cdn) {
       return (
         <>

@@ -5,11 +5,11 @@ import {
   faCircle,
   faHome,
   faHorizontalRule,
+  faPhone,
   faStar as faStarSolid,
   faStarHalfAlt,
   faTimes,
-  faTools,
-  faPhone
+  faTools
 } from '@fortawesome/pro-solid-svg-icons'
 import {
   faArrowCircleLeft,

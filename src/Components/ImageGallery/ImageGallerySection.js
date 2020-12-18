@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import React, { useLayoutEffect, useMemo, useRef, useReducer } from 'react'
 import shortId from 'shortid'
 
 import derivedPublicId from '../../Helpers/ImageCDN/derivePublicId'
@@ -13,6 +13,30 @@ import ImageGallerySingleImageGroup from './ImageGallerySingleImageGroup'
 import ImageGalleryPhaseGroup from './ImageGalleryPhaseGroup'
 import ImageGalleryModal from './ImageGalleryModal'
 
+const REDUCER_ACTIONS = {
+  CURRENT_IMAGE: 'current_image',
+  PREVIOUS_ARROW: 'previous_arrow',
+  NEXT_ARROW: 'next_arrow',
+  CURRENT_INDEX: 'current_index'
+}
+
+const imageGalleryReducer = (state, action) => {
+  switch (action.type) {
+    case REDUCER_ACTIONS.CURRENT_IMAGE:
+      return { ...state, currentImage: action.payload }
+    case REDUCER_ACTIONS.PREVIOUS_ARROW:
+      return { ...state, previousArrowVisible: action.payload }
+    case REDUCER_ACTIONS.NEXT_ARROW:
+      return { ...state, nextArrowVisible: action.payload }
+    case REDUCER_ACTIONS.CURRENT_INDEX:
+      return { ...state, currentImageIndex: action.payload }
+    default:
+      return state
+  }
+}
+
+
+
 const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
   const ImageGallerySectionContainer = useRef(null)
@@ -22,7 +46,6 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
   const [heroImage, setHeroImage] = useState(null)
   const [galleryThumbnailImages, setGalleryThumbnailImages] = useState(null)
   const [galleryModalImages, setGalleryModalImages] = useState([])
-  const [galleryImagesWidth, setGalleryImagesWidth] = useState([])
 
   const onImageClick = (e) => {
     e.preventDefault()
@@ -47,7 +70,8 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         setHeroImage(hero)
       }
 
-      let imageThumbnails, modalImages = null
+      let imageThumbnails
+      let modalImages
 
       if (sectionImages.phases) {
         imageThumbnails = createPhaseThumbnails(sectionImages.images)
@@ -66,12 +90,13 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         setGalleryModalImages(modalImages)
       }
     }
-  }, [sectionImages])
+  }, [sectionImages, heroImage])
 
   const ImageGroups = () => {
     if (galleryThumbnailImages && galleryThumbnailImages[0] && (galleryThumbnailImages[0].beforeImages || galleryThumbnailImages[0].duringImages || galleryThumbnailImages[0].afterImages)) {
       return galleryThumbnailImages.map(currentGroup => {
-        return <ImageGalleryPhaseGroup key={shortId.generate()} onImageClick={onImageClick} currentImageGroup={currentGroup} />
+        return <ImageGalleryPhaseGroup key={shortId.generate()} onImageClick={onImageClick}
+                                       currentImageGroup={currentGroup}/>
       })
     } else {
       return (
@@ -87,12 +112,12 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
         {!isSection && <span className='image-gallery-section__title'>{title}</span>}
         {heroImage && <ImageGallerySectionHero onImageClick={onImageClick} heroImage={heroImage}/>}
         <div ref={ImageGallerySectionContainer} className='image-gallery-section__img-container'>
-          <ImageGroups />
+          <ImageGroups/>
         </div>
       </div>
       // </LazyLoad>
     )
-  }, [galleryThumbnailImages, heroImage])
+  }, [heroImage, isSection, title])
 
   return (
     <>

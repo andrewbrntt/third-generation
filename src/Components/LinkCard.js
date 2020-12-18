@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Image } from 'cloudinary-react'
 import DynamicImage from './DynamicImage'
 
 const LinkCard = ({ imgSrc, cardTitle, urlPath }) => {

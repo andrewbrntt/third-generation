@@ -17,6 +17,7 @@ const DesktopNavigationMenu = () => {
     e.preventDefault()
 
     if (e.keyCode === 13) {
+      // noinspection JSUnresolvedFunction
       servicesFirstSubMenuItem.current.focus()
       setServicesSubMenuIsOpen(!servicesSubMenuIsOpen)
     }
@@ -30,6 +31,7 @@ const DesktopNavigationMenu = () => {
 
   useLayoutEffect(() => {
     if (!servicesSubMenuIsOpen && servicesSubMenuEventType === 'blur') {
+      // noinspection JSUnresolvedFunction
       ourWorkMenuItem.current.focus()
     }
   }, [servicesSubMenuIsOpen, servicesSubMenuEventType])

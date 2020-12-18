@@ -1,7 +1,6 @@
 import React from 'react'
 import DecorativeImage from './DecorativeImage'
 import ThemedLink from './ThemedLink'
-import { Image } from 'cloudinary-react'
 import DynamicImage from './DynamicImage'
 
 const DesktopBodySectionHeader = ({ sectionTitle, children, heroImage, linkText, linkRoute }) => {
