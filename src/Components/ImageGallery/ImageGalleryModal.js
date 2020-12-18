@@ -12,10 +12,6 @@ const initState = {
   previousArrowVisible: false
 }
 
-const init = (initState) => {
-  return initState
-}
-
 const REDUCER_ACTIONS = {
   CURRENT_IMAGE: 'current_image',
   PREVIOUS_ARROW: 'previous_arrow',
@@ -51,7 +47,7 @@ const ImageGalleryModal = ({
     NEXT: 'next'
   }
 
-  const [state, dispatch] = useReducer(imageModalReducer, initState, init)
+  const [state, dispatch] = useReducer(imageModalReducer, initState, initState => initState)
 
   const modalContainer = useRef(null)
 
@@ -112,7 +108,7 @@ const ImageGalleryModal = ({
     <div ref={modalContainer}
          className={`image-gallery__modal ${isModalOpen ? 'modal--display-block' : 'modal--display-none'} ${styleClasses || ''}`}>
       <div className='image-gallery__close-btn-container'>
-        <button className='image-gallery__modal-btn modal__close-btn' onClick={() => handleModalClose(!isModalOpen)}>
+        <button className='image-gallery__modal-btn modal__close-btn' onClick={() => handleModalClose()}>
           <FontAwesomeIcon className='modal__times-icon' icon={['fa', 'times']} />
         </button>
       </div>

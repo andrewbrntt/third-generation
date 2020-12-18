@@ -1,3 +1,14 @@
 *:focus {
   outline: $secondary solid 3px;
 }
+
+.nav__button-link-style {
+  color: $white;
+  background-color: $primary;
+  border: transparent;
+}
+
+.image-gallery__item-button {
+  padding: 0;
+  border: transparent;
+}

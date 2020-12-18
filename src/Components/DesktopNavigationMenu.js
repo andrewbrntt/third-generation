@@ -59,13 +59,13 @@ const DesktopNavigationMenu = () => {
         <li aria-hidden='true'>|</li>
         <li onKeyUp={handleSubmenuToggle}
             className='desktop-nav__services-li'>
-          <a className='desktop-nav__services-drop-down' href='#'>
+          <button className='nav__button-link-style desktop-nav__services-drop-down'>
             Services
             <FontAwesomeIcon
               className='color-white desktop-nav__services-caret-down'
               icon={'caret-down'}
             />
-          </a>
+          </button>
           <ul
             className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
             <li>
