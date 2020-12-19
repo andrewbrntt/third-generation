@@ -22,14 +22,12 @@ const OurWork = () => {
     const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
     const galleryImageGroup3 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3)
     const galleryImageGroup4 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_4)
-    const galleryImageGroup5 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_5)
-    Promise.all([galleryImageGroup1, galleryImageGroup2, galleryImageGroup3, galleryImageGroup4, galleryImageGroup5])
+
+    Promise.all([galleryImageGroup1, galleryImageGroup2, galleryImageGroup3, galleryImageGroup4])
       .then(res => {
-        allGroupSections.push(res[0])
-        allGroupSections.push(res[1])
-        allGroupSections.push(res[2])
-        allGroupSections.push(res[3])
-        allGroupSections.push(res[4])
+        for(let i = 0; i < res.length; i++) {
+          allGroupSections.push(res[i])
+        }
 
         setImageGallerySections(allGroupSections)
       })

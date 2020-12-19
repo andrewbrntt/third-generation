@@ -62,16 +62,22 @@
 
 .mobile-navigation__menu-button {
   position: absolute;
-  top: 8rem;
+  // TODO: Change back when COVID banner is removed
+  top: 14rem;
+  //top: 8rem;
   left: 0.9375rem;
   z-index: 1;
 
   @include sm-header {
-    top: 6rem;
+    // TODO: Change back when COVID banner is removed
+    top: 12rem;
+    //top: 6rem;
   }
 
   @include md {
-    top: 3.5rem;
+    // TODO: Change back when COVID banner is removed
+    top: 7.6rem;
+    //top: 3.5rem;
   }
 }
 

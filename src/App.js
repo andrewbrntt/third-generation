@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import fontAwesomeLibrary from './Helpers/fontAwesomeLibrary'
 import './Styles/base/_app.scss'
 
+import CovidBanner from './Components/COVIDBanner'
 import SkipLink from './Components/SkipLink'
 import Banner from './Components/Banner'
 import Header from './Components/Header'
@@ -21,12 +22,13 @@ const Remodel = lazy(() => import('./Pages/Remodel'))
 const Reviews = lazy(() => import('./Pages/Reviews'))
 const EmergencyService = lazy(() => import('./Pages/EmergencyService'))
 const Error = lazy(() => import('./Pages/Error'))
+const CovidStatement = lazy(() => import('./Pages/CovidStatement'))
 
 fontAwesomeLibrary()
 
 function App () {
-  const loadingIcon = <div className='app-load-spinner'><FontAwesomeIcon className='modal__times-icon color-primary'
-                                                                         icon={['far', 'spinner-third']} spin={true}/>
+  const loadingIcon = <div className='app-load-spinner'>
+    <FontAwesomeIcon className='modal__times-icon color-primary' icon={['far', 'spinner-third']} spin={true}/>
   </div>
 
   return (
@@ -38,6 +40,7 @@ function App () {
       </Helmet>
       <header className='background-color-primary'>
         <SkipLink/>
+        <CovidBanner />
         <Banner/>
         <Header/>
       </header>
@@ -73,6 +76,9 @@ function App () {
             </Route>
             <Route path='/emergency-service'>
               <EmergencyService/>
+            </Route>
+            <Route path='/covid'>
+              <CovidStatement/>
             </Route>
             <Route path='*'>
               <Error/>

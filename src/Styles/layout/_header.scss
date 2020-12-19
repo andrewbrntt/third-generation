@@ -18,17 +18,24 @@
 .header__logo-container {
   // Box Model
   position: absolute;
-  top: 8rem;
+  // TODO: Change back when COVID banner is removed
+  top: 13rem;
+  //top: 8rem;
   right: 0;
   left: 0;
   text-align: center;
   @include sm-header {
-    top: 6rem;
+    // TODO: Change back when COVID banner is removed
+    top: 11rem;
+    //top: 6rem;
   }
 
   @include md {
-    top: 3.5rem;
+    // TODO: Change back when COVID banner is removed
+    top: 7rem;
+    //top: 10rem;
   }
+
   @include lg {
     position: initial;
   }
