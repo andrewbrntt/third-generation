@@ -13,6 +13,8 @@ const GLOBAL_DEFS = {
     PROJECT_2: 'project-2',
     PROJECT_3: 'project-3',
     PROJECT_4: 'project-4',
+
+    // TODO: Remove or change this to a real project. This one is a before/during/after project example.
     PROJECT_5: 'project-5',
   },
   IMAGE_CARDS: {
