@@ -88,7 +88,9 @@ const Home = () => {
       </Helmet>
       <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
                   heroImageName='home'
-                  pageHeader='Transform Your House Into Your Dream Home'>
+                  pageHeader='Transform Your House Into Your Dream Home'
+                  showButtonTwo="true"
+      >
         <p>
           A home's exterior is made beautiful through its siding, trim, and roofing.
         </p>

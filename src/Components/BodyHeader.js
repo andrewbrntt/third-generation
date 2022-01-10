@@ -5,7 +5,7 @@ import DynamicImage from '../Components/DynamicImage'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 
 // TODO: This seems to be re-rendering like 6 times on load and I need to figure out why
-const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }) => {
+const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName, showButtonTwo }) => {
 
   const [heroImage, setHeroImage] = useState(null)
 
@@ -34,7 +34,9 @@ const BodyHeader = ({ linkRoute, linkText, pageHeader, children, heroImageName }
       {heroImage && <DynamicImage styleClasses='body-header__background-hero-img' imageObject={heroImage}/>}
       {heroImage && <HeroImageOverlay elementRef={overlayContainer} styleClasses='display-middle' linkRoute={linkRoute}
                                       linkText={linkText}
-                                      pageHeader={pageHeader}>
+                                      pageHeader={pageHeader}
+                                      showButtonTwo={showButtonTwo}
+      >
         {children}
       </HeroImageOverlay>}
     </section>
