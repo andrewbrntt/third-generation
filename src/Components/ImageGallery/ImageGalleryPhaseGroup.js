@@ -5,14 +5,18 @@ import shortId from 'shortid'
 const ImageGalleryPhaseGroup = ({currentImageGroup, onImageClick}) => {
   let groupTitle = ''
   let groupImages = ''
+let beforeImages = currentImageGroup.beforeImages
+let duringImages = currentImageGroup.duringImages
+let afterImages = currentImageGroup.afterImages
 
-  if (currentImageGroup.beforeImages) {
+
+  if (Array.isArray(beforeImages) && beforeImages.length > 0) {
     groupTitle = 'Before'
     groupImages = currentImageGroup.beforeImages
-  } else if (currentImageGroup.duringImages) {
+  } else if (Array.isArray(duringImages) && duringImages.length > 0) {
     groupTitle = 'During'
     groupImages = currentImageGroup.duringImages
-  } else if (currentImageGroup.afterImages) {
+  } else if (Array.isArray(afterImages) && afterImages.length > 0) {
     groupTitle = 'After'
     groupImages = currentImageGroup.afterImages
   }

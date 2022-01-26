@@ -22,11 +22,11 @@ const OurWork = () => {
     const galleryImageGroup2 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
     const galleryImageGroup3 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3)
     const galleryImageGroup4 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_4)
+    const galleryImageGroup6 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_6)
+    const galleryImageGroup8 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_8)
+    const galleryImageGroup9 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_9)
 
-    // TODO: Remove or change this to a real project. This one is a before/during/after project example.
-    const galleryImageGroup5 = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_5)
-
-    Promise.all([galleryImageGroup1, galleryImageGroup2, galleryImageGroup3, galleryImageGroup4, galleryImageGroup5])
+    Promise.all([galleryImageGroup1, galleryImageGroup2, galleryImageGroup3, galleryImageGroup4, galleryImageGroup6, galleryImageGroup8, galleryImageGroup9])
       .then(res => {
         for(let i = 0; i < res.length; i++) {
           allGroupSections.push(res[i])
