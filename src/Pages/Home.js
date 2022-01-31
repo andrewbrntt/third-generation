@@ -34,7 +34,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-
+// TODO: The file structure needs to be gallery type => individual project => device size eg: basement => project-1 => desktop
     const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
 
     const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)

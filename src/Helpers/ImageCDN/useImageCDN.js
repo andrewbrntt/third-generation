@@ -14,12 +14,12 @@ export function getWindowWidth () {
   return windowSize
 }
 
-export function getGroupImagesCDN (imageGroupTag) {
+export function getGroupImagesCDN (galleryName) {
   const windowSize = getWindowWidth()
-  return axios.get(`${GLOBAL_DEFS.CDN_DEFS.CDN_DOMAIN_PREFIX}${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${imageGroupTag}.json`)
+  return axios.get(`${GLOBAL_DEFS.CDN_DEFS.CDN_DOMAIN_PREFIX}${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${galleryName}-${windowSize}.json`)
 }
 
-export function getImagesCDNSingleStockArtTest (suffix, pageHero = false) {
+export function getImagesCDNSingleStockArt (suffix, pageHero = false) {
   const windowSize = pageHero && window.innerWidth >= 1200 ? GLOBAL_DEFS.WINDOW_SIZES.DESKTOP_LARGE : getWindowWidth()
   let url = `${GLOBAL_DEFS.CDN_DEFS.CDN_DOMAIN_PREFIX}${process.env.REACT_APP_CDN_CLOUD_NAME}/image/list/${windowSize}-${suffix}.json`
   return axios.get(url)

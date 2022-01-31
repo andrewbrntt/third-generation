@@ -8,6 +8,12 @@ export const routesData = {
   ourWork: { routeName: 'Our Work', routeTo: '/our-work' },
   reviews: { routeName: 'Reviews', routeTo: '/reviews' },
   contactUs: { routeName: 'Contact Us', routeTo: '/contact' },
+  kitchenGallery: { routeName: 'Kitchen', routeTo: '/contact' },
+  bathroomGallery: { routeName: 'Bathroom', routeTo: '/contact' },
+  basementGallery: { routeName: 'Basement', routeTo: '/contact' },
+  roofingGallery: { routeName: 'Roofing', routeTo: '/contact' },
+  wholeHomeGallery: { routeName: 'Whole-Home Remodel', routeTo: '/contact' },
+  otherGallery: { routeName: 'Other', routeTo: '/contact' },
   emergency: {
     routeName: '24-Hour Emergency',
     routeTo: '/emergency-service'

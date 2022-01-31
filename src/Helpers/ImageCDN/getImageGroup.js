@@ -1,8 +1,8 @@
 import { getGroupImagesCDN } from './useImageCDN'
 import createImage from './createImageObject'
 
-const getImageGroup = (groupId) => {
-  return getGroupImagesCDN(groupId)
+const getImageGroup = (galleryName) => {
+  return getGroupImagesCDN(galleryName)
     .then(rawImageGroupRes => {
       let imageGroup = {
         phases: false,

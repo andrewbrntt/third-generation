@@ -99,10 +99,51 @@ const DesktopNavigationMenu = () => {
           </ul>
         </li>
         <li aria-hidden='true'>|</li>
-        <li>
-          <NavLink ref={ourWorkMenuItem} to={routesData.ourWork.routeTo}>
-            {routesData.ourWork.routeName}
-          </NavLink>
+        <li onKeyUp={handleSubmenuToggle}
+            className='desktop-nav__services-li'>
+          <button className='nav__button-link-style desktop-nav__services-drop-down'>
+            Gallery
+            <FontAwesomeIcon
+              className='color-white desktop-nav__services-caret-down'
+              icon={'caret-down'}
+            />
+          </button>
+          <ul
+            className={`desktop-nav__services-submenu ${servicesSubMenuIsOpen ? 'desktop-nav__submenu-is-open' : ''}`}>
+            <li>
+              <NavLink
+                ref={servicesFirstSubMenuItem}
+                to={routesData.kitchenGallery.routeTo}
+              >
+                {routesData.kitchenGallery.routeName}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={routesData.bathroomGallery.routeTo}>
+                {routesData.bathroomGallery.routeName}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={routesData.basementGallery.routeTo}>
+                {routesData.basementGallery.routeName}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={routesData.wholeHomeGallery.routeTo}>
+                {routesData.wholeHomeGallery.routeName}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink ref={servicesLastSubMenuItem} to={routesData.roofingGallery.routeTo}>
+                {routesData.roofingGallery.routeName}
+              </NavLink>
+            </li>
+            <li onBlur={handleSubmenuClose}>
+              <NavLink ref={servicesLastSubMenuItem} to={routesData.otherGallery.routeTo}>
+                {routesData.otherGallery.routeName}
+              </NavLink>
+            </li>
+          </ul>
         </li>
         <li aria-hidden='true'>|</li>
         <li>

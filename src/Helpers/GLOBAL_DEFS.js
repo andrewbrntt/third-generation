@@ -1,7 +1,7 @@
 const GLOBAL_DEFS = {
   SMALL: 'small',
   HERO: 'hero',
-  IMAGE_GALLERY_PATH: '/image-gallery',
+  IMAGE_GALLERY_PATH: '/image-gallery-dev',
   THIRD_GEN_DOMAIN: '.third-generation',
 
   CDN_DEFS: {
@@ -13,9 +13,13 @@ const GLOBAL_DEFS = {
     PROJECT_2: 'project-2',
     PROJECT_3: 'project-3',
     PROJECT_4: 'project-4',
+    PROJECT_5: 'project-5',
     PROJECT_6: 'project-6',
+    PROJECT_7: 'project-7',
     PROJECT_8: 'project-8',
-    PROJECT_9: 'project-9',
+  },
+  GALLERY_NAMES: {
+    BASEMENT: 'basement'
   },
   IMAGE_CARDS: {
     REMODEL_CARD: 'remodel-card',

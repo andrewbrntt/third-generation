@@ -86,5 +86,6 @@
     "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.17.1",
     "yarn-audit-fix": "^9.0.9"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
