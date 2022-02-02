@@ -19,7 +19,12 @@ const GLOBAL_DEFS = {
     PROJECT_8: 'project-8',
   },
   GALLERY_NAMES: {
-    BASEMENT: 'basement'
+    BASEMENT: 'basement',
+    BATHROOM: 'bathroom',
+    KITCHEN: 'kitchen',
+    ROOFING: 'roofing',
+    WHOLE_HOME: 'whole-home',
+    OTHER: 'other',
   },
   IMAGE_CARDS: {
     REMODEL_CARD: 'remodel-card',
@@ -49,6 +54,14 @@ const GLOBAL_DEFS = {
     AFTER: 'after',
     DURING: 'during'
   }
+}
+
+export const GALLERY_REDUCER_ACTIONS = {
+  MODAL_STATE: 'modal_state',
+    CURRENT_INDEX: 'image_index',
+    HERO_IMAGE: 'hero_image',
+    THUMBNAILS: 'thumbnails',
+    MODAL_IMAGES: 'modal_images'
 }
 
 export default GLOBAL_DEFS

@@ -7,25 +7,35 @@ const createModalImages = (images, hero) => {
   let sortedModalImages = []
   let fullImages
 
-if(images.length > 0) {
-  fullImages = images.filter(image => !image.src.includes(GLOBAL_DEFS.SMALL) && !image.src.includes(GLOBAL_DEFS.HERO))
-  let modalImages = fullImages.map(modalImage => createImage(modalImage.src, modalImage.altText, modalImage.phase, modalImage.name))
+  if (images.length > 0) {
+    fullImages = images.filter(image => !image.thumbnail && !image.hero)
+    let modalImages = fullImages.map(modalImage =>
+      createImage(
+        modalImage.src,
+        modalImage.altText,
+        modalImage.phase,
+        modalImage.name,
+        modalImage.device,
+        modalImage.gallery,
+        modalImage.order
+      )
+    )
 
-  sortedModalImages = sortImageArray(modalImages)
-}
+    sortedModalImages = sortImageArray(modalImages)
+  }
+  if (hero) {
     sortedModalImages.unshift(hero)
+  }
+  if (sortedModalImages[1].phase !== '') {
+    sortedModalImages = phaseGrouper(sortedModalImages)
+  }
 
-    if(sortedModalImages[1].phase !== '') {
-     sortedModalImages = phaseGrouper(sortedModalImages)
-    }
-
-    return sortedModalImages
+  return sortedModalImages
 }
 export default createModalImages
 
-
-function phaseGrouper (images) {
- const beforeImages = images.filter(image => {
+function phaseGrouper(images) {
+  const beforeImages = images.filter(image => {
     return image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.BEFORE
   })
 

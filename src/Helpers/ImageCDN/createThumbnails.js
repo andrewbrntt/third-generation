@@ -1,11 +1,19 @@
 import sortImageArray from '../sortImageArray'
 import createImage from './createImageObject'
-import GLOBAL_DEFS from '../GLOBAL_DEFS'
 
 const createThumbnails = (images) => {
-  let smallImages = images.filter(image => image.src.includes(GLOBAL_DEFS.SMALL))
+  let smallImages = images.filter(image => image.thumbnail)
 
-  let thumbnails = smallImages.map(thumbnail => createImage(thumbnail.src, thumbnail.altText, thumbnail.phase, thumbnail.name))
+  let thumbnails = smallImages.map(thumbnail =>
+    createImage(
+      thumbnail.src,
+      thumbnail.altText,
+      thumbnail.phase,
+      thumbnail.name,
+      thumbnail.device,
+      thumbnail.gallery,
+      thumbnail.order
+    ))
 
   return sortImageArray(thumbnails)
 }
