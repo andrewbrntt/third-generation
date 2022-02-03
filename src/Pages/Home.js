@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES } from '../Helpers/GLOBAL_DEFS'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
 import LinkCard from '../Components/LinkCard'
@@ -34,7 +34,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.GALLERY_NAMES.BASEMENT)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES.BASEMENT)
 
     const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -88,7 +88,7 @@ const Home = () => {
       <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
                   heroImageName='home'
                   pageHeader='Transform Your House Into Your Dream Home'
-                  showButtonTwo="true"
+                  showButtonTwo={false}
       >
         <p>
           A home's exterior is made beautiful through its siding, trim, and roofing.

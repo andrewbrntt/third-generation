@@ -17,7 +17,6 @@ const initState = {
   galleryModalImages: []
 }
 
-
 const ImageGallerySection = ({ title, sectionImages, isSection }) => {
 
   const ImageGallerySectionContainer = useRef(null)

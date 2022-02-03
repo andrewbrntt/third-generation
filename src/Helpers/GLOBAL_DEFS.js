@@ -18,14 +18,7 @@ const GLOBAL_DEFS = {
     PROJECT_7: 'project-7',
     PROJECT_8: 'project-8',
   },
-  GALLERY_NAMES: {
-    BASEMENT: 'basement',
-    BATHROOM: 'bathroom',
-    KITCHEN: 'kitchen',
-    ROOFING: 'roofing',
-    WHOLE_HOME: 'whole-home',
-    OTHER: 'other',
-  },
+
   IMAGE_CARDS: {
     REMODEL_CARD: 'remodel-card',
     REPAIRS_CARD: 'repairs-card',
@@ -41,7 +34,7 @@ const GLOBAL_DEFS = {
     ROOFING: 'roofing',
     SIDING: 'siding',
     OUR_WORK_SECTION: 'our-work-section',
-    OUR_WORK: 'our-work'
+    OUR_WORK: 'image_galleryt'
   },
   WINDOW_SIZES: {
     DESKTOP_LARGE: 'desktop-large',
@@ -58,10 +51,19 @@ const GLOBAL_DEFS = {
 
 export const GALLERY_REDUCER_ACTIONS = {
   MODAL_STATE: 'modal_state',
-    CURRENT_INDEX: 'image_index',
-    HERO_IMAGE: 'hero_image',
-    THUMBNAILS: 'thumbnails',
-    MODAL_IMAGES: 'modal_images'
+  CURRENT_INDEX: 'image_index',
+  HERO_IMAGE: 'hero_image',
+  THUMBNAILS: 'thumbnails',
+  MODAL_IMAGES: 'modal_images'
+}
+
+export const GALLERY_NAMES = {
+  BASEMENT: 'basement',
+  BATHROOM: 'bathroom',
+  KITCHEN: 'kitchen',
+  ROOFING: 'roofing',
+  WHOLE_HOME: 'whole-home',
+  OTHER: 'other'
 }
 
 export default GLOBAL_DEFS

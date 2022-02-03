@@ -1,19 +1,22 @@
 export const routesData = {
   home: { routeName: 'Home', routeTo: '/', exact: true },
   about: { routeName: 'About', routeTo: '/about' },
-  remodel: { routeName: 'Remodel', routeTo: '/remodel' },
-  roofing: { routeName: 'Roofing', routeTo: '/roofing' },
-  siding: { routeName: 'Siding', routeTo: '/siding' },
-  repairs: { routeName: 'Repairs', routeTo: '/repairs' },
-  ourWork: { routeName: 'Our Work', routeTo: '/our-work' },
+  services: [
+    { routeName: 'Remodel', routeTo: '/remodel' },
+    { routeName: 'Roofing', routeTo: '/roofing' },
+    { routeName: 'Siding', routeTo: '/siding' },
+    { routeName: 'Repairs', routeTo: '/repairs' }
+  ],
   reviews: { routeName: 'Reviews', routeTo: '/reviews' },
   contactUs: { routeName: 'Contact Us', routeTo: '/contact' },
-  kitchenGallery: { routeName: 'Kitchen', routeTo: '/contact' },
-  bathroomGallery: { routeName: 'Bathroom', routeTo: '/contact' },
-  basementGallery: { routeName: 'Basement', routeTo: '/contact' },
-  roofingGallery: { routeName: 'Roofing', routeTo: '/contact' },
-  wholeHomeGallery: { routeName: 'Whole-Home Remodel', routeTo: '/contact' },
-  otherGallery: { routeName: 'Other', routeTo: '/contact' },
+  imageGalleries: [
+    { routeName: 'Kitchen', routeTo: '/kitchen' },
+    { routeName: 'Bathroom', routeTo: '/bathroom' },
+    { routeName: 'Basement', routeTo: '/basement' },
+    { routeName: 'Roofing', routeTo: '/roofing' },
+    { routeName: 'Whole-Home Remodel', routeTo: '/whole-home' },
+    { routeName: 'Other', routeTo: '/other' }
+  ],
   emergency: {
     routeName: '24-Hour Emergency',
     routeTo: '/emergency-service'

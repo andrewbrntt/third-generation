@@ -1,4 +1,5 @@
 import shortId from 'shortid'
+import toTitleCase from '../toTitleCase'
 
 const createImage = (src, altText, phase, name, device, gallery, order, thumbnail) => {
   return {
@@ -17,13 +18,4 @@ const createImage = (src, altText, phase, name, device, gallery, order, thumbnai
 
 export default createImage
 
-function toTitleCase (str) {
-  if (str && str !== '') {
-    return str.replace(
-      /\w\S*/g,
-      function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-      }
-    )
-  }
-}
+
