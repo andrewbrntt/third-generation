@@ -61,7 +61,7 @@ const Siding = () => {
           </p>
         </div>
       </DesktopBodySectionHeader>
-      <BodySection linkRoute='our-work'
+      <BodySection linkRoute='/other-photos'
                    styleClasses='background-color-primary color-white padding-x-standard body-section--width-full'
                    sectionTitle='Pros to Siding'
                    linkText='View Gallery'>
@@ -94,7 +94,7 @@ const Siding = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
+      <BodySection linkRoute='/other-photos' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work' linkText='View Gallery'>
         {ourWorkSectionImage &&
         <DynamicImage styleClasses='body-section__hero-img' imageObject={ourWorkSectionImage}/>}

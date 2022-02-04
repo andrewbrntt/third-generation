@@ -24,7 +24,7 @@ const OurWork = ({gallery}) => {
         setImageGalleryPhotos(res)
       })
 
-  }, [])
+  }, [gallery])
 
   // const ImageGalleryGroups = () => {
   //   if (imageGallerySections && imageGallerySections.length > 0) {

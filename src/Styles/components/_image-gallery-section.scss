@@ -35,9 +35,9 @@
   margin-bottom: 1.25rem;
 
   //Typography
-  font-size: 1.25rem;
   font-family: $san-serif-font;
   letter-spacing: 0.003125rem;
+  text-decoration: underline;
 
   @include sm {
     width: 31.25rem;
@@ -45,12 +45,10 @@
 
   @include md {
     width: 43.75rem;
-    font-size: 1.625rem;
   }
 
   @include lg {
     width: 60.3125rem;
-    margin-bottom: 3.125rem;
   }
 }
 

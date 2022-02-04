@@ -4,10 +4,6 @@ const GLOBAL_DEFS = {
   IMAGE_GALLERY_PATH: '/image-gallery-dev',
   THIRD_GEN_DOMAIN: '.third-generation',
 
-  CDN_DEFS: {
-    SMALL_SLUG: '-small',
-    CDN_DOMAIN_PREFIX: 'https://res.cloudinary.com/'
-  },
   IMAGE_GROUPS: {
     PROJECT_1: 'project-1',
     PROJECT_2: 'project-2',
@@ -31,17 +27,12 @@ const GLOBAL_DEFS = {
     EMERGENCY: 'emergency',
     REMODEL: 'remodel',
     REPAIRS: 'repairs',
-    ROOFING: 'roofing',
+    ROOFING: 'roofing-art',
     SIDING: 'siding',
     OUR_WORK_SECTION: 'our-work-section',
-    OUR_WORK: 'image_galleryt'
+    OUR_WORK: 'image_gallery'
   },
-  WINDOW_SIZES: {
-    DESKTOP_LARGE: 'desktop-large',
-    DESKTOP: 'desktop',
-    TABLET: 'tablet',
-    MOBILE: 'mobile'
-  },
+
   IMAGE_GALLERY_PHASES: {
     BEFORE: 'before',
     AFTER: 'after',
@@ -64,6 +55,33 @@ export const GALLERY_NAMES = {
   ROOFING: 'roofing',
   WHOLE_HOME: 'whole-home',
   OTHER: 'other'
+}
+
+export const GALLERY_NAMES_BY_PROJECT = {
+  BASEMENT_PROJECT_1: 'basement-project-1',
+  BATHROOM_PROJECT_1: 'bathroom-project-1',
+  BATHROOM_PROJECT_2: 'bathroom-project-2',
+  KITCHEN_PROJECT_1: 'kitchen-project-1',
+  KITCHEN_PROJECT_2: 'kitchen-project-2',
+  ROOFING_PROJECT_1: 'roofing-project-1',
+  ROOFING_PROJECT_2: 'roofing-project-2',
+  WHOLE_HOME_PROJECT_1: 'whole-home-project-1',
+  OTHER_PROJECT_1: 'other-project-1',
+  OTHER_PROJECT_2: 'other-project-2',
+  OTHER_PROJECT_3: 'other-project-3',
+}
+
+export const CDN_DEFS = {
+  SMALL_SLUG: '-small',
+  CDN_DOMAIN_PREFIX: 'https://res.cloudinary.com/',
+  REACT_APP_CDN_CLOUD_NAME: 'third-gen-construction'
+}
+
+export const WINDOW_SIZES = {
+  DESKTOP_LARGE: 'desktop-large',
+    DESKTOP: 'desktop',
+    TABLET: 'tablet',
+    MOBILE: 'mobile'
 }
 
 export default GLOBAL_DEFS

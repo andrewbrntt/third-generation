@@ -43,7 +43,7 @@ const ContactFormSubmitErrorModal = ({ isErrorModalOpen, handleClose }) => {
             <ul className='contact-form__success-modal-ul remove-padding-left color-primary'>
               <li>
                 <span className='contact-form__success-modal-text'>View</span>
-                <Link to='/our-work' className='contact-form__success-modal-link'>Our Work</Link>
+                <Link to='/other-photos' className='contact-form__success-modal-link'>Our Other Work</Link>
               </li>
               <li>
                 <span className='contact-form__success-modal-text'>Read</span>

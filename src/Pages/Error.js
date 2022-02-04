@@ -15,10 +15,6 @@ const Error = () => {
       <div className='error__ul-container'>
         <ul className='contact-form__success-modal-ul remove-padding-left'>
           <li>
-            <span className='contact-form__success-modal-text'>View</span>
-            <Link to='/our-work' className='contact-form__success-modal-link'>Our Work</Link>
-          </li>
-          <li>
             <span className='contact-form__success-modal-text'>Read</span>
             <Link to='/reviews' className='contact-form__success-modal-link'>Reviews</Link>
           </li>

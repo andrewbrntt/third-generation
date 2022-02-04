@@ -48,10 +48,10 @@ const EmergencyService = () => {
         </div>
       </BodySection>
       <BodySection
-        linkRoute='/our-work'
+        linkRoute='/other-photos'
         styleClasses='background-color-primary color-white body-section--width-full'
         sectionTitle='Our Work'
-        linkText='View Gallery'>
+        linkText='View Other Gallery'>
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965 desktop--margin-0'>
             We're proud of our work and love showing it off.

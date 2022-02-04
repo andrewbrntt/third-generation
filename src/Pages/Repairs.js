@@ -11,7 +11,7 @@ import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { repairReviews } from '../DataObjects/reviewsData'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES } from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import DynamicImage from '../Components/DynamicImage'
 
@@ -28,7 +28,7 @@ const Repairs = () => {
 
   useEffect(() => {
     const remodelHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.REPAIRS)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES.BASEMENT)
 
     Promise.all([remodelHero, galleryImageGroup])
       .then(res => {
@@ -101,9 +101,9 @@ const Repairs = () => {
           <p className='p--top-spacing'>We are available 24/7 to help you fix whatever goes wrong in your home.</p>
         </div>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
+      <BodySection linkRoute='/basement-photos' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work'
-                   linkText='View Gallery'>
+                   linkText='View Basement Gallery'>
         <div className='p--margin-bottom-standard padding-x-standard'>
           <p className='body-section--width-965'>
             We're proud of our work and love showing it off.

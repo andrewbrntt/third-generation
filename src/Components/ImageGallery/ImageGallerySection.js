@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useReducer } from 'react'
+import React, { useEffect, useRef, useReducer } from 'react'
 import ImageGallerySectionHero from './ImageGallerySectionHero'
 import createPhaseThumbnails from './createPhaseThumbnails'
 import { GALLERY_REDUCER_ACTIONS } from '../../Helpers/GLOBAL_DEFS'
@@ -12,7 +12,7 @@ import ImageGalleryModal from './ImageGalleryModal'
 const initState = {
   isModalOpen: false,
   selectedImageIndex: -1,
-  heroImage: {},
+  heroImage: null,
   galleryThumbnailImages: [],
   galleryModalImages: []
 }
@@ -38,7 +38,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
     dispatch({ type: GALLERY_REDUCER_ACTIONS.MODAL_STATE, payload: false })
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
 
     if (sectionImages.images && sectionImages.images.length > 0) {
       let imageThumbnails
@@ -46,28 +46,19 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
       const hero = createHeroImage(sectionImages.images)
       let modalImages = createModalImages(sectionImages.images, hero)
 
-      // Check to see if it is different
-      if (hero && JSON.stringify(hero) !== JSON.stringify(state.heroImage)) {
-        dispatch({ type: GALLERY_REDUCER_ACTIONS.HERO_IMAGE, payload: hero })
-      }
 
       if (sectionImages.phases) {
         imageThumbnails = createPhaseThumbnails(sectionImages.images)
       } else {
         imageThumbnails = createThumbnails(sectionImages.images)
       }
+        dispatch({ type: GALLERY_REDUCER_ACTIONS.HERO_IMAGE, payload: hero })
 
-      // Check to see if the thumbnails have changed
-      if (JSON.stringify(imageThumbnails) !== JSON.stringify(state.galleryThumbnailImages)) {
         dispatch({ type: GALLERY_REDUCER_ACTIONS.THUMBNAILS, payload: imageThumbnails })
-      }
 
-      // Check to see if the modal images have changed
-      if (JSON.stringify(modalImages) !== JSON.stringify(state.galleryModalImages)) {
         dispatch({ type: GALLERY_REDUCER_ACTIONS.MODAL_IMAGES, payload: modalImages })
-      }
     }
-  }, [sectionImages, state.heroImage])
+  },[sectionImages.images, sectionImages.phases])
 
   return (
     <>
@@ -79,7 +70,7 @@ const ImageGallerySection = ({ title, sectionImages, isSection }) => {
           initialImageIndex={ state.selectedImageIndex }
         /> }
       <div className="image-gallery-section__container">
-        { !isSection && <span className="image-gallery-section__title">{ title }</span> }
+        { !isSection && <h3 className="image-gallery-section__title">{ title }</h3> }
         { state.heroImage && <ImageGallerySectionHero onImageClick={ onImageClick } heroImage={ state.heroImage }/> }
         <div ref={ ImageGallerySectionContainer } className="image-gallery-section__img-container">
           <ImageGroups galleryThumbnailImages={state.galleryThumbnailImages} onImageClick={onImageClick}/>

@@ -69,22 +69,22 @@ function App () {
             <Route path='/contact'>
               <Contact/>
             </Route>
-            <Route path='/basement'>
+            <Route path='/basement-photos'>
               <OurWork gallery={GALLERY_NAMES.BASEMENT}/>
             </Route>
-            <Route path='/bathroom'>
+            <Route path='/bathroom-photos'>
               <OurWork gallery={GALLERY_NAMES.BATHROOM}/>
             </Route>
-            <Route path='/kitchen'>
+            <Route path='/kitchen-photos'>
               <OurWork gallery={GALLERY_NAMES.KITCHEN}/>
             </Route>
-            <Route path='/roofing'>
+            <Route path='/roofing-photos'>
               <OurWork gallery={GALLERY_NAMES.ROOFING}/>
             </Route>
-            <Route path='/whole-home'>
+            <Route path='/whole-home-photos'>
               <OurWork gallery={GALLERY_NAMES.WHOLE_HOME}/>
             </Route>
-            <Route path='/other'>
+            <Route path='/other-photos'>
               <OurWork gallery={GALLERY_NAMES.OTHER}/>
             </Route>
             <Route path='/reviews'>

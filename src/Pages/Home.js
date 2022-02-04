@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import GLOBAL_DEFS, { GALLERY_NAMES } from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
 import LinkCard from '../Components/LinkCard'
@@ -34,7 +34,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const galleryImageGroup = getImageGroup(GALLERY_NAMES.BASEMENT)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.KITCHEN_PROJECT_1)
 
     const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -134,7 +134,7 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary'
+      <BodySection linkRoute='/kitchen-photos' linkText='View Kitchen Gallery' styleClasses='body-section--width-965 color-primary'
                    sectionTitle='Our Work'>
         <div
           className='p--margin-bottom-standard body-section__p-container home__our-work-p-container padding-x-standard'>
@@ -145,7 +145,7 @@ const Home = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
+        {imageGalleryImages && <ImageGallerySection title='Finished Project' sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
                    sectionTitle='Contact Us'>
