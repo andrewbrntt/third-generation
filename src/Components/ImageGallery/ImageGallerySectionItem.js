@@ -7,7 +7,7 @@ const ImageGallerySectionItem = ({ imageObject, index, onImageClick }) => {
   return (
     <button
       className={`${index % 3 === 1 ? 'image-gallery-section__img-link-margin-x' : ''} image-gallery-section__img-link image-gallery__item-button`}
-      key={shortId.generate()} onClick={onImageClick}>
+      key={shortId.generate()} onClick={(e) => onImageClick(e, imageObject)}>
       <DynamicImage imageObject={imageObject}/>
     </button>
   )

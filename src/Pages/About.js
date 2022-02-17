@@ -11,7 +11,7 @@ import OurProcessInfographicDesktop from '../Components/OurProcessInfographicDes
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import { routesData } from '../DataObjects/routes'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import DynamicImage from '../Components/DynamicImage'
 
@@ -40,7 +40,7 @@ const About = () => {
   useEffect(() => {
 
     const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.BATHROOM_PROJECT_1, true)
 
     Promise.all([aboutHero, galleryImageGroup])
       .then(res => {
@@ -93,8 +93,8 @@ const About = () => {
         <AccreditedSitesSection containerStyleClasses='body-section--width-965'
                                 accreditationSites={accreditationSites}/>
       </BodySection>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
-                   linkText='View Gallery'
+      <BodySection linkRoute='/bathroom-photos' styleClasses='background-color-primary color-white body-section--width-full'
+                   linkText='View Bathroom Gallery'
                    sectionTitle='Our Work'>
         <div className='padding-x-standard p--margin-bottom-standard body-section--width-965'>
           <p>

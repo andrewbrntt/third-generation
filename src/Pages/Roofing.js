@@ -11,22 +11,25 @@ import { vendors } from '../Helpers/vendorAssetLibrary'
 
 import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import { roofReviews } from '../DataObjects/reviewsData'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import DynamicImage from '../Components/DynamicImage'
+import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
+import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 
 const Roofing = () => {
+  const [imageGalleryImages, setImageGalleryImages] = useState(null)
   const [heroImage, setHeroImage] = useState(null)
-  const [ourWorkSectionImage, setOurWorkSectionImage] = useState(null)
 
   useEffect(() => {
     const roofingHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ROOFING)
-    const ourWorkHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.OUR_WORK_SECTION)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.ROOFING_PROJECT_1, true)
 
-    Promise.all([roofingHero, ourWorkHero])
+
+    Promise.all([roofingHero, galleryImageGroup])
       .then(res => {
         setHeroImage(res[0])
-        setOurWorkSectionImage(res[1])
+        setImageGalleryImages(res[1])
       })
   }, [])
 
@@ -65,11 +68,9 @@ const Roofing = () => {
           </p>
         </div>
       </DesktopBodySectionHeader>
-      <BodySection linkRoute='/our-work' styleClasses='background-color-primary color-white body-section--width-full'
+      <BodySection linkRoute='/roofing-photos' styleClasses='background-color-primary color-white body-section--width-full'
                    sectionTitle='Our Work'
-                   linkText='View Gallery'>
-        {ourWorkSectionImage &&
-        <DynamicImage styleClasses='body-section__hero-img' imageObject={ourWorkSectionImage}/>}
+                   linkText='View Roofing Gallery'>
         <div className='p--margin-bottom-standard body-section--width-965 padding-x-standard'>
           <p>
             We're proud of our work and love showing it off.
@@ -78,6 +79,7 @@ const Roofing = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
+        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection sectionTitle='Materials' styleClasses='color-primary padding-x-standard body-section--width-965'>
         <div className='p--margin-bottom-standard padding-x-standard'>

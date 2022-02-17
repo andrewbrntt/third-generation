@@ -9,7 +9,7 @@ import DesktopBodySectionHeader from '../Components/DesktopBodySectionHeader'
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import SuppliersSection from '../Components/SuppliersSection'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
 import DynamicImage from '../Components/DynamicImage'
 
@@ -25,7 +25,7 @@ const Remodel = () => {
 
   useEffect(() => {
     const remodelHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.REMODEL)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_3)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.KITCHEN_PROJECT_1, true)
 
     Promise.all([remodelHero, galleryImageGroup])
       .then(res => {
@@ -109,10 +109,10 @@ const Remodel = () => {
         </div>
       </BodySection>
       <BodySection
-        linkRoute='/our-work'
+        linkRoute='/kitchen-photos'
         styleClasses='background-color-primary color-white body-section--width-full'
         sectionTitle='Our Work'
-        linkText='View Gallery'>
+        linkText='View Kitchen Gallery'>
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965 desktop--margin-0'>
             We're proud of our work and love showing it off.

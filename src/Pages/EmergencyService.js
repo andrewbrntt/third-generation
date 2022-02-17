@@ -10,7 +10,7 @@ import { remodelReviews } from '../DataObjects/reviewsData'
 
 import ImageGallerySection from '../Components/ImageGallery/ImageGallerySection'
 import getStockArtImage from '../Helpers/ImageCDN/getStockArtImage'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import getImageGroup from '../Helpers/ImageCDN/getImageGroup'
 import DynamicImage from '../Components/DynamicImage'
 
@@ -21,7 +21,7 @@ const EmergencyService = () => {
   useEffect(() => {
 
     const emergencyHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.EMERGENCY)
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_2)
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.OTHER_PROJECT_1, true)
 
     Promise.all([emergencyHero, galleryImageGroup])
       .then(res => {
@@ -48,10 +48,10 @@ const EmergencyService = () => {
         </div>
       </BodySection>
       <BodySection
-        linkRoute='/our-work'
+        linkRoute='/other-photos'
         styleClasses='background-color-primary color-white body-section--width-full'
         sectionTitle='Our Work'
-        linkText='View Gallery'>
+        linkText='View Other Gallery'>
         <div className='p--margin-bottom-standard'>
           <p className='padding-x-standard body-section--width-965 desktop--margin-0'>
             We're proud of our work and love showing it off.

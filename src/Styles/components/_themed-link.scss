@@ -11,9 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 13.125rem;
-  height: 3.125rem;
-  padding: 0 1.25rem;
+  padding: 1.25rem;
 
   //Typography
   color: $white;
@@ -24,7 +22,6 @@
   border: 0;
 
   @include md {
-    width: 15.625rem;
   }
 }
 

@@ -31,20 +31,20 @@
 }
 
 .image-gallery__img-container {
-  width: 16.25rem;
-  height: auto;
-
-  @include sm {
-    width: 31.25rem;
-  }
-
-  @include md {
-    width: 41.25rem;
-  }
-
-  @include lg {
-    width: 56.25rem;
-  }
+  // width: 16.25rem;
+  // height: auto;
+  //
+  // @include sm {
+  //   width: 31.25rem;
+  // }
+  //
+  // @include md {
+  //   width: 41.25rem;
+  // }
+  //
+  // @include lg {
+  //   width: 56.25rem;
+  // }
 }
 
 .image-gallery--display-flex {

@@ -126,10 +126,10 @@ const ImageGalleryModal = ({
               <LazyLoad once>
                 <DynamicImage styleClasses='image-gallery__modal-image' imageObject={state.currentImage} />
               </LazyLoad>
-              {state.currentImage && state.currentImage.subText &&
-              <div className='image-gallery__text default-text color-white'>
-                {state.currentImage.subText}
-              </div>}
+              {/*{state.currentImage && state.currentImage.subText &&*/}
+              {/*<div className='image-gallery__text default-text color-white'>*/}
+              {/*  {state.currentImage.subText}*/}
+              {/*</div>}*/}
             </div>
           </div>
           <div style={{ visibility: state.nextArrowVisible ? 'visible' : 'hidden' }}

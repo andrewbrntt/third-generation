@@ -10,6 +10,7 @@ import Banner from './Components/Banner'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { GALLERY_NAMES } from './Helpers/GLOBAL_DEFS'
 
 const Home = lazy(() => import('./Pages/Home'))
 const About = lazy(() => import('./Pages/About'))
@@ -68,8 +69,23 @@ function App () {
             <Route path='/contact'>
               <Contact/>
             </Route>
-            <Route path='/our-work'>
-              <OurWork/>
+            <Route path='/basement-photos'>
+              <OurWork galleryName={GALLERY_NAMES.BASEMENT}/>
+            </Route>
+            <Route path='/bathroom-photos'>
+              <OurWork galleryName={GALLERY_NAMES.BATHROOM}/>
+            </Route>
+            <Route path='/kitchen-photos'>
+              <OurWork galleryName={GALLERY_NAMES.KITCHEN}/>
+            </Route>
+            <Route path='/roofing-photos'>
+              <OurWork galleryName={GALLERY_NAMES.ROOFING}/>
+            </Route>
+            {/*<Route path='/whole-home-photos'>*/}
+            {/*  <OurWork gallery={GALLERY_NAMES.WHOLE_HOME}/>*/}
+            {/*</Route>*/}
+            <Route path='/other-photos'>
+              <OurWork galleryName={GALLERY_NAMES.OTHER}/>
             </Route>
             <Route path='/reviews'>
               <Reviews/>

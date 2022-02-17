@@ -1,13 +1,22 @@
 export const routesData = {
   home: { routeName: 'Home', routeTo: '/', exact: true },
   about: { routeName: 'About', routeTo: '/about' },
-  remodel: { routeName: 'Remodel', routeTo: '/remodel' },
-  roofing: { routeName: 'Roofing', routeTo: '/roofing' },
-  siding: { routeName: 'Siding', routeTo: '/siding' },
-  repairs: { routeName: 'Repairs', routeTo: '/repairs' },
-  ourWork: { routeName: 'Our Work', routeTo: '/our-work' },
+  services: [
+    { routeName: 'Remodel', routeTo: '/remodel' },
+    { routeName: 'Roofing', routeTo: '/roofing' },
+    { routeName: 'Siding', routeTo: '/siding' },
+    { routeName: 'Repairs', routeTo: '/repairs' }
+  ],
   reviews: { routeName: 'Reviews', routeTo: '/reviews' },
   contactUs: { routeName: 'Contact Us', routeTo: '/contact' },
+  imageGalleries: [
+    { routeName: 'Kitchen', routeTo: '/kitchen-photos' },
+    { routeName: 'Bathroom', routeTo: '/bathroom-photos' },
+    { routeName: 'Basement', routeTo: '/basement-photos' },
+    { routeName: 'Roofing', routeTo: '/roofing-photos' },
+    // { routeName: 'Whole-Home', routeTo: '/whole-home-photos' },
+    { routeName: 'Other', routeTo: '/other-photos' }
+  ],
   emergency: {
     routeName: '24-Hour Emergency',
     routeTo: '/emergency-service'
@@ -30,5 +39,24 @@ export const socialMediaRoutes = {
     routeName: 'Google',
     routeTo: 'https://www.google.com/search?client=ms-android-verizon&cds=3&cs=1&hl=en-US&v=11.30.9.21.arm64&output=search&q=3rd+Generation+Construction+llc&ludocid=10215793668164252082&lsig=AB86z5Xw67MdcxIrDbtAvXzqbZQN&kgs=82f03822b75cfb8c&shndl=-1&source=sh/x/kp/local&entrypoint=sh/x/kp/local'
   }
-
 }
+
+export const serviceRoutes = [
+  { routeName: 'Remodel', routeTo: '/remodel' },
+  { routeName: 'Roofing', routeTo: '/roofing' },
+  { routeName: 'Siding', routeTo: '/siding' },
+  { routeName: 'Repairs', routeTo: '/repairs' },
+  {
+    routeName: '24-Hour Emergency',
+    routeTo: '/emergency-service',
+  }
+]
+
+export const topMenuRoutes = [
+  { routeName: 'Home', routeTo: '/', exact: true },
+  { routeName: 'About', routeTo: '/about' },
+]
+export const bottomMenuRoutes = [
+  { routeName: 'Reviews', routeTo: '/reviews' },
+  { routeName: 'Contact Us', routeTo: '/contact' }
+]

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import GLOBAL_DEFS from '../Helpers/GLOBAL_DEFS'
+import GLOBAL_DEFS, { GALLERY_NAMES_BY_PROJECT } from '../Helpers/GLOBAL_DEFS'
 import BodyHeader from '../Components/BodyHeader'
 import BodySection from '../Components/BodySection'
 import LinkCard from '../Components/LinkCard'
@@ -33,9 +33,8 @@ const Home = () => {
     requiredTextClasses: 'color-white'
   }
 
-  useEffect(() => {
-
-    const galleryImageGroup = getImageGroup(GLOBAL_DEFS.IMAGE_GROUPS.PROJECT_1)
+  useLayoutEffect(() => {
+    const galleryImageGroup = getImageGroup(GALLERY_NAMES_BY_PROJECT.KITCHEN_PROJECT_1, true)
 
     const aboutHero = getStockArtImage(GLOBAL_DEFS.PAGE_HEROS.ABOUT_US)
     const roofingCard = getStockArtImage(GLOBAL_DEFS.IMAGE_CARDS.ROOFING_CARD)
@@ -89,7 +88,7 @@ const Home = () => {
       <BodyHeader linkRoute={routesData.contactUs.routeTo} linkText={routesData.contactUs.routeName}
                   heroImageName='home'
                   pageHeader='Transform Your House Into Your Dream Home'
-                  showButtonTwo="true"
+                  showButtonTwo={false}
       >
         <p>
           A home's exterior is made beautiful through its siding, trim, and roofing.
@@ -135,7 +134,7 @@ const Home = () => {
           </p>
         </div>
       </BodySection>
-      <BodySection linkRoute='our-work' linkText='View Gallery' styleClasses='body-section--width-965 color-primary'
+      <BodySection linkRoute='/kitchen-photos' linkText='View Kitchen Gallery' styleClasses='body-section--width-965 color-primary'
                    sectionTitle='Our Work'>
         <div
           className='p--margin-bottom-standard body-section__p-container home__our-work-p-container padding-x-standard'>
@@ -146,7 +145,7 @@ const Home = () => {
             Let Third Generation Construction transform your current space into the home of your dreams.
           </p>
         </div>
-        {imageGalleryImages && <ImageGallerySection sectionImages={imageGalleryImages}/>}
+        {imageGalleryImages && <ImageGallerySection title='Finished Project' sectionImages={imageGalleryImages}/>}
       </BodySection>
       <BodySection styleClasses='home__contact-us-section padding-x-standard background-color-primary color-white'
                    sectionTitle='Contact Us'>

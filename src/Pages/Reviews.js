@@ -7,7 +7,6 @@ import { allReviews } from '../DataObjects/reviewsData'
 import ReviewSitesSection from '../Components/ReviewSitesSection'
 
 const Reviews = () => {
-
   return (
     <>
       <Helmet>

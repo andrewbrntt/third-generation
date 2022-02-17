@@ -1,13 +1,24 @@
 import sortImageArray from '../sortImageArray'
-import createImage from './createImageObject'
 import GLOBAL_DEFS from '../GLOBAL_DEFS'
 
-const createThumbnails = (images) => {
-  let smallImages = images.filter(image => image.src.includes(GLOBAL_DEFS.SMALL))
+const createThumbnails = (sectionImages) => {
+  let thumbnailImages = sectionImages.images.filter(image => image.thumbnail)
 
-  let thumbnails = smallImages.map(thumbnail => createImage(thumbnail.src, thumbnail.altText, thumbnail.phase, thumbnail.name))
+  if (sectionImages.phases) {
+    const beforeImages = thumbnailImages.filter(image => image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.BEFORE)
+    const duringImages = thumbnailImages.filter(image => image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.DURING)
+    const afterImages = thumbnailImages.filter(image => image.phase === GLOBAL_DEFS.IMAGE_GALLERY_PHASES.AFTER)
 
-  return sortImageArray(thumbnails)
+    return [{
+      phases: true,
+      beforeImages: sortImageArray(beforeImages),
+      duringImages: sortImageArray(duringImages),
+      afterImages:  sortImageArray(afterImages)
+
+    }]
+  } else {
+    return sortImageArray(thumbnailImages)
+  }
 }
 
 export default createThumbnails

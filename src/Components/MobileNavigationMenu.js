@@ -2,29 +2,9 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import shortId from 'shortid'
 import MobileNavigationButton from './MobileNavigationButton'
+import { serviceRoutes, topMenuRoutes, bottomMenuRoutes, routesData } from '../DataObjects/routes'
 
 const MobileNavigationMenu = ({ createRouteObject }) => {
-
-  // TODO: Update these objects to use the routesData object
-  const serviceRoutes = [
-    { routeName: 'Remodel', routeTo: '/remodel' },
-    { routeName: 'Roofing', routeTo: '/roofing' },
-    { routeName: 'Siding', routeTo: '/siding' },
-    { routeName: 'Repairs', routeTo: '/repairs' },
-    {
-      routeName: '24-Hour Emergency',
-      routeTo: '/emergency-service',
-    }
-  ]
-  const topMenuRoutes = [
-    { routeName: 'Home', routeTo: '/', exact: true },
-    { routeName: 'About', routeTo: '/about' },
-  ]
-  const bottomMenuRoutes = [
-    { routeName: 'Our Work', routeTo: '/our-work' },
-    { routeName: 'Reviews', routeTo: '/reviews' },
-    { routeName: 'Contact Us', routeTo: '/contact' }
-  ]
   const [navIsOpen, setNavIsOpen] = useState(false)
 
   const toggleMobileNav = (e) => {
@@ -79,6 +59,7 @@ const MobileNavigationMenu = ({ createRouteObject }) => {
           {createMenuList(topMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
           <h2 id='mobile-navigation__services-heading' className='mobile-navigation__heading'>Services</h2>
           {createMenuList(serviceRoutes, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text', 'mobile-navigation__services-heading')}
+          {createMenuList(routesData.imageGalleries, 'mobile-navigation__ul mobile-navigation__nested-list remove-padding action-text', 'mobile-navigation__services-heading')}
           {createMenuList(bottomMenuRoutes, 'mobile-navigation__ul remove-padding action-text')}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image } from 'cloudinary-react'
+import {CDN_DEFS} from '../Helpers/GLOBAL_DEFS'
 
 const DynamicImage = ({ imageObject, styleClasses }) => {
   if (imageObject) {
@@ -17,7 +18,7 @@ const DynamicImage = ({ imageObject, styleClasses }) => {
       return (
         <>
           <Image className={styleClasses}
-                 cloudName={process.env.REACT_APP_CDN_CLOUD_NAME}
+                 cloudName={CDN_DEFS.REACT_APP_CDN_CLOUD_NAME}
                  publicId={imageObject.src}
           />
         </>

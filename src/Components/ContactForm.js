@@ -14,6 +14,8 @@ import {
 import ContactFormSuccessModal from './ContactFormSuccessModal'
 import ContactFormSubmitErrorModal from './ContactFormSubmitErrorModal'
 
+
+// TODO: Change form to use https://help.formspree.io/hc/en-us/articles/360055613373-The-Formspree-React-library
 const ContactForm = ({ formStyleClasses = {} }) => {
 
   const contactFormElement = useRef(null)
